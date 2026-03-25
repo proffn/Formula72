@@ -42,10 +42,25 @@ export interface WholesaleSectionData {
   right: SplitBlockSide;
 }
 
+export interface ComparisonColumnData {
+  title: string;
+  advantagesTitle: string;
+  advantages: string[];
+  disadvantagesTitle: string;
+  disadvantages: string[];
+}
+
+export interface ProsConsSectionData {
+  sectionTitle: string;
+  leftColumn: ComparisonColumnData;
+  rightColumn: ComparisonColumnData;
+}
+
 export interface HomePageData {
   siteHeader: SiteHeaderContent;
   navigation: NavItem[];
   hero: HeroContent;
   banners: BannerItem[];
   wholesaleContract: WholesaleSectionData;
+  prosCons: ProsConsSectionData;
 }

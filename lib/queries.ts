@@ -239,6 +239,7 @@ export async function getHomePageData(): Promise<HomePageData> {
       hero: homePage ? mapHero(homePage) : homePageMock.hero,
       banners: banners.length > 0 ? banners.map(mapBanner) : homePageMock.banners,
       wholesaleContract: wholesaleSection ? mapWholesale(wholesaleSection) : homePageMock.wholesaleContract,
+      prosCons: homePageMock.prosCons,
     };
 
     if (process.env.NODE_ENV !== "production") {

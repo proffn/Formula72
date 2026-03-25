@@ -1,5 +1,6 @@
 import { BannerSlider } from "@/components/sections/banner-slider";
 import { HeroSection } from "@/components/sections/hero-section";
+import { ProsConsSection } from "@/components/sections/pros-cons-section";
 import { WholesaleContractSection } from "@/components/sections/wholesale-contract-section";
 import { getHomePageData } from "@/lib/queries";
 
@@ -13,6 +14,7 @@ export default async function HomePage() {
       <HeroSection siteHeader={data.siteHeader} navigation={data.navigation} hero={data.hero} />
       <BannerSlider banners={data.banners} />
       <WholesaleContractSection section={data.wholesaleContract} />
+      <ProsConsSection section={data.prosCons} />
     </main>
   );
 }
