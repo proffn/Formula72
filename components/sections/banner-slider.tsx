@@ -62,51 +62,63 @@ export function BannerSlider({ banners }: BannerSliderProps) {
           className="flex transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
         >
-          {banners.map((banner) => (
-            <div key={banner.id} className="relative aspect-[1366/768] w-full flex-none">
+          {banners.map((banner, index) => (
+            <div
+              key={banner.id}
+              className="relative aspect-[1366/768] w-full flex-none"
+            >
               {(() => {
                 const layout = getBannerLayoutClasses(banner.textPosition);
+                const isFirstBanner = index === 0;
 
                 return (
                   <>
-              <Image
-                src={banner.image}
-                alt={banner.title}
-                fill
-                sizes="100vw"
-                unoptimized={isRemoteAssetUrl(banner.image)}
-                className="object-contain object-center"
-              />
-              <div
-                className={`absolute inset-0 ${
-                  banner.textColor === "light"
-                    ? "bg-[linear-gradient(90deg,rgba(43,24,18,0.18)_0%,rgba(43,24,18,0.08)_42%,rgba(43,24,18,0.1)_100%)]"
-                    : "bg-[linear-gradient(90deg,rgba(255,247,238,0.08)_0%,rgba(255,247,238,0.04)_100%)]"
-                }`}
-              />
+                    <Image
+                      src={banner.image}
+                      alt={banner.title}
+                      fill
+                      sizes="100vw"
+                      unoptimized={isRemoteAssetUrl(banner.image)}
+                      className="object-contain object-center"
+                    />
+                    <div
+                      className={`absolute inset-0 ${
+                        banner.textColor === "light"
+                          ? "bg-[linear-gradient(90deg,rgba(43,24,18,0.18)_0%,rgba(43,24,18,0.08)_42%,rgba(43,24,18,0.1)_100%)]"
+                          : "bg-[linear-gradient(90deg,rgba(255,247,238,0.08)_0%,rgba(255,247,238,0.04)_100%)]"
+                      }`}
+                    />
 
-              <div
-                className={`absolute inset-0 flex ${layout.container}`}
-              >
-                <div
-                  className={`${layout.content} text-left ${
-                    banner.textColor === "light" ? "text-white" : "text-[#63504A]"
-                  }`}
-                >
-                  <h3
-                    className={`uppercase tracking-[-0.03em] ${layout.title}`}
-                  >
-                    {banner.title}
-                  </h3>
-                  {banner.subtitle ? (
-                    <p
-                      className={`tracking-[-0.02em] ${layout.subtitle}`}
+                    <div
+                      className={`absolute inset-0 flex ${layout.container}`}
                     >
-                      {banner.subtitle}
-                    </p>
-                  ) : null}
-                </div>
-              </div>
+                      <div
+                        className={`${layout.content} text-left ${
+                          banner.textColor === "light"
+                            ? "text-white"
+                            : "text-[#63504A]"
+                        }`}
+                      >
+                        <h3
+                          className={`uppercase tracking-[-0.03em] ${layout.title} ${
+                            isFirstBanner ? "scale-[0.9091] origin-top-left" : ""
+                          }`}
+                        >
+                          {banner.title}
+                        </h3>
+                        {banner.subtitle ? (
+                          <p
+                            className={`tracking-[-0.02em] ${layout.subtitle} ${
+                              isFirstBanner
+                                ? "scale-[0.6944] origin-top-left lg:mt-[12.7px] min-[1920px]:mt-[17.9px]"
+                                : ""
+                            }`}
+                          >
+                            {banner.subtitle}
+                          </p>
+                        ) : null}
+                      </div>
+                    </div>
                   </>
                 );
               })()}
@@ -127,7 +139,9 @@ export function BannerSlider({ banners }: BannerSliderProps) {
               onClick={() => goTo(index)}
               aria-label={`Перейти к слайду ${index + 1}`}
               className={`h-2 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30 ${
-                index === activeIndex ? "w-8 bg-foreground" : "w-2 bg-foreground/35 hover:bg-foreground/55"
+                index === activeIndex
+                  ? "w-8 bg-foreground"
+                  : "w-2 bg-foreground/35 hover:bg-foreground/55"
               }`}
             />
           ))}
