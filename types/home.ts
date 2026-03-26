@@ -56,6 +56,22 @@ export interface ProsConsSectionData {
   rightColumn: ComparisonColumnData;
 }
 
+export interface Formula72SchemeSectionData {
+  title: string;
+  image: string;
+}
+
+export interface WorkStageItemData {
+  id: string;
+  text: string;
+  image: string;
+}
+
+export interface WorkStagesSectionData {
+  title: string;
+  stages: WorkStageItemData[];
+}
+
 export interface HomePageData {
   siteHeader: SiteHeaderContent;
   navigation: NavItem[];
@@ -63,4 +79,6 @@ export interface HomePageData {
   banners: BannerItem[];
   wholesaleContract: WholesaleSectionData;
   prosCons: ProsConsSectionData;
+  formula72Scheme: Formula72SchemeSectionData;
+  workStages: WorkStagesSectionData;
 }

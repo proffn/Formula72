@@ -67,3 +67,44 @@ export interface StrapiWholesaleContractSection {
   rightButtonLink: string;
   backgroundImage?: StrapiMedia | null;
 }
+
+export interface StrapiTextItem {
+  id?: number;
+  text?: string | null;
+}
+
+export interface StrapiProsConsSection {
+  id: number;
+  documentId?: string;
+  sectionTitle?: string | null;
+  leftTitle?: string | null;
+  leftAdvantagesTitle?: string | null;
+  leftAdvantages?: StrapiTextItem[] | null;
+  leftDisadvantagesTitle?: string | null;
+  leftDisadvantages?: StrapiTextItem[] | null;
+  rightTitle?: string | null;
+  rightAdvantagesTitle?: string | null;
+  rightAdvantages?: StrapiTextItem[] | null;
+  rightDisadvantagesTitle?: string | null;
+  rightDisadvantages?: StrapiTextItem[] | null;
+}
+
+export interface StrapiFormula72SchemeSection {
+  id: number;
+  documentId?: string;
+  title?: string | null;
+  image?: StrapiMedia | null;
+}
+
+export interface StrapiWorkStageItem {
+  id?: number;
+  text?: string | null;
+  image?: StrapiMedia | null;
+}
+
+export interface StrapiWorkStagesSection {
+  id: number;
+  documentId?: string;
+  title?: string | null;
+  stages?: StrapiWorkStageItem[] | null;
+}

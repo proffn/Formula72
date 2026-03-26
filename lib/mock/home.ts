@@ -94,4 +94,43 @@ export const homePageMock: HomePageData = {
       ],
     },
   },
+  formula72Scheme: {
+    title: "K72",
+    image: "/images/home/formula72-scheme/formula72-scheme.png",
+  },
+  workStages: {
+    title: "ЭТАПЫ РАБОТЫ",
+    stages: [
+      {
+        id: "stage-1",
+        image: "/images/home/work-stages/stage-1.png",
+        text: "Совместно с менеджером выбираете продукт, тару, упаковку и определяете состав заказа.",
+      },
+      {
+        id: "stage-2",
+        image: "/images/home/work-stages/stage-2.png",
+        text: "Подписываете договор и спецификацию, выставляется счет и осуществляется оплата.",
+      },
+      {
+        id: "stage-3",
+        image: "/images/home/work-stages/stage-3.png",
+        text: "Регистрируется декларация, организуется маркировка «Честный Знак» и создается карточка товара.",
+      },
+      {
+        id: "stage-4",
+        image: "/images/home/work-stages/stage-4.png",
+        text: "Производство закупает сырьё, изготавливает сигнальный образец и запускает варку при наличии всех материалов.",
+      },
+      {
+        id: "stage-5",
+        image: "/images/home/work-stages/stage-5.png",
+        text: "Упаковываются коробки, маркируются для отгрузки и осуществляется отгрузка продукции.",
+      },
+      {
+        id: "stage-6",
+        image: "/images/home/work-stages/stage-6.png",
+        text: "Организуется транспортировка, оформляется забор груза и передаются сопроводительные документы.",
+      },
+    ],
+  },
 };

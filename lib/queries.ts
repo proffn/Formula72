@@ -3,18 +3,27 @@ import { homePageMock } from "@/lib/mock/home";
 import type {
   BannerItem,
   BannerTextPosition,
+  Formula72SchemeSectionData,
   HomePageData,
   NavItem,
+  ProsConsSectionData,
   SiteHeaderContent,
   WholesaleSectionData,
+  WorkStageItemData,
+  WorkStagesSectionData,
 } from "@/types/home";
 import type {
   StrapiBanner,
   StrapiCollectionResponse,
+  StrapiFormula72SchemeSection,
   StrapiHomePage,
+  StrapiProsConsSection,
   StrapiSiteHeader,
   StrapiSingleResponse,
+  StrapiTextItem,
   StrapiWholesaleContractSection,
+  StrapiWorkStageItem,
+  StrapiWorkStagesSection,
 } from "@/types/strapi";
 
 const navigationHrefs = ["#hero", "#hero", "#wholesale-contract", "#banners"] as const;
@@ -153,6 +162,72 @@ function mapWholesale(section: StrapiWholesaleContractSection): WholesaleSection
   };
 }
 
+function normalizeTextItems(items: StrapiTextItem[] | null | undefined, fallback: string[]) {
+  const normalized = (items ?? [])
+    .map((item) => item.text?.trim())
+    .filter((item): item is string => Boolean(item));
+
+  return normalized.length > 0 ? normalized : fallback;
+}
+
+function mapProsCons(section: StrapiProsConsSection): ProsConsSectionData {
+  return {
+    sectionTitle: section.sectionTitle?.trim() || homePageMock.prosCons.sectionTitle,
+    leftColumn: {
+      title: section.leftTitle?.trim() || homePageMock.prosCons.leftColumn.title,
+      advantagesTitle:
+        section.leftAdvantagesTitle?.trim() || homePageMock.prosCons.leftColumn.advantagesTitle,
+      advantages: normalizeTextItems(section.leftAdvantages, homePageMock.prosCons.leftColumn.advantages),
+      disadvantagesTitle:
+        section.leftDisadvantagesTitle?.trim() || homePageMock.prosCons.leftColumn.disadvantagesTitle,
+      disadvantages: normalizeTextItems(
+        section.leftDisadvantages,
+        homePageMock.prosCons.leftColumn.disadvantages,
+      ),
+    },
+    rightColumn: {
+      title: section.rightTitle?.trim() || homePageMock.prosCons.rightColumn.title,
+      advantagesTitle:
+        section.rightAdvantagesTitle?.trim() || homePageMock.prosCons.rightColumn.advantagesTitle,
+      advantages: normalizeTextItems(section.rightAdvantages, homePageMock.prosCons.rightColumn.advantages),
+      disadvantagesTitle:
+        section.rightDisadvantagesTitle?.trim() || homePageMock.prosCons.rightColumn.disadvantagesTitle,
+      disadvantages: normalizeTextItems(
+        section.rightDisadvantages,
+        homePageMock.prosCons.rightColumn.disadvantages,
+      ),
+    },
+  };
+}
+
+function mapFormula72Scheme(section: StrapiFormula72SchemeSection): Formula72SchemeSectionData {
+  return {
+    title: section.title?.trim() || homePageMock.formula72Scheme.title,
+    image: getStrapiMediaUrl(section.image?.url) ?? homePageMock.formula72Scheme.image,
+  };
+}
+
+function mapWorkStageItem(stage: StrapiWorkStageItem, index: number): WorkStageItemData {
+  const fallbackStage = homePageMock.workStages.stages[index % homePageMock.workStages.stages.length];
+
+  return {
+    id: String(stage.id ?? fallbackStage.id ?? index),
+    text: stage.text?.trim() || fallbackStage.text,
+    image: getStrapiMediaUrl(stage.image?.url) ?? fallbackStage.image,
+  };
+}
+
+function mapWorkStages(section: StrapiWorkStagesSection): WorkStagesSectionData {
+  const stages = (section.stages ?? [])
+    .filter((stage) => Boolean(stage.text?.trim() || stage.image?.url))
+    .map(mapWorkStageItem);
+
+  return {
+    title: section.title?.trim() || homePageMock.workStages.title,
+    stages: stages.length > 0 ? stages : homePageMock.workStages.stages,
+  };
+}
+
 export async function getHomePage() {
   const response = await strapiFetch<StrapiSingleResponse<StrapiHomePage>>("/api/home-page", {
     params: {
@@ -198,12 +273,62 @@ export async function getWholesaleContractSection() {
   return normalizeSingle(response);
 }
 
+export async function getProsConsSection() {
+  const response = await strapiFetch<StrapiSingleResponse<StrapiProsConsSection>>(
+    "/api/pros-cons-section",
+    {
+      params: {
+        populate: "*",
+      },
+    },
+  );
+
+  return normalizeSingle(response);
+}
+
+export async function getFormula72SchemeSection() {
+  const response = await strapiFetch<StrapiSingleResponse<StrapiFormula72SchemeSection>>(
+    "/api/formula72-scheme-section",
+    {
+      params: {
+        populate: "*",
+      },
+    },
+  );
+
+  return normalizeSingle(response);
+}
+
+export async function getWorkStagesSection() {
+  const response = await strapiFetch<StrapiSingleResponse<StrapiWorkStagesSection>>(
+    "/api/work-stages-section",
+    {
+      params: {
+        populate: "*",
+      },
+    },
+  );
+
+  return normalizeSingle(response);
+}
+
 export async function getHomePageData(): Promise<HomePageData> {
-  const [siteHeaderResult, homePageResult, bannersResult, wholesaleSectionResult] = await Promise.allSettled([
+  const [
+    siteHeaderResult,
+    homePageResult,
+    bannersResult,
+    wholesaleSectionResult,
+    prosConsSectionResult,
+    formula72SchemeSectionResult,
+    workStagesSectionResult,
+  ] = await Promise.allSettled([
     getSiteHeader(),
     getHomePage(),
     getBanners(),
     getWholesaleContractSection(),
+    getProsConsSection(),
+    getFormula72SchemeSection(),
+    getWorkStagesSection(),
   ]);
 
   const siteHeader = siteHeaderResult.status === "fulfilled" ? siteHeaderResult.value : null;
@@ -211,6 +336,11 @@ export async function getHomePageData(): Promise<HomePageData> {
   const banners = bannersResult.status === "fulfilled" ? bannersResult.value : [];
   const wholesaleSection =
     wholesaleSectionResult.status === "fulfilled" ? wholesaleSectionResult.value : null;
+  const prosConsSection = prosConsSectionResult.status === "fulfilled" ? prosConsSectionResult.value : null;
+  const formula72SchemeSection =
+    formula72SchemeSectionResult.status === "fulfilled" ? formula72SchemeSectionResult.value : null;
+  const workStagesSection =
+    workStagesSectionResult.status === "fulfilled" ? workStagesSectionResult.value : null;
   const headerData = siteHeader
     ? mapSiteHeader(siteHeader)
     : {
@@ -222,13 +352,19 @@ export async function getHomePageData(): Promise<HomePageData> {
     siteHeaderResult.status === "rejected" ||
     homePageResult.status === "rejected" ||
     bannersResult.status === "rejected" ||
-    wholesaleSectionResult.status === "rejected"
+    wholesaleSectionResult.status === "rejected" ||
+    prosConsSectionResult.status === "rejected" ||
+    formula72SchemeSectionResult.status === "rejected" ||
+    workStagesSectionResult.status === "rejected"
   ) {
     console.warn("Strapi data partially unavailable, using mock only for failed sections.", {
       siteHeader: siteHeaderResult.status,
       homePage: homePageResult.status,
       banners: bannersResult.status,
       wholesaleSection: wholesaleSectionResult.status,
+      prosConsSection: prosConsSectionResult.status,
+      formula72SchemeSection: formula72SchemeSectionResult.status,
+      workStagesSection: workStagesSectionResult.status,
     });
   }
 
@@ -239,7 +375,11 @@ export async function getHomePageData(): Promise<HomePageData> {
       hero: homePage ? mapHero(homePage) : homePageMock.hero,
       banners: banners.length > 0 ? banners.map(mapBanner) : homePageMock.banners,
       wholesaleContract: wholesaleSection ? mapWholesale(wholesaleSection) : homePageMock.wholesaleContract,
-      prosCons: homePageMock.prosCons,
+      prosCons: prosConsSection ? mapProsCons(prosConsSection) : homePageMock.prosCons,
+      formula72Scheme: formula72SchemeSection
+        ? mapFormula72Scheme(formula72SchemeSection)
+        : homePageMock.formula72Scheme,
+      workStages: workStagesSection ? mapWorkStages(workStagesSection) : homePageMock.workStages,
     };
 
     if (process.env.NODE_ENV !== "production") {
@@ -250,6 +390,11 @@ export async function getHomePageData(): Promise<HomePageData> {
           image: banner.image,
         })),
         wholesaleBackgroundImage: data.wholesaleContract.backgroundImage,
+        formula72SchemeImage: data.formula72Scheme.image,
+        workStageImages: data.workStages.stages.map((stage) => ({
+          id: stage.id,
+          image: stage.image,
+        })),
       });
     }
 
