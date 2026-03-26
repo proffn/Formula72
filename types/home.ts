@@ -61,6 +61,20 @@ export interface Formula72SchemeSectionData {
   image: string;
 }
 
+export interface MissionK72ItemData {
+  title: string;
+  text: string;
+  image: string;
+}
+
+export interface MissionK72SectionData {
+  title: string;
+  leadText: string;
+  leftMainImage: string;
+  items: [MissionK72ItemData, MissionK72ItemData, MissionK72ItemData];
+  sideLabel?: string;
+}
+
 export interface WorkStageItemData {
   id: string;
   text: string;
@@ -79,6 +93,7 @@ export interface HomePageData {
   banners: BannerItem[];
   wholesaleContract: WholesaleSectionData;
   prosCons: ProsConsSectionData;
+  missionK72: MissionK72SectionData;
   formula72Scheme: Formula72SchemeSectionData;
   workStages: WorkStagesSectionData;
 }

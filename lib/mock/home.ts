@@ -94,6 +94,29 @@ export const homePageMock: HomePageData = {
       ],
     },
   },
+  missionK72: {
+    title: "Миссия K72",
+    leadText: "Хочешь покорить мир через свой продукт? Мы поможем",
+    leftMainImage: "/images/home/mission-k72/mission-main.png",
+    items: [
+      {
+        title: "Сертификация",
+        text: "Все наши продукты и сырье сертифицируются",
+        image: "/images/home/mission-k72/mission-certification.png",
+      },
+      {
+        title: "Честный Знак",
+        text: "Мы умеем работать с Честным Знаком и с радостью поможем вам",
+        image: "/images/home/mission-k72/mission-honest-sign.png",
+      },
+      {
+        title: "Профессионализм",
+        text: "Мы сотрудничаем с косметологиями и косметологами по всей России",
+        image: "/images/home/mission-k72/mission-professionalism.png",
+      },
+    ],
+    sideLabel: "FORMULA72",
+  },
   formula72Scheme: {
     title: "K72",
     image: "/images/home/formula72-scheme/formula72-scheme.png",

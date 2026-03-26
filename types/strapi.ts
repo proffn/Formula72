@@ -96,6 +96,24 @@ export interface StrapiFormula72SchemeSection {
   image?: StrapiMedia | null;
 }
 
+export interface StrapiMissionK72Section {
+  id: number;
+  documentId?: string;
+  title?: string | null;
+  leadText?: string | null;
+  leftMainImage?: StrapiMedia | null;
+  certificationTitle?: string | null;
+  certificationText?: string | null;
+  certificationImage?: StrapiMedia | null;
+  honestSignTitle?: string | null;
+  honestSignText?: string | null;
+  honestSignImage?: StrapiMedia | null;
+  professionalismTitle?: string | null;
+  professionalismText?: string | null;
+  professionalismImage?: StrapiMedia | null;
+  sideLabel?: string | null;
+}
+
 export interface StrapiWorkStageItem {
   id?: number;
   text?: string | null;

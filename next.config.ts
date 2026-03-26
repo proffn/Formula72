@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    dangerouslyAllowLocalIP: true,
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {

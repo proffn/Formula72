@@ -5,6 +5,7 @@ import type {
   BannerTextPosition,
   Formula72SchemeSectionData,
   HomePageData,
+  MissionK72SectionData,
   NavItem,
   ProsConsSectionData,
   SiteHeaderContent,
@@ -17,6 +18,7 @@ import type {
   StrapiCollectionResponse,
   StrapiFormula72SchemeSection,
   StrapiHomePage,
+  StrapiMissionK72Section,
   StrapiProsConsSection,
   StrapiSiteHeader,
   StrapiSingleResponse,
@@ -207,6 +209,34 @@ function mapFormula72Scheme(section: StrapiFormula72SchemeSection): Formula72Sch
   };
 }
 
+function mapMissionK72(section: StrapiMissionK72Section): MissionK72SectionData {
+  return {
+    title: section.title?.trim() || homePageMock.missionK72.title,
+    leadText: section.leadText?.trim() || homePageMock.missionK72.leadText,
+    leftMainImage: getStrapiMediaUrl(section.leftMainImage?.url) ?? homePageMock.missionK72.leftMainImage,
+    items: [
+      {
+        title: section.certificationTitle?.trim() || homePageMock.missionK72.items[0].title,
+        text: section.certificationText?.trim() || homePageMock.missionK72.items[0].text,
+        image:
+          getStrapiMediaUrl(section.certificationImage?.url) ?? homePageMock.missionK72.items[0].image,
+      },
+      {
+        title: section.honestSignTitle?.trim() || homePageMock.missionK72.items[1].title,
+        text: section.honestSignText?.trim() || homePageMock.missionK72.items[1].text,
+        image: getStrapiMediaUrl(section.honestSignImage?.url) ?? homePageMock.missionK72.items[1].image,
+      },
+      {
+        title: section.professionalismTitle?.trim() || homePageMock.missionK72.items[2].title,
+        text: section.professionalismText?.trim() || homePageMock.missionK72.items[2].text,
+        image:
+          getStrapiMediaUrl(section.professionalismImage?.url) ?? homePageMock.missionK72.items[2].image,
+      },
+    ],
+    sideLabel: section.sideLabel?.trim() || homePageMock.missionK72.sideLabel,
+  };
+}
+
 function mapWorkStageItem(stage: StrapiWorkStageItem, index: number): WorkStageItemData {
   const fallbackStage = homePageMock.workStages.stages[index % homePageMock.workStages.stages.length];
 
@@ -299,6 +329,19 @@ export async function getFormula72SchemeSection() {
   return normalizeSingle(response);
 }
 
+export async function getMissionK72Section() {
+  const response = await strapiFetch<StrapiSingleResponse<StrapiMissionK72Section>>(
+    "/api/mission-k72-section",
+    {
+      params: {
+        populate: "*",
+      },
+    },
+  );
+
+  return normalizeSingle(response);
+}
+
 export async function getWorkStagesSection() {
   const response = await strapiFetch<StrapiSingleResponse<StrapiWorkStagesSection>>(
     "/api/work-stages-section",
@@ -320,6 +363,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     wholesaleSectionResult,
     prosConsSectionResult,
     formula72SchemeSectionResult,
+    missionK72SectionResult,
     workStagesSectionResult,
   ] = await Promise.allSettled([
     getSiteHeader(),
@@ -328,6 +372,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     getWholesaleContractSection(),
     getProsConsSection(),
     getFormula72SchemeSection(),
+    getMissionK72Section(),
     getWorkStagesSection(),
   ]);
 
@@ -339,6 +384,8 @@ export async function getHomePageData(): Promise<HomePageData> {
   const prosConsSection = prosConsSectionResult.status === "fulfilled" ? prosConsSectionResult.value : null;
   const formula72SchemeSection =
     formula72SchemeSectionResult.status === "fulfilled" ? formula72SchemeSectionResult.value : null;
+  const missionK72Section =
+    missionK72SectionResult.status === "fulfilled" ? missionK72SectionResult.value : null;
   const workStagesSection =
     workStagesSectionResult.status === "fulfilled" ? workStagesSectionResult.value : null;
   const headerData = siteHeader
@@ -355,6 +402,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     wholesaleSectionResult.status === "rejected" ||
     prosConsSectionResult.status === "rejected" ||
     formula72SchemeSectionResult.status === "rejected" ||
+    missionK72SectionResult.status === "rejected" ||
     workStagesSectionResult.status === "rejected"
   ) {
     console.warn("Strapi data partially unavailable, using mock only for failed sections.", {
@@ -364,6 +412,7 @@ export async function getHomePageData(): Promise<HomePageData> {
       wholesaleSection: wholesaleSectionResult.status,
       prosConsSection: prosConsSectionResult.status,
       formula72SchemeSection: formula72SchemeSectionResult.status,
+      missionK72Section: missionK72SectionResult.status,
       workStagesSection: workStagesSectionResult.status,
     });
   }
@@ -376,6 +425,7 @@ export async function getHomePageData(): Promise<HomePageData> {
       banners: banners.length > 0 ? banners.map(mapBanner) : homePageMock.banners,
       wholesaleContract: wholesaleSection ? mapWholesale(wholesaleSection) : homePageMock.wholesaleContract,
       prosCons: prosConsSection ? mapProsCons(prosConsSection) : homePageMock.prosCons,
+      missionK72: missionK72Section ? mapMissionK72(missionK72Section) : homePageMock.missionK72,
       formula72Scheme: formula72SchemeSection
         ? mapFormula72Scheme(formula72SchemeSection)
         : homePageMock.formula72Scheme,
@@ -390,6 +440,13 @@ export async function getHomePageData(): Promise<HomePageData> {
           image: banner.image,
         })),
         wholesaleBackgroundImage: data.wholesaleContract.backgroundImage,
+        missionK72Images: {
+          leftMainImage: data.missionK72.leftMainImage,
+          items: data.missionK72.items.map((item) => ({
+            title: item.title,
+            image: item.image,
+          })),
+        },
         formula72SchemeImage: data.formula72Scheme.image,
         workStageImages: data.workStages.stages.map((stage) => ({
           id: stage.id,
