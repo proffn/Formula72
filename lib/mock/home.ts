@@ -156,4 +156,94 @@ export const homePageMock: HomePageData = {
       },
     ],
   },
+  whoSuits: {
+    title: "КОМУ ПОДОЙДЁТ",
+    items: [
+      {
+        id: "who-suits-1",
+        title: "Селлерам на маркетплейсах",
+        text: "Минимальная партия от 5000 ₽ для старта, можно запускать продукт под своим брендом без лишних вложений.",
+        image: "/images/home/who-suits/item-1.png",
+      },
+      {
+        id: "who-suits-2",
+        title: "Бьюти-блогерам",
+        text: "Подойдет для первого запуска, рекламных интеграций и теста спроса с собственной косметической линейкой.",
+        image: "/images/home/who-suits/item-2.png",
+      },
+      {
+        id: "who-suits-3",
+        title: "Салонам красоты",
+        text: "Поможет создать продукт для постоянных клиентов и усилить профессиональный имидж салонного бизнеса.",
+        image: "/images/home/who-suits/item-3.png",
+      },
+      {
+        id: "who-suits-4",
+        title: "Дистрибьюторам",
+        text: "Подходит для расширения ассортимента и запуска позиции с хорошей маржинальностью в собственной сети продаж.",
+        image: "/images/home/who-suits/item-4.png",
+      },
+      {
+        id: "who-suits-5",
+        title: "Магазинам косметики и сетям",
+        text: "Удобный формат для запуска private label и развития нового направления без сложной производственной базы.",
+        image: "/images/home/who-suits/item-5.png",
+      },
+      {
+        id: "who-suits-6",
+        title: "Хочу свой бренд!",
+        text: "Соберем подходящий продукт, тару и упаковку, чтобы вы быстро вышли на рынок со своей косметической маркой.",
+        image: "/images/home/who-suits/item-6.png",
+        buttonText: "РАССЧИТАТЬ СТОИМОСТЬ",
+        buttonLink: "#wholesale-contract",
+      },
+    ],
+  },
+  whyTrustUs: {
+    title: "ПОЧЕМУ НАМ ДОВЕРЯЮТ?",
+    points: [
+      {
+        id: "why-trust-point-1",
+        text: "Минимальная партия от 50 000 рублей",
+      },
+      {
+        id: "why-trust-point-2",
+        text: "Производство в России, собственная лаборатория",
+      },
+      {
+        id: "why-trust-point-3",
+        text: "Чистые формулы, разработанные опытными технологами",
+      },
+      {
+        id: "why-trust-point-4",
+        text: "Собственный фулфилмент",
+      },
+      {
+        id: "why-trust-point-5",
+        text: "Более 300+ довольных клиентов по всей России и странам СНГ",
+      },
+    ],
+    galleryItems: [
+      {
+        id: "why-trust-gallery-1",
+        image: "/images/home/why-trust-us/item-1.jpg",
+        hoverImage: "/images/home/why-trust-us/item-1-hover.jpg",
+      },
+      {
+        id: "why-trust-gallery-2",
+        image: "/images/home/why-trust-us/item-2.jpg",
+        hoverImage: "/images/home/why-trust-us/item-2-hover.jpg",
+      },
+      {
+        id: "why-trust-gallery-3",
+        image: "/images/home/why-trust-us/item-3.jpg",
+        hoverImage: "/images/home/why-trust-us/item-3-hover.jpg",
+      },
+      {
+        id: "why-trust-gallery-4",
+        image: "/images/home/why-trust-us/item-4.jpg",
+        hoverImage: "/images/home/why-trust-us/item-4-hover.jpg",
+      },
+    ],
+  },
 };

@@ -10,6 +10,11 @@ import type {
   ProsConsSectionData,
   SiteHeaderContent,
   WholesaleSectionData,
+  WhyTrustGalleryItemData,
+  WhyTrustPointData,
+  WhyTrustUsSectionData,
+  WhoSuitsItemData,
+  WhoSuitsSectionData,
   WorkStageItemData,
   WorkStagesSectionData,
 } from "@/types/home";
@@ -23,6 +28,11 @@ import type {
   StrapiSiteHeader,
   StrapiSingleResponse,
   StrapiTextItem,
+  StrapiWhyTrustGalleryItem,
+  StrapiWhyTrustPoint,
+  StrapiWhyTrustUsSection,
+  StrapiWhoSuitsItem,
+  StrapiWhoSuitsSection,
   StrapiWholesaleContractSection,
   StrapiWorkStageItem,
   StrapiWorkStagesSection,
@@ -81,6 +91,22 @@ function normalizeCollection<T>(response: StrapiCollectionResponse<T | { attribu
   });
 }
 
+function resolveMediaUrl(
+  media:
+    | { url?: string | null; data?: { url?: string | null; attributes?: { url?: string | null } | null } | null }
+    | null
+    | undefined,
+) {
+  const directUrl = media?.url;
+
+  if (directUrl) {
+    return getStrapiMediaUrl(directUrl);
+  }
+
+  const nestedUrl = media?.data?.url ?? media?.data?.attributes?.url;
+  return getStrapiMediaUrl(nestedUrl);
+}
+
 function resolveBannerTextPosition(banner: StrapiBanner, index: number): BannerTextPosition {
   if (banner.textPosition === "left-top" || banner.textPosition === "right-center") {
     return banner.textPosition;
@@ -105,7 +131,7 @@ function mapBanner(banner: StrapiBanner, index: number): BannerItem {
     title: banner.title,
     subtitle: banner.subtitle ?? undefined,
     textPosition,
-    image: getStrapiMediaUrl(banner.image?.url) ?? homePageMock.banners[index % homePageMock.banners.length].image,
+    image: resolveMediaUrl(banner.image) ?? homePageMock.banners[index % homePageMock.banners.length].image,
     textColor: textPosition === "left-top" ? "dark" : "light",
   };
 }
@@ -117,7 +143,7 @@ function mapHero(homePage: StrapiHomePage) {
       homePage.heroTitleLine2 || homePageMock.hero.lines[1],
     ] as [string, string],
     brand: homePage.heroSubtitle || homePageMock.hero.brand,
-    backgroundImage: getStrapiMediaUrl(homePage.heroBackgroundImage?.url) ?? homePageMock.hero.backgroundImage,
+    backgroundImage: resolveMediaUrl(homePage.heroBackgroundImage) ?? homePageMock.hero.backgroundImage,
   };
 }
 
@@ -127,7 +153,7 @@ function mapSiteHeader(siteHeader: StrapiSiteHeader): {
 } {
   return {
     siteHeader: {
-      logoImage: getStrapiMediaUrl(siteHeader.logoImage?.url) ?? homePageMock.siteHeader.logoImage,
+      logoImage: resolveMediaUrl(siteHeader.logoImage) ?? homePageMock.siteHeader.logoImage,
       phone: siteHeader.phone?.trim() || homePageMock.siteHeader.phone,
       workSchedule: siteHeader.workSchedule?.trim() || homePageMock.siteHeader.workSchedule,
     },
@@ -146,7 +172,7 @@ function mapSiteHeader(siteHeader: StrapiSiteHeader): {
 function mapWholesale(section: StrapiWholesaleContractSection): WholesaleSectionData {
   return {
     backgroundImage:
-      getStrapiMediaUrl(section.backgroundImage?.url) ?? homePageMock.wholesaleContract.backgroundImage,
+      resolveMediaUrl(section.backgroundImage) ?? homePageMock.wholesaleContract.backgroundImage,
     left: {
       lines: splitTitle(section.leftTitle, homePageMock.wholesaleContract.left.lines),
       action: {
@@ -205,7 +231,7 @@ function mapProsCons(section: StrapiProsConsSection): ProsConsSectionData {
 function mapFormula72Scheme(section: StrapiFormula72SchemeSection): Formula72SchemeSectionData {
   return {
     title: section.title?.trim() || homePageMock.formula72Scheme.title,
-    image: getStrapiMediaUrl(section.image?.url) ?? homePageMock.formula72Scheme.image,
+    image: resolveMediaUrl(section.image) ?? homePageMock.formula72Scheme.image,
   };
 }
 
@@ -213,24 +239,22 @@ function mapMissionK72(section: StrapiMissionK72Section): MissionK72SectionData 
   return {
     title: section.title?.trim() || homePageMock.missionK72.title,
     leadText: section.leadText?.trim() || homePageMock.missionK72.leadText,
-    leftMainImage: getStrapiMediaUrl(section.leftMainImage?.url) ?? homePageMock.missionK72.leftMainImage,
+    leftMainImage: resolveMediaUrl(section.leftMainImage) ?? homePageMock.missionK72.leftMainImage,
     items: [
       {
         title: section.certificationTitle?.trim() || homePageMock.missionK72.items[0].title,
         text: section.certificationText?.trim() || homePageMock.missionK72.items[0].text,
-        image:
-          getStrapiMediaUrl(section.certificationImage?.url) ?? homePageMock.missionK72.items[0].image,
+        image: resolveMediaUrl(section.certificationImage) ?? homePageMock.missionK72.items[0].image,
       },
       {
         title: section.honestSignTitle?.trim() || homePageMock.missionK72.items[1].title,
         text: section.honestSignText?.trim() || homePageMock.missionK72.items[1].text,
-        image: getStrapiMediaUrl(section.honestSignImage?.url) ?? homePageMock.missionK72.items[1].image,
+        image: resolveMediaUrl(section.honestSignImage) ?? homePageMock.missionK72.items[1].image,
       },
       {
         title: section.professionalismTitle?.trim() || homePageMock.missionK72.items[2].title,
         text: section.professionalismText?.trim() || homePageMock.missionK72.items[2].text,
-        image:
-          getStrapiMediaUrl(section.professionalismImage?.url) ?? homePageMock.missionK72.items[2].image,
+        image: resolveMediaUrl(section.professionalismImage) ?? homePageMock.missionK72.items[2].image,
       },
     ],
     sideLabel: section.sideLabel?.trim() || homePageMock.missionK72.sideLabel,
@@ -243,7 +267,7 @@ function mapWorkStageItem(stage: StrapiWorkStageItem, index: number): WorkStageI
   return {
     id: String(stage.id ?? fallbackStage.id ?? index),
     text: stage.text?.trim() || fallbackStage.text,
-    image: getStrapiMediaUrl(stage.image?.url) ?? fallbackStage.image,
+    image: resolveMediaUrl(stage.image) ?? fallbackStage.image,
   };
 }
 
@@ -255,6 +279,68 @@ function mapWorkStages(section: StrapiWorkStagesSection): WorkStagesSectionData 
   return {
     title: section.title?.trim() || homePageMock.workStages.title,
     stages: stages.length > 0 ? stages : homePageMock.workStages.stages,
+  };
+}
+
+function mapWhoSuitsItem(item: StrapiWhoSuitsItem, index: number): WhoSuitsItemData {
+  const fallbackItem = homePageMock.whoSuits.items[index % homePageMock.whoSuits.items.length];
+
+  return {
+    id: String(item.id ?? fallbackItem.id ?? index),
+    title: item.title?.trim() || fallbackItem.title,
+    text: item.text?.trim() || fallbackItem.text,
+    image: resolveMediaUrl(item.image) ?? fallbackItem.image,
+    buttonText: item.buttonText?.trim() || fallbackItem.buttonText,
+    buttonLink: item.buttonLink?.trim() || fallbackItem.buttonLink,
+  };
+}
+
+function mapWhoSuits(section: StrapiWhoSuitsSection): WhoSuitsSectionData {
+  const items = (section.items ?? [])
+    .filter((item) => Boolean(item.title?.trim() || item.text?.trim() || item.image?.url))
+    .map(mapWhoSuitsItem);
+
+  return {
+    title: section.title?.trim() || homePageMock.whoSuits.title,
+    items: items.length > 0 ? items : homePageMock.whoSuits.items,
+  };
+}
+
+function mapWhyTrustPoint(point: StrapiWhyTrustPoint, index: number): WhyTrustPointData {
+  const fallbackPoint = homePageMock.whyTrustUs.points[index % homePageMock.whyTrustUs.points.length];
+
+  return {
+    id: String(point.id ?? fallbackPoint.id ?? index),
+    text: point.text?.trim() || fallbackPoint.text,
+  };
+}
+
+function mapWhyTrustGalleryItem(
+  item: StrapiWhyTrustGalleryItem,
+  index: number,
+): WhyTrustGalleryItemData {
+  const fallbackItem =
+    homePageMock.whyTrustUs.galleryItems[index % homePageMock.whyTrustUs.galleryItems.length];
+
+  return {
+    id: String(item.id ?? fallbackItem.id ?? index),
+    image: resolveMediaUrl(item.image) ?? fallbackItem.image,
+    hoverImage: resolveMediaUrl(item.hoverImage) ?? fallbackItem.hoverImage,
+  };
+}
+
+function mapWhyTrustUs(section: StrapiWhyTrustUsSection): WhyTrustUsSectionData {
+  const points = (section.points ?? [])
+    .filter((point) => Boolean(point.text?.trim()))
+    .map(mapWhyTrustPoint);
+  const galleryItems = (section.galleryItems ?? [])
+    .filter((item) => Boolean(item.image?.url || item.hoverImage?.url))
+    .map(mapWhyTrustGalleryItem);
+
+  return {
+    title: section.title?.trim() || homePageMock.whyTrustUs.title,
+    points: points.length > 0 ? points : homePageMock.whyTrustUs.points,
+    galleryItems: galleryItems.length > 0 ? galleryItems : homePageMock.whyTrustUs.galleryItems,
   };
 }
 
@@ -355,6 +441,33 @@ export async function getWorkStagesSection() {
   return normalizeSingle(response);
 }
 
+export async function getWhoSuitsSection() {
+  const response = await strapiFetch<StrapiSingleResponse<StrapiWhoSuitsSection>>(
+    "/api/who-suits-section",
+    {
+      params: {
+        "populate[items][populate]": "image",
+      },
+    },
+  );
+
+  return normalizeSingle(response);
+}
+
+export async function getWhyTrustUsSection() {
+  const response = await strapiFetch<StrapiSingleResponse<StrapiWhyTrustUsSection>>(
+    "/api/why-trust-us-section",
+    {
+      params: {
+        "populate[points]": "*",
+        "populate[galleryItems][populate]": "*",
+      },
+    },
+  );
+
+  return normalizeSingle(response);
+}
+
 export async function getHomePageData(): Promise<HomePageData> {
   const [
     siteHeaderResult,
@@ -365,6 +478,8 @@ export async function getHomePageData(): Promise<HomePageData> {
     formula72SchemeSectionResult,
     missionK72SectionResult,
     workStagesSectionResult,
+    whoSuitsSectionResult,
+    whyTrustUsSectionResult,
   ] = await Promise.allSettled([
     getSiteHeader(),
     getHomePage(),
@@ -374,6 +489,8 @@ export async function getHomePageData(): Promise<HomePageData> {
     getFormula72SchemeSection(),
     getMissionK72Section(),
     getWorkStagesSection(),
+    getWhoSuitsSection(),
+    getWhyTrustUsSection(),
   ]);
 
   const siteHeader = siteHeaderResult.status === "fulfilled" ? siteHeaderResult.value : null;
@@ -388,6 +505,10 @@ export async function getHomePageData(): Promise<HomePageData> {
     missionK72SectionResult.status === "fulfilled" ? missionK72SectionResult.value : null;
   const workStagesSection =
     workStagesSectionResult.status === "fulfilled" ? workStagesSectionResult.value : null;
+  const whoSuitsSection =
+    whoSuitsSectionResult.status === "fulfilled" ? whoSuitsSectionResult.value : null;
+  const whyTrustUsSection =
+    whyTrustUsSectionResult.status === "fulfilled" ? whyTrustUsSectionResult.value : null;
   const headerData = siteHeader
     ? mapSiteHeader(siteHeader)
     : {
@@ -403,7 +524,9 @@ export async function getHomePageData(): Promise<HomePageData> {
     prosConsSectionResult.status === "rejected" ||
     formula72SchemeSectionResult.status === "rejected" ||
     missionK72SectionResult.status === "rejected" ||
-    workStagesSectionResult.status === "rejected"
+    workStagesSectionResult.status === "rejected" ||
+    whoSuitsSectionResult.status === "rejected" ||
+    whyTrustUsSectionResult.status === "rejected"
   ) {
     console.warn("Strapi data partially unavailable, using mock only for failed sections.", {
       siteHeader: siteHeaderResult.status,
@@ -414,6 +537,8 @@ export async function getHomePageData(): Promise<HomePageData> {
       formula72SchemeSection: formula72SchemeSectionResult.status,
       missionK72Section: missionK72SectionResult.status,
       workStagesSection: workStagesSectionResult.status,
+      whoSuitsSection: whoSuitsSectionResult.status,
+      whyTrustUsSection: whyTrustUsSectionResult.status,
     });
   }
 
@@ -430,6 +555,8 @@ export async function getHomePageData(): Promise<HomePageData> {
         ? mapFormula72Scheme(formula72SchemeSection)
         : homePageMock.formula72Scheme,
       workStages: workStagesSection ? mapWorkStages(workStagesSection) : homePageMock.workStages,
+      whoSuits: whoSuitsSection ? mapWhoSuits(whoSuitsSection) : homePageMock.whoSuits,
+      whyTrustUs: whyTrustUsSection ? mapWhyTrustUs(whyTrustUsSection) : homePageMock.whyTrustUs,
     };
 
     if (process.env.NODE_ENV !== "production") {
@@ -451,6 +578,15 @@ export async function getHomePageData(): Promise<HomePageData> {
         workStageImages: data.workStages.stages.map((stage) => ({
           id: stage.id,
           image: stage.image,
+        })),
+        whoSuitsImages: data.whoSuits.items.map((item) => ({
+          id: item.id,
+          image: item.image,
+        })),
+        whyTrustUsImages: data.whyTrustUs.galleryItems.map((item) => ({
+          id: item.id,
+          image: item.image,
+          hoverImage: item.hoverImage ?? null,
         })),
       });
     }

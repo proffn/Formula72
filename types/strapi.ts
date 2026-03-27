@@ -126,3 +126,38 @@ export interface StrapiWorkStagesSection {
   title?: string | null;
   stages?: StrapiWorkStageItem[] | null;
 }
+
+export interface StrapiWhoSuitsItem {
+  id?: number;
+  title?: string | null;
+  text?: string | null;
+  image?: StrapiMedia | null;
+  buttonText?: string | null;
+  buttonLink?: string | null;
+}
+
+export interface StrapiWhoSuitsSection {
+  id: number;
+  documentId?: string;
+  title?: string | null;
+  items?: StrapiWhoSuitsItem[] | null;
+}
+
+export interface StrapiWhyTrustPoint {
+  id?: number;
+  text?: string | null;
+}
+
+export interface StrapiWhyTrustGalleryItem {
+  id?: number;
+  image?: StrapiMedia | null;
+  hoverImage?: StrapiMedia | null;
+}
+
+export interface StrapiWhyTrustUsSection {
+  id: number;
+  documentId?: string;
+  title?: string | null;
+  points?: StrapiWhyTrustPoint[] | null;
+  galleryItems?: StrapiWhyTrustGalleryItem[] | null;
+}

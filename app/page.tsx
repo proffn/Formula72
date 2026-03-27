@@ -3,6 +3,8 @@ import { Formula72SchemeSection } from "@/components/sections/formula72-scheme-s
 import { HeroSection } from "@/components/sections/hero-section";
 import { MissionK72Section } from "@/components/sections/mission-k72-section";
 import { ProsConsSection } from "@/components/sections/pros-cons-section";
+import { WhyTrustUsSection } from "@/components/sections/why-trust-us-section";
+import { WhoSuitsSection } from "@/components/sections/who-suits-section";
 import { WholesaleContractSection } from "@/components/sections/wholesale-contract-section";
 import { WorkStagesSection } from "@/components/sections/work-stages-section";
 import { getHomePageData } from "@/lib/queries";
@@ -21,6 +23,8 @@ export default async function HomePage() {
       <Formula72SchemeSection section={data.formula72Scheme} />
       <WorkStagesSection section={data.workStages} />
       <MissionK72Section section={data.missionK72} />
+      <WhoSuitsSection section={data.whoSuits} />
+      <WhyTrustUsSection section={data.whyTrustUs} />
     </main>
   );
 }

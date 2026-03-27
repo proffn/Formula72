@@ -86,6 +86,37 @@ export interface WorkStagesSectionData {
   stages: WorkStageItemData[];
 }
 
+export interface WhoSuitsItemData {
+  id: string;
+  title: string;
+  text: string;
+  image: string;
+  buttonText?: string;
+  buttonLink?: string;
+}
+
+export interface WhoSuitsSectionData {
+  title: string;
+  items: WhoSuitsItemData[];
+}
+
+export interface WhyTrustPointData {
+  id: string;
+  text: string;
+}
+
+export interface WhyTrustGalleryItemData {
+  id: string;
+  image: string;
+  hoverImage?: string;
+}
+
+export interface WhyTrustUsSectionData {
+  title: string;
+  points: WhyTrustPointData[];
+  galleryItems: WhyTrustGalleryItemData[];
+}
+
 export interface HomePageData {
   siteHeader: SiteHeaderContent;
   navigation: NavItem[];
@@ -96,4 +127,6 @@ export interface HomePageData {
   missionK72: MissionK72SectionData;
   formula72Scheme: Formula72SchemeSectionData;
   workStages: WorkStagesSectionData;
+  whoSuits: WhoSuitsSectionData;
+  whyTrustUs: WhyTrustUsSectionData;
 }

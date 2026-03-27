@@ -12,7 +12,7 @@ export function WorkStagesSection({ section }: WorkStagesSectionProps) {
       id="work-stages"
       className="bg-[#63504A] px-5 py-14 text-[#F7F2EE] sm:px-8 sm:py-16 lg:min-h-[100svh] lg:px-10 lg:py-16"
     >
-      <div className="mx-auto flex max-w-[1120px] flex-col lg:min-h-[calc(100svh-8rem)] lg:justify-center">
+      <div className="mx-auto flex max-w-[1280px] flex-col lg:min-h-[calc(100svh-8rem)] lg:justify-center">
         <div className="max-w-3xl">
           <h2 className="text-[clamp(2rem,4vw,4.2rem)] font-extrabold uppercase leading-[0.94] tracking-[-0.04em] text-[#F7F2EE]">
             {section.title}
