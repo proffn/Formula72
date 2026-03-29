@@ -1,4 +1,5 @@
 import { BannerSlider } from "@/components/sections/banner-slider";
+import { CoverageMapSection } from "@/components/sections/coverage-map-section";
 import { Formula72SchemeSection } from "@/components/sections/formula72-scheme-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { MissionK72Section } from "@/components/sections/mission-k72-section";
@@ -25,6 +26,7 @@ export default async function HomePage() {
       <MissionK72Section section={data.missionK72} />
       <WhoSuitsSection section={data.whoSuits} />
       <WhyTrustUsSection section={data.whyTrustUs} />
+      <CoverageMapSection section={data.coverageMap} />
     </main>
   );
 }

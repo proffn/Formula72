@@ -3,6 +3,8 @@ import { homePageMock } from "@/lib/mock/home";
 import type {
   BannerItem,
   BannerTextPosition,
+  CoverageMapReviewData,
+  CoverageMapSectionData,
   Formula72SchemeSectionData,
   HomePageData,
   MissionK72SectionData,
@@ -21,6 +23,8 @@ import type {
 import type {
   StrapiBanner,
   StrapiCollectionResponse,
+  StrapiCoverageMapReview,
+  StrapiCoverageMapSection,
   StrapiFormula72SchemeSection,
   StrapiHomePage,
   StrapiMissionK72Section,
@@ -344,6 +348,49 @@ function mapWhyTrustUs(section: StrapiWhyTrustUsSection): WhyTrustUsSectionData 
   };
 }
 
+function clampPosition(value: number | null | undefined, fallback: number) {
+  if (typeof value !== "number" || Number.isNaN(value)) {
+    return fallback;
+  }
+
+  return Math.min(100, Math.max(0, value));
+}
+
+function mapCoverageMapReview(
+  review: StrapiCoverageMapReview,
+  index: number,
+): CoverageMapReviewData {
+  return {
+    id: String(review.id ?? index),
+    name: review.name?.trim() || "",
+    reviewText: review.reviewText?.trim() || "",
+    rating:
+      typeof review.rating === "number" && Number.isFinite(review.rating)
+        ? Math.min(5, Math.max(1, Math.round(review.rating)))
+        : 5,
+    avatar: resolveMediaUrl(review.avatar) ?? homePageMock.coverageMap.reviews[0].avatar,
+    brandImage: resolveMediaUrl(review.brandImage) ?? undefined,
+    xPosition: clampPosition(review.xPosition, 50),
+    yPosition: clampPosition(review.yPosition, 50),
+    isActive: review.isActive ?? true,
+  };
+}
+
+function mapCoverageMapSection(section: StrapiCoverageMapSection): CoverageMapSectionData {
+  const reviews = (section.reviews ?? [])
+    .filter((review) => Boolean(review.name?.trim()) && Boolean(review.reviewText?.trim()))
+    .map(mapCoverageMapReview)
+    .filter((review) => review.isActive);
+
+  return {
+    title: section.title?.trim() || homePageMock.coverageMap.title,
+    subtitle: section.subtitle?.trim() || homePageMock.coverageMap.subtitle,
+    description: section.description?.trim() || homePageMock.coverageMap.description,
+    mapImage: resolveMediaUrl(section.mapImage) ?? homePageMock.coverageMap.mapImage,
+    reviews: section.reviews ? reviews : homePageMock.coverageMap.reviews.filter((review) => review.isActive),
+  };
+}
+
 export async function getHomePage() {
   const response = await strapiFetch<StrapiSingleResponse<StrapiHomePage>>("/api/home-page", {
     params: {
@@ -468,6 +515,19 @@ export async function getWhyTrustUsSection() {
   return normalizeSingle(response);
 }
 
+export async function getCoverageMapSection() {
+  const response = await strapiFetch<StrapiSingleResponse<StrapiCoverageMapSection>>(
+    "/api/coverage-map-section",
+    {
+      params: {
+        populate: "*",
+      },
+    },
+  );
+
+  return normalizeSingle(response);
+}
+
 export async function getHomePageData(): Promise<HomePageData> {
   const [
     siteHeaderResult,
@@ -480,6 +540,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     workStagesSectionResult,
     whoSuitsSectionResult,
     whyTrustUsSectionResult,
+    coverageMapSectionResult,
   ] = await Promise.allSettled([
     getSiteHeader(),
     getHomePage(),
@@ -491,6 +552,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     getWorkStagesSection(),
     getWhoSuitsSection(),
     getWhyTrustUsSection(),
+    getCoverageMapSection(),
   ]);
 
   const siteHeader = siteHeaderResult.status === "fulfilled" ? siteHeaderResult.value : null;
@@ -509,6 +571,8 @@ export async function getHomePageData(): Promise<HomePageData> {
     whoSuitsSectionResult.status === "fulfilled" ? whoSuitsSectionResult.value : null;
   const whyTrustUsSection =
     whyTrustUsSectionResult.status === "fulfilled" ? whyTrustUsSectionResult.value : null;
+  const coverageMapSection =
+    coverageMapSectionResult.status === "fulfilled" ? coverageMapSectionResult.value : null;
   const headerData = siteHeader
     ? mapSiteHeader(siteHeader)
     : {
@@ -526,7 +590,8 @@ export async function getHomePageData(): Promise<HomePageData> {
     missionK72SectionResult.status === "rejected" ||
     workStagesSectionResult.status === "rejected" ||
     whoSuitsSectionResult.status === "rejected" ||
-    whyTrustUsSectionResult.status === "rejected"
+    whyTrustUsSectionResult.status === "rejected" ||
+    coverageMapSectionResult.status === "rejected"
   ) {
     console.warn("Strapi data partially unavailable, using mock only for failed sections.", {
       siteHeader: siteHeaderResult.status,
@@ -539,6 +604,7 @@ export async function getHomePageData(): Promise<HomePageData> {
       workStagesSection: workStagesSectionResult.status,
       whoSuitsSection: whoSuitsSectionResult.status,
       whyTrustUsSection: whyTrustUsSectionResult.status,
+      coverageMapSection: coverageMapSectionResult.status,
     });
   }
 
@@ -557,6 +623,9 @@ export async function getHomePageData(): Promise<HomePageData> {
       workStages: workStagesSection ? mapWorkStages(workStagesSection) : homePageMock.workStages,
       whoSuits: whoSuitsSection ? mapWhoSuits(whoSuitsSection) : homePageMock.whoSuits,
       whyTrustUs: whyTrustUsSection ? mapWhyTrustUs(whyTrustUsSection) : homePageMock.whyTrustUs,
+      coverageMap: coverageMapSection
+        ? mapCoverageMapSection(coverageMapSection)
+        : homePageMock.coverageMap,
     };
 
     if (process.env.NODE_ENV !== "production") {
@@ -588,6 +657,14 @@ export async function getHomePageData(): Promise<HomePageData> {
           image: item.image,
           hoverImage: item.hoverImage ?? null,
         })),
+        coverageMap: {
+          mapImage: data.coverageMap.mapImage,
+          reviews: data.coverageMap.reviews.map((review) => ({
+            id: review.id,
+            avatar: review.avatar,
+            brandImage: review.brandImage ?? null,
+          })),
+        },
       });
     }
 

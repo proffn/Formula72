@@ -161,3 +161,25 @@ export interface StrapiWhyTrustUsSection {
   points?: StrapiWhyTrustPoint[] | null;
   galleryItems?: StrapiWhyTrustGalleryItem[] | null;
 }
+
+export interface StrapiCoverageMapReview {
+  id?: number;
+  name?: string | null;
+  reviewText?: string | null;
+  rating?: number | null;
+  avatar?: StrapiMedia | null;
+  brandImage?: StrapiMedia | null;
+  xPosition?: number | null;
+  yPosition?: number | null;
+  isActive?: boolean | null;
+}
+
+export interface StrapiCoverageMapSection {
+  id: number;
+  documentId?: string;
+  title?: string | null;
+  subtitle?: string | null;
+  description?: string | null;
+  mapImage?: StrapiMedia | null;
+  reviews?: StrapiCoverageMapReview[] | null;
+}

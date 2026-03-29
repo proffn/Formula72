@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { isRemoteAssetUrl } from "@/lib/api";
 import type { WhoSuitsSectionData } from "@/types/home";
@@ -23,7 +23,7 @@ export function WhoSuitsSection({ section }: WhoSuitsSectionProps) {
               key={`${item.id}-${index}`}
               className="flex min-h-[21rem] flex-col rounded-[28px] border border-[rgba(99,80,74,0.08)] bg-[rgba(255,255,255,0.74)] p-5 shadow-[0_22px_56px_rgba(99,80,74,0.12)] backdrop-blur-[2px] sm:min-h-[22rem] sm:p-6"
             >
-              <div className="flex justify-center">
+              <div className="flex min-h-[7.25rem] items-end justify-center sm:min-h-[7.5rem]">
                 <div className="relative h-[6.75rem] w-full max-w-[9.75rem] sm:h-[7.25rem] sm:max-w-[10.25rem]">
                   <Image
                     src={item.image}
@@ -60,3 +60,4 @@ export function WhoSuitsSection({ section }: WhoSuitsSectionProps) {
     </section>
   );
 }
+

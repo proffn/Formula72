@@ -117,6 +117,26 @@ export interface WhyTrustUsSectionData {
   galleryItems: WhyTrustGalleryItemData[];
 }
 
+export interface CoverageMapReviewData {
+  id: string;
+  name: string;
+  reviewText: string;
+  rating: number;
+  avatar: string;
+  brandImage?: string;
+  xPosition: number;
+  yPosition: number;
+  isActive: boolean;
+}
+
+export interface CoverageMapSectionData {
+  title: string;
+  subtitle: string;
+  description: string;
+  mapImage: string;
+  reviews: CoverageMapReviewData[];
+}
+
 export interface HomePageData {
   siteHeader: SiteHeaderContent;
   navigation: NavItem[];
@@ -129,4 +149,5 @@ export interface HomePageData {
   workStages: WorkStagesSectionData;
   whoSuits: WhoSuitsSectionData;
   whyTrustUs: WhyTrustUsSectionData;
+  coverageMap: CoverageMapSectionData;
 }
