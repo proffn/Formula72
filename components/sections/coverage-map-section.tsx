@@ -32,10 +32,10 @@ export function CoverageMapSection({ section }: CoverageMapSectionProps) {
         </div>
 
         <div className="mt-8 hidden lg:block">
-          <div className="relative mx-auto aspect-[1485/845] w-full max-w-[1120px] xl:max-w-[1180px]">
+          <div className="relative mx-auto aspect-[1485/845] w-full max-w-[1120px] overflow-hidden xl:max-w-[1180px]">
             <Image
               src={section.mapImage}
-              alt="РљР°СЂС‚Р° РѕС…РІР°С‚Р° Formula72"
+              alt="Карта охвата Formula72"
               fill
               sizes="(max-width: 1280px) 86vw, 1180px"
               unoptimized={isRemoteAssetUrl(section.mapImage)}
@@ -73,9 +73,16 @@ type DesktopMarkerProps = {
 };
 
 function DesktopMarker({ review, index }: DesktopMarkerProps) {
-  const isRightSide = review.xPosition > 66;
-  const isBottomSide = review.yPosition > 58;
+  const isRightSide = review.xPosition > 58;
+  const isTopZone = review.yPosition < 24;
+  const isBottomZone = review.brandImage ? review.yPosition > 66 : review.yPosition > 74;
   const animationDelay = `${index * 0.18}s`;
+
+  const verticalPositionClass = isTopZone
+    ? "top-0"
+    : isBottomZone
+      ? "bottom-0"
+      : "top-1/2 -translate-y-1/2";
 
   return (
     <div
@@ -88,7 +95,7 @@ function DesktopMarker({ review, index }: DesktopMarkerProps) {
     >
       <button
         type="button"
-        aria-label={`РџРѕРєР°Р·Р°С‚СЊ РѕС‚Р·С‹РІ: ${review.name}`}
+        aria-label={`Показать отзыв: ${review.name}`}
         className="coverage-heart-marker relative z-10 flex h-7 w-7 items-center justify-center border-0 bg-transparent p-0"
         style={{ animationDelay }}
         data-marker-id={review.id}
@@ -102,16 +109,12 @@ function DesktopMarker({ review, index }: DesktopMarkerProps) {
         <HeartIcon className="h-5 w-5 fill-[#D86F46] drop-shadow-[0_8px_12px_rgba(216,111,70,0.25)] transition-transform duration-300 group-hover:scale-110 group-focus-visible:scale-110" />
       </button>
 
-      <span className="pointer-events-none absolute left-1/2 top-full z-20 mt-1 hidden -translate-x-1/2 rounded-full bg-[rgba(255,255,255,0.92)] px-1.5 py-0.5 text-[10px] font-bold leading-none text-[#7C6259] shadow-[0_6px_18px_rgba(124,98,89,0.14)]">
-        {index + 1}
-      </span>
-
       <div
         className={`pointer-events-none absolute z-20 w-[320px] opacity-0 transition duration-200 group-hover:pointer-events-auto group-hover:opacity-100 ${
-          isRightSide ? "right-5" : "left-5"
-        } ${isBottomSide ? "bottom-7" : "top-7"}`}
+          isRightSide ? "right-6" : "left-6"
+        } ${verticalPositionClass}`}
       >
-        <div className="rounded-[26px] border border-[rgba(124,98,89,0.14)] bg-[rgba(255,255,255,0.96)] p-4 shadow-[0_24px_60px_rgba(124,98,89,0.16)] backdrop-blur-sm">
+        <div className="max-h-[28rem] overflow-y-auto rounded-[26px] border border-[rgba(124,98,89,0.14)] bg-[rgba(255,255,255,0.96)] p-4 shadow-[0_24px_60px_rgba(124,98,89,0.16)] backdrop-blur-sm">
           <ReviewCard review={review} />
         </div>
       </div>
@@ -165,7 +168,7 @@ function ReviewCard({ review, compact = false }: ReviewCardProps) {
           <div className="relative h-40 w-full overflow-hidden rounded-[18px] bg-white">
             <Image
               src={review.brandImage}
-              alt={`Р¤РѕС‚Рѕ Р±СЂРµРЅРґР° ${review.name}`}
+              alt={`Фото бренда ${review.name}`}
               fill
               sizes={compact ? "240px" : "320px"}
               unoptimized={isRemoteAssetUrl(review.brandImage)}
@@ -197,7 +200,3 @@ function StarIcon({ filled }: { filled: boolean }) {
     </svg>
   );
 }
-
-
-
-

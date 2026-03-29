@@ -1,4 +1,4 @@
-import { getStrapiMediaUrl, strapiFetch } from "@/lib/api";
+﻿import { getStrapiMediaUrl, strapiFetch } from "@/lib/api";
 import { homePageMock } from "@/lib/mock/home";
 import type {
   BannerItem,
@@ -15,6 +15,8 @@ import type {
   WhyTrustGalleryItemData,
   WhyTrustPointData,
   WhyTrustUsSectionData,
+  WhatWeCanMakeItemData,
+  WhatWeCanMakeSectionData,
   WhoSuitsItemData,
   WhoSuitsSectionData,
   WorkStageItemData,
@@ -35,6 +37,8 @@ import type {
   StrapiWhyTrustGalleryItem,
   StrapiWhyTrustPoint,
   StrapiWhyTrustUsSection,
+  StrapiWhatWeCanMakeSection,
+  StrapiMakeItem,
   StrapiWhoSuitsItem,
   StrapiWhoSuitsSection,
   StrapiWholesaleContractSection,
@@ -348,6 +352,30 @@ function mapWhyTrustUs(section: StrapiWhyTrustUsSection): WhyTrustUsSectionData 
   };
 }
 
+
+function mapWhatWeCanMakeItem(item: StrapiMakeItem, index: number): WhatWeCanMakeItemData {
+  const fallbackItem = homePageMock.whatWeCanMake.items[index % homePageMock.whatWeCanMake.items.length];
+
+  return {
+    id: String(item.id ?? fallbackItem.id ?? index),
+    title: item.title?.trim() || fallbackItem.title,
+    image: resolveMediaUrl(item.image) ?? fallbackItem.image,
+    hoverImage: resolveMediaUrl(item.hoverImage) ?? fallbackItem.hoverImage,
+    hoverVideo: resolveMediaUrl(item.hoverVideo) ?? fallbackItem.hoverVideo,
+    isActive: item.isActive ?? fallbackItem.isActive,
+  };
+}
+
+function mapWhatWeCanMake(section: StrapiWhatWeCanMakeSection): WhatWeCanMakeSectionData {
+  const items = (section.items ?? [])
+    .filter((item) => (item.isActive ?? true) && Boolean(item.title?.trim() || item.image?.url))
+    .map(mapWhatWeCanMakeItem);
+
+  return {
+    title: section.title?.trim() || homePageMock.whatWeCanMake.title,
+    items: items.length > 0 ? items : homePageMock.whatWeCanMake.items,
+  };
+}
 function clampPosition(value: number | null | undefined, fallback: number) {
   if (typeof value !== "number" || Number.isNaN(value)) {
     return fallback;
@@ -515,6 +543,19 @@ export async function getWhyTrustUsSection() {
   return normalizeSingle(response);
 }
 
+
+export async function getWhatWeCanMakeSection() {
+  const response = await strapiFetch<StrapiSingleResponse<StrapiWhatWeCanMakeSection>>(
+    "/api/what-we-can-make-section",
+    {
+      params: {
+        "populate[items][populate]": "*",
+      },
+    },
+  );
+
+  return normalizeSingle(response);
+}
 export async function getCoverageMapSection() {
   const response = await strapiFetch<StrapiSingleResponse<StrapiCoverageMapSection>>(
     "/api/coverage-map-section",
@@ -540,6 +581,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     workStagesSectionResult,
     whoSuitsSectionResult,
     whyTrustUsSectionResult,
+    whatWeCanMakeSectionResult,
     coverageMapSectionResult,
   ] = await Promise.allSettled([
     getSiteHeader(),
@@ -552,6 +594,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     getWorkStagesSection(),
     getWhoSuitsSection(),
     getWhyTrustUsSection(),
+    getWhatWeCanMakeSection(),
     getCoverageMapSection(),
   ]);
 
@@ -571,6 +614,8 @@ export async function getHomePageData(): Promise<HomePageData> {
     whoSuitsSectionResult.status === "fulfilled" ? whoSuitsSectionResult.value : null;
   const whyTrustUsSection =
     whyTrustUsSectionResult.status === "fulfilled" ? whyTrustUsSectionResult.value : null;
+  const whatWeCanMakeSection =
+    whatWeCanMakeSectionResult.status === "fulfilled" ? whatWeCanMakeSectionResult.value : null;
   const coverageMapSection =
     coverageMapSectionResult.status === "fulfilled" ? coverageMapSectionResult.value : null;
   const headerData = siteHeader
@@ -591,6 +636,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     workStagesSectionResult.status === "rejected" ||
     whoSuitsSectionResult.status === "rejected" ||
     whyTrustUsSectionResult.status === "rejected" ||
+    whatWeCanMakeSectionResult.status === "rejected" ||
     coverageMapSectionResult.status === "rejected"
   ) {
     console.warn("Strapi data partially unavailable, using mock only for failed sections.", {
@@ -604,6 +650,7 @@ export async function getHomePageData(): Promise<HomePageData> {
       workStagesSection: workStagesSectionResult.status,
       whoSuitsSection: whoSuitsSectionResult.status,
       whyTrustUsSection: whyTrustUsSectionResult.status,
+      whatWeCanMakeSection: whatWeCanMakeSectionResult.status,
       coverageMapSection: coverageMapSectionResult.status,
     });
   }
@@ -623,6 +670,7 @@ export async function getHomePageData(): Promise<HomePageData> {
       workStages: workStagesSection ? mapWorkStages(workStagesSection) : homePageMock.workStages,
       whoSuits: whoSuitsSection ? mapWhoSuits(whoSuitsSection) : homePageMock.whoSuits,
       whyTrustUs: whyTrustUsSection ? mapWhyTrustUs(whyTrustUsSection) : homePageMock.whyTrustUs,
+      whatWeCanMake: whatWeCanMakeSection ? mapWhatWeCanMake(whatWeCanMakeSection) : homePageMock.whatWeCanMake,
       coverageMap: coverageMapSection
         ? mapCoverageMapSection(coverageMapSection)
         : homePageMock.coverageMap,
@@ -657,6 +705,12 @@ export async function getHomePageData(): Promise<HomePageData> {
           image: item.image,
           hoverImage: item.hoverImage ?? null,
         })),
+        whatWeCanMakeImages: data.whatWeCanMake.items.map((item) => ({
+          id: item.id,
+          image: item.image,
+          hoverImage: item.hoverImage ?? null,
+          hoverVideo: item.hoverVideo ?? null,
+        })),
         coverageMap: {
           mapImage: data.coverageMap.mapImage,
           reviews: data.coverageMap.reviews.map((review) => ({
@@ -674,3 +728,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     return homePageMock;
   }
 }
+
+
+
+

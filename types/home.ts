@@ -1,4 +1,4 @@
-export interface NavItem {
+﻿export interface NavItem {
   label: string;
   href: string;
 }
@@ -117,6 +117,20 @@ export interface WhyTrustUsSectionData {
   galleryItems: WhyTrustGalleryItemData[];
 }
 
+
+export interface WhatWeCanMakeItemData {
+  id: string;
+  title: string;
+  image: string;
+  hoverImage?: string;
+  hoverVideo?: string;
+  isActive: boolean;
+}
+
+export interface WhatWeCanMakeSectionData {
+  title: string;
+  items: WhatWeCanMakeItemData[];
+}
 export interface CoverageMapReviewData {
   id: string;
   name: string;
@@ -149,5 +163,7 @@ export interface HomePageData {
   workStages: WorkStagesSectionData;
   whoSuits: WhoSuitsSectionData;
   whyTrustUs: WhyTrustUsSectionData;
+  whatWeCanMake: WhatWeCanMakeSectionData;
   coverageMap: CoverageMapSectionData;
 }
+

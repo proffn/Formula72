@@ -1,4 +1,4 @@
-export interface StrapiMediaFormat {
+﻿export interface StrapiMediaFormat {
   url: string;
   width?: number;
   height?: number;
@@ -162,6 +162,22 @@ export interface StrapiWhyTrustUsSection {
   galleryItems?: StrapiWhyTrustGalleryItem[] | null;
 }
 
+
+export interface StrapiMakeItem {
+  id?: number;
+  title?: string | null;
+  image?: StrapiMedia | null;
+  hoverImage?: StrapiMedia | null;
+  hoverVideo?: StrapiMedia | null;
+  isActive?: boolean | null;
+}
+
+export interface StrapiWhatWeCanMakeSection {
+  id: number;
+  documentId?: string;
+  title?: string | null;
+  items?: StrapiMakeItem[] | null;
+}
 export interface StrapiCoverageMapReview {
   id?: number;
   name?: string | null;
@@ -183,3 +199,4 @@ export interface StrapiCoverageMapSection {
   mapImage?: StrapiMedia | null;
   reviews?: StrapiCoverageMapReview[] | null;
 }
+

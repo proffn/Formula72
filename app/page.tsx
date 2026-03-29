@@ -1,9 +1,10 @@
-import { BannerSlider } from "@/components/sections/banner-slider";
+﻿import { BannerSlider } from "@/components/sections/banner-slider";
 import { CoverageMapSection } from "@/components/sections/coverage-map-section";
 import { Formula72SchemeSection } from "@/components/sections/formula72-scheme-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { MissionK72Section } from "@/components/sections/mission-k72-section";
 import { ProsConsSection } from "@/components/sections/pros-cons-section";
+import { WhatWeCanMakeSection } from "@/components/sections/what-we-can-make-section";
 import { WhyTrustUsSection } from "@/components/sections/why-trust-us-section";
 import { WhoSuitsSection } from "@/components/sections/who-suits-section";
 import { WholesaleContractSection } from "@/components/sections/wholesale-contract-section";
@@ -27,6 +28,7 @@ export default async function HomePage() {
       <WhoSuitsSection section={data.whoSuits} />
       <WhyTrustUsSection section={data.whyTrustUs} />
       <CoverageMapSection section={data.coverageMap} />
+      <WhatWeCanMakeSection section={data.whatWeCanMake} />
     </main>
   );
 }
