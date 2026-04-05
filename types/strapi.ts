@@ -1,4 +1,4 @@
-﻿export interface StrapiMediaFormat {
+export interface StrapiMediaFormat {
   url: string;
   width?: number;
   height?: number;
@@ -217,6 +217,42 @@ export interface StrapiFinalBrandSection {
   documentId?: string;
   title?: string | null;
 }
+export interface StrapiFooterLink {
+  id?: number;
+  label?: string | null;
+  href?: string | null;
+}
+
+export interface StrapiFooterSocialLink {
+  id?: number;
+  platform?: 'whatsapp' | 'telegram' | 'vk' | string | null;
+  href?: string | null;
+  enabled?: boolean | null;
+  icon?: StrapiMedia | null;
+  hoverIcon?: StrapiMedia | null;
+}
+
+export interface StrapiFooterSection {
+  id: number;
+  documentId?: string;
+  contactsColumnTitle?: string | null;
+  consultationTitle?: string | null;
+  consultationPhone?: string | null;
+  consultationEmail?: string | null;
+  procurementTitle?: string | null;
+  procurementEmail?: string | null;
+  marketingTitle?: string | null;
+  marketingEmail?: string | null;
+  workingHours?: string | null;
+  companyColumnTitle?: string | null;
+  companyLinks?: StrapiFooterLink[] | null;
+  documentsColumnTitle?: string | null;
+  documentLinks?: StrapiFooterLink[] | null;
+  formColumnTitle?: string | null;
+  phonePlaceholder?: string | null;
+  consentText?: string | null;
+  socialLinks?: StrapiFooterSocialLink[] | null;
+}
 export interface StrapiCoverageMapReview {
   id?: number;
   name?: string | null;
@@ -238,6 +274,10 @@ export interface StrapiCoverageMapSection {
   mapImage?: StrapiMedia | null;
   reviews?: StrapiCoverageMapReview[] | null;
 }
+
+
+
+
 
 
 

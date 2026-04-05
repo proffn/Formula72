@@ -387,6 +387,39 @@ export const homePageMock: HomePageData = {
   finalBrand: {
     title: "FORMULA72",
   },
+  footer: {
+    contactsColumnTitle: "КОНТАКТЫ",
+    consultationTitle: "Консультация по контрактному производству",
+    consultationPhone: "+7 969 907 88 87",
+    consultationEmail: "kosmetika72@bk.ru",
+    procurementTitle: "Отдел закупок",
+    procurementEmail: "kontrakt-kosmetika@mail.ru",
+    marketingTitle: "Отдел маркетинга",
+    marketingEmail: "evsi@gmail.com",
+    workingHours: "график работы с 11:00 до 16:00 по Мск",
+    companyColumnTitle: "О КОМПАНИИ",
+    companyLinks: [
+      { label: "Условия", href: "#" },
+      { label: "Вакансии", href: "#" },
+      { label: "Сертификаты", href: "#" },
+      { label: "Бесплатные материалы для предпринимателей", href: "#" },
+      { label: "Разработка дизайна", href: "#" },
+    ],
+    documentsColumnTitle: "ДОКУМЕНТЫ",
+    documentLinks: [
+      { label: "Условия обработки персональных данных", href: "#" },
+      { label: "Политика обработки персональных данных", href: "#" },
+      { label: "Согласие на обработку персональных данных", href: "#" },
+    ],
+    formColumnTitle: "ОСТАВИТЬ ЗАЯВКУ",
+    phonePlaceholder: "Оставьте ваш телефон",
+    consentText: "Оставляя заявку, вы соглашаетесь с политикой обработки персональных данных",
+    socialLinks: [
+      { platform: "whatsapp", href: "#", enabled: true, icon: undefined, hoverIcon: undefined },
+      { platform: "telegram", href: "#", enabled: true, icon: undefined, hoverIcon: undefined },
+      { platform: "vk", href: "#", enabled: true, icon: undefined, hoverIcon: undefined },
+    ],
+  },
   coverageMap: {
     title: "Formula72",
     subtitle: "РљРѕРЅС‚СЂР°РєС‚РЅРѕРµ РїСЂРѕРёР·РІРѕРґСЃС‚РІРѕ",
@@ -436,6 +469,9 @@ export const homePageMock: HomePageData = {
     ],
   },
 };
+
+
+
 
 
 

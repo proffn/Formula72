@@ -1,11 +1,10 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { isRemoteAssetUrl } from "@/lib/api";
 import { BurgerIcon } from "@/components/ui/burger-icon";
-import { Container } from "@/components/ui/container";
 import type { NavItem, SiteHeaderContent } from "@/types/home";
 
 type SiteHeaderProps = {
@@ -40,10 +39,10 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
 
   return (
     <>
-      <header className="absolute inset-x-0 top-0 z-40 pt-4 sm:pt-5 lg:pt-6">
-        <Container>
-          <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4">
-            <Link href="#hero" className="relative block h-[104px] w-[240px] lg:h-[128px] lg:w-[296px]">
+      <header className="absolute inset-x-0 top-0 z-40 px-4 pt-3 sm:px-6 sm:pt-4 lg:px-8 lg:pt-5">
+        <div className="mx-auto w-full max-w-[1100px]">
+          <div className="grid grid-cols-[auto_1fr_auto] items-center gap-3">
+            <Link href="#hero" className="relative block h-[84px] w-[192px] lg:h-[102px] lg:w-[236px]">
               <Image
                 src={desktopLogoSrc}
                 alt={logoAlt}
@@ -54,12 +53,12 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
               />
             </Link>
 
-            <nav className="hidden items-center justify-center gap-6 text-center lg:flex xl:gap-8">
+            <nav className="hidden items-center justify-center gap-5 text-center lg:flex xl:gap-6">
               {mainNavigation.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-[19.5px] font-medium tracking-[-0.01em] text-[#63504A] transition duration-300 hover:text-[#4f3f3a] focus-visible:text-[#4f3f3a] focus-visible:outline-none xl:text-[22.5px]"
+                  className="text-[15.5px] font-medium tracking-[-0.01em] text-[#63504A] transition duration-300 hover:text-[#4f3f3a] focus-visible:text-[#4f3f3a] focus-visible:outline-none xl:text-[18px]"
                 >
                   {item.label}
                 </Link>
@@ -70,11 +69,11 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
               href="#wholesale-contract"
               className="hidden text-right text-[#63504A] transition duration-300 hover:text-[#4f3f3a] focus-visible:text-[#4f3f3a] focus-visible:outline-none lg:block"
             >
-              <span className="block text-[14px] font-semibold tracking-[-0.01em] xl:text-[16px]">{content.phone}</span>
-              <span className="mt-1 block text-[12px] font-medium tracking-[-0.01em] xl:text-[14px]">{content.workSchedule}</span>
+              <span className="block text-[11px] font-semibold tracking-[-0.01em] xl:text-[13px]">{content.phone}</span>
+              <span className="mt-1 block text-[10px] font-medium tracking-[-0.01em] xl:text-[11px]">{content.workSchedule}</span>
             </Link>
           </div>
-        </Container>
+        </div>
       </header>
 
       <button

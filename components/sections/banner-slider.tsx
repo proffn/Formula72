@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -70,6 +70,7 @@ export function BannerSlider({ banners }: BannerSliderProps) {
               {(() => {
                 const layout = getBannerLayoutClasses(banner.textPosition);
                 const isFirstBanner = index === 0;
+                const isSecondBanner = index === 1;
 
                 return (
                   <>
@@ -97,7 +98,7 @@ export function BannerSlider({ banners }: BannerSliderProps) {
                           banner.textColor === "light"
                             ? "text-white"
                             : "text-[#63504A]"
-                        }`}
+                        } ${isSecondBanner ? "lg:-translate-x-[10%]" : ""}`}
                       >
                         <h3
                           className={`uppercase tracking-[-0.03em] ${layout.title} ${

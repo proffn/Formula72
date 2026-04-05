@@ -1,4 +1,4 @@
-﻿export interface NavItem {
+export interface NavItem {
   label: string;
   href: string;
 }
@@ -117,7 +117,6 @@ export interface WhyTrustUsSectionData {
   galleryItems: WhyTrustGalleryItemData[];
 }
 
-
 export interface WhatWeCanMakeItemData {
   id: string;
   title: string;
@@ -131,6 +130,7 @@ export interface WhatWeCanMakeSectionData {
   title: string;
   items: WhatWeCanMakeItemData[];
 }
+
 export interface FaqItemData {
   id: string;
   number: string;
@@ -155,15 +155,53 @@ export interface FaqSectionData {
   ctaButtonText: string;
   ctaButtonLink: string;
 }
+
 export interface LeadCtaSectionData {
   title: string;
   description: string;
   buttonText: string;
   buttonLink: string;
 }
+
 export interface FinalBrandSectionData {
   title: string;
 }
+
+export interface FooterLinkData {
+  label: string;
+  href: string;
+}
+
+export type FooterSocialPlatform = 'whatsapp' | 'telegram' | 'vk';
+
+export interface FooterSocialLinkData {
+  platform: FooterSocialPlatform | string;
+  href: string;
+  enabled: boolean;
+  icon?: string;
+  hoverIcon?: string;
+}
+
+export interface FooterData {
+  contactsColumnTitle: string;
+  consultationTitle: string;
+  consultationPhone: string;
+  consultationEmail: string;
+  procurementTitle: string;
+  procurementEmail: string;
+  marketingTitle: string;
+  marketingEmail: string;
+  workingHours: string;
+  companyColumnTitle: string;
+  companyLinks: FooterLinkData[];
+  documentsColumnTitle: string;
+  documentLinks: FooterLinkData[];
+  formColumnTitle: string;
+  phonePlaceholder: string;
+  consentText: string;
+  socialLinks: FooterSocialLinkData[];
+}
+
 export interface CoverageMapReviewData {
   id: string;
   name: string;
@@ -199,10 +237,9 @@ export interface HomePageData {
   whatWeCanMake: WhatWeCanMakeSectionData;
   leadCta: LeadCtaSectionData;
   finalBrand: FinalBrandSectionData;
+  footer: FooterData;
   coverageMap: CoverageMapSectionData;
   faq: FaqSectionData;
 }
-
-
 
 

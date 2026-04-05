@@ -1,4 +1,5 @@
-﻿import { BannerSlider } from "@/components/sections/banner-slider";
+﻿import { SiteFooter } from "@/components/layout/site-footer";
+import { BannerSlider } from "@/components/sections/banner-slider";
 import { CoverageMapSection } from "@/components/sections/coverage-map-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { FinalBrandSection } from "@/components/sections/final-brand-section";
@@ -20,21 +21,24 @@ export default async function HomePage() {
   const data = await getHomePageData();
 
   return (
-    <main className="page-shell">
-      <HeroSection siteHeader={data.siteHeader} navigation={data.navigation} hero={data.hero} />
-      <BannerSlider banners={data.banners} />
-      <WholesaleContractSection section={data.wholesaleContract} />
-      <ProsConsSection section={data.prosCons} />
-      <Formula72SchemeSection section={data.formula72Scheme} />
-      <WorkStagesSection section={data.workStages} />
-      <MissionK72Section section={data.missionK72} />
-      <WhoSuitsSection section={data.whoSuits} />
-      <WhyTrustUsSection section={data.whyTrustUs} />
-      <CoverageMapSection section={data.coverageMap} />
-      <WhatWeCanMakeSection section={data.whatWeCanMake} />
-      <FaqSection section={data.faq} />
-      <LeadCtaSection section={data.leadCta} />
-      <FinalBrandSection section={data.finalBrand} />
-    </main>
+    <>
+      <main className="page-shell">
+        <HeroSection siteHeader={data.siteHeader} navigation={data.navigation} hero={data.hero} />
+        <BannerSlider banners={data.banners} />
+        <WholesaleContractSection section={data.wholesaleContract} />
+        <ProsConsSection section={data.prosCons} />
+        <Formula72SchemeSection section={data.formula72Scheme} />
+        <WorkStagesSection section={data.workStages} />
+        <MissionK72Section section={data.missionK72} />
+        <WhoSuitsSection section={data.whoSuits} />
+        <WhyTrustUsSection section={data.whyTrustUs} />
+        <CoverageMapSection section={data.coverageMap} />
+        <WhatWeCanMakeSection section={data.whatWeCanMake} />
+        <FaqSection section={data.faq} />
+        <LeadCtaSection section={data.leadCta} />
+        <FinalBrandSection section={data.finalBrand} />
+      </main>
+      <SiteFooter section={data.footer} />
+    </>
   );
 }

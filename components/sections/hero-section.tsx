@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -37,18 +37,18 @@ export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) 
 
       <SiteHeader content={siteHeader} navigation={navigation} />
 
-      <div className="absolute inset-0 flex items-center justify-center px-6 pb-12 pt-24 sm:px-8 sm:pt-28 lg:pt-32">
-        <div className="flex max-w-6xl flex-col items-center text-center text-[#63504A]">
+      <div className="absolute inset-0 flex items-center justify-center px-6 pb-10 pt-20 sm:px-8 sm:pt-24 lg:pt-26">
+        <div className="flex max-w-5xl flex-col items-center text-center text-[#63504A]">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={getRevealTransition(0.12)}
             className="space-y-1"
           >
-            <p className="text-[clamp(2.25rem,6vw,6rem)] font-bold uppercase leading-[0.94] tracking-[0.08em] sm:tracking-[0.1em]">
+            <p className="text-[clamp(1.8rem,4.8vw,4.8rem)] font-bold uppercase leading-[0.94] tracking-[0.064em] sm:tracking-[0.08em]">
               {hero.lines[0]}
             </p>
-            <p className="text-[clamp(2.25rem,6vw,6rem)] font-bold uppercase leading-[0.94] tracking-[0.08em] sm:tracking-[0.1em]">
+            <p className="text-[clamp(1.8rem,4.8vw,4.8rem)] font-bold uppercase leading-[0.94] tracking-[0.064em] sm:tracking-[0.08em]">
               {hero.lines[1]}
             </p>
           </motion.div>
@@ -57,7 +57,7 @@ export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) 
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={getRevealTransition(0.28)}
-            className="mt-4 text-[clamp(3.333rem,.333vw,.292rem)] font-extralight uppercase leading-none tracking-[0.28em] sm:mt-5 sm:tracking-[0.34em]"
+            className="mt-3 text-[clamp(2.666rem,.266vw,.234rem)] font-extralight uppercase leading-none tracking-[0.224em] sm:mt-4 sm:tracking-[0.272em]"
           >
             {hero.brand}
           </motion.p>

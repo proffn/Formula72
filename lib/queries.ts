@@ -5,6 +5,9 @@ import type {
   BannerTextPosition,
   CoverageMapReviewData,
   CoverageMapSectionData,
+  FooterData,
+  FooterLinkData,
+  FooterSocialLinkData,
   FaqCategoryData,
   FaqItemData,
   FaqSectionData,
@@ -32,6 +35,9 @@ import type {
   StrapiCollectionResponse,
   StrapiCoverageMapReview,
   StrapiCoverageMapSection,
+  StrapiFooterLink,
+  StrapiFooterSection,
+  StrapiFooterSocialLink,
   StrapiFaqCategory,
   StrapiFaqItem,
   StrapiFaqSection,
@@ -448,6 +454,65 @@ function clampPosition(value: number | null | undefined, fallback: number) {
   return Math.min(100, Math.max(0, value));
 }
 
+function mapFooterLink(link: StrapiFooterLink, fallback: FooterLinkData): FooterLinkData {
+  return {
+    label: link.label?.trim() || fallback.label,
+    href: link.href?.trim() || fallback.href,
+  };
+}
+
+function mapFooterSocialLink(
+  link: StrapiFooterSocialLink,
+  fallback: FooterSocialLinkData,
+): FooterSocialLinkData {
+  return {
+    platform: link.platform?.trim() || fallback.platform,
+    href: link.href?.trim() || fallback.href,
+    enabled: link.enabled ?? fallback.enabled,
+    icon: resolveMediaUrl(link.icon) ?? fallback.icon,
+    hoverIcon: resolveMediaUrl(link.hoverIcon) ?? resolveMediaUrl(link.icon) ?? fallback.hoverIcon ?? fallback.icon,
+  };
+}
+
+function mapFooterSection(section: StrapiFooterSection): FooterData {
+  const companyLinks = (section.companyLinks ?? [])
+    .filter((link) => Boolean(link.label?.trim()) && Boolean(link.href?.trim()))
+    .map((link, index) =>
+      mapFooterLink(link, homePageMock.footer.companyLinks[index % homePageMock.footer.companyLinks.length]),
+    );
+
+  const documentLinks = (section.documentLinks ?? [])
+    .filter((link) => Boolean(link.label?.trim()) && Boolean(link.href?.trim()))
+    .map((link, index) =>
+      mapFooterLink(link, homePageMock.footer.documentLinks[index % homePageMock.footer.documentLinks.length]),
+    );
+
+  const socialLinks = (section.socialLinks ?? [])
+    .filter((link) => Boolean(link.platform?.trim()) && (link.enabled ?? true))
+    .map((link, index) =>
+      mapFooterSocialLink(link, homePageMock.footer.socialLinks[index % homePageMock.footer.socialLinks.length]),
+    );
+
+  return {
+    contactsColumnTitle: section.contactsColumnTitle?.trim() || homePageMock.footer.contactsColumnTitle,
+    consultationTitle: section.consultationTitle?.trim() || homePageMock.footer.consultationTitle,
+    consultationPhone: section.consultationPhone?.trim() || homePageMock.footer.consultationPhone,
+    consultationEmail: section.consultationEmail?.trim() || homePageMock.footer.consultationEmail,
+    procurementTitle: section.procurementTitle?.trim() || homePageMock.footer.procurementTitle,
+    procurementEmail: section.procurementEmail?.trim() || homePageMock.footer.procurementEmail,
+    marketingTitle: section.marketingTitle?.trim() || homePageMock.footer.marketingTitle,
+    marketingEmail: section.marketingEmail?.trim() || homePageMock.footer.marketingEmail,
+    workingHours: section.workingHours?.trim() || homePageMock.footer.workingHours,
+    companyColumnTitle: section.companyColumnTitle?.trim() || homePageMock.footer.companyColumnTitle,
+    companyLinks: companyLinks.length > 0 ? companyLinks : homePageMock.footer.companyLinks,
+    documentsColumnTitle: section.documentsColumnTitle?.trim() || homePageMock.footer.documentsColumnTitle,
+    documentLinks: documentLinks.length > 0 ? documentLinks : homePageMock.footer.documentLinks,
+    formColumnTitle: section.formColumnTitle?.trim() || homePageMock.footer.formColumnTitle,
+    phonePlaceholder: section.phonePlaceholder?.trim() || homePageMock.footer.phonePlaceholder,
+    consentText: section.consentText?.trim() || homePageMock.footer.consentText,
+    socialLinks: section.socialLinks ? socialLinks : homePageMock.footer.socialLinks,
+  };
+}
 function mapCoverageMapReview(
   review: StrapiCoverageMapReview,
   index: number,
@@ -653,6 +718,20 @@ export async function getFinalBrandSection() {
 
   return normalizeSingle(response);
 }
+export async function getFooterSection() {
+  const response = await strapiFetch<StrapiSingleResponse<StrapiFooterSection>>(
+    "/api/footer-section",
+    {
+      params: {
+        "populate[companyLinks]": "*",
+        "populate[documentLinks]": "*",
+        "populate[socialLinks][populate]": "*",
+      },
+    },
+  );
+
+  return normalizeSingle(response);
+}
 export async function getCoverageMapSection() {
   const response = await strapiFetch<StrapiSingleResponse<StrapiCoverageMapSection>>(
     "/api/coverage-map-section",
@@ -683,6 +762,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     faqSectionResult,
     leadCtaSectionResult,
     finalBrandSectionResult,
+    footerSectionResult,
   ] = await Promise.allSettled([
     getSiteHeader(),
     getHomePage(),
@@ -699,6 +779,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     getFaqSection(),
     getLeadCtaSection(),
     getFinalBrandSection(),
+    getFooterSection(),
   ]);
 
   const siteHeader = siteHeaderResult.status === "fulfilled" ? siteHeaderResult.value : null;
@@ -725,6 +806,7 @@ export async function getHomePageData(): Promise<HomePageData> {
   const leadCtaSection = leadCtaSectionResult.status === "fulfilled" ? leadCtaSectionResult.value : null;
   const finalBrandSection =
     finalBrandSectionResult.status === "fulfilled" ? finalBrandSectionResult.value : null;
+  const footerSection = footerSectionResult.status === "fulfilled" ? footerSectionResult.value : null;
   const headerData = siteHeader
     ? mapSiteHeader(siteHeader)
     : {
@@ -747,7 +829,8 @@ export async function getHomePageData(): Promise<HomePageData> {
     coverageMapSectionResult.status === "rejected" ||
     faqSectionResult.status === "rejected" ||
     leadCtaSectionResult.status === "rejected" ||
-    finalBrandSectionResult.status === "rejected"
+    finalBrandSectionResult.status === "rejected" ||
+    footerSectionResult.status === "rejected"
   ) {
     console.warn("Strapi data partially unavailable, using mock only for failed sections.", {
       siteHeader: siteHeaderResult.status,
@@ -765,6 +848,7 @@ export async function getHomePageData(): Promise<HomePageData> {
       faqSection: faqSectionResult.status,
       leadCtaSection: leadCtaSectionResult.status,
       finalBrandSection: finalBrandSectionResult.status,
+      footerSection: footerSectionResult.status,
     });
   }
 
@@ -792,6 +876,7 @@ export async function getHomePageData(): Promise<HomePageData> {
       finalBrand: finalBrandSection
         ? mapFinalBrandSection(finalBrandSection)
         : homePageMock.finalBrand,
+      footer: footerSection ? mapFooterSection(footerSection) : homePageMock.footer,
     };
 
     if (process.env.NODE_ENV !== "production") {
@@ -846,5 +931,9 @@ export async function getHomePageData(): Promise<HomePageData> {
     return homePageMock;
   }
 }
+
+
+
+
 
 

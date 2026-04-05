@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 import { isRemoteAssetUrl } from "@/lib/api";
 import type { WholesaleSectionData } from "@/types/home";
@@ -13,7 +13,7 @@ export function WholesaleContractSection({ section }: WholesaleContractSectionPr
       <div className="relative aspect-[1920/1080] w-full overflow-hidden">
         <Image
           src={section.backgroundImage}
-          alt="Оптовая торговля и контрактное производство"
+          alt="РћРїС‚РѕРІР°СЏ С‚РѕСЂРіРѕРІР»СЏ Рё РєРѕРЅС‚СЂР°РєС‚РЅРѕРµ РїСЂРѕРёР·РІРѕРґСЃС‚РІРѕ"
           fill
           sizes="100vw"
           unoptimized={isRemoteAssetUrl(section.backgroundImage)}
@@ -46,14 +46,14 @@ function SplitSide({ side, align }: SplitSideProps) {
     >
       <div>
         <p
-          className={`text-[clamp(2.42rem,4.29vw,4.675rem)] font-bold uppercase leading-[0.95] tracking-[-0.03em] xl:text-[75px] ${
+          className={`text-[clamp(1.94rem,3.43vw,3.74rem)] font-bold uppercase leading-[0.95] tracking-[-0.03em] xl:text-[60px] ${
             isRight ? "text-[#63504A]" : "text-white"
           }`}
         >
           {side.lines[0]}
         </p>
         <p
-          className={`text-[clamp(2.42rem,4.29vw,4.675rem)] font-bold uppercase leading-[0.95] tracking-[-0.03em] xl:text-[75px] ${
+          className={`text-[clamp(1.94rem,3.43vw,3.74rem)] font-bold uppercase leading-[0.95] tracking-[-0.03em] xl:text-[60px] ${
             isRight ? "text-[#63504A]" : "text-white"
           }`}
         >
@@ -63,7 +63,7 @@ function SplitSide({ side, align }: SplitSideProps) {
 
       <Link
         href={side.action.href}
-        className={`mt-4 inline-flex items-center justify-center rounded-md px-[38px] py-[13px] text-[1.12rem] font-bold uppercase leading-none tracking-[-0.01em] transition duration-300 focus-visible:outline-none focus-visible:ring-2 xl:mt-[34px] xl:px-[53px] xl:py-[17px] xl:text-[20px] ${
+        className={`mt-3 inline-flex items-center justify-center rounded-md px-[30px] py-[10px] text-[0.9rem] font-bold uppercase leading-none tracking-[-0.01em] transition duration-300 focus-visible:outline-none focus-visible:ring-2 xl:mt-[27px] xl:px-[42px] xl:py-[14px] xl:text-[16px] ${
           isRight
             ? "bg-[#63504A] text-white hover:bg-[#52403a] focus-visible:bg-[#52403a] focus-visible:ring-[#63504A]/30"
             : "bg-white text-[#63504A] hover:bg-[#f8f5f2] focus-visible:bg-[#f8f5f2] focus-visible:ring-white/60"
