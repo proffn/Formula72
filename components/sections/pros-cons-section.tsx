@@ -126,7 +126,7 @@ function ComparisonCard({ column, tone, advantagesRef }: ComparisonCardProps) {
         <SectionList title={column.advantagesTitle} items={column.advantages} marker="+" accent="positive" />
       </div>
 
-      <div className="mt-4.5 border-t border-[rgba(99,80,74,0.12)] pt-3.5">
+      <div className="mt-6 border-t border-[rgba(99,80,74,0.12)] pt-3.5">
         <SectionList
           title={column.disadvantagesTitle}
           items={column.disadvantages}
@@ -175,3 +175,4 @@ function SectionList({ title, items, marker, accent }: SectionListProps) {
     </div>
   );
 }
+
