@@ -1,7 +1,10 @@
 ﻿import { BannerSlider } from "@/components/sections/banner-slider";
 import { CoverageMapSection } from "@/components/sections/coverage-map-section";
+import { FaqSection } from "@/components/sections/faq-section";
+import { FinalBrandSection } from "@/components/sections/final-brand-section";
 import { Formula72SchemeSection } from "@/components/sections/formula72-scheme-section";
 import { HeroSection } from "@/components/sections/hero-section";
+import { LeadCtaSection } from "@/components/sections/lead-cta-section";
 import { MissionK72Section } from "@/components/sections/mission-k72-section";
 import { ProsConsSection } from "@/components/sections/pros-cons-section";
 import { WhatWeCanMakeSection } from "@/components/sections/what-we-can-make-section";
@@ -29,6 +32,9 @@ export default async function HomePage() {
       <WhyTrustUsSection section={data.whyTrustUs} />
       <CoverageMapSection section={data.coverageMap} />
       <WhatWeCanMakeSection section={data.whatWeCanMake} />
+      <FaqSection section={data.faq} />
+      <LeadCtaSection section={data.leadCta} />
+      <FinalBrandSection section={data.finalBrand} />
     </main>
   );
 }

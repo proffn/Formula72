@@ -5,8 +5,13 @@ import type {
   BannerTextPosition,
   CoverageMapReviewData,
   CoverageMapSectionData,
+  FaqCategoryData,
+  FaqItemData,
+  FaqSectionData,
+  FinalBrandSectionData,
   Formula72SchemeSectionData,
   HomePageData,
+  LeadCtaSectionData,
   MissionK72SectionData,
   NavItem,
   ProsConsSectionData,
@@ -27,8 +32,13 @@ import type {
   StrapiCollectionResponse,
   StrapiCoverageMapReview,
   StrapiCoverageMapSection,
+  StrapiFaqCategory,
+  StrapiFaqItem,
+  StrapiFaqSection,
+  StrapiFinalBrandSection,
   StrapiFormula72SchemeSection,
   StrapiHomePage,
+  StrapiLeadCtaSection,
   StrapiMissionK72Section,
   StrapiProsConsSection,
   StrapiSiteHeader,
@@ -47,7 +57,6 @@ import type {
 } from "@/types/strapi";
 
 const navigationHrefs = ["#hero", "#hero", "#wholesale-contract", "#banners"] as const;
-
 function splitTitle(value: string, fallback: [string, string]): [string, string] {
   const normalized = value.trim();
 
@@ -376,6 +385,61 @@ function mapWhatWeCanMake(section: StrapiWhatWeCanMakeSection): WhatWeCanMakeSec
     items: items.length > 0 ? items : homePageMock.whatWeCanMake.items,
   };
 }
+function mapFaqItem(item: StrapiFaqItem, index: number, categoryIndex: number): FaqItemData {
+  const fallbackCategory = homePageMock.faq.categories[categoryIndex % homePageMock.faq.categories.length];
+  const fallbackItem = fallbackCategory.items[index % fallbackCategory.items.length];
+
+  return {
+    id: String(item.id ?? fallbackItem.id ?? `${categoryIndex}-${index}`),
+    number: item.number?.trim() || fallbackItem.number,
+    question: item.question?.trim() || fallbackItem.question,
+    answer: item.answer?.trim() || fallbackItem.answer,
+    isActive: item.isActive ?? fallbackItem.isActive,
+  };
+}
+
+function mapFaqCategory(category: StrapiFaqCategory, index: number): FaqCategoryData {
+  const fallbackCategory = homePageMock.faq.categories[index % homePageMock.faq.categories.length];
+  const items = (category.items ?? [])
+    .filter((item) => (item.isActive ?? true) && Boolean(item.question?.trim()))
+    .map((item, itemIndex) => mapFaqItem(item, itemIndex, index));
+
+  return {
+    id: String(category.id ?? fallbackCategory.id ?? index),
+    title: category.title?.trim() || fallbackCategory.title,
+    items: items.length > 0 ? items : fallbackCategory.items,
+  };
+}
+
+function mapFaqSection(section: StrapiFaqSection): FaqSectionData {
+  const categories = (section.categories ?? [])
+    .filter((category) => Boolean(category.title?.trim()) || Boolean(category.items?.length))
+    .map(mapFaqCategory);
+
+  return {
+    bigNumber: section.bigNumber?.trim() || homePageMock.faq.bigNumber,
+    title: section.title?.trim() || homePageMock.faq.title,
+    description: section.description?.trim() || homePageMock.faq.description,
+    categories: categories.length > 0 ? categories : homePageMock.faq.categories,
+    ctaTitle: section.ctaTitle?.trim() || homePageMock.faq.ctaTitle,
+    ctaText: section.ctaText?.trim() || homePageMock.faq.ctaText,
+    ctaButtonText: section.ctaButtonText?.trim() || homePageMock.faq.ctaButtonText,
+    ctaButtonLink: section.ctaButtonLink?.trim() || homePageMock.faq.ctaButtonLink,
+  };
+}
+function mapLeadCtaSection(section: StrapiLeadCtaSection): LeadCtaSectionData {
+  return {
+    title: section.title?.trim() || homePageMock.leadCta.title,
+    description: section.description?.trim() || homePageMock.leadCta.description,
+    buttonText: section.buttonText?.trim() || homePageMock.leadCta.buttonText,
+    buttonLink: section.buttonLink?.trim() || homePageMock.leadCta.buttonLink,
+  };
+}
+function mapFinalBrandSection(section: StrapiFinalBrandSection): FinalBrandSectionData {
+  return {
+    title: section.title?.trim() || homePageMock.finalBrand.title,
+  };
+}
 function clampPosition(value: number | null | undefined, fallback: number) {
   if (typeof value !== "number" || Number.isNaN(value)) {
     return fallback;
@@ -556,6 +620,39 @@ export async function getWhatWeCanMakeSection() {
 
   return normalizeSingle(response);
 }
+export async function getFaqSection() {
+  const response = await strapiFetch<StrapiSingleResponse<StrapiFaqSection>>('/api/faq-section', {
+    params: {
+      'populate[categories][populate][items]': '*',
+    },
+  });
+
+  return normalizeSingle(response);
+}
+export async function getLeadCtaSection() {
+  const response = await strapiFetch<StrapiSingleResponse<StrapiLeadCtaSection>>(
+    "/api/lead-cta-section",
+    {
+      params: {
+        populate: "*",
+      },
+    },
+  );
+
+  return normalizeSingle(response);
+}
+export async function getFinalBrandSection() {
+  const response = await strapiFetch<StrapiSingleResponse<StrapiFinalBrandSection>>(
+    "/api/final-brand-section",
+    {
+      params: {
+        populate: "*",
+      },
+    },
+  );
+
+  return normalizeSingle(response);
+}
 export async function getCoverageMapSection() {
   const response = await strapiFetch<StrapiSingleResponse<StrapiCoverageMapSection>>(
     "/api/coverage-map-section",
@@ -583,6 +680,9 @@ export async function getHomePageData(): Promise<HomePageData> {
     whyTrustUsSectionResult,
     whatWeCanMakeSectionResult,
     coverageMapSectionResult,
+    faqSectionResult,
+    leadCtaSectionResult,
+    finalBrandSectionResult,
   ] = await Promise.allSettled([
     getSiteHeader(),
     getHomePage(),
@@ -596,6 +696,9 @@ export async function getHomePageData(): Promise<HomePageData> {
     getWhyTrustUsSection(),
     getWhatWeCanMakeSection(),
     getCoverageMapSection(),
+    getFaqSection(),
+    getLeadCtaSection(),
+    getFinalBrandSection(),
   ]);
 
   const siteHeader = siteHeaderResult.status === "fulfilled" ? siteHeaderResult.value : null;
@@ -618,6 +721,10 @@ export async function getHomePageData(): Promise<HomePageData> {
     whatWeCanMakeSectionResult.status === "fulfilled" ? whatWeCanMakeSectionResult.value : null;
   const coverageMapSection =
     coverageMapSectionResult.status === "fulfilled" ? coverageMapSectionResult.value : null;
+  const faqSection = faqSectionResult.status === "fulfilled" ? faqSectionResult.value : null;
+  const leadCtaSection = leadCtaSectionResult.status === "fulfilled" ? leadCtaSectionResult.value : null;
+  const finalBrandSection =
+    finalBrandSectionResult.status === "fulfilled" ? finalBrandSectionResult.value : null;
   const headerData = siteHeader
     ? mapSiteHeader(siteHeader)
     : {
@@ -637,7 +744,10 @@ export async function getHomePageData(): Promise<HomePageData> {
     whoSuitsSectionResult.status === "rejected" ||
     whyTrustUsSectionResult.status === "rejected" ||
     whatWeCanMakeSectionResult.status === "rejected" ||
-    coverageMapSectionResult.status === "rejected"
+    coverageMapSectionResult.status === "rejected" ||
+    faqSectionResult.status === "rejected" ||
+    leadCtaSectionResult.status === "rejected" ||
+    finalBrandSectionResult.status === "rejected"
   ) {
     console.warn("Strapi data partially unavailable, using mock only for failed sections.", {
       siteHeader: siteHeaderResult.status,
@@ -652,6 +762,9 @@ export async function getHomePageData(): Promise<HomePageData> {
       whyTrustUsSection: whyTrustUsSectionResult.status,
       whatWeCanMakeSection: whatWeCanMakeSectionResult.status,
       coverageMapSection: coverageMapSectionResult.status,
+      faqSection: faqSectionResult.status,
+      leadCtaSection: leadCtaSectionResult.status,
+      finalBrandSection: finalBrandSectionResult.status,
     });
   }
 
@@ -674,6 +787,11 @@ export async function getHomePageData(): Promise<HomePageData> {
       coverageMap: coverageMapSection
         ? mapCoverageMapSection(coverageMapSection)
         : homePageMock.coverageMap,
+      faq: faqSection ? mapFaqSection(faqSection) : homePageMock.faq,
+      leadCta: leadCtaSection ? mapLeadCtaSection(leadCtaSection) : homePageMock.leadCta,
+      finalBrand: finalBrandSection
+        ? mapFinalBrandSection(finalBrandSection)
+        : homePageMock.finalBrand,
     };
 
     if (process.env.NODE_ENV !== "production") {
@@ -728,7 +846,5 @@ export async function getHomePageData(): Promise<HomePageData> {
     return homePageMock;
   }
 }
-
-
 
 

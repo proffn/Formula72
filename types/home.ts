@@ -131,6 +131,39 @@ export interface WhatWeCanMakeSectionData {
   title: string;
   items: WhatWeCanMakeItemData[];
 }
+export interface FaqItemData {
+  id: string;
+  number: string;
+  question: string;
+  answer: string;
+  isActive: boolean;
+}
+
+export interface FaqCategoryData {
+  id: string;
+  title: string;
+  items: FaqItemData[];
+}
+
+export interface FaqSectionData {
+  bigNumber: string;
+  title: string;
+  description: string;
+  categories: FaqCategoryData[];
+  ctaTitle: string;
+  ctaText: string;
+  ctaButtonText: string;
+  ctaButtonLink: string;
+}
+export interface LeadCtaSectionData {
+  title: string;
+  description: string;
+  buttonText: string;
+  buttonLink: string;
+}
+export interface FinalBrandSectionData {
+  title: string;
+}
 export interface CoverageMapReviewData {
   id: string;
   name: string;
@@ -164,6 +197,12 @@ export interface HomePageData {
   whoSuits: WhoSuitsSectionData;
   whyTrustUs: WhyTrustUsSectionData;
   whatWeCanMake: WhatWeCanMakeSectionData;
+  leadCta: LeadCtaSectionData;
+  finalBrand: FinalBrandSectionData;
   coverageMap: CoverageMapSectionData;
+  faq: FaqSectionData;
 }
+
+
+
 

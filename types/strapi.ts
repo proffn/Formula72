@@ -178,6 +178,45 @@ export interface StrapiWhatWeCanMakeSection {
   title?: string | null;
   items?: StrapiMakeItem[] | null;
 }
+export interface StrapiFaqItem {
+  id?: number;
+  number?: string | null;
+  question?: string | null;
+  answer?: string | null;
+  isActive?: boolean | null;
+}
+
+export interface StrapiFaqCategory {
+  id?: number;
+  title?: string | null;
+  items?: StrapiFaqItem[] | null;
+}
+
+export interface StrapiFaqSection {
+  id: number;
+  documentId?: string;
+  bigNumber?: string | null;
+  title?: string | null;
+  description?: string | null;
+  categories?: StrapiFaqCategory[] | null;
+  ctaTitle?: string | null;
+  ctaText?: string | null;
+  ctaButtonText?: string | null;
+  ctaButtonLink?: string | null;
+}
+export interface StrapiLeadCtaSection {
+  id: number;
+  documentId?: string;
+  title?: string | null;
+  description?: string | null;
+  buttonText?: string | null;
+  buttonLink?: string | null;
+}
+export interface StrapiFinalBrandSection {
+  id: number;
+  documentId?: string;
+  title?: string | null;
+}
 export interface StrapiCoverageMapReview {
   id?: number;
   name?: string | null;
@@ -199,4 +238,7 @@ export interface StrapiCoverageMapSection {
   mapImage?: StrapiMedia | null;
   reviews?: StrapiCoverageMapReview[] | null;
 }
+
+
+
 
