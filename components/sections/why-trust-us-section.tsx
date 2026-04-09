@@ -14,7 +14,7 @@ export function WhyTrustUsSection({ section }: WhyTrustUsSectionProps) {
     >
       <div className="mx-auto max-w-[1100px]">
         <div className="max-w-[860px]">
-          <h2 className="text-[clamp(1.62rem,3.2vw,3.36rem)] font-extrabold uppercase leading-[0.94] tracking-[-0.04em]">
+          <h2 className="text-[clamp(2rem,3.2vw,3.36rem)] font-extrabold uppercase leading-[0.94] tracking-[-0.04em]">
             {section.title}
           </h2>
         </div>
@@ -70,3 +70,4 @@ export function WhyTrustUsSection({ section }: WhyTrustUsSectionProps) {
     </section>
   );
 }
+

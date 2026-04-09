@@ -1,10 +1,11 @@
-export interface NavItem {
+﻿export interface NavItem {
   label: string;
   href: string;
 }
 
 export interface SiteHeaderContent {
   logoImage: string;
+  burgerMenuLogo?: string;
   phone: string;
   workSchedule: string;
 }
@@ -202,6 +203,19 @@ export interface FooterData {
   socialLinks: FooterSocialLinkData[];
 }
 
+export interface FloatingContactData {
+  enabled: boolean;
+  buttonLabel?: string;
+  telegramLabel: string;
+  telegramUrl: string;
+  maxLabel: string;
+  maxUrl: string;
+  vkLabel: string;
+  vkUrl: string;
+  phoneLabel: string;
+  phoneUrl: string;
+  showScrollTop: boolean;
+}
 export interface CoverageMapReviewData {
   id: string;
   name: string;
@@ -238,8 +252,11 @@ export interface HomePageData {
   leadCta: LeadCtaSectionData;
   finalBrand: FinalBrandSectionData;
   footer: FooterData;
+  floatingContact: FloatingContactData;
   coverageMap: CoverageMapSectionData;
   faq: FaqSectionData;
 }
+
+
 
 

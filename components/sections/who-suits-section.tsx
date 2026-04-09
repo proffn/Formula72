@@ -12,7 +12,7 @@ export function WhoSuitsSection({ section }: WhoSuitsSectionProps) {
     <section id="who-suits" className="bg-[#F7F2EE] px-5 py-11 text-[#63504A] sm:px-8 sm:py-13 lg:px-10 lg:py-16">
       <div className="mx-auto max-w-[1100px]">
         <div className="max-w-[860px]">
-          <h2 className="text-[clamp(1.62rem,3.2vw,3.36rem)] font-extrabold uppercase leading-[0.94] tracking-[-0.04em]">
+          <h2 className="text-[clamp(2rem,3.2vw,3.36rem)] font-extrabold uppercase leading-[0.94] tracking-[-0.04em]">
             {section.title}
           </h2>
         </div>
@@ -21,7 +21,7 @@ export function WhoSuitsSection({ section }: WhoSuitsSectionProps) {
           {section.items.map((item, index) => (
             <article
               key={`${item.id}-${index}`}
-              className="flex min-h-[16.8rem] flex-col rounded-[22px] border border-[rgba(99,80,74,0.08)] bg-[rgba(255,255,255,0.74)] p-4 shadow-[0_16px_40px_rgba(99,80,74,0.12)] backdrop-blur-[2px] sm:min-h-[17.6rem] sm:p-5"
+              className="group flex min-h-[16.8rem] flex-col rounded-[22px] border border-[rgba(99,80,74,0.08)] bg-[rgba(255,255,255,0.74)] p-4 shadow-[0_16px_40px_rgba(99,80,74,0.12)] backdrop-blur-[2px] transition duration-300 sm:min-h-[17.6rem] sm:p-5"
             >
               <div className="flex min-h-[5.8rem] items-end justify-center sm:min-h-[6rem]">
                 <div className="relative h-[5.4rem] w-full max-w-[7.8rem] sm:h-[5.8rem] sm:max-w-[8.2rem]">
@@ -31,7 +31,7 @@ export function WhoSuitsSection({ section }: WhoSuitsSectionProps) {
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     unoptimized={isRemoteAssetUrl(item.image)}
-                    className="object-contain object-center"
+                    className="object-contain object-center transition duration-300 group-hover:translate-y-[-2px]"
                   />
                 </div>
               </div>
@@ -60,3 +60,5 @@ export function WhoSuitsSection({ section }: WhoSuitsSectionProps) {
     </section>
   );
 }
+
+

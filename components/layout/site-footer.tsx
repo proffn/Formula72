@@ -79,7 +79,7 @@ function SocialIcon({ social }: { social: FooterSocialLinkData }) {
 }
 
 export function SiteFooter({ section }: SiteFooterProps) {
-  const socials = section.socialLinks.filter((link) => link.enabled && link.href.trim());
+  const socials = section.socialLinks.filter((link) => link.enabled);
 
   return (
     <footer className="bg-[#63504A] px-4 py-6 font-manrope text-[#F7F2EE] sm:px-6 sm:py-8 lg:px-8 lg:py-9">
@@ -136,16 +136,32 @@ export function SiteFooter({ section }: SiteFooterProps) {
             </form>
             {socials.length > 0 ? (
               <div className="flex items-center gap-3 pt-0.5 text-[#F7F2EE]">
-                {socials.map((social) => (
-                  <a
-                    key={`${social.platform}-${social.href}`}
-                    href={social.href}
-                    aria-label={getPlatformLabel(social.platform)}
-                    className="group inline-flex h-[32px] w-[32px] items-center justify-center text-[#F7F2EE] transition hover:text-white sm:h-[34px] sm:w-[34px]"
-                  >
-                    <SocialIcon social={social} />
-                  </a>
-                ))}
+                {socials.map((social) => {
+                  const content = <SocialIcon social={social} />;
+
+                  if (social.href.trim()) {
+                    return (
+                      <a
+                        key={`${social.platform}-${social.href}`}
+                        href={social.href}
+                        aria-label={getPlatformLabel(social.platform)}
+                        className="group inline-flex h-[32px] w-[32px] items-center justify-center text-[#F7F2EE] transition hover:text-white sm:h-[34px] sm:w-[34px]"
+                      >
+                        {content}
+                      </a>
+                    );
+                  }
+
+                  return (
+                    <span
+                      key={`${social.platform}-disabled`}
+                      aria-label={getPlatformLabel(social.platform)}
+                      className="group inline-flex h-[32px] w-[32px] items-center justify-center text-[#F7F2EE]/80 sm:h-[34px] sm:w-[34px]"
+                    >
+                      {content}
+                    </span>
+                  );
+                })}
               </div>
             ) : null}
           </div>
@@ -154,5 +170,8 @@ export function SiteFooter({ section }: SiteFooterProps) {
     </footer>
   );
 }
+
+
+
 
 

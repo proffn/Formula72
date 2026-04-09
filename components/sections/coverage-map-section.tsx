@@ -24,7 +24,7 @@ export function CoverageMapSection({ section }: CoverageMapSectionProps) {
           <p className="text-[0.84rem] font-semibold uppercase tracking-[0.285em] text-[rgba(124,98,89,0.72)] sm:text-[0.9rem]">
             {section.title}
           </p>
-          <h2 className="mt-3 text-balance whitespace-pre-line text-[clamp(1.68rem,3.85vw,3.76rem)] font-extrabold uppercase leading-[0.92] tracking-[-0.05em]">
+          <h2 className="mt-3 text-balance whitespace-pre-line text-[clamp(2rem,3.85vw,3.76rem)] font-extrabold uppercase leading-[0.92] tracking-[-0.05em]">
             {desktopSubtitle}
           </h2>
           <p className="mt-3 text-balance text-[0.88rem] font-medium leading-[1.48] text-[rgba(124,98,89,0.86)] sm:text-[0.98rem]">
@@ -201,3 +201,4 @@ function StarIcon({ filled }: { filled: boolean }) {
     </svg>
   );
 }
+

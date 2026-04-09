@@ -37,12 +37,12 @@ export function FaqSection({ section }: FaqSectionProps) {
       <div className="mx-auto w-full max-w-[1100px]">
         <div className="border-b border-[#E6D9CF] pb-5 sm:pb-6 lg:pb-6">
           <div className="flex flex-col gap-3 sm:gap-3 lg:flex-row lg:items-center lg:gap-4">
-            <div className="faq-heading-number flex-none self-start font-manrope text-[128px] font-medium leading-[0.78] tracking-[-0.08em] text-[#8C6246] sm:text-[150px] lg:w-[164px] lg:self-center lg:text-[172px]">
+            <div className="faq-heading-number flex-none self-start font-manrope text-[128px] font-medium leading-[0.78] tracking-[-0.08em] text-[#63504A] sm:text-[150px] lg:w-[164px] lg:self-center lg:text-[172px]">
               {section.bigNumber}
             </div>
 
             <div className="faq-heading-copy min-w-0 flex-1 lg:max-w-[688px]">
-              <h2 className="font-manrope text-[34px] font-semibold leading-[0.88] tracking-[-0.05em] sm:text-[42px] lg:text-[45px]">
+              <h2 className="font-manrope text-[32px] font-semibold leading-[0.88] tracking-[-0.05em] sm:text-[42px] lg:text-[45px]">
                 {section.title}
               </h2>
               <p className="mt-4 max-w-[656px] text-[15px] leading-[1.34] text-[#7A6862] sm:text-[15px] sm:leading-[1.36] lg:text-[17px] lg:leading-[1.3]">
@@ -85,7 +85,7 @@ export function FaqSection({ section }: FaqSectionProps) {
 
               <Link
                 href={section.ctaButtonLink}
-                className="inline-flex items-center justify-center rounded-[9px] bg-[#8C6246] px-4 py-2.5 text-[13px] font-medium text-[#F7F2EE] transition hover:bg-[#74513A]"
+                className="inline-flex items-center justify-center rounded-[9px] bg-[#63504A] px-4 py-2.5 text-[13px] font-medium text-[#F7F2EE] transition hover:bg-[#4F403B]"
               >
                 {section.ctaButtonText}
               </Link>
@@ -161,3 +161,6 @@ function FaqCategoryCard({ category, openId, onToggle }: FaqCategoryCardProps) {
     </div>
   );
 }
+
+
+

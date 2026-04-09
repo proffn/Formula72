@@ -5,6 +5,7 @@ import type {
   BannerTextPosition,
   CoverageMapReviewData,
   CoverageMapSectionData,
+  FloatingContactData,
   FooterData,
   FooterLinkData,
   FooterSocialLinkData,
@@ -35,6 +36,7 @@ import type {
   StrapiCollectionResponse,
   StrapiCoverageMapReview,
   StrapiCoverageMapSection,
+  StrapiFloatingContactSection,
   StrapiFooterLink,
   StrapiFooterSection,
   StrapiFooterSocialLink,
@@ -177,6 +179,7 @@ function mapSiteHeader(siteHeader: StrapiSiteHeader): {
   return {
     siteHeader: {
       logoImage: resolveMediaUrl(siteHeader.logoImage) ?? homePageMock.siteHeader.logoImage,
+      burgerMenuLogo: resolveMediaUrl(siteHeader.burgerMenuLogo) ?? homePageMock.siteHeader.burgerMenuLogo,
       phone: siteHeader.phone?.trim() || homePageMock.siteHeader.phone,
       workSchedule: siteHeader.workSchedule?.trim() || homePageMock.siteHeader.workSchedule,
     },
@@ -446,6 +449,21 @@ function mapFinalBrandSection(section: StrapiFinalBrandSection): FinalBrandSecti
     title: section.title?.trim() || homePageMock.finalBrand.title,
   };
 }
+function mapFloatingContactSection(section: StrapiFloatingContactSection): FloatingContactData {
+  return {
+    enabled: section.enabled ?? homePageMock.floatingContact.enabled,
+    buttonLabel: section.buttonLabel?.trim() || homePageMock.floatingContact.buttonLabel,
+    telegramLabel: section.telegramLabel?.trim() || homePageMock.floatingContact.telegramLabel,
+    telegramUrl: section.telegramUrl?.trim() || homePageMock.floatingContact.telegramUrl,
+    maxLabel: section.maxLabel?.trim() || homePageMock.floatingContact.maxLabel,
+    maxUrl: section.maxUrl?.trim() || homePageMock.floatingContact.maxUrl,
+    vkLabel: section.vkLabel?.trim() || homePageMock.floatingContact.vkLabel,
+    vkUrl: section.vkUrl?.trim() || homePageMock.floatingContact.vkUrl,
+    phoneLabel: section.phoneLabel?.trim() || homePageMock.floatingContact.phoneLabel,
+    phoneUrl: section.phoneUrl?.trim() || homePageMock.floatingContact.phoneUrl,
+    showScrollTop: section.showScrollTop ?? homePageMock.floatingContact.showScrollTop,
+  };
+}
 function clampPosition(value: number | null | undefined, fallback: number) {
   if (typeof value !== "number" || Number.isNaN(value)) {
     return fallback;
@@ -567,7 +585,6 @@ export async function getSiteHeader() {
 
   return normalizeSingle(response);
 }
-
 export async function getBanners() {
   const response = await strapiFetch<StrapiCollectionResponse<StrapiBanner>>("/api/banners", {
     params: {
@@ -650,7 +667,7 @@ export async function getWhoSuitsSection() {
     "/api/who-suits-section",
     {
       params: {
-        "populate[items][populate]": "image",
+        populate: "*",
       },
     },
   );
@@ -663,8 +680,7 @@ export async function getWhyTrustUsSection() {
     "/api/why-trust-us-section",
     {
       params: {
-        "populate[points]": "*",
-        "populate[galleryItems][populate]": "*",
+        populate: "*",
       },
     },
   );
@@ -678,7 +694,7 @@ export async function getWhatWeCanMakeSection() {
     "/api/what-we-can-make-section",
     {
       params: {
-        "populate[items][populate]": "*",
+        populate: "*",
       },
     },
   );
@@ -686,9 +702,9 @@ export async function getWhatWeCanMakeSection() {
   return normalizeSingle(response);
 }
 export async function getFaqSection() {
-  const response = await strapiFetch<StrapiSingleResponse<StrapiFaqSection>>('/api/faq-section', {
+  const response = await strapiFetch<StrapiSingleResponse<StrapiFaqSection>>("/api/faq-section", {
     params: {
-      'populate[categories][populate][items]': '*',
+      populate: "*",
     },
   });
 
@@ -699,7 +715,6 @@ export async function getLeadCtaSection() {
     "/api/lead-cta-section",
     {
       params: {
-        populate: "*",
       },
     },
   );
@@ -711,7 +726,6 @@ export async function getFinalBrandSection() {
     "/api/final-brand-section",
     {
       params: {
-        populate: "*",
       },
     },
   );
@@ -726,6 +740,17 @@ export async function getFooterSection() {
         "populate[companyLinks]": "*",
         "populate[documentLinks]": "*",
         "populate[socialLinks][populate]": "*",
+      },
+    },
+  );
+
+  return normalizeSingle(response);
+}
+export async function getFloatingContactSection() {
+  const response = await strapiFetch<StrapiSingleResponse<StrapiFloatingContactSection>>(
+    "/api/floating-contact-section",
+    {
+      params: {
       },
     },
   );
@@ -763,6 +788,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     leadCtaSectionResult,
     finalBrandSectionResult,
     footerSectionResult,
+    floatingContactSectionResult,
   ] = await Promise.allSettled([
     getSiteHeader(),
     getHomePage(),
@@ -780,6 +806,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     getLeadCtaSection(),
     getFinalBrandSection(),
     getFooterSection(),
+    getFloatingContactSection(),
   ]);
 
   const siteHeader = siteHeaderResult.status === "fulfilled" ? siteHeaderResult.value : null;
@@ -807,6 +834,8 @@ export async function getHomePageData(): Promise<HomePageData> {
   const finalBrandSection =
     finalBrandSectionResult.status === "fulfilled" ? finalBrandSectionResult.value : null;
   const footerSection = footerSectionResult.status === "fulfilled" ? footerSectionResult.value : null;
+  const floatingContactSection =
+    floatingContactSectionResult.status === "fulfilled" ? floatingContactSectionResult.value : null;
   const headerData = siteHeader
     ? mapSiteHeader(siteHeader)
     : {
@@ -830,7 +859,8 @@ export async function getHomePageData(): Promise<HomePageData> {
     faqSectionResult.status === "rejected" ||
     leadCtaSectionResult.status === "rejected" ||
     finalBrandSectionResult.status === "rejected" ||
-    footerSectionResult.status === "rejected"
+    footerSectionResult.status === "rejected" ||
+    floatingContactSectionResult.status === "rejected"
   ) {
     console.warn("Strapi data partially unavailable, using mock only for failed sections.", {
       siteHeader: siteHeaderResult.status,
@@ -849,6 +879,7 @@ export async function getHomePageData(): Promise<HomePageData> {
       leadCtaSection: leadCtaSectionResult.status,
       finalBrandSection: finalBrandSectionResult.status,
       footerSection: footerSectionResult.status,
+      floatingContactSection: floatingContactSectionResult.status,
     });
   }
 
@@ -877,6 +908,9 @@ export async function getHomePageData(): Promise<HomePageData> {
         ? mapFinalBrandSection(finalBrandSection)
         : homePageMock.finalBrand,
       footer: footerSection ? mapFooterSection(footerSection) : homePageMock.footer,
+      floatingContact: floatingContactSection
+        ? mapFloatingContactSection(floatingContactSection)
+        : homePageMock.floatingContact,
     };
 
     if (process.env.NODE_ENV !== "production") {
@@ -931,6 +965,28 @@ export async function getHomePageData(): Promise<HomePageData> {
     return homePageMock;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

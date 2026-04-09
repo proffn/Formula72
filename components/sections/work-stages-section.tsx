@@ -10,11 +10,11 @@ export function WorkStagesSection({ section }: WorkStagesSectionProps) {
   return (
     <section
       id="work-stages"
-      className="bg-[#63504A] px-5 py-11 text-[#F7F2EE] sm:px-8 sm:py-13 lg:min-h-[100svh] lg:px-10 lg:py-13"
+      className="relative z-[1] bg-[#63504A] px-5 py-11 text-[#F7F2EE] sm:px-8 sm:py-13 lg:min-h-[100svh] lg:px-10 lg:py-13"
     >
       <div className="mx-auto flex max-w-[1100px] flex-col lg:min-h-[calc(100svh-6.5rem)] lg:justify-center">
         <div className="max-w-[820px]">
-          <h2 className="text-[clamp(1.62rem,3.2vw,3.36rem)] font-extrabold uppercase leading-[0.94] tracking-[-0.04em] text-[#F7F2EE]">
+          <h2 className="text-[clamp(2rem,3.2vw,3.36rem)] font-extrabold uppercase leading-[0.94] tracking-[-0.04em] text-[#F7F2EE]">
             {section.title}
           </h2>
         </div>
@@ -29,7 +29,7 @@ export function WorkStagesSection({ section }: WorkStagesSectionProps) {
                 <div className="relative h-[5.6rem] w-full max-w-[8rem] sm:h-[6rem] sm:max-w-[8.4rem]">
                   <Image
                     src={stage.image}
-                    alt={`Р­С‚Р°Рї ${index + 1}`}
+                    alt={`Этап ${index + 1}`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     unoptimized={isRemoteAssetUrl(stage.image)}
@@ -50,3 +50,5 @@ export function WorkStagesSection({ section }: WorkStagesSectionProps) {
     </section>
   );
 }
+
+

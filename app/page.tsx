@@ -1,4 +1,5 @@
-﻿import { SiteFooter } from "@/components/layout/site-footer";
+﻿import { FloatingActionButtons } from "@/components/layout/floating-action-buttons";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { BannerSlider } from "@/components/sections/banner-slider";
 import { CoverageMapSection } from "@/components/sections/coverage-map-section";
 import { FaqSection } from "@/components/sections/faq-section";
@@ -39,6 +40,9 @@ export default async function HomePage() {
         <FinalBrandSection section={data.finalBrand} />
       </main>
       <SiteFooter section={data.footer} />
+      <FloatingActionButtons section={data.floatingContact} />
     </>
   );
 }
+
+

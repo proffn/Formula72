@@ -16,12 +16,12 @@ export function WhatWeCanMakeSection({ section }: WhatWeCanMakeSectionProps) {
     >
       <div className="mx-auto max-w-[1100px]">
         <div className="max-w-[840px]">
-          <h2 className="text-[clamp(1.62rem,3.2vw,3.4rem)] font-extrabold leading-[0.94] tracking-[-0.04em]">
+          <h2 className="text-[clamp(2rem,3.2vw,3.4rem)] font-extrabold leading-[0.94] tracking-[-0.04em]">
             {section.title}
           </h2>
         </div>
 
-        <div className="mt-6.5 grid gap-3 sm:mt-7 sm:grid-cols-2 lg:grid-cols-4 lg:gap-3.5">
+        <div className="mt-8 grid gap-3 sm:mt-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-3.5">
           {activeItems.map((item, index) => (
             <WhatWeCanMakeCard key={`${item.id}-${index}`} item={item} />
           ))}
@@ -84,3 +84,5 @@ function WhatWeCanMakeCard({ item }: WhatWeCanMakeCardProps) {
     </article>
   );
 }
+
+

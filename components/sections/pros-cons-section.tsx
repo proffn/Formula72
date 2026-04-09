@@ -75,9 +75,13 @@ export function ProsConsSection({ section }: ProsConsSectionProps) {
       className="relative bg-[#F7F2EE] px-5 py-8 text-[#63504A] sm:px-8 sm:py-9 lg:min-h-[100svh] lg:px-10 lg:py-7 xl:py-8"
     >
       <div className="mx-auto flex max-w-[1100px] flex-col lg:min-h-[calc(100svh-3.5rem)] lg:justify-center">
-        <div className="max-w-[980px]">
-          <h2 className="whitespace-pre-line text-[clamp(1.66rem,2.85vw,3.22rem)] font-extrabold leading-[0.94] tracking-[-0.04em]">
-            {formatSectionTitle(section.sectionTitle)}
+        <div className="max-w-[980px] pb-4 sm:pb-0">
+          <h2 className="text-[clamp(2rem,2.85vw,3.22rem)] font-extrabold leading-[0.94] tracking-[-0.04em] sm:whitespace-pre-line">
+            <span className="whitespace-pre-line sm:hidden">{`Плюсы и минусы
+готовых рецептур
+и создание своего
+уникального продукта`}</span>
+            <span className="hidden sm:inline">{formatSectionTitle(section.sectionTitle)}</span>
           </h2>
         </div>
 
@@ -166,7 +170,7 @@ function SectionList({ title, items, marker, accent }: SectionListProps) {
             >
               {marker}
             </span>
-            <span className="text-pretty text-[0.82rem] font-medium leading-[1.36] text-[#63504A] sm:text-[0.86rem] lg:text-[0.88rem]">
+            <span className="text-[0.82rem] font-medium leading-[1.36] text-[#63504A] sm:text-pretty sm:text-[0.86rem] lg:text-[0.88rem]">
               {item}
             </span>
           </li>
@@ -175,4 +179,12 @@ function SectionList({ title, items, marker, accent }: SectionListProps) {
     </div>
   );
 }
+
+
+
+
+
+
+
+
 

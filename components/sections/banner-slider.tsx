@@ -102,7 +102,9 @@ export function BannerSlider({ banners }: BannerSliderProps) {
                       >
                         <h3
                           className={`uppercase tracking-[-0.03em] ${layout.title} ${
-                            isFirstBanner ? "scale-[0.9091] origin-top-left" : ""
+                            isFirstBanner
+                              ? "scale-[0.9091] origin-top-left"
+                              : ""
                           }`}
                         >
                           {banner.title}

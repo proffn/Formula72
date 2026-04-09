@@ -1,4 +1,4 @@
-export interface StrapiMediaFormat {
+﻿export interface StrapiMediaFormat {
   url: string;
   width?: number;
   height?: number;
@@ -33,10 +33,29 @@ export interface StrapiHomePage {
   heroBackgroundImage?: StrapiMedia | null;
 }
 
+export interface StrapiMobileMenuNavigationItem {
+  id?: number;
+  label?: string | null;
+  href?: string | null;
+  enabled?: boolean | null;
+  order?: number | null;
+  badge?: string | null;
+  openInNewTab?: boolean | null;
+}
+
+export interface StrapiMobileMenuSocialItem {
+  id?: number;
+  label?: string | null;
+  href?: string | null;
+  enabled?: boolean | null;
+  icon?: StrapiMedia | null;
+  hoverIcon?: StrapiMedia | null;
+}
 export interface StrapiSiteHeader {
   id: number;
   documentId?: string;
   logoImage?: StrapiMedia | null;
+  burgerMenuLogo?: StrapiMedia | null;
   navAboutLabel?: string | null;
   navProductionLabel?: string | null;
   navWholesaleLabel?: string | null;
@@ -265,6 +284,21 @@ export interface StrapiCoverageMapReview {
   isActive?: boolean | null;
 }
 
+export interface StrapiFloatingContactSection {
+  id: number;
+  documentId?: string;
+  enabled?: boolean | null;
+  buttonLabel?: string | null;
+  telegramLabel?: string | null;
+  telegramUrl?: string | null;
+  maxLabel?: string | null;
+  maxUrl?: string | null;
+  vkLabel?: string | null;
+  vkUrl?: string | null;
+  phoneLabel?: string | null;
+  phoneUrl?: string | null;
+  showScrollTop?: boolean | null;
+}
 export interface StrapiCoverageMapSection {
   id: number;
   documentId?: string;
@@ -274,9 +308,6 @@ export interface StrapiCoverageMapSection {
   mapImage?: StrapiMedia | null;
   reviews?: StrapiCoverageMapReview[] | null;
 }
-
-
-
 
 
 
