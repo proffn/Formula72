@@ -1,85 +1,39 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import type { FloatingContactData } from "@/types/home";
+import type { FloatingContactData, FloatingContactItemData } from "@/types/home";
 
 type FloatingActionButtonsProps = {
   section: FloatingContactData;
 };
 
-type FloatingItem = {
-  id: string;
-  label: string;
-  href: string;
-  kind: "telegram" | "person" | "vk" | "phone";
-};
-
 export function FloatingActionButtons({ section }: FloatingActionButtonsProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [hideAtPageEnd, setHideAtPageEnd] = useState(false);
+  const [hideManagerButton, setHideManagerButton] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
 
-  const items = useMemo<FloatingItem[]>(() => {
-    const next: FloatingItem[] = [];
+  const items = useMemo(
+    () =>
+      (section.items ?? [])
+        .filter((item) => item.enabled)
+        .sort((left, right) => {
+          const leftOrder = left.order ?? Number.MAX_SAFE_INTEGER;
+          const rightOrder = right.order ?? Number.MAX_SAFE_INTEGER;
 
-    if (section.telegramUrl?.trim()) {
-      next.push({
-        id: "telegram",
-        label: section.telegramLabel,
-        href: section.telegramUrl,
-        kind: "telegram",
-      });
-    }
+          if (leftOrder !== rightOrder) {
+            return leftOrder - rightOrder;
+          }
 
-    if (section.maxUrl?.trim()) {
-      next.push({
-        id: "max",
-        label: section.maxLabel,
-        href: section.maxUrl,
-        kind: "person",
-      });
-    }
-
-    if (section.vkUrl?.trim()) {
-      next.push({
-        id: "vk",
-        label: section.vkLabel,
-        href: section.vkUrl,
-        kind: "vk",
-      });
-    }
-
-    if (section.phoneUrl?.trim()) {
-      next.push({
-        id: "phone",
-        label: section.phoneLabel,
-        href: section.phoneUrl,
-        kind: "phone",
-      });
-    }
-
-    return next;
-  }, [
-    section.maxLabel,
-    section.maxUrl,
-    section.phoneLabel,
-    section.phoneUrl,
-    section.telegramLabel,
-    section.telegramUrl,
-    section.vkLabel,
-    section.vkUrl,
-  ]);
+          return left.label.localeCompare(right.label, "ru");
+        }),
+    [section.items],
+  );
 
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 320);
-
-      const viewportBottom = window.scrollY + window.innerHeight;
-      const pageHeight = document.documentElement.scrollHeight;
-      const isMobile = window.innerWidth < 640;
-      setHideAtPageEnd(isMobile && pageHeight - viewportBottom < 140);
     };
 
     handleScroll();
@@ -91,6 +45,40 @@ export function FloatingActionButtons({ section }: FloatingActionButtonsProps) {
       window.removeEventListener("resize", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    const footerSubmitArea = document.querySelector<HTMLElement>("[data-footer-submit-area]");
+
+    if (!footerSubmitArea) {
+      setHideManagerButton(false);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setHideManagerButton(entry.isIntersecting);
+      },
+      {
+        root: null,
+        // Shrink the viewport from the bottom so the manager button hides
+        // only when the footer form reaches the fixed-button zone.
+        rootMargin: "0px 0px -112px 0px",
+        threshold: 0,
+      },
+    );
+
+    observer.observe(footerSubmitArea);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (hideManagerButton) {
+      setIsOpen(false);
+    }
+  }, [hideManagerButton]);
 
   useEffect(() => {
     const handlePointerDown = (event: MouseEvent | TouchEvent) => {
@@ -123,7 +111,7 @@ export function FloatingActionButtons({ section }: FloatingActionButtonsProps) {
   const shouldShowManagerButton = section.enabled && items.length > 0;
   const shouldShowTopButton = section.showScrollTop && showScrollTop;
 
-  if ((!shouldShowManagerButton && !shouldShowTopButton) || hideAtPageEnd) {
+  if (!shouldShowManagerButton && !shouldShowTopButton) {
     return null;
   }
 
@@ -133,7 +121,13 @@ export function FloatingActionButtons({ section }: FloatingActionButtonsProps) {
       className="pointer-events-none fixed right-4 bottom-4 z-30 flex flex-col items-end gap-3 sm:right-5 sm:bottom-5 lg:right-6 lg:bottom-6"
     >
       {shouldShowManagerButton ? (
-        <div className="pointer-events-auto flex flex-col items-end gap-3">
+        <div
+          className={`flex flex-col items-end gap-3 transition duration-200 ease-out ${
+            hideManagerButton
+              ? "pointer-events-none translate-y-2 opacity-0"
+              : "pointer-events-auto translate-y-0 opacity-100"
+          }`}
+        >
           <div
             className={`w-[min(18rem,calc(100vw-2rem))] origin-bottom-right rounded-[22px] border border-[rgba(99,80,74,0.12)] bg-[rgba(247,242,238,0.96)] p-3.5 shadow-[0_18px_42px_rgba(69,53,47,0.18)] backdrop-blur-sm transition duration-200 sm:w-[17.5rem] ${
               isOpen
@@ -148,28 +142,13 @@ export function FloatingActionButtons({ section }: FloatingActionButtonsProps) {
             ) : null}
 
             <div className="flex flex-col gap-2">
-              {items.map((item) => (
-                <a
-                  key={item.id}
-                  href={item.href}
-                  target={item.href.startsWith("http") ? "_blank" : undefined}
-                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                  className="group flex items-center gap-3 rounded-[16px] border border-[rgba(99,80,74,0.1)] bg-[#F7F2EE] px-3.5 py-3 text-[14px] font-medium leading-[1.2] text-[#63504A] transition hover:border-[rgba(99,80,74,0.18)] hover:bg-[#F2E9E2]"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <span className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-[#63504A] text-[#F7F2EE] shadow-[0_8px_18px_rgba(69,53,47,0.22)] transition group-hover:bg-[#4F403B] group-hover:shadow-[0_10px_22px_rgba(69,53,47,0.26)]">
-                    {item.kind === "telegram" ? (
-                      <TelegramGlyph />
-                    ) : item.kind === "person" ? (
-                      <PersonGlyph />
-                    ) : item.kind === "vk" ? (
-                      <VkGlyph />
-                    ) : (
-                      <PhoneGlyph />
-                    )}
-                  </span>
-                  <span className="min-w-0 flex-1">{item.label}</span>
-                </a>
+              {items.map((item, index) => (
+                <FloatingContactRow
+                  key={`${item.label}-${item.order ?? index}`}
+                  item={item}
+                  fallbackIndex={index}
+                  onPress={() => setIsOpen(false)}
+                />
               ))}
             </div>
           </div>
@@ -179,7 +158,7 @@ export function FloatingActionButtons({ section }: FloatingActionButtonsProps) {
             onClick={() => setIsOpen((current) => !current)}
             aria-label={section.buttonLabel || "Связь с менеджером"}
             aria-expanded={isOpen}
-            className="flex h-14 w-14 items-center justify-center rounded-full border border-[rgba(247,242,238,0.12)] bg-[#63504A] text-[#F7F2EE] shadow-[0_20px_38px_rgba(69,53,47,0.28)] transition hover:bg-[#4F403B] hover:shadow-[0_22px_42px_rgba(69,53,47,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F7F2EE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#63504A] sm:h-15 sm:w-15"
+            className="flex h-14 w-14 items-center justify-center rounded-full border border-[rgba(247,242,238,0.12)] bg-[#63504A] text-[#F7F2EE] shadow-[0_20px_38px_rgba(69,53,47,0.28)] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.05] hover:bg-[#4F403B] hover:shadow-[0_24px_46px_rgba(69,53,47,0.34)] active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F7F2EE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#63504A] sm:h-15 sm:w-15"
           >
             <MessageGlyph />
           </button>
@@ -191,12 +170,87 @@ export function FloatingActionButtons({ section }: FloatingActionButtonsProps) {
           type="button"
           onClick={handleScrollTop}
           aria-label="Наверх"
-          className="pointer-events-auto flex h-14 w-14 items-center justify-center rounded-full border border-[rgba(99,80,74,0.18)] bg-[rgba(247,242,238,0.96)] text-[#63504A] shadow-[0_18px_34px_rgba(69,53,47,0.2)] transition duration-200 hover:-translate-y-[1px] hover:border-[rgba(99,80,74,0.26)] hover:bg-[#F7F2EE] hover:shadow-[0_20px_38px_rgba(69,53,47,0.24)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#63504A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F2EE] sm:h-15 sm:w-15"
+          className="pointer-events-auto flex h-14 w-14 items-center justify-center rounded-full border border-[rgba(99,80,74,0.18)] bg-[rgba(247,242,238,0.96)] text-[#63504A] shadow-[0_18px_34px_rgba(69,53,47,0.2)] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.05] hover:border-[rgba(99,80,74,0.26)] hover:bg-[#F7F2EE] hover:shadow-[0_22px_42px_rgba(69,53,47,0.26)] active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#63504A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F2EE] sm:h-15 sm:w-15"
         >
           <ArrowUpGlyph />
         </button>
       ) : null}
     </div>
+  );
+}
+
+function FloatingContactRow({
+  item,
+  fallbackIndex,
+  onPress,
+}: {
+  item: FloatingContactItemData;
+  fallbackIndex: number;
+  onPress: () => void;
+}) {
+  const isClickable = Boolean(item.href?.trim());
+  const itemClassName =
+    "group flex items-center gap-3 rounded-[16px] border border-[rgba(99,80,74,0.1)] bg-[#F7F2EE] px-3.5 py-3 text-[14px] font-medium leading-[1.2] text-[#63504A] shadow-[0_8px_20px_rgba(69,53,47,0.06)] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.02] hover:border-[rgba(99,80,74,0.18)] hover:bg-[#F2E9E2] hover:shadow-[0_12px_26px_rgba(69,53,47,0.1)] active:translate-y-0 active:scale-[0.99]";
+
+  const content = (
+    <>
+      <span className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-[#63504A] text-[#F7F2EE] shadow-[0_8px_18px_rgba(69,53,47,0.22)] transition group-hover:bg-[#4F403B] group-hover:shadow-[0_10px_22px_rgba(69,53,47,0.26)]">
+        {item.icon ? (
+          <FloatingContactIcon
+            icon={item.icon}
+            hoverIcon={item.hoverIcon && item.hoverIcon !== item.icon ? item.hoverIcon : undefined}
+          />
+        ) : (
+          <DefaultFloatingGlyph index={fallbackIndex} />
+        )}
+      </span>
+      <span className="min-w-0 flex-1">{item.label}</span>
+    </>
+  );
+
+  if (!isClickable) {
+    return <span className={itemClassName}>{content}</span>;
+  }
+
+  return (
+    <a
+      href={item.href}
+      target={item.href.startsWith("http") ? "_blank" : undefined}
+      rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+      className={itemClassName}
+      onClick={onPress}
+    >
+      {content}
+    </a>
+  );
+}
+
+function FloatingContactIcon({
+  icon,
+  hoverIcon,
+}: {
+  icon: string;
+  hoverIcon?: string;
+}) {
+  return (
+    <span className="relative block h-[18px] w-[18px]">
+      <img
+        src={icon}
+        alt=""
+        aria-hidden="true"
+        className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-200 ${
+          hoverIcon ? "opacity-100 group-hover:opacity-0" : "opacity-100"
+        }`}
+      />
+      {hoverIcon ? (
+        <img
+          src={hoverIcon}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-contain opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+        />
+      ) : null}
+    </span>
   );
 }
 
@@ -231,6 +285,24 @@ function MessageGlyph() {
       <path d="M8.5 13.35H13.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
     </svg>
   );
+}
+
+function DefaultFloatingGlyph({ index }: { index: number }) {
+  const kind = index % 4;
+
+  if (kind === 0) {
+    return <TelegramGlyph />;
+  }
+
+  if (kind === 1) {
+    return <PersonGlyph />;
+  }
+
+  if (kind === 2) {
+    return <VkGlyph />;
+  }
+
+  return <PhoneGlyph />;
 }
 
 function TelegramGlyph() {
@@ -293,9 +365,3 @@ function PhoneGlyph() {
     </svg>
   );
 }
-
-
-
-
-
-

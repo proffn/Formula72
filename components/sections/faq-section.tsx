@@ -85,7 +85,7 @@ export function FaqSection({ section }: FaqSectionProps) {
 
               <Link
                 href={section.ctaButtonLink}
-                className="inline-flex items-center justify-center rounded-[9px] bg-[#63504A] px-4 py-2.5 text-[13px] font-medium text-[#F7F2EE] transition hover:bg-[#4F403B]"
+                className="inline-flex items-center justify-center rounded-[9px] bg-[#63504A] px-4 py-2.5 text-[13px] font-medium text-[#F7F2EE] shadow-[0_10px_24px_rgba(69,53,47,0.14)] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.03] hover:bg-[#4F403B] hover:shadow-[0_16px_30px_rgba(69,53,47,0.2)] active:translate-y-0 active:scale-[0.99]"
               >
                 {section.ctaButtonText}
               </Link>

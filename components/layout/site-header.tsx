@@ -55,14 +55,35 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
     <>
       <header className="absolute inset-x-0 top-0 z-40 px-4 pt-3 sm:px-6 sm:pt-4 lg:px-8 lg:pt-5">
         <div className="mx-auto w-full max-w-[1100px]">
-          <div className="grid grid-cols-[auto_1fr_auto] items-center gap-3">
-            <Link href="#hero" className="relative block h-[53px] w-[121px] lg:h-[64px] lg:w-[149px]">
+          <div className="flex items-center justify-between gap-4 lg:hidden">
+            <Link
+              href="#hero"
+              className="group relative block h-[41px] w-[105px] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.02] focus-visible:outline-none"
+            >
               <Image
                 src={desktopLogoSrc}
                 alt={logoAlt}
                 fill
                 unoptimized={isRemoteAssetUrl(desktopLogoSrc)}
-                className="object-contain object-left"
+                className="object-contain object-left transition duration-300 ease-out group-hover:brightness-[0.98]"
+                priority
+              />
+            </Link>
+
+            <div className="h-14 w-14 flex-none" aria-hidden="true" />
+          </div>
+
+          <div className="hidden grid-cols-[auto_1fr_auto] items-center gap-3 lg:grid">
+            <Link
+              href="#hero"
+              className="group relative block h-[53px] w-[121px] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.02] focus-visible:outline-none lg:h-[64px] lg:w-[149px]"
+            >
+              <Image
+                src={desktopLogoSrc}
+                alt={logoAlt}
+                fill
+                unoptimized={isRemoteAssetUrl(desktopLogoSrc)}
+                className="object-contain object-left transition duration-300 ease-out group-hover:brightness-[0.98]"
                 priority
               />
             </Link>
@@ -72,19 +93,24 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-[15.5px] font-medium tracking-[-0.01em] text-[#63504A] transition duration-300 hover:text-[#4f3f3a] focus-visible:text-[#4f3f3a] focus-visible:outline-none xl:text-[18px]"
+                  className="group relative text-[15.5px] font-medium tracking-[-0.01em] text-[#63504A] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.03] hover:text-[#4f3f3a] focus-visible:text-[#4f3f3a] focus-visible:outline-none xl:text-[18px]"
                 >
                   {item.label}
+                  <span className="absolute left-0 -bottom-1.5 h-px w-full origin-left scale-x-0 bg-[#63504A]/55 transition duration-300 ease-out group-hover:scale-x-100" />
                 </Link>
               ))}
             </nav>
 
             <Link
               href="#wholesale-contract"
-              className="hidden text-right text-[#63504A] transition duration-300 hover:text-[#4f3f3a] focus-visible:text-[#4f3f3a] focus-visible:outline-none lg:block"
+              className="group hidden text-right text-[#63504A] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.02] hover:text-[#4f3f3a] focus-visible:text-[#4f3f3a] focus-visible:outline-none lg:block"
             >
-              <span className="block text-[11px] font-semibold tracking-[-0.01em] xl:text-[13px]">{content.phone}</span>
-              <span className="mt-1 block text-[10px] font-medium tracking-[-0.01em] xl:text-[11px]">{content.workSchedule}</span>
+              <span className="block text-[11px] font-semibold tracking-[-0.01em] transition duration-300 ease-out group-hover:text-[#3f312d] xl:text-[13px]">
+                {content.phone}
+              </span>
+              <span className="mt-1 block text-[10px] font-medium tracking-[-0.01em] text-[#63504A]/82 transition duration-300 ease-out group-hover:text-[#4f3f3a] xl:text-[11px]">
+                {content.workSchedule}
+              </span>
             </Link>
           </div>
         </div>
@@ -95,7 +121,20 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
         aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"}
         aria-expanded={isMenuOpen}
         onClick={() => setIsMenuOpen((current) => !current)}
-        className={`fixed right-2 top-5 z-[60] transition-all duration-300 sm:right-3 sm:top-6 lg:right-4 lg:top-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#63504A]/40 focus-visible:ring-offset-4 focus-visible:ring-offset-transparent ${
+        className={`fixed right-2 top-3 z-[60] flex transition-all duration-300 sm:right-3 sm:top-6 lg:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#63504A]/25 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${
+          !isMenuOpen ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
+        }`}
+        style={{ top: "max(0.75rem, env(safe-area-inset-top))" }}
+      >
+        <BurgerIcon />
+      </button>
+
+      <button
+        type="button"
+        aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"}
+        aria-expanded={isMenuOpen}
+        onClick={() => setIsMenuOpen((current) => !current)}
+        className={`fixed right-2 top-5 z-[60] hidden transition-all duration-300 sm:right-3 sm:top-6 lg:block lg:right-4 lg:top-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#63504A]/40 focus-visible:ring-offset-4 focus-visible:ring-offset-transparent ${
           showBurger && !isMenuOpen ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0"
         }`}
       >
@@ -146,18 +185,18 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="group border-b border-[rgba(247,242,238,0.11)] py-4.5 transition duration-300 hover:border-[rgba(247,242,238,0.18)] focus-visible:outline-none"
+                className="group border-b border-[rgba(247,242,238,0.11)] py-4.5 transition duration-300 ease-out hover:border-[rgba(247,242,238,0.18)] focus-visible:outline-none"
               >
                 <div className="flex items-baseline justify-between gap-4">
                   <div className="flex items-baseline gap-3.5">
-                    <span className="text-[11px] font-semibold tracking-[0.16em] text-[#DCCFC9]/54">
+                    <span className="text-[11px] font-semibold tracking-[0.16em] text-[#DCCFC9]/54 transition duration-300 ease-out group-hover:text-[#F7F2EE]/72">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-[29px] font-semibold leading-[0.96] tracking-[-0.05em] text-[#F7F2EE] transition duration-300 group-hover:translate-x-[3px] sm:text-[32px]">
+                    <span className="text-[29px] font-semibold leading-[0.96] tracking-[-0.05em] text-[#F7F2EE] transition duration-300 ease-out group-hover:translate-x-[3px] group-hover:scale-[1.02] sm:text-[32px]">
                       {item.label}
                     </span>
                   </div>
-                  <span className="pt-1 text-[18px] text-[#DCCFC9]/54 transition duration-300 group-hover:translate-x-[2px] group-hover:text-[#F7F2EE]">
+                  <span className="pt-1 text-[18px] text-[#DCCFC9]/54 transition duration-300 ease-out group-hover:translate-x-[2px] group-hover:scale-[1.08] group-hover:text-[#F7F2EE]">
                     →
                   </span>
                 </div>

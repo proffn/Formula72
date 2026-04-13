@@ -47,7 +47,7 @@ export function WhoSuitsSection({ section }: WhoSuitsSectionProps) {
                 {item.buttonText && item.buttonLink ? (
                   <Link
                     href={item.buttonLink}
-                    className="mt-auto inline-flex min-h-9 items-center justify-center rounded-full bg-[#63504A] px-4 py-2.5 text-center text-[0.68rem] font-bold uppercase tracking-[0.06em] text-[#F7F2EE] transition duration-300 hover:bg-[#52403a] focus-visible:bg-[#52403a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#63504A]/25"
+                    className="mt-auto inline-flex min-h-9 items-center justify-center rounded-full bg-[#63504A] px-4 py-2.5 text-center text-[0.68rem] font-bold uppercase tracking-[0.06em] text-[#F7F2EE] shadow-[0_10px_24px_rgba(69,53,47,0.14)] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.03] hover:bg-[#52403a] hover:shadow-[0_16px_30px_rgba(69,53,47,0.2)] active:translate-y-0 active:scale-[0.99] focus-visible:bg-[#52403a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#63504A]/25"
                   >
                     {item.buttonText}
                   </Link>

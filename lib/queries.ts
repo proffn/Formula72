@@ -6,6 +6,7 @@ import type {
   CoverageMapReviewData,
   CoverageMapSectionData,
   FloatingContactData,
+  FloatingContactItemData,
   FooterData,
   FooterLinkData,
   FooterSocialLinkData,
@@ -36,6 +37,7 @@ import type {
   StrapiCollectionResponse,
   StrapiCoverageMapReview,
   StrapiCoverageMapSection,
+  StrapiFloatingContactItem,
   StrapiFloatingContactSection,
   StrapiFooterLink,
   StrapiFooterSection,
@@ -169,6 +171,9 @@ function mapHero(homePage: StrapiHomePage) {
     ] as [string, string],
     brand: homePage.heroSubtitle || homePageMock.hero.brand,
     backgroundImage: resolveMediaUrl(homePage.heroBackgroundImage) ?? homePageMock.hero.backgroundImage,
+    mobileBackgroundImage:
+      resolveMediaUrl(homePage.heroMobileBackgroundImage) ??
+      homePageMock.hero.mobileBackgroundImage,
   };
 }
 
@@ -449,18 +454,50 @@ function mapFinalBrandSection(section: StrapiFinalBrandSection): FinalBrandSecti
     title: section.title?.trim() || homePageMock.finalBrand.title,
   };
 }
+
+function mapFloatingContactItem(
+  item: StrapiFloatingContactItem,
+  index: number,
+): FloatingContactItemData {
+  const fallback =
+    homePageMock.floatingContact.items[index % homePageMock.floatingContact.items.length];
+
+  return {
+    label: item.label?.trim() || fallback.label,
+    href: item.href?.trim() || fallback.href,
+    enabled: item.enabled ?? fallback.enabled,
+    order:
+      typeof item.order === "number" && Number.isFinite(item.order)
+        ? item.order
+        : fallback.order,
+    icon: resolveMediaUrl(item.icon) ?? fallback.icon,
+    hoverIcon:
+      resolveMediaUrl(item.hoverIcon) ??
+      resolveMediaUrl(item.icon) ??
+      fallback.hoverIcon ??
+      fallback.icon,
+  };
+}
+
 function mapFloatingContactSection(section: StrapiFloatingContactSection): FloatingContactData {
+  const items = (section.items ?? [])
+    .filter((item) => Boolean(item.label?.trim()))
+    .map(mapFloatingContactItem)
+    .sort((left, right) => {
+      const leftOrder = left.order ?? Number.MAX_SAFE_INTEGER;
+      const rightOrder = right.order ?? Number.MAX_SAFE_INTEGER;
+
+      if (leftOrder !== rightOrder) {
+        return leftOrder - rightOrder;
+      }
+
+      return left.label.localeCompare(right.label, "ru");
+    });
+
   return {
     enabled: section.enabled ?? homePageMock.floatingContact.enabled,
     buttonLabel: section.buttonLabel?.trim() || homePageMock.floatingContact.buttonLabel,
-    telegramLabel: section.telegramLabel?.trim() || homePageMock.floatingContact.telegramLabel,
-    telegramUrl: section.telegramUrl?.trim() || homePageMock.floatingContact.telegramUrl,
-    maxLabel: section.maxLabel?.trim() || homePageMock.floatingContact.maxLabel,
-    maxUrl: section.maxUrl?.trim() || homePageMock.floatingContact.maxUrl,
-    vkLabel: section.vkLabel?.trim() || homePageMock.floatingContact.vkLabel,
-    vkUrl: section.vkUrl?.trim() || homePageMock.floatingContact.vkUrl,
-    phoneLabel: section.phoneLabel?.trim() || homePageMock.floatingContact.phoneLabel,
-    phoneUrl: section.phoneUrl?.trim() || homePageMock.floatingContact.phoneUrl,
+    items: items.length > 0 ? items : homePageMock.floatingContact.items,
     showScrollTop: section.showScrollTop ?? homePageMock.floatingContact.showScrollTop,
   };
 }
@@ -484,7 +521,7 @@ function mapFooterSocialLink(
   fallback: FooterSocialLinkData,
 ): FooterSocialLinkData {
   return {
-    platform: link.platform?.trim() || fallback.platform,
+    label: link.label?.trim() || fallback.label,
     href: link.href?.trim() || fallback.href,
     enabled: link.enabled ?? fallback.enabled,
     icon: resolveMediaUrl(link.icon) ?? fallback.icon,
@@ -506,7 +543,7 @@ function mapFooterSection(section: StrapiFooterSection): FooterData {
     );
 
   const socialLinks = (section.socialLinks ?? [])
-    .filter((link) => Boolean(link.platform?.trim()) && (link.enabled ?? true))
+    .filter((link) => Boolean(link.label?.trim() || link.icon?.url || link.href?.trim()) && (link.enabled ?? true))
     .map((link, index) =>
       mapFooterSocialLink(link, homePageMock.footer.socialLinks[index % homePageMock.footer.socialLinks.length]),
     );
@@ -751,6 +788,7 @@ export async function getFloatingContactSection() {
     "/api/floating-contact-section",
     {
       params: {
+        "populate[items][populate]": "*",
       },
     },
   );

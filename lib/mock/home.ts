@@ -16,6 +16,7 @@ export const homePageMock: HomePageData = {
   hero: {
     lines: ["РљРћРќРўР РђРљРўРќРћР•", "РџР РћРР—Р’РћР”РЎРўР’Рћ"],
     brand: "FORMULA72",
+    mobileBackgroundImage: "/images/home/hero/mobile-hero-bg.png",
   },
   banners: [
     {
@@ -415,22 +416,40 @@ export const homePageMock: HomePageData = {
     phonePlaceholder: "Оставьте ваш телефон",
     consentText: "Оставляя заявку, вы соглашаетесь с политикой обработки персональных данных",
     socialLinks: [
-      { platform: "whatsapp", href: "#", enabled: true, icon: undefined, hoverIcon: undefined },
-      { platform: "telegram", href: "#", enabled: true, icon: undefined, hoverIcon: undefined },
-      { platform: "vk", href: "#", enabled: true, icon: undefined, hoverIcon: undefined },
+      { label: "WhatsApp", href: "#", enabled: true, icon: undefined, hoverIcon: undefined },
+      { label: "Telegram", href: "#", enabled: true, icon: undefined, hoverIcon: undefined },
+      { label: "VK", href: "#", enabled: true, icon: undefined, hoverIcon: undefined },
     ],
   },
   floatingContact: {
     enabled: true,
     buttonLabel: "Связь с менеджером",
-    telegramLabel: "Telegram",
-    telegramUrl: "https://t.me/formula72",
-    maxLabel: "MAX",
-    maxUrl: "https://t.me/formula72_manager",
-    vkLabel: "VK",
-    vkUrl: "https://vk.com/formula72",
-    phoneLabel: "+7 969 907 88 87",
-    phoneUrl: "tel:+79699078887",
+    items: [
+      {
+        label: "Telegram",
+        href: "https://t.me/formula72",
+        enabled: true,
+        order: 1,
+      },
+      {
+        label: "MAX",
+        href: "https://t.me/formula72_manager",
+        enabled: true,
+        order: 2,
+      },
+      {
+        label: "VK",
+        href: "https://vk.com/formula72",
+        enabled: true,
+        order: 3,
+      },
+      {
+        label: "+7 969 907 88 87",
+        href: "tel:+79699078887",
+        enabled: true,
+        order: 4,
+      },
+    ],
     showScrollTop: true,
   },
   coverageMap: {

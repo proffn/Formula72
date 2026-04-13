@@ -31,6 +31,7 @@ export interface StrapiHomePage {
   heroTitleLine2: string;
   heroSubtitle: string;
   heroBackgroundImage?: StrapiMedia | null;
+  heroMobileBackgroundImage?: StrapiMedia | null;
 }
 
 export interface StrapiMobileMenuNavigationItem {
@@ -244,7 +245,7 @@ export interface StrapiFooterLink {
 
 export interface StrapiFooterSocialLink {
   id?: number;
-  platform?: 'whatsapp' | 'telegram' | 'vk' | string | null;
+  label?: string | null;
   href?: string | null;
   enabled?: boolean | null;
   icon?: StrapiMedia | null;
@@ -272,6 +273,15 @@ export interface StrapiFooterSection {
   consentText?: string | null;
   socialLinks?: StrapiFooterSocialLink[] | null;
 }
+export interface StrapiFloatingContactItem {
+  id?: number;
+  label?: string | null;
+  href?: string | null;
+  enabled?: boolean | null;
+  order?: number | null;
+  icon?: StrapiMedia | null;
+  hoverIcon?: StrapiMedia | null;
+}
 export interface StrapiCoverageMapReview {
   id?: number;
   name?: string | null;
@@ -289,14 +299,7 @@ export interface StrapiFloatingContactSection {
   documentId?: string;
   enabled?: boolean | null;
   buttonLabel?: string | null;
-  telegramLabel?: string | null;
-  telegramUrl?: string | null;
-  maxLabel?: string | null;
-  maxUrl?: string | null;
-  vkLabel?: string | null;
-  vkUrl?: string | null;
-  phoneLabel?: string | null;
-  phoneUrl?: string | null;
+  items?: StrapiFloatingContactItem[] | null;
   showScrollTop?: boolean | null;
 }
 export interface StrapiCoverageMapSection {

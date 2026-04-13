@@ -63,7 +63,7 @@ function SplitSide({ side, align }: SplitSideProps) {
 
       <Link
         href={side.action.href}
-        className={`mt-3 inline-flex items-center justify-center rounded-md px-[30px] py-[10px] text-[0.9rem] font-bold uppercase leading-none tracking-[-0.01em] transition duration-300 focus-visible:outline-none focus-visible:ring-2 xl:mt-[27px] xl:px-[42px] xl:py-[14px] xl:text-[16px] ${
+        className={`mt-3 inline-flex items-center justify-center rounded-md px-[30px] py-[10px] text-[0.9rem] font-bold uppercase leading-none tracking-[-0.01em] shadow-[0_12px_26px_rgba(69,53,47,0.14)] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.03] hover:shadow-[0_18px_32px_rgba(69,53,47,0.22)] active:translate-y-0 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 xl:mt-[27px] xl:px-[42px] xl:py-[14px] xl:text-[16px] ${
           isRight
             ? "bg-[#63504A] text-white hover:bg-[#52403a] focus-visible:bg-[#52403a] focus-visible:ring-[#63504A]/30"
             : "bg-white text-[#63504A] hover:bg-[#f8f5f2] focus-visible:bg-[#f8f5f2] focus-visible:ring-white/60"

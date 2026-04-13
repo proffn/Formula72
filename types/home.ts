@@ -14,6 +14,7 @@ export interface HeroContent {
   lines: [string, string];
   brand: string;
   backgroundImage?: string;
+  mobileBackgroundImage?: string;
 }
 
 export type BannerTextPosition = "left-top" | "right-center";
@@ -173,10 +174,8 @@ export interface FooterLinkData {
   href: string;
 }
 
-export type FooterSocialPlatform = 'whatsapp' | 'telegram' | 'vk';
-
 export interface FooterSocialLinkData {
-  platform: FooterSocialPlatform | string;
+  label?: string;
   href: string;
   enabled: boolean;
   icon?: string;
@@ -203,17 +202,19 @@ export interface FooterData {
   socialLinks: FooterSocialLinkData[];
 }
 
+export interface FloatingContactItemData {
+  label: string;
+  href: string;
+  enabled: boolean;
+  order?: number;
+  icon?: string;
+  hoverIcon?: string;
+}
+
 export interface FloatingContactData {
   enabled: boolean;
   buttonLabel?: string;
-  telegramLabel: string;
-  telegramUrl: string;
-  maxLabel: string;
-  maxUrl: string;
-  vkLabel: string;
-  vkUrl: string;
-  phoneLabel: string;
-  phoneUrl: string;
+  items: FloatingContactItemData[];
   showScrollTop: boolean;
 }
 export interface CoverageMapReviewData {
