@@ -17,15 +17,32 @@ export interface HeroContent {
   mobileBackgroundImage?: string;
 }
 
-export type BannerTextPosition = "left-top" | "right-center";
+export type BannerContentAlign = "left" | "center" | "right";
+export type BannerContentVerticalAlign = "top" | "center" | "bottom";
+export type BannerTextColor = "dark" | "light";
 
-export interface BannerItem {
+export interface BannerSlideData {
   id: string;
   title: string;
-  image: string;
   subtitle?: string;
-  textPosition: BannerTextPosition;
-  textColor?: "dark" | "light";
+  description?: string;
+  image: string;
+  mobileImage?: string;
+  mobileAspectRatio?: string;
+  enabled: boolean;
+  order?: number;
+  contentAlign: BannerContentAlign;
+  contentVerticalAlign: BannerContentVerticalAlign;
+  textMaxWidth?: string;
+  buttonLabel?: string;
+  buttonHref?: string;
+  textColor?: BannerTextColor;
+}
+
+export interface BannerSectionData {
+  enabled: boolean;
+  autoplayDelay: number;
+  banners: BannerSlideData[];
 }
 
 export interface SplitBlockAction {
@@ -36,6 +53,7 @@ export interface SplitBlockAction {
 export interface SplitBlockSide {
   lines: [string, string];
   action: SplitBlockAction;
+  MobileImage?: string;
 }
 
 export interface WholesaleSectionData {
@@ -58,9 +76,16 @@ export interface ProsConsSectionData {
   rightColumn: ComparisonColumnData;
 }
 
+export interface Formula72SchemeItemData {
+  title: string;
+  description: string;
+  mobileImage: string;
+}
+
 export interface Formula72SchemeSectionData {
   title: string;
   image: string;
+  items: [Formula72SchemeItemData, Formula72SchemeItemData, Formula72SchemeItemData];
 }
 
 export interface MissionK72ItemData {
@@ -241,7 +266,7 @@ export interface HomePageData {
   siteHeader: SiteHeaderContent;
   navigation: NavItem[];
   hero: HeroContent;
-  banners: BannerItem[];
+  bannerSection: BannerSectionData;
   wholesaleContract: WholesaleSectionData;
   prosCons: ProsConsSectionData;
   missionK72: MissionK72SectionData;

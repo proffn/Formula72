@@ -25,7 +25,7 @@ export default async function HomePage() {
     <>
       <main className="page-shell">
         <HeroSection siteHeader={data.siteHeader} navigation={data.navigation} hero={data.hero} />
-        <BannerSlider banners={data.banners} />
+        <BannerSlider section={data.bannerSection} />
         <WholesaleContractSection section={data.wholesaleContract} />
         <ProsConsSection section={data.prosCons} />
         <Formula72SchemeSection section={data.formula72Scheme} />

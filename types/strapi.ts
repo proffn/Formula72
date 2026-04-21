@@ -68,12 +68,46 @@ export interface StrapiSiteHeader {
 export interface StrapiBanner {
   id: number;
   documentId?: string;
-  title: string;
+  title?: string | null;
   subtitle?: string | null;
   textPosition?: "left-top" | "right-center" | null;
   image?: StrapiMedia | null;
+  mobileImage?: StrapiMedia | null;
   order?: number | null;
   isActive?: boolean | null;
+  enabled?: boolean | null;
+  contentAlign?: "left" | "center" | "right" | null;
+  contentVerticalAlign?: "top" | "center" | "bottom" | null;
+  textMaxWidth?: string | null;
+  buttonLabel?: string | null;
+  buttonHref?: string | null;
+  textColor?: "dark" | "light" | null;
+  description?: string | null;
+}
+
+export interface StrapiBannerSlideItem {
+  id?: number;
+  title?: string | null;
+  subtitle?: string | null;
+  description?: string | null;
+  image?: StrapiMedia | null;
+  mobileImage?: StrapiMedia | null;
+  enabled?: boolean | null;
+  order?: number | null;
+  contentAlign?: "left" | "center" | "right" | null;
+  contentVerticalAlign?: "top" | "center" | "bottom" | null;
+  textMaxWidth?: string | null;
+  buttonLabel?: string | null;
+  buttonHref?: string | null;
+  textColor?: "dark" | "light" | null;
+}
+
+export interface StrapiBannerSection {
+  id: number;
+  documentId?: string;
+  enabled?: boolean | null;
+  autoplayDelay?: number | null;
+  banners?: StrapiBannerSlideItem[] | null;
 }
 
 export interface StrapiWholesaleContractSection {
@@ -82,9 +116,11 @@ export interface StrapiWholesaleContractSection {
   leftTitle: string;
   leftButtonText: string;
   leftButtonLink: string;
+  OptMobileImage?: StrapiMedia | null;
   rightTitle: string;
   rightButtonText: string;
   rightButtonLink: string;
+  ContractMobileImage?: StrapiMedia | null;
   backgroundImage?: StrapiMedia | null;
 }
 
@@ -109,11 +145,19 @@ export interface StrapiProsConsSection {
   rightDisadvantages?: StrapiTextItem[] | null;
 }
 
+export interface StrapiFormula72SchemeItem {
+  id?: number;
+  title?: string | null;
+  description?: string | null;
+  mobileImage?: StrapiMedia | null;
+}
+
 export interface StrapiFormula72SchemeSection {
   id: number;
   documentId?: string;
   title?: string | null;
   image?: StrapiMedia | null;
+  items?: StrapiFormula72SchemeItem[] | null;
 }
 
 export interface StrapiMissionK72Section {

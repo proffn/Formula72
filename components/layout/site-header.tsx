@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { BurgerIcon } from "@/components/ui/burger-icon";
 import { isRemoteAssetUrl } from "@/lib/api";
 import type { NavItem, SiteHeaderContent } from "@/types/home";
 
@@ -20,6 +19,7 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
   const mainNavigation = navigation.slice(0, 4);
   const desktopLogoSrc = content.logoImage || "/images/home/hero/logo1.png";
   const mobileLogoSrc = content.burgerMenuLogo || content.logoImage || "/images/home/hero/logo2-w.png";
+  const burgerIconSrc = "/images/home/ui-icons/burger-icon.svg";
   const logoAlt = "Formula72";
 
   useEffect(() => {
@@ -121,12 +121,19 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
         aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"}
         aria-expanded={isMenuOpen}
         onClick={() => setIsMenuOpen((current) => !current)}
-        className={`fixed right-2 top-3 z-[60] flex transition-all duration-300 sm:right-3 sm:top-6 lg:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#63504A]/25 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${
+        className={`fixed right-2 top-3 z-[60] flex h-14 w-14 items-center justify-center rounded-full border border-[rgba(247,242,238,0.12)] bg-[#63504A] text-[#F7F2EE] shadow-[0_20px_38px_rgba(69,53,47,0.28)] transition-all duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.05] hover:bg-[#4F403B] hover:shadow-[0_24px_46px_rgba(69,53,47,0.34)] active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F7F2EE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#63504A] sm:right-3 sm:top-6 sm:h-15 sm:w-15 lg:hidden ${
           !isMenuOpen ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
         }`}
         style={{ top: "max(0.75rem, env(safe-area-inset-top))" }}
       >
-        <BurgerIcon />
+        <Image
+          src={burgerIconSrc}
+          alt=""
+          width={56}
+          height={56}
+          aria-hidden="true"
+          className="h-6 w-6 object-contain"
+        />
       </button>
 
       <button
@@ -134,11 +141,18 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
         aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"}
         aria-expanded={isMenuOpen}
         onClick={() => setIsMenuOpen((current) => !current)}
-        className={`fixed right-2 top-5 z-[60] hidden transition-all duration-300 sm:right-3 sm:top-6 lg:block lg:right-4 lg:top-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#63504A]/40 focus-visible:ring-offset-4 focus-visible:ring-offset-transparent ${
+        className={`fixed right-2 top-5 z-[60] hidden h-14 w-14 items-center justify-center rounded-full border border-[rgba(247,242,238,0.12)] bg-[#63504A] text-[#F7F2EE] shadow-[0_20px_38px_rgba(69,53,47,0.28)] transition-all duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.05] hover:bg-[#4F403B] hover:shadow-[0_24px_46px_rgba(69,53,47,0.34)] active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F7F2EE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#63504A] sm:right-3 sm:top-6 sm:h-15 sm:w-15 lg:right-4 lg:top-7 lg:flex ${
           showBurger && !isMenuOpen ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0"
         }`}
       >
-        <BurgerIcon />
+        <Image
+          src={burgerIconSrc}
+          alt=""
+          width={56}
+          height={56}
+          aria-hidden="true"
+          className="h-6 w-6 object-contain"
+        />
       </button>
 
       <div

@@ -110,6 +110,7 @@ export function FloatingActionButtons({ section }: FloatingActionButtonsProps) {
 
   const shouldShowManagerButton = section.enabled && items.length > 0;
   const shouldShowTopButton = section.showScrollTop && showScrollTop;
+  const messageIconSrc = "/images/home/ui-icons/message-icon.svg";
 
   if (!shouldShowManagerButton && !shouldShowTopButton) {
     return null;
@@ -125,13 +126,13 @@ export function FloatingActionButtons({ section }: FloatingActionButtonsProps) {
           className={`flex flex-col items-end gap-3 transition duration-200 ease-out ${
             hideManagerButton
               ? "pointer-events-none translate-y-2 opacity-0"
-              : "pointer-events-auto translate-y-0 opacity-100"
+              : "pointer-events-none translate-y-0 opacity-100"
           }`}
         >
           <div
             className={`w-[min(18rem,calc(100vw-2rem))] origin-bottom-right rounded-[22px] border border-[rgba(99,80,74,0.12)] bg-[rgba(247,242,238,0.96)] p-3.5 shadow-[0_18px_42px_rgba(69,53,47,0.18)] backdrop-blur-sm transition duration-200 sm:w-[17.5rem] ${
               isOpen
-                ? "translate-y-0 scale-100 opacity-100"
+                ? "pointer-events-auto translate-y-0 scale-100 opacity-100"
                 : "pointer-events-none translate-y-2 scale-[0.98] opacity-0"
             }`}
           >
@@ -158,9 +159,14 @@ export function FloatingActionButtons({ section }: FloatingActionButtonsProps) {
             onClick={() => setIsOpen((current) => !current)}
             aria-label={section.buttonLabel || "Связь с менеджером"}
             aria-expanded={isOpen}
-            className="flex h-14 w-14 items-center justify-center rounded-full border border-[rgba(247,242,238,0.12)] bg-[#63504A] text-[#F7F2EE] shadow-[0_20px_38px_rgba(69,53,47,0.28)] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.05] hover:bg-[#4F403B] hover:shadow-[0_24px_46px_rgba(69,53,47,0.34)] active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F7F2EE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#63504A] sm:h-15 sm:w-15"
+            className="pointer-events-auto flex h-14 w-14 items-center justify-center rounded-full border border-[rgba(247,242,238,0.12)] bg-[#63504A] text-[#F7F2EE] shadow-[0_20px_38px_rgba(69,53,47,0.28)] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.05] hover:bg-[#4F403B] hover:shadow-[0_24px_46px_rgba(69,53,47,0.34)] active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F7F2EE] focus-visible:ring-offset-2 focus-visible:ring-offset-[#63504A] sm:h-15 sm:w-15"
           >
-            <MessageGlyph />
+            <img
+              src={messageIconSrc}
+              alt=""
+              aria-hidden="true"
+              className="h-6 w-6 object-contain"
+            />
           </button>
         </div>
       ) : null}
@@ -266,23 +272,6 @@ function ArrowUpGlyph() {
     >
       <path d="M12 19V5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
       <path d="M6 11L12 5L18 11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function MessageGlyph() {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-      className="drop-shadow-[0_1px_2px_rgba(247,242,238,0.18)]"
-    >
-      <path d="M6 18.5L6.9 15.4C5.67 14.22 5 12.67 5 10.9C5 7.09 8.13 4 12 4C15.87 4 19 7.09 19 10.9C19 14.71 15.87 17.8 12 17.8C10.79 17.8 9.65 17.49 8.66 16.95L6 18.5Z" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M8.5 10.75H15.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-      <path d="M8.5 13.35H13.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
     </svg>
   );
 }

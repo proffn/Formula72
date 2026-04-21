@@ -1,8 +1,8 @@
 ﻿import { getStrapiMediaUrl, strapiFetch } from "@/lib/api";
 import { homePageMock } from "@/lib/mock/home";
 import type {
-  BannerItem,
-  BannerTextPosition,
+  BannerSectionData,
+  BannerSlideData,
   CoverageMapReviewData,
   CoverageMapSectionData,
   FloatingContactData,
@@ -34,6 +34,7 @@ import type {
 } from "@/types/home";
 import type {
   StrapiBanner,
+  StrapiBannerSection,
   StrapiCollectionResponse,
   StrapiCoverageMapReview,
   StrapiCoverageMapSection,
@@ -46,6 +47,7 @@ import type {
   StrapiFaqItem,
   StrapiFaqSection,
   StrapiFinalBrandSection,
+  StrapiFormula72SchemeItem,
   StrapiFormula72SchemeSection,
   StrapiHomePage,
   StrapiLeadCtaSection,
@@ -108,16 +110,6 @@ function normalizeSingle<T>(response: StrapiSingleResponse<T | { attributes?: T 
   return entry as T;
 }
 
-function normalizeCollection<T>(response: StrapiCollectionResponse<T | { attributes?: T }>): T[] {
-  return response.data.map((entry) => {
-    if (typeof entry === "object" && entry !== null && "attributes" in entry && entry.attributes) {
-      return entry.attributes as T;
-    }
-
-    return entry as T;
-  });
-}
-
 function resolveMediaUrl(
   media:
     | { url?: string | null; data?: { url?: string | null; attributes?: { url?: string | null } | null } | null }
@@ -134,32 +126,122 @@ function resolveMediaUrl(
   return getStrapiMediaUrl(nestedUrl);
 }
 
-function resolveBannerTextPosition(banner: StrapiBanner, index: number): BannerTextPosition {
-  if (banner.textPosition === "left-top" || banner.textPosition === "right-center") {
-    return banner.textPosition;
+function resolveMediaAspectRatio(
+  media:
+    | {
+        width?: number | null;
+        height?: number | null;
+        data?:
+          | {
+              width?: number | null;
+              height?: number | null;
+              attributes?: { width?: number | null; height?: number | null } | null;
+            }
+          | null;
+      }
+    | null
+    | undefined,
+) {
+  const width = media?.width ?? media?.data?.width ?? media?.data?.attributes?.width;
+  const height = media?.height ?? media?.data?.height ?? media?.data?.attributes?.height;
+
+  if (!width || !height) {
+    return null;
   }
 
-  if (banner.order === 1) {
-    return "left-top";
-  }
-
-  if (banner.order === 2) {
-    return "right-center";
-  }
-
-  return index === 0 ? "left-top" : "right-center";
+  return `${width} / ${height}`;
 }
 
-function mapBanner(banner: StrapiBanner, index: number): BannerItem {
-  const textPosition = resolveBannerTextPosition(banner, index);
+function mapBanner(
+  banner: StrapiBanner,
+  index: number,
+): BannerSlideData {
+  const fallback =
+    homePageMock.bannerSection.banners.find((item) => item.order === banner.order) ??
+    homePageMock.bannerSection.banners[index % homePageMock.bannerSection.banners.length];
+  const resolvedDesktopImage = resolveMediaUrl(banner.image) ?? fallback.image ?? "";
+  const resolvedMobileImage =
+    resolveMediaUrl(banner.mobileImage) ??
+    fallback.mobileImage ??
+    resolvedDesktopImage ??
+    undefined;
+  const derivedContentAlign =
+    banner.contentAlign ??
+    (banner.textPosition === "right-center" ? "right" : fallback.contentAlign);
+  const derivedVerticalAlign =
+    banner.contentVerticalAlign ??
+    (banner.textPosition === "right-center" ? "center" : fallback.contentVerticalAlign);
+  const derivedTextColor =
+    banner.textColor ??
+    (banner.textPosition === "right-center" ? "light" : fallback.textColor);
 
   return {
-    id: banner.documentId ?? String(banner.id ?? index),
-    title: banner.title,
-    subtitle: banner.subtitle ?? undefined,
-    textPosition,
-    image: resolveMediaUrl(banner.image) ?? homePageMock.banners[index % homePageMock.banners.length].image,
-    textColor: textPosition === "left-top" ? "dark" : "light",
+    id: String(banner.id ?? fallback.id ?? index),
+    title: banner.title?.trim() || fallback.title,
+    subtitle: banner.subtitle?.trim() || fallback.subtitle,
+    description: banner.description?.trim() || fallback.description,
+    image: resolvedDesktopImage,
+    mobileImage: resolvedMobileImage,
+    mobileAspectRatio:
+      resolveMediaAspectRatio(banner.mobileImage) ??
+      fallback.mobileAspectRatio ??
+      resolveMediaAspectRatio(banner.image) ??
+      undefined,
+    enabled: banner.isActive ?? banner.enabled ?? fallback.enabled,
+    order:
+      typeof banner.order === "number" && Number.isFinite(banner.order)
+        ? banner.order
+        : fallback.order,
+    contentAlign: derivedContentAlign,
+    contentVerticalAlign: derivedVerticalAlign,
+    textMaxWidth: banner.textMaxWidth?.trim() || fallback.textMaxWidth,
+    buttonLabel: banner.buttonLabel?.trim() || fallback.buttonLabel,
+    buttonHref: banner.buttonHref?.trim() || fallback.buttonHref,
+    textColor: derivedTextColor,
+  };
+}
+
+function mapBannerSection(section: StrapiBannerSection | null, legacyBanners: StrapiBanner[] | null): BannerSectionData {
+  const sectionBanners = (section?.banners ?? [])
+    .filter((banner) => (banner.enabled ?? true) && Boolean(banner.title?.trim() || banner.image?.url))
+    .map((banner, index) => mapBanner(banner as StrapiBanner, index));
+
+  const collectionBanners = (legacyBanners ?? [])
+    .filter((banner) => (banner.isActive ?? banner.enabled ?? true) && Boolean(banner.title?.trim() || banner.image?.url))
+    .sort((left, right) => {
+      const leftOrder = left.order ?? Number.MAX_SAFE_INTEGER;
+      const rightOrder = right.order ?? Number.MAX_SAFE_INTEGER;
+
+      if (leftOrder !== rightOrder) {
+        return leftOrder - rightOrder;
+      }
+
+      return (left.title ?? "").localeCompare(right.title ?? "", "ru");
+    })
+    .map(mapBanner)
+    .sort((left, right) => {
+      const leftOrder = left.order ?? Number.MAX_SAFE_INTEGER;
+      const rightOrder = right.order ?? Number.MAX_SAFE_INTEGER;
+
+      if (leftOrder !== rightOrder) {
+        return leftOrder - rightOrder;
+      }
+
+      return left.title.localeCompare(right.title, "ru");
+    });
+
+  return {
+    enabled: section?.enabled ?? homePageMock.bannerSection.enabled,
+    autoplayDelay:
+      typeof section?.autoplayDelay === "number" && section.autoplayDelay > 0
+        ? section.autoplayDelay
+        : homePageMock.bannerSection.autoplayDelay,
+    banners:
+      sectionBanners.length > 0
+        ? sectionBanners
+        : collectionBanners.length > 0
+          ? collectionBanners
+          : homePageMock.bannerSection.banners,
   };
 }
 
@@ -210,6 +292,9 @@ function mapWholesale(section: StrapiWholesaleContractSection): WholesaleSection
         label: section.leftButtonText,
         href: section.leftButtonLink,
       },
+      MobileImage:
+        resolveMediaUrl(section.OptMobileImage) ??
+        homePageMock.wholesaleContract.left.MobileImage,
     },
     right: {
       lines: splitTitle(section.rightTitle, homePageMock.wholesaleContract.right.lines),
@@ -217,6 +302,9 @@ function mapWholesale(section: StrapiWholesaleContractSection): WholesaleSection
         label: section.rightButtonText,
         href: section.rightButtonLink,
       },
+      MobileImage:
+        resolveMediaUrl(section.ContractMobileImage) ??
+        homePageMock.wholesaleContract.right.MobileImage,
     },
   };
 }
@@ -259,10 +347,37 @@ function mapProsCons(section: StrapiProsConsSection): ProsConsSectionData {
   };
 }
 
+function mapFormula72SchemeItem(
+  item: StrapiFormula72SchemeItem,
+  index: number,
+): Formula72SchemeSectionData["items"][number] {
+  const fallback = homePageMock.formula72Scheme.items[index % homePageMock.formula72Scheme.items.length];
+
+  return {
+    title: item.title?.trim() || fallback.title,
+    description: item.description?.trim() || fallback.description,
+    mobileImage: resolveMediaUrl(item.mobileImage) ?? fallback.mobileImage,
+  };
+}
+
+function mapFormula72SchemeItems(
+  items: StrapiFormula72SchemeItem[] | null | undefined,
+): Formula72SchemeSectionData["items"] {
+  const mappedItems = (items ?? [])
+    .filter((item) => Boolean(item.title?.trim() || item.description?.trim() || item.mobileImage?.url))
+    .slice(0, 3)
+    .map(mapFormula72SchemeItem);
+
+  return homePageMock.formula72Scheme.items.map(
+    (fallback, index) => mappedItems[index] ?? fallback,
+  ) as Formula72SchemeSectionData["items"];
+}
+
 function mapFormula72Scheme(section: StrapiFormula72SchemeSection): Formula72SchemeSectionData {
   return {
     title: section.title?.trim() || homePageMock.formula72Scheme.title,
     image: resolveMediaUrl(section.image) ?? homePageMock.formula72Scheme.image,
+    items: mapFormula72SchemeItems(section.items),
   };
 }
 
@@ -622,16 +737,36 @@ export async function getSiteHeader() {
 
   return normalizeSingle(response);
 }
-export async function getBanners() {
-  const response = await strapiFetch<StrapiCollectionResponse<StrapiBanner>>("/api/banners", {
-    params: {
-      "filters[isActive][$eq]": true,
-      sort: "order:asc",
-      populate: "*",
-    },
-  });
+export async function getBannerSection() {
+  const [sectionResponse, bannersResponse] = await Promise.allSettled([
+    strapiFetch<StrapiSingleResponse<StrapiBannerSection>>(
+      "/api/banner-section",
+      {
+        params: {
+          "populate[banners][populate]": "*",
+        },
+      },
+    ),
+    strapiFetch<StrapiCollectionResponse<StrapiBanner>>(
+      "/api/banners",
+      {
+        params: {
+          populate: "*",
+        },
+      },
+    ),
+  ]);
 
-  return normalizeCollection(response);
+  const bannerSection =
+    sectionResponse.status === "fulfilled" ? normalizeSingle(sectionResponse.value) : null;
+  const legacyBanners =
+    bannersResponse.status === "fulfilled" ? bannersResponse.value.data ?? [] : [];
+
+  if (!bannerSection && legacyBanners.length === 0) {
+    return null;
+  }
+
+  return mapBannerSection(bannerSection, legacyBanners);
 }
 
 export async function getWholesaleContractSection() {
@@ -665,7 +800,8 @@ export async function getFormula72SchemeSection() {
     "/api/formula72-scheme-section",
     {
       params: {
-        populate: "*",
+        "populate[image]": true,
+        "populate[items][populate]": "mobileImage",
       },
     },
   );
@@ -812,7 +948,7 @@ export async function getHomePageData(): Promise<HomePageData> {
   const [
     siteHeaderResult,
     homePageResult,
-    bannersResult,
+    bannerSectionResult,
     wholesaleSectionResult,
     prosConsSectionResult,
     formula72SchemeSectionResult,
@@ -830,7 +966,7 @@ export async function getHomePageData(): Promise<HomePageData> {
   ] = await Promise.allSettled([
     getSiteHeader(),
     getHomePage(),
-    getBanners(),
+    getBannerSection(),
     getWholesaleContractSection(),
     getProsConsSection(),
     getFormula72SchemeSection(),
@@ -849,7 +985,7 @@ export async function getHomePageData(): Promise<HomePageData> {
 
   const siteHeader = siteHeaderResult.status === "fulfilled" ? siteHeaderResult.value : null;
   const homePage = homePageResult.status === "fulfilled" ? homePageResult.value : null;
-  const banners = bannersResult.status === "fulfilled" ? bannersResult.value : [];
+  const bannerSection = bannerSectionResult.status === "fulfilled" ? bannerSectionResult.value : null;
   const wholesaleSection =
     wholesaleSectionResult.status === "fulfilled" ? wholesaleSectionResult.value : null;
   const prosConsSection = prosConsSectionResult.status === "fulfilled" ? prosConsSectionResult.value : null;
@@ -884,7 +1020,7 @@ export async function getHomePageData(): Promise<HomePageData> {
   if (
     siteHeaderResult.status === "rejected" ||
     homePageResult.status === "rejected" ||
-    bannersResult.status === "rejected" ||
+    bannerSectionResult.status === "rejected" ||
     wholesaleSectionResult.status === "rejected" ||
     prosConsSectionResult.status === "rejected" ||
     formula72SchemeSectionResult.status === "rejected" ||
@@ -903,7 +1039,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     console.warn("Strapi data partially unavailable, using mock only for failed sections.", {
       siteHeader: siteHeaderResult.status,
       homePage: homePageResult.status,
-      banners: bannersResult.status,
+      bannerSection: bannerSectionResult.status,
       wholesaleSection: wholesaleSectionResult.status,
       prosConsSection: prosConsSectionResult.status,
       formula72SchemeSection: formula72SchemeSectionResult.status,
@@ -926,7 +1062,7 @@ export async function getHomePageData(): Promise<HomePageData> {
       siteHeader: headerData.siteHeader,
       navigation: headerData.navigation,
       hero: homePage ? mapHero(homePage) : homePageMock.hero,
-      banners: banners.length > 0 ? banners.map(mapBanner) : homePageMock.banners,
+      bannerSection: bannerSection ?? homePageMock.bannerSection,
       wholesaleContract: wholesaleSection ? mapWholesale(wholesaleSection) : homePageMock.wholesaleContract,
       prosCons: prosConsSection ? mapProsCons(prosConsSection) : homePageMock.prosCons,
       missionK72: missionK72Section ? mapMissionK72(missionK72Section) : homePageMock.missionK72,
@@ -954,9 +1090,10 @@ export async function getHomePageData(): Promise<HomePageData> {
     if (process.env.NODE_ENV !== "production") {
       console.info("Resolved Strapi media URLs", {
         heroBackgroundImage: data.hero.backgroundImage ?? null,
-        bannerImages: data.banners.map((banner) => ({
+        bannerImages: data.bannerSection.banners.map((banner) => ({
           id: banner.id,
           image: banner.image,
+          mobileImage: banner.mobileImage ?? null,
         })),
         wholesaleBackgroundImage: data.wholesaleContract.backgroundImage,
         missionK72Images: {
@@ -966,7 +1103,13 @@ export async function getHomePageData(): Promise<HomePageData> {
             image: item.image,
           })),
         },
-        formula72SchemeImage: data.formula72Scheme.image,
+        formula72Scheme: {
+          image: data.formula72Scheme.image,
+          items: data.formula72Scheme.items.map((item) => ({
+            title: item.title,
+            mobileImage: item.mobileImage,
+          })),
+        },
         workStageImages: data.workStages.stages.map((stage) => ({
           id: stage.id,
           image: stage.image,

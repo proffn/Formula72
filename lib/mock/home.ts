@@ -18,41 +18,59 @@ export const homePageMock: HomePageData = {
     brand: "FORMULA72",
     mobileBackgroundImage: "/images/home/hero/mobile-hero-bg.png",
   },
-  banners: [
-    {
-      id: "banner-1",
-      title: "РР”Р•РђР›Р¬РќР«Р™\nРџР РћР”РЈРљРў РЎ K72",
-      image: "/images/home/banners/banner-1.jpg",
-      subtitle: "РўРІРѕСЏ РёРґРµСЏ - РЅР°С€ РїСЂРёРѕСЂРёС‚РµС‚",
-      textPosition: "left-top",
-      textColor: "dark",
-    },
-    {
-      id: "banner-2",
-      title: "Р’Р Р•РњРЇ\nРЎРћР—Р”РђР’РђРўР¬",
-      image: "/images/home/banners/banner-2.jpg",
-      subtitle: "РњР« РџР Р•Р’Р РђР©РђР•Рњ РњР•Р§РўР«\nР’ Р Р•РђР›Р¬РќРћРЎРўР¬",
-      textPosition: "right-center",
-      textColor: "light",
-    },
-  ],
-  wholesaleContract: {
-    backgroundImage: "/images/home/wholesale-contract/opt-contract-bg.jpg",
-    left: {
-      lines: ["РћРџРўРћР’РђРЇ", "РўРћР Р“РћР’Р›РЇ"],
-      action: {
-        label: "РЈРЎР›РћР’РРЇ",
-        href: "#",
+  bannerSection: {
+    enabled: true,
+    autoplayDelay: 6000,
+    banners: [
+      {
+        id: "banner-1",
+          title: "ИДЕАЛЬНЫЙ ПРОДУКТ\nС FORMULA72",
+          subtitle: "ТВОЯ ИДЕЯ - НАШ ПРИОРИТЕТ",
+          image: "/images/home/banners/banner-1.jpg",
+          mobileImage: "/images/home/banners/banner-1-mobile.png",
+          mobileAspectRatio: "247 / 275",
+          enabled: true,
+        order: 1,
+        contentAlign: "left",
+        contentVerticalAlign: "top",
+        textMaxWidth: "18rem",
+        textColor: "dark",
       },
-    },
-    right: {
-      lines: ["РљРћРќРўР РђРљРўРќРћР•", "РџР РћРР—Р’РћР”РЎРўР’Рћ"],
-      action: {
-        label: "РџРћР›РЈР§РРўР¬ РљРћРќРЎРЈР›Р¬РўРђР¦РР®",
-        href: "#",
+      {
+        id: "banner-2",
+          title: "ВРЕМЯ\nСОЗДАВАТЬ",
+          subtitle: "МЫ ПРЕВРАЩАЕМ МЕЧТЫ\nВ РЕАЛЬНОСТЬ",
+          image: "/images/home/banners/banner-2.jpg",
+          mobileImage: "/images/home/banners/banner-2-mobile.png",
+          mobileAspectRatio: "248 / 274",
+          enabled: true,
+        order: 2,
+        contentAlign: "right",
+        contentVerticalAlign: "center",
+        textMaxWidth: "19rem",
+        textColor: "light",
       },
-    },
+    ],
   },
+    wholesaleContract: {
+      backgroundImage: "/images/home/wholesale-contract/opt-contract-bg.jpg",
+      left: {
+        lines: ["РћРџРўРћР’РђРЇ", "РўРћР Р“РћР’Р›РЇ"],
+        action: {
+          label: "РЈРЎР›РћР’РРЇ",
+          href: "#",
+        },
+        MobileImage: "/images/home/wholesale-contract/opt-mobile.jpg",
+      },
+      right: {
+        lines: ["РљРћРќРўР РђРљРўРќРћР•", "РџР РћРР—Р’РћР”РЎРўР’Рћ"],
+        action: {
+          label: "РџРћР›РЈР§РРўР¬ РљРћРќРЎРЈР›Р¬РўРђР¦РР®",
+          href: "#",
+        },
+        MobileImage: "/images/home/wholesale-contract/contract-mobile.jpg",
+      },
+    },
   prosCons: {
     sectionTitle: "Плюсы и минусы готовых рецептур и создание своего уникального продукта",
     leftColumn: {
@@ -121,6 +139,25 @@ export const homePageMock: HomePageData = {
   formula72Scheme: {
     title: "K72",
     image: "/images/home/formula72-scheme/formula72-scheme.png",
+    items: [
+      {
+        title: "АНГРО",
+        description:
+          "Готовая косметическая масса в удобной таре для самостоятельного розлива и упаковки.",
+        mobileImage: "/images/home/formula72-scheme/formula_angro.png",
+      },
+      {
+        title: "ОПТ",
+        description: "Предлагаем готовую косметику известных брендов на оптимальных условиях.",
+        mobileImage: "/images/home/formula72-scheme/formula_opt.png",
+      },
+      {
+        title: "ПОД КЛЮЧ",
+        description:
+          "Возьмем на себя ключевые этапы производства. Качественная косметика под вашим брендом.",
+        mobileImage: "/images/home/formula72-scheme/formula_key.png",
+      },
+    ],
   },
   workStages: {
     title: "Р­РўРђРџР« Р РђР‘РћРўР«",
