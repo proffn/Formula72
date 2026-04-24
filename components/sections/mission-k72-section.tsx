@@ -1,5 +1,3 @@
-﻿import Image from "next/image";
-import { isRemoteAssetUrl } from "@/lib/api";
 import type { MissionK72SectionData } from "@/types/home";
 
 type MissionK72SectionProps = {
@@ -25,13 +23,12 @@ export function MissionK72Section({ section }: MissionK72SectionProps) {
 
           <div className="lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:pt-4">
             <div className="relative aspect-[0.6047] h-full min-h-[340px] overflow-hidden bg-[#EDE0D5] lg:h-[688px] lg:min-h-0 lg:w-[416px]">
-              <Image
+              <img
                 src={section.leftMainImage}
                 alt={section.title}
-                fill
-                sizes="(max-width: 1023px) 100vw, 416px"
-                unoptimized={isRemoteAssetUrl(section.leftMainImage)}
-                className="object-cover"
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover"
               />
             </div>
           </div>
@@ -59,13 +56,12 @@ export function MissionK72Section({ section }: MissionK72SectionProps) {
                   </div>
 
                   <div className="relative min-h-[190px] border-x border-b border-[rgba(75,46,34,0.12)] bg-[#EADCCF] md:min-h-[220px] lg:h-[420px] lg:min-h-0 lg:w-[320px]">
-                    <Image
+                    <img
                       src={item.image}
                       alt={item.title}
-                      fill
-                      sizes="(max-width: 767px) 100vw, (max-width: 1023px) 33vw, 320px"
-                      unoptimized={isRemoteAssetUrl(item.image)}
-                      className="object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 h-full w-full object-cover"
                     />
                   </div>
                 </article>
