@@ -164,12 +164,12 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
       />
 
       <aside
-        className={`fixed inset-y-0 right-0 z-[56] flex h-screen w-[min(360px,92vw)] flex-col bg-[#63504A] text-[#F7F2EE] shadow-[-20px_0_44px_rgba(41,28,24,0.22)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`fixed inset-y-0 right-0 z-[56] flex h-[100dvh] max-h-[100dvh] w-[min(360px,92vw)] flex-col overflow-y-auto overscroll-contain bg-[#63504A] text-[#F7F2EE] shadow-[-20px_0_44px_rgba(41,28,24,0.22)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
         }`}
         style={{
           paddingTop: "max(1rem, env(safe-area-inset-top))",
-          paddingBottom: "max(1rem, env(safe-area-inset-bottom))",
+          paddingBottom: "max(1.5rem, calc(env(safe-area-inset-bottom) + 0.75rem))",
         }}
       >
         <div className="flex min-h-full w-full flex-col px-5 sm:px-6">
@@ -194,7 +194,7 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
             </button>
           </div>
 
-          <nav className="mt-3 flex flex-col">
+          <nav className="mt-3 flex min-h-0 flex-1 flex-col overflow-y-auto pr-1">
             {mainNavigation.map((item, index) => (
               <Link
                 key={item.label}
@@ -219,7 +219,7 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
             ))}
           </nav>
 
-          <div className="mt-auto shrink-0 pt-7 pb-1">
+          <div className="mt-5 shrink-0 pt-5">
             <div className="rounded-[24px] border border-[rgba(247,242,238,0.12)] bg-[rgba(247,242,238,0.05)] px-5 py-6 shadow-[0_18px_40px_rgba(41,28,24,0.16)]">
               <span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-[#DCCFC9]/62">
                 Контакты
