@@ -1,4 +1,5 @@
 ﻿import Image from "next/image";
+import { isRemoteAssetUrl } from "@/lib/api";
 import type { MissionK72SectionData } from "@/types/home";
 
 type MissionK72SectionProps = {
@@ -29,6 +30,7 @@ export function MissionK72Section({ section }: MissionK72SectionProps) {
                 alt={section.title}
                 fill
                 sizes="(max-width: 1023px) 100vw, 416px"
+                unoptimized={isRemoteAssetUrl(section.leftMainImage)}
                 className="object-cover"
               />
             </div>
@@ -62,6 +64,7 @@ export function MissionK72Section({ section }: MissionK72SectionProps) {
                       alt={item.title}
                       fill
                       sizes="(max-width: 767px) 100vw, (max-width: 1023px) 33vw, 320px"
+                      unoptimized={isRemoteAssetUrl(item.image)}
                       className="object-cover"
                     />
                   </div>

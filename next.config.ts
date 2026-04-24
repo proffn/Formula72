@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
         hostname: "127.0.0.1",
         port: "1337",
       },
+      {
+        protocol: "https",
+        hostname: "formula72-cms.onrender.com",
+      },
     ],
   },
 };
