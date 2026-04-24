@@ -26,9 +26,13 @@ export function MissionK72Section({ section }: MissionK72SectionProps) {
               <img
                 src={section.leftMainImage}
                 alt={section.title}
-                loading="lazy"
+                width={520}
+                height={860}
+                loading="eager"
+                fetchPriority="high"
                 decoding="async"
-                className="absolute inset-0 h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full"
+                style={{ objectFit: "cover" }}
               />
             </div>
           </div>
@@ -59,9 +63,12 @@ export function MissionK72Section({ section }: MissionK72SectionProps) {
                     <img
                       src={item.image}
                       alt={item.title}
-                      loading="lazy"
+                      width={400}
+                      height={580}
+                      loading="eager"
                       decoding="async"
-                      className="absolute inset-0 h-full w-full object-cover"
+                      className="absolute inset-0 h-full w-full"
+                      style={{ objectFit: "cover" }}
                     />
                   </div>
                 </article>
