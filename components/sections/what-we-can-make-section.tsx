@@ -1,5 +1,4 @@
 ﻿import Image from "next/image";
-import { isRemoteAssetUrl } from "@/lib/api";
 import type { WhatWeCanMakeItemData, WhatWeCanMakeSectionData } from "@/types/home";
 
 type WhatWeCanMakeSectionProps = {
@@ -47,7 +46,8 @@ function WhatWeCanMakeCard({ item }: WhatWeCanMakeCardProps) {
           alt={item.title}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          unoptimized={isRemoteAssetUrl(item.image)}
+          loading="eager"
+          unoptimized
           className={`object-cover object-center transition duration-500 ${hasHoverImage || hasHoverVideo ? 'group-hover:scale-[1.02]' : ''} ${hasHoverImage ? 'group-hover:opacity-0' : 'opacity-100'}`}
         />
 
@@ -57,7 +57,8 @@ function WhatWeCanMakeCard({ item }: WhatWeCanMakeCardProps) {
             alt={`${item.title} hover`}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            unoptimized={isRemoteAssetUrl(item.hoverImage)}
+            loading="eager"
+            unoptimized
             className="object-cover object-center opacity-0 transition duration-500 group-hover:opacity-100"
           />
         ) : null}

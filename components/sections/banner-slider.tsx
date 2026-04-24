@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import { isRemoteAssetUrl } from "@/lib/api";
 import type {
   BannerContentAlign,
   BannerContentVerticalAlign,
@@ -162,7 +161,8 @@ function BannerSlide({ banner }: { banner: BannerSlideData }) {
           alt={banner.title}
           fill
           sizes="100vw"
-          unoptimized={isRemoteAssetUrl(mobileImage)}
+          loading="eager"
+          unoptimized
           className="object-cover object-center"
         />
       </div>
@@ -171,7 +171,8 @@ function BannerSlide({ banner }: { banner: BannerSlideData }) {
         alt={banner.title}
         fill
         sizes="100vw"
-        unoptimized={isRemoteAssetUrl(banner.image)}
+        loading="eager"
+        unoptimized
         className="hidden object-cover object-center sm:block"
       />
 

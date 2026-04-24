@@ -1,6 +1,5 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
-import { isRemoteAssetUrl } from "@/lib/api";
 import type { WhoSuitsSectionData } from "@/types/home";
 
 type WhoSuitsSectionProps = {
@@ -30,7 +29,8 @@ export function WhoSuitsSection({ section }: WhoSuitsSectionProps) {
                     alt={item.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                    unoptimized={isRemoteAssetUrl(item.image)}
+                    loading="eager"
+                    unoptimized
                     className="object-contain object-center transition duration-300 group-hover:translate-y-[-2px]"
                   />
                 </div>

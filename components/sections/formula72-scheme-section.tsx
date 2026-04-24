@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { isRemoteAssetUrl } from "@/lib/api";
 import type { Formula72SchemeSectionData } from "@/types/home";
 
 type Formula72SchemeSectionProps = {
@@ -48,7 +47,8 @@ export function Formula72SchemeSection({ section }: Formula72SchemeSectionProps)
                   alt={item.title}
                   fill
                   sizes="100vw"
-                  unoptimized={isRemoteAssetUrl(item.mobileImage)}
+                  loading="eager"
+                  unoptimized
                   className={`${layout.imagePosition} object-cover`}
                 />
                 <div
@@ -85,7 +85,8 @@ export function Formula72SchemeSection({ section }: Formula72SchemeSectionProps)
           alt={section.title || "Formula72 scheme"}
           fill
           sizes="100vw"
-          unoptimized={isRemoteAssetUrl(section.image)}
+          loading="eager"
+          unoptimized
           className="object-contain object-center"
         />
       </div>

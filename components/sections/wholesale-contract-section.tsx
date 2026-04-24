@@ -1,6 +1,5 @@
 ﻿import Link from "next/link";
 import Image from "next/image";
-import { isRemoteAssetUrl } from "@/lib/api";
 import type { WholesaleSectionData } from "@/types/home";
 
 type WholesaleContractSectionProps = {
@@ -33,7 +32,8 @@ export function WholesaleContractSection({ section }: WholesaleContractSectionPr
           alt="РћРїС‚РѕРІР°СЏ С‚РѕСЂРіРѕРІР»СЏ Рё РєРѕРЅС‚СЂР°РєС‚РЅРѕРµ РїСЂРѕРёР·РІРѕРґСЃС‚РІРѕ"
           fill
           sizes="100vw"
-          unoptimized={isRemoteAssetUrl(section.backgroundImage)}
+          loading="eager"
+          unoptimized
           className="object-contain object-center"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,245,235,0.12)_0%,rgba(255,245,235,0.04)_42%,rgba(255,245,235,0.12)_100%)]" />
@@ -77,7 +77,8 @@ function MobileSplitCard({ side, imageSrc, imageAlt }: MobileSplitCardProps) {
           alt={imageAlt}
           fill
           sizes="(max-width: 767px) 100vw, 0px"
-          unoptimized={isRemoteAssetUrl(imageSrc)}
+          loading="eager"
+          unoptimized
           className="object-cover object-center"
         />
       </div>

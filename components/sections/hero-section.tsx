@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 import { SiteHeader } from "@/components/layout/site-header";
-import { isRemoteAssetUrl } from "@/lib/api";
 import type { HeroContent, NavItem, SiteHeaderContent } from "@/types/home";
 
 type HeroSectionProps = {
@@ -68,7 +67,7 @@ export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) 
           alt="Formula72 hero background"
           fill
           priority
-          unoptimized={isRemoteAssetUrl(backgroundImage)}
+          unoptimized
           className="object-contain object-center"
         />
 

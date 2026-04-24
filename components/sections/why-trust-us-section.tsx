@@ -1,5 +1,4 @@
 ﻿import Image from "next/image";
-import { isRemoteAssetUrl } from "@/lib/api";
 import type { WhyTrustUsSectionData } from "@/types/home";
 
 type WhyTrustUsSectionProps = {
@@ -31,7 +30,8 @@ export function WhyTrustUsSection({ section }: WhyTrustUsSectionProps) {
                   alt={`РџРѕС‡РµРјСѓ РґРѕРІРµСЂСЏСЋС‚ Formula72 ${index + 1}`}
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 1280px) 40vw, 25vw"
-                  unoptimized={isRemoteAssetUrl(item.image)}
+                  loading="eager"
+                  unoptimized
                   className={`object-cover object-center transition duration-500 ${
                     item.hoverImage ? "opacity-100 group-hover:opacity-0" : ""
                   }`}
@@ -42,7 +42,8 @@ export function WhyTrustUsSection({ section }: WhyTrustUsSectionProps) {
                     alt={`РџРѕС‡РµРјСѓ РґРѕРІРµСЂСЏСЋС‚ Formula72 ${index + 1} hover`}
                     fill
                     sizes="(max-width: 640px) 50vw, (max-width: 1280px) 40vw, 25vw"
-                    unoptimized={isRemoteAssetUrl(item.hoverImage)}
+                    loading="eager"
+                    unoptimized
                     className="object-cover object-center opacity-0 transition duration-500 group-hover:opacity-100"
                   />
                 ) : null}

@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { isRemoteAssetUrl } from "@/lib/api";
 import type { NavItem, SiteHeaderContent } from "@/types/home";
 
 type SiteHeaderProps = {
@@ -64,7 +63,7 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
                 src={desktopLogoSrc}
                 alt={logoAlt}
                 fill
-                unoptimized={isRemoteAssetUrl(desktopLogoSrc)}
+                unoptimized
                 className="object-contain object-left transition duration-300 ease-out group-hover:brightness-[0.98]"
                 priority
               />
@@ -82,7 +81,7 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
                 src={desktopLogoSrc}
                 alt={logoAlt}
                 fill
-                unoptimized={isRemoteAssetUrl(desktopLogoSrc)}
+                unoptimized
                 className="object-contain object-left transition duration-300 ease-out group-hover:brightness-[0.98]"
                 priority
               />
@@ -132,6 +131,7 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
           width={56}
           height={56}
           aria-hidden="true"
+          unoptimized
           className="h-6 w-6 object-contain"
         />
       </button>
@@ -151,6 +151,7 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
           width={56}
           height={56}
           aria-hidden="true"
+          unoptimized
           className="h-6 w-6 object-contain"
         />
       </button>
@@ -178,7 +179,7 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
                 src={mobileLogoSrc}
                 alt={logoAlt}
                 fill
-                unoptimized={isRemoteAssetUrl(mobileLogoSrc)}
+                unoptimized
                 className="object-contain object-left"
               />
             </div>

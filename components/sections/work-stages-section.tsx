@@ -1,5 +1,4 @@
 ﻿import Image from "next/image";
-import { isRemoteAssetUrl } from "@/lib/api";
 import type { WorkStagesSectionData } from "@/types/home";
 
 type WorkStagesSectionProps = {
@@ -32,7 +31,8 @@ export function WorkStagesSection({ section }: WorkStagesSectionProps) {
                     alt={`Этап ${index + 1}`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                    unoptimized={isRemoteAssetUrl(stage.image)}
+                    loading="eager"
+                    unoptimized
                     className="object-contain object-center drop-shadow-[0_8px_18px_rgba(45,28,20,0.22)] transition duration-300 group-hover:translate-y-[-2px]"
                   />
                 </div>
