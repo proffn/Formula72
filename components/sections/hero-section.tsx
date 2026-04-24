@@ -33,7 +33,7 @@ export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) 
 
         <SiteHeader content={siteHeader} navigation={navigation} />
 
-        <div className="absolute inset-0 flex items-center justify-center px-6 pb-[15svh] pt-[max(5.75rem,calc(env(safe-area-inset-top)+4.75rem))]">
+        <div className="absolute inset-0 flex items-center justify-center px-6 pb-[15svh] pt-[calc(max(5.75rem,calc(env(safe-area-inset-top)+4.75rem))+10%)]">
           <div className="flex max-w-[20rem] flex-col items-center text-center text-[#63504A]">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
