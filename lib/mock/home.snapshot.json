@@ -1,0 +1,2840 @@
+{
+  "version": 1,
+  "generatedAt": "2026-04-25T07:34:26.973Z",
+  "sourceUrl": "https://formula72-cms.onrender.com",
+  "responses": {
+    "siteHeader": {
+      "data": {
+        "id": 5,
+        "documentId": "exjcit28ulyhn8j0bscbbd3p",
+        "navAboutLabel": "О нас",
+        "navProductionLabel": "Производство",
+        "navWholesaleLabel": "Опт",
+        "navReviewsLabel": "Отзывы",
+        "phone": "+7 969 807 88 87",
+        "workSchedule": "пн.-пт. с 07:00 до 16:00 по мск",
+        "createdAt": "2026-03-22T17:56:10.656Z",
+        "updatedAt": "2026-04-24T09:10:05.612Z",
+        "publishedAt": "2026-04-24T09:10:05.788Z",
+        "logoImage": {
+          "id": 74,
+          "documentId": "qosuoelaqu99zyrwldgug4jr",
+          "name": "logo3.png",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 385,
+          "height": 241,
+          "formats": {
+            "thumbnail": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034087/formula72/logo3_b4b7ba01bb_thumbnail.png",
+              "hash": "thumbnail_logo3_b4b7ba01bb",
+              "mime": "image/png",
+              "name": "thumbnail_logo3.png",
+              "path": null,
+              "size": 11.4,
+              "width": 245,
+              "height": 153,
+              "provider": "cloudinary",
+              "sizeInBytes": 11399,
+              "provider_metadata": {
+                "public_id": "formula72/logo3_b4b7ba01bb_thumbnail",
+                "resource_type": "image"
+              }
+            }
+          },
+          "hash": "logo3_b4b7ba01bb",
+          "ext": ".png",
+          "mime": "image/png",
+          "size": 3.04,
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034086/formula72/logo3_b4b7ba01bb.png",
+          "previewUrl": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/logo3_b4b7ba01bb",
+            "resource_type": "image"
+          },
+          "createdAt": "2026-04-24T09:09:46.287Z",
+          "updatedAt": "2026-04-24T12:34:47.835Z",
+          "publishedAt": "2026-04-24T09:09:46.288Z"
+        },
+        "burgerMenuLogo": {
+          "id": 75,
+          "documentId": "d5ixk1gm5kpnj65o3zf6hs4p",
+          "name": "logo3-w.png",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 385,
+          "height": 241,
+          "formats": {
+            "thumbnail": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034088/formula72/logo3_w_44f0df3d99_thumbnail.png",
+              "hash": "thumbnail_logo3_w_44f0df3d99",
+              "mime": "image/png",
+              "name": "thumbnail_logo3-w.png",
+              "path": null,
+              "size": 11.6,
+              "width": 245,
+              "height": 153,
+              "provider": "cloudinary",
+              "sizeInBytes": 11601,
+              "provider_metadata": {
+                "public_id": "formula72/logo3_w_44f0df3d99_thumbnail",
+                "resource_type": "image"
+              }
+            }
+          },
+          "hash": "logo3_w_44f0df3d99",
+          "ext": ".png",
+          "mime": "image/png",
+          "size": 3.1,
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034088/formula72/logo3_w_44f0df3d99.png",
+          "previewUrl": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/logo3_w_44f0df3d99",
+            "resource_type": "image"
+          },
+          "createdAt": "2026-04-24T09:10:01.091Z",
+          "updatedAt": "2026-04-24T12:34:49.476Z",
+          "publishedAt": "2026-04-24T09:10:01.091Z"
+        }
+      },
+      "meta": {}
+    },
+    "homePage": {
+      "data": {
+        "id": 7,
+        "documentId": "vky6ruwc66r6cssuhwb124yy",
+        "heroTitleLine1": "КОНТРАКТНОE",
+        "heroTitleLine2": "ПРОИЗВОДСТВО",
+        "heroSubtitle": "ФОРМУЛА72",
+        "createdAt": "2026-03-22T16:27:06.040Z",
+        "updatedAt": "2026-04-24T12:38:58.524Z",
+        "publishedAt": "2026-04-24T12:38:58.623Z",
+        "heroBackgroundImage": {
+          "id": 72,
+          "documentId": "d10dvgywgnp6i7rk26ksrtgk",
+          "name": "hero-bg.jpg",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 1920,
+          "height": 1078,
+          "formats": {
+            "large": {
+              "ext": ".jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032853/formula72/hero_bg_16a92b3a9f_large.jpg",
+              "hash": "large_hero_bg_16a92b3a9f",
+              "mime": "image/jpeg",
+              "name": "large_hero-bg.jpg",
+              "path": null,
+              "size": 33.44,
+              "width": 1000,
+              "height": 561,
+              "provider": "cloudinary",
+              "sizeInBytes": 33441,
+              "provider_metadata": {
+                "public_id": "formula72/hero_bg_16a92b3a9f_large",
+                "resource_type": "image"
+              }
+            },
+            "small": {
+              "ext": ".jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032854/formula72/hero_bg_16a92b3a9f_small.jpg",
+              "hash": "small_hero_bg_16a92b3a9f",
+              "mime": "image/jpeg",
+              "name": "small_hero-bg.jpg",
+              "path": null,
+              "size": 12.08,
+              "width": 500,
+              "height": 281,
+              "provider": "cloudinary",
+              "sizeInBytes": 12077,
+              "provider_metadata": {
+                "public_id": "formula72/hero_bg_16a92b3a9f_small",
+                "resource_type": "image"
+              }
+            },
+            "medium": {
+              "ext": ".jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032855/formula72/hero_bg_16a92b3a9f_medium.jpg",
+              "hash": "medium_hero_bg_16a92b3a9f",
+              "mime": "image/jpeg",
+              "name": "medium_hero-bg.jpg",
+              "path": null,
+              "size": 21.78,
+              "width": 750,
+              "height": 421,
+              "provider": "cloudinary",
+              "sizeInBytes": 21783,
+              "provider_metadata": {
+                "public_id": "formula72/hero_bg_16a92b3a9f_medium",
+                "resource_type": "image"
+              }
+            },
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032855/formula72/hero_bg_16a92b3a9f_thumbnail.jpg",
+              "hash": "thumbnail_hero_bg_16a92b3a9f",
+              "mime": "image/jpeg",
+              "name": "thumbnail_hero-bg.jpg",
+              "path": null,
+              "size": 4.5,
+              "width": 245,
+              "height": 137,
+              "provider": "cloudinary",
+              "sizeInBytes": 4504,
+              "provider_metadata": {
+                "public_id": "formula72/hero_bg_16a92b3a9f_thumbnail",
+                "resource_type": "image"
+              }
+            }
+          },
+          "hash": "hero_bg_16a92b3a9f",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 93.35,
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032853/formula72/hero_bg_16a92b3a9f.jpg",
+          "previewUrl": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/hero_bg_16a92b3a9f",
+            "resource_type": "image"
+          },
+          "createdAt": "2026-04-24T09:08:49.889Z",
+          "updatedAt": "2026-04-24T12:14:16.250Z",
+          "publishedAt": "2026-04-24T09:08:49.890Z"
+        },
+        "heroMobileBackgroundImage": {
+          "id": 73,
+          "documentId": "a2garkfi5o2swgh65mt8d79z",
+          "name": "mobile-hero-bg.png",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 1080,
+          "height": 1920,
+          "formats": {
+            "large": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032857/formula72/mobile_hero_bg_b31ab14067_large.png",
+              "hash": "large_mobile_hero_bg_b31ab14067",
+              "mime": "image/png",
+              "name": "large_mobile-hero-bg.png",
+              "path": null,
+              "size": 581.17,
+              "width": 563,
+              "height": 1000,
+              "provider": "cloudinary",
+              "sizeInBytes": 581168,
+              "provider_metadata": {
+                "public_id": "formula72/mobile_hero_bg_b31ab14067_large",
+                "resource_type": "image"
+              }
+            },
+            "small": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032858/formula72/mobile_hero_bg_b31ab14067_small.png",
+              "hash": "small_mobile_hero_bg_b31ab14067",
+              "mime": "image/png",
+              "name": "small_mobile-hero-bg.png",
+              "path": null,
+              "size": 151.86,
+              "width": 281,
+              "height": 500,
+              "provider": "cloudinary",
+              "sizeInBytes": 151856,
+              "provider_metadata": {
+                "public_id": "formula72/mobile_hero_bg_b31ab14067_small",
+                "resource_type": "image"
+              }
+            },
+            "medium": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032858/formula72/mobile_hero_bg_b31ab14067_medium.png",
+              "hash": "medium_mobile_hero_bg_b31ab14067",
+              "mime": "image/png",
+              "name": "medium_mobile-hero-bg.png",
+              "path": null,
+              "size": 332.24,
+              "width": 422,
+              "height": 750,
+              "provider": "cloudinary",
+              "sizeInBytes": 332236,
+              "provider_metadata": {
+                "public_id": "formula72/mobile_hero_bg_b31ab14067_medium",
+                "resource_type": "image"
+              }
+            },
+            "thumbnail": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032859/formula72/mobile_hero_bg_b31ab14067_thumbnail.png",
+              "hash": "thumbnail_mobile_hero_bg_b31ab14067",
+              "mime": "image/png",
+              "name": "thumbnail_mobile-hero-bg.png",
+              "path": null,
+              "size": 18.19,
+              "width": 88,
+              "height": 156,
+              "provider": "cloudinary",
+              "sizeInBytes": 18186,
+              "provider_metadata": {
+                "public_id": "formula72/mobile_hero_bg_b31ab14067_thumbnail",
+                "resource_type": "image"
+              }
+            }
+          },
+          "hash": "mobile_hero_bg_b31ab14067",
+          "ext": ".png",
+          "mime": "image/png",
+          "size": 540.44,
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032856/formula72/mobile_hero_bg_b31ab14067.png",
+          "previewUrl": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/mobile_hero_bg_b31ab14067",
+            "resource_type": "image"
+          },
+          "createdAt": "2026-04-24T09:09:10.597Z",
+          "updatedAt": "2026-04-24T12:14:20.056Z",
+          "publishedAt": "2026-04-24T09:09:10.597Z"
+        }
+      },
+      "meta": {}
+    },
+    "bannerSection": null,
+    "banners": {
+      "data": [
+        {
+          "id": 5,
+          "documentId": "c1alu5vm9phf6cpugwn6xj2r",
+          "title": "ВРЕМЯ СОЗДАВАТЬ",
+          "subtitle": "МЫ ПРЕВРАЩАЕМ МЕЧТЫ\nВ РЕАЛЬНОСТЬ",
+          "textPosition": null,
+          "order": 2,
+          "isActive": true,
+          "createdAt": "2026-03-22T17:16:14.758Z",
+          "updatedAt": "2026-04-24T09:50:58.291Z",
+          "publishedAt": "2026-04-24T09:50:58.400Z",
+          "image": {
+            "id": 79,
+            "documentId": "i3yl2rior38fulgnrs8euw5l",
+            "name": "banner-2.jpg",
+            "alternativeText": null,
+            "caption": null,
+            "focalPoint": null,
+            "width": 1366,
+            "height": 768,
+            "formats": {
+              "large": {
+                "ext": ".jpg",
+                "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034098/formula72/banner_2_468320edfd_large.jpg",
+                "hash": "large_banner_2_468320edfd",
+                "mime": "image/jpeg",
+                "name": "large_banner-2.jpg",
+                "path": null,
+                "size": 62.38,
+                "width": 1000,
+                "height": 562,
+                "provider": "cloudinary",
+                "sizeInBytes": 62380,
+                "provider_metadata": {
+                  "public_id": "formula72/banner_2_468320edfd_large",
+                  "resource_type": "image"
+                }
+              },
+              "small": {
+                "ext": ".jpg",
+                "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034098/formula72/banner_2_468320edfd_small.jpg",
+                "hash": "small_banner_2_468320edfd",
+                "mime": "image/jpeg",
+                "name": "small_banner-2.jpg",
+                "path": null,
+                "size": 19.09,
+                "width": 500,
+                "height": 281,
+                "provider": "cloudinary",
+                "sizeInBytes": 19088,
+                "provider_metadata": {
+                  "public_id": "formula72/banner_2_468320edfd_small",
+                  "resource_type": "image"
+                }
+              },
+              "medium": {
+                "ext": ".jpg",
+                "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034099/formula72/banner_2_468320edfd_medium.jpg",
+                "hash": "medium_banner_2_468320edfd",
+                "mime": "image/jpeg",
+                "name": "medium_banner-2.jpg",
+                "path": null,
+                "size": 38.29,
+                "width": 750,
+                "height": 422,
+                "provider": "cloudinary",
+                "sizeInBytes": 38293,
+                "provider_metadata": {
+                  "public_id": "formula72/banner_2_468320edfd_medium",
+                  "resource_type": "image"
+                }
+              },
+              "thumbnail": {
+                "ext": ".jpg",
+                "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034100/formula72/banner_2_468320edfd_thumbnail.jpg",
+                "hash": "thumbnail_banner_2_468320edfd",
+                "mime": "image/jpeg",
+                "name": "thumbnail_banner-2.jpg",
+                "path": null,
+                "size": 5.81,
+                "width": 245,
+                "height": 138,
+                "provider": "cloudinary",
+                "sizeInBytes": 5807,
+                "provider_metadata": {
+                  "public_id": "formula72/banner_2_468320edfd_thumbnail",
+                  "resource_type": "image"
+                }
+              }
+            },
+            "hash": "banner_2_468320edfd",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "size": 102.25,
+            "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034097/formula72/banner_2_468320edfd.jpg",
+            "previewUrl": null,
+            "provider": "cloudinary",
+            "provider_metadata": {
+              "public_id": "formula72/banner_2_468320edfd",
+              "resource_type": "image"
+            },
+            "createdAt": "2026-04-24T09:50:51.891Z",
+            "updatedAt": "2026-04-24T12:35:01.191Z",
+            "publishedAt": "2026-04-24T09:50:51.891Z"
+          }
+        },
+        {
+          "id": 6,
+          "documentId": "kxfn13prurl2f20oo7nndtt4",
+          "title": "ИДЕАЛЬНЫЙ ПРОДУКТ\nС ФОРМУЛА72",
+          "subtitle": "ТОВОЯ ИДЕЯ — НАШ ПРИОРИТЕТ",
+          "textPosition": null,
+          "order": 1,
+          "isActive": true,
+          "createdAt": "2026-03-22T17:15:23.474Z",
+          "updatedAt": "2026-04-24T09:51:20.896Z",
+          "publishedAt": "2026-04-24T09:51:20.993Z",
+          "image": {
+            "id": 80,
+            "documentId": "b65k0cyksgke006dqh2rsip6",
+            "name": "banner-1.jpg",
+            "alternativeText": null,
+            "caption": null,
+            "focalPoint": null,
+            "width": 1366,
+            "height": 768,
+            "formats": {
+              "large": {
+                "ext": ".jpg",
+                "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034102/formula72/banner_1_cc5a3875fb_large.jpg",
+                "hash": "large_banner_1_cc5a3875fb",
+                "mime": "image/jpeg",
+                "name": "large_banner-1.jpg",
+                "path": null,
+                "size": 49.6,
+                "width": 1000,
+                "height": 562,
+                "provider": "cloudinary",
+                "sizeInBytes": 49601,
+                "provider_metadata": {
+                  "public_id": "formula72/banner_1_cc5a3875fb_large",
+                  "resource_type": "image"
+                }
+              },
+              "small": {
+                "ext": ".jpg",
+                "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034102/formula72/banner_1_cc5a3875fb_small.jpg",
+                "hash": "small_banner_1_cc5a3875fb",
+                "mime": "image/jpeg",
+                "name": "small_banner-1.jpg",
+                "path": null,
+                "size": 15.08,
+                "width": 500,
+                "height": 281,
+                "provider": "cloudinary",
+                "sizeInBytes": 15078,
+                "provider_metadata": {
+                  "public_id": "formula72/banner_1_cc5a3875fb_small",
+                  "resource_type": "image"
+                }
+              },
+              "medium": {
+                "ext": ".jpg",
+                "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034103/formula72/banner_1_cc5a3875fb_medium.jpg",
+                "hash": "medium_banner_1_cc5a3875fb",
+                "mime": "image/jpeg",
+                "name": "medium_banner-1.jpg",
+                "path": null,
+                "size": 29.72,
+                "width": 750,
+                "height": 422,
+                "provider": "cloudinary",
+                "sizeInBytes": 29718,
+                "provider_metadata": {
+                  "public_id": "formula72/banner_1_cc5a3875fb_medium",
+                  "resource_type": "image"
+                }
+              },
+              "thumbnail": {
+                "ext": ".jpg",
+                "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034104/formula72/banner_1_cc5a3875fb_thumbnail.jpg",
+                "hash": "thumbnail_banner_1_cc5a3875fb",
+                "mime": "image/jpeg",
+                "name": "thumbnail_banner-1.jpg",
+                "path": null,
+                "size": 4.66,
+                "width": 245,
+                "height": 138,
+                "provider": "cloudinary",
+                "sizeInBytes": 4662,
+                "provider_metadata": {
+                  "public_id": "formula72/banner_1_cc5a3875fb_thumbnail",
+                  "resource_type": "image"
+                }
+              }
+            },
+            "hash": "banner_1_cc5a3875fb",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "size": 83.01,
+            "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034101/formula72/banner_1_cc5a3875fb.jpg",
+            "previewUrl": null,
+            "provider": "cloudinary",
+            "provider_metadata": {
+              "public_id": "formula72/banner_1_cc5a3875fb",
+              "resource_type": "image"
+            },
+            "createdAt": "2026-04-24T09:51:15.197Z",
+            "updatedAt": "2026-04-24T12:35:04.669Z",
+            "publishedAt": "2026-04-24T09:51:15.197Z"
+          }
+        }
+      ],
+      "meta": {
+        "pagination": {
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "total": 2
+        }
+      }
+    },
+    "wholesaleContract": {
+      "data": {
+        "id": 8,
+        "documentId": "kodbjatfrnux6zrw07poj0ms",
+        "leftTitle": "ОПТОВАЯ ТОРГОВЛЯ",
+        "leftButtonText": "УСЛОВИЯ",
+        "leftButtonLink": "#",
+        "rightTitle": "КОНТРАКТНОЕ ПРОИЗВОДСТВО",
+        "rightButtonText": "ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ",
+        "rightButtonLink": "#",
+        "createdAt": "2026-03-22T16:27:06.057Z",
+        "updatedAt": "2026-04-24T13:03:10.567Z",
+        "publishedAt": "2026-04-24T13:03:10.699Z",
+        "backgroundImage": {
+          "id": 76,
+          "documentId": "gx2fuouzx231fcom1s431rum",
+          "name": "opt-contract-bg.jpg",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 1920,
+          "height": 1080,
+          "formats": {
+            "large": {
+              "ext": ".jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034091/formula72/opt_contract_bg_4f9ce775ba_large.png",
+              "hash": "large_opt_contract_bg_4f9ce775ba",
+              "mime": "image/jpeg",
+              "name": "large_opt-contract-bg.jpg",
+              "path": null,
+              "size": 1048.61,
+              "width": 1000,
+              "height": 563,
+              "provider": "cloudinary",
+              "sizeInBytes": 1048611,
+              "provider_metadata": {
+                "public_id": "formula72/opt_contract_bg_4f9ce775ba_large",
+                "resource_type": "image"
+              }
+            },
+            "small": {
+              "ext": ".jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034092/formula72/opt_contract_bg_4f9ce775ba_small.png",
+              "hash": "small_opt_contract_bg_4f9ce775ba",
+              "mime": "image/jpeg",
+              "name": "small_opt-contract-bg.jpg",
+              "path": null,
+              "size": 278.9,
+              "width": 500,
+              "height": 281,
+              "provider": "cloudinary",
+              "sizeInBytes": 278902,
+              "provider_metadata": {
+                "public_id": "formula72/opt_contract_bg_4f9ce775ba_small",
+                "resource_type": "image"
+              }
+            },
+            "medium": {
+              "ext": ".jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034092/formula72/opt_contract_bg_4f9ce775ba_medium.png",
+              "hash": "medium_opt_contract_bg_4f9ce775ba",
+              "mime": "image/jpeg",
+              "name": "medium_opt-contract-bg.jpg",
+              "path": null,
+              "size": 601.94,
+              "width": 750,
+              "height": 422,
+              "provider": "cloudinary",
+              "sizeInBytes": 601942,
+              "provider_metadata": {
+                "public_id": "formula72/opt_contract_bg_4f9ce775ba_medium",
+                "resource_type": "image"
+              }
+            },
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034093/formula72/opt_contract_bg_4f9ce775ba_thumbnail.png",
+              "hash": "thumbnail_opt_contract_bg_4f9ce775ba",
+              "mime": "image/jpeg",
+              "name": "thumbnail_opt-contract-bg.jpg",
+              "path": null,
+              "size": 76.59,
+              "width": 245,
+              "height": 138,
+              "provider": "cloudinary",
+              "sizeInBytes": 76591,
+              "provider_metadata": {
+                "public_id": "formula72/opt_contract_bg_4f9ce775ba_thumbnail",
+                "resource_type": "image"
+              }
+            }
+          },
+          "hash": "opt_contract_bg_4f9ce775ba",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 851.61,
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034090/formula72/opt_contract_bg_4f9ce775ba.png",
+          "previewUrl": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/opt_contract_bg_4f9ce775ba",
+            "resource_type": "image"
+          },
+          "createdAt": "2026-04-24T09:11:41.586Z",
+          "updatedAt": "2026-04-24T12:34:54.129Z",
+          "publishedAt": "2026-04-24T09:11:41.587Z"
+        },
+        "OptMobileImage": {
+          "id": 77,
+          "documentId": "ryxhnndz5xfx21a8u3q6hiyl",
+          "name": "opt-mobile.jpg",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 765,
+          "height": 500,
+          "formats": {
+            "small": {
+              "ext": ".jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034095/formula72/opt_mobile_67a4881e6c_small.png",
+              "hash": "small_opt_mobile_67a4881e6c",
+              "mime": "image/jpeg",
+              "name": "small_opt-mobile.jpg",
+              "path": null,
+              "size": 303.02,
+              "width": 500,
+              "height": 327,
+              "provider": "cloudinary",
+              "sizeInBytes": 303025,
+              "provider_metadata": {
+                "public_id": "formula72/opt_mobile_67a4881e6c_small",
+                "resource_type": "image"
+              }
+            },
+            "medium": {
+              "ext": ".jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034095/formula72/opt_mobile_67a4881e6c_medium.png",
+              "hash": "medium_opt_mobile_67a4881e6c",
+              "mime": "image/jpeg",
+              "name": "medium_opt-mobile.jpg",
+              "path": null,
+              "size": 585.33,
+              "width": 750,
+              "height": 490,
+              "provider": "cloudinary",
+              "sizeInBytes": 585325,
+              "provider_metadata": {
+                "public_id": "formula72/opt_mobile_67a4881e6c_medium",
+                "resource_type": "image"
+              }
+            },
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034096/formula72/opt_mobile_67a4881e6c_thumbnail.png",
+              "hash": "thumbnail_opt_mobile_67a4881e6c",
+              "mime": "image/jpeg",
+              "name": "thumbnail_opt-mobile.jpg",
+              "path": null,
+              "size": 84.17,
+              "width": 239,
+              "height": 156,
+              "provider": "cloudinary",
+              "sizeInBytes": 84165,
+              "provider_metadata": {
+                "public_id": "formula72/opt_mobile_67a4881e6c_thumbnail",
+                "resource_type": "image"
+              }
+            }
+          },
+          "hash": "opt_mobile_67a4881e6c",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 143.4,
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034094/formula72/opt_mobile_67a4881e6c.png",
+          "previewUrl": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/opt_mobile_67a4881e6c",
+            "resource_type": "image"
+          },
+          "createdAt": "2026-04-24T09:11:58.992Z",
+          "updatedAt": "2026-04-24T12:34:57.047Z",
+          "publishedAt": "2026-04-24T09:11:58.992Z"
+        },
+        "ContractMobileImage": {
+          "id": 88,
+          "documentId": "pnpd8f9yjmu5dn08x2k7jpgg",
+          "name": "contract-mobile.jpg",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 765,
+          "height": 500,
+          "formats": {
+            "small": {
+              "ext": ".jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034272/formula72/small_contract_mobile_d8e14e4f6f.png",
+              "hash": "small_contract_mobile_d8e14e4f6f",
+              "mime": "image/jpeg",
+              "name": "small_contract-mobile.jpg",
+              "path": null,
+              "size": 306.25,
+              "width": 500,
+              "height": 327,
+              "sizeInBytes": 306251,
+              "provider_metadata": {
+                "public_id": "formula72/small_contract_mobile_d8e14e4f6f",
+                "resource_type": "image"
+              }
+            },
+            "medium": {
+              "ext": ".jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034272/formula72/medium_contract_mobile_d8e14e4f6f.png",
+              "hash": "medium_contract_mobile_d8e14e4f6f",
+              "mime": "image/jpeg",
+              "name": "medium_contract-mobile.jpg",
+              "path": null,
+              "size": 591.06,
+              "width": 750,
+              "height": 490,
+              "sizeInBytes": 591059,
+              "provider_metadata": {
+                "public_id": "formula72/medium_contract_mobile_d8e14e4f6f",
+                "resource_type": "image"
+              }
+            },
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034272/formula72/thumbnail_contract_mobile_d8e14e4f6f.png",
+              "hash": "thumbnail_contract_mobile_d8e14e4f6f",
+              "mime": "image/jpeg",
+              "name": "thumbnail_contract-mobile.jpg",
+              "path": null,
+              "size": 83.04,
+              "width": 239,
+              "height": 156,
+              "sizeInBytes": 83039,
+              "provider_metadata": {
+                "public_id": "formula72/thumbnail_contract_mobile_d8e14e4f6f",
+                "resource_type": "image"
+              }
+            }
+          },
+          "hash": "contract_mobile_d8e14e4f6f",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 151.43,
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034272/formula72/contract_mobile_d8e14e4f6f.png",
+          "previewUrl": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/contract_mobile_d8e14e4f6f",
+            "resource_type": "image"
+          },
+          "createdAt": "2026-04-24T12:37:53.437Z",
+          "updatedAt": "2026-04-24T12:37:53.437Z",
+          "publishedAt": "2026-04-24T12:37:53.437Z"
+        }
+      },
+      "meta": {}
+    },
+    "prosCons": {
+      "data": {
+        "id": 4,
+        "documentId": "bi9hj32kvcplxap3sdn35mjk",
+        "sectionTitle": "Плюсы и минусы готовых рецептур и создание своего уникального продукта",
+        "leftTitle": "ОПТ",
+        "leftAdvantagesTitle": "Преимущества",
+        "leftDisadvantagesTitle": "Недостатки",
+        "rightTitle": "КОНТРАКТНОЕ",
+        "rightAdvantagesTitle": "Преимущества",
+        "rightDisadvantagesTitle": "Недостатки",
+        "createdAt": "2026-03-25T12:56:15.510Z",
+        "updatedAt": "2026-04-07T15:58:47.001Z",
+        "publishedAt": "2026-04-07T15:58:47.039Z",
+        "leftAdvantages": [
+          {
+            "id": 22,
+            "text": "Быстрый старт"
+          },
+          {
+            "id": 23,
+            "text": "Готовая ассортиментная матрица"
+          },
+          {
+            "id": 24,
+            "text": "Минимальные маркетинговые вложения"
+          },
+          {
+            "id": 25,
+            "text": "Минимальные репутационные риски"
+          },
+          {
+            "id": 26,
+            "text": "Готовые документы и сертификация"
+          },
+          {
+            "id": 27,
+            "text": "Готовый Честный Знак"
+          }
+        ],
+        "leftDisadvantages": [
+          {
+            "id": 28,
+            "text": "Ниже маржинальность"
+          },
+          {
+            "id": 29,
+            "text": "Зависимость от поставщика"
+          },
+          {
+            "id": 30,
+            "text": "\nОграниченный контроль качества"
+          },
+          {
+            "id": 31,
+            "text": "Нет уникальности"
+          },
+          {
+            "id": 32,
+            "text": "Демпинг конкурентов с похожим товаром"
+          }
+        ],
+        "rightAdvantages": [
+          {
+            "id": 33,
+            "text": "Собственный бренд и его позиционирование"
+          },
+          {
+            "id": 34,
+            "text": "Формулы, разработанные индивидуально технологом"
+          },
+          {
+            "id": 35,
+            "text": "Контроль качества и гибкость в выборе продукта"
+          },
+          {
+            "id": 36,
+            "text": "Высокая маржинальность"
+          },
+          {
+            "id": 37,
+            "text": "Уникальность на рынке"
+          },
+          {
+            "id": 38,
+            "text": "Защита от демпинга и \"ценовых войн\""
+          }
+        ],
+        "rightDisadvantages": [
+          {
+            "id": 39,
+            "text": "Длинный запуск"
+          },
+          {
+            "id": 40,
+            "text": "Риск ошибки с продуктом"
+          },
+          {
+            "id": 41,
+            "text": "Ответственность за продукт / репутацию"
+          },
+          {
+            "id": 42,
+            "text": "Высокие маркетинговые вложения"
+          }
+        ]
+      },
+      "meta": {}
+    },
+    "formula72Scheme": {
+      "data": {
+        "id": 5,
+        "documentId": "t52gspivlo1ss7bamrszgjbd",
+        "title": "ФОРМУЛА72",
+        "createdAt": "2026-03-26T11:23:19.247Z",
+        "updatedAt": "2026-04-24T09:53:07.602Z",
+        "publishedAt": "2026-04-24T09:53:07.892Z",
+        "image": {
+          "id": 81,
+          "documentId": "jixr0sm0f3gjjl0umjgadkdj",
+          "name": "formula72-scheme.png",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 1280,
+          "height": 714,
+          "formats": {
+            "large": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034105/formula72/formula72_scheme_e9d298c16b_large.jpg",
+              "hash": "large_formula72_scheme_e9d298c16b",
+              "mime": "image/png",
+              "name": "large_formula72-scheme.png",
+              "path": null,
+              "size": 38.85,
+              "width": 1000,
+              "height": 558,
+              "provider": "cloudinary",
+              "sizeInBytes": 38847,
+              "provider_metadata": {
+                "public_id": "formula72/formula72_scheme_e9d298c16b_large",
+                "resource_type": "image"
+              }
+            },
+            "small": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034106/formula72/formula72_scheme_e9d298c16b_small.jpg",
+              "hash": "small_formula72_scheme_e9d298c16b",
+              "mime": "image/png",
+              "name": "small_formula72-scheme.png",
+              "path": null,
+              "size": 10.78,
+              "width": 500,
+              "height": 279,
+              "provider": "cloudinary",
+              "sizeInBytes": 10777,
+              "provider_metadata": {
+                "public_id": "formula72/formula72_scheme_e9d298c16b_small",
+                "resource_type": "image"
+              }
+            },
+            "medium": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034107/formula72/formula72_scheme_e9d298c16b_medium.jpg",
+              "hash": "medium_formula72_scheme_e9d298c16b",
+              "mime": "image/png",
+              "name": "medium_formula72-scheme.png",
+              "path": null,
+              "size": 22.7,
+              "width": 750,
+              "height": 418,
+              "provider": "cloudinary",
+              "sizeInBytes": 22698,
+              "provider_metadata": {
+                "public_id": "formula72/formula72_scheme_e9d298c16b_medium",
+                "resource_type": "image"
+              }
+            },
+            "thumbnail": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034108/formula72/formula72_scheme_e9d298c16b_thumbnail.jpg",
+              "hash": "thumbnail_formula72_scheme_e9d298c16b",
+              "mime": "image/png",
+              "name": "thumbnail_formula72-scheme.png",
+              "path": null,
+              "size": 3.32,
+              "width": 245,
+              "height": 136,
+              "provider": "cloudinary",
+              "sizeInBytes": 3316,
+              "provider_metadata": {
+                "public_id": "formula72/formula72_scheme_e9d298c16b_thumbnail",
+                "resource_type": "image"
+              }
+            }
+          },
+          "hash": "formula72_scheme_e9d298c16b",
+          "ext": ".png",
+          "mime": "image/png",
+          "size": 62.57,
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034104/formula72/formula72_scheme_e9d298c16b.jpg",
+          "previewUrl": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/formula72_scheme_e9d298c16b",
+            "resource_type": "image"
+          },
+          "createdAt": "2026-04-24T09:52:05.989Z",
+          "updatedAt": "2026-04-24T12:35:08.707Z",
+          "publishedAt": "2026-04-24T09:52:05.989Z"
+        },
+        "items": [
+          {
+            "id": 7,
+            "title": "АНГРО",
+            "description": "Готовая косметическая масса в удобной таре для самостоятельного розлива и упаковки.",
+            "mobileImage": {
+              "id": 82,
+              "documentId": "skiegkfue4t8hf1pjhad1faf",
+              "name": "formula_angro.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 1080,
+              "height": 640,
+              "formats": {
+                "large": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034109/formula72/formula_angro_a737ed4363_large.png",
+                  "hash": "large_formula_angro_a737ed4363",
+                  "mime": "image/png",
+                  "name": "large_formula_angro.png",
+                  "path": null,
+                  "size": 363.13,
+                  "width": 1000,
+                  "height": 593,
+                  "provider": "cloudinary",
+                  "sizeInBytes": 363126,
+                  "provider_metadata": {
+                    "public_id": "formula72/formula_angro_a737ed4363_large",
+                    "resource_type": "image"
+                  }
+                },
+                "small": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034110/formula72/formula_angro_a737ed4363_small.png",
+                  "hash": "small_formula_angro_a737ed4363",
+                  "mime": "image/png",
+                  "name": "small_formula_angro.png",
+                  "path": null,
+                  "size": 90.06,
+                  "width": 500,
+                  "height": 296,
+                  "provider": "cloudinary",
+                  "sizeInBytes": 90056,
+                  "provider_metadata": {
+                    "public_id": "formula72/formula_angro_a737ed4363_small",
+                    "resource_type": "image"
+                  }
+                },
+                "medium": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034110/formula72/formula_angro_a737ed4363_medium.png",
+                  "hash": "medium_formula_angro_a737ed4363",
+                  "mime": "image/png",
+                  "name": "medium_formula_angro.png",
+                  "path": null,
+                  "size": 211.42,
+                  "width": 750,
+                  "height": 444,
+                  "provider": "cloudinary",
+                  "sizeInBytes": 211422,
+                  "provider_metadata": {
+                    "public_id": "formula72/formula_angro_a737ed4363_medium",
+                    "resource_type": "image"
+                  }
+                },
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034111/formula72/formula_angro_a737ed4363_thumbnail.png",
+                  "hash": "thumbnail_formula_angro_a737ed4363",
+                  "mime": "image/png",
+                  "name": "thumbnail_formula_angro.png",
+                  "path": null,
+                  "size": 22.97,
+                  "width": 245,
+                  "height": 145,
+                  "provider": "cloudinary",
+                  "sizeInBytes": 22966,
+                  "provider_metadata": {
+                    "public_id": "formula72/formula_angro_a737ed4363_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "formula_angro_a737ed4363",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 95.79,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034108/formula72/formula_angro_a737ed4363.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/formula_angro_a737ed4363",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-04-24T09:52:22.601Z",
+              "updatedAt": "2026-04-24T12:35:13.529Z",
+              "publishedAt": "2026-04-24T09:52:22.601Z"
+            }
+          },
+          {
+            "id": 8,
+            "title": "ОПТ",
+            "description": "Предлагаем готовую косметику известных брендов на оптимальных условиях.",
+            "mobileImage": {
+              "id": 83,
+              "documentId": "xlqhl8sn5manox16fj5dkdjq",
+              "name": "formula_opt.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 1080,
+              "height": 640,
+              "formats": {
+                "large": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034114/formula72/formula_opt_d860979de1_large.png",
+                  "hash": "large_formula_opt_d860979de1",
+                  "mime": "image/png",
+                  "name": "large_formula_opt.png",
+                  "path": null,
+                  "size": 439.73,
+                  "width": 1000,
+                  "height": 593,
+                  "provider": "cloudinary",
+                  "sizeInBytes": 439727,
+                  "provider_metadata": {
+                    "public_id": "formula72/formula_opt_d860979de1_large",
+                    "resource_type": "image"
+                  }
+                },
+                "small": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034115/formula72/formula_opt_d860979de1_small.png",
+                  "hash": "small_formula_opt_d860979de1",
+                  "mime": "image/png",
+                  "name": "small_formula_opt.png",
+                  "path": null,
+                  "size": 111.79,
+                  "width": 500,
+                  "height": 296,
+                  "provider": "cloudinary",
+                  "sizeInBytes": 111787,
+                  "provider_metadata": {
+                    "public_id": "formula72/formula_opt_d860979de1_small",
+                    "resource_type": "image"
+                  }
+                },
+                "medium": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034115/formula72/formula_opt_d860979de1_medium.png",
+                  "hash": "medium_formula_opt_d860979de1",
+                  "mime": "image/png",
+                  "name": "medium_formula_opt.png",
+                  "path": null,
+                  "size": 258.08,
+                  "width": 750,
+                  "height": 444,
+                  "provider": "cloudinary",
+                  "sizeInBytes": 258079,
+                  "provider_metadata": {
+                    "public_id": "formula72/formula_opt_d860979de1_medium",
+                    "resource_type": "image"
+                  }
+                },
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034116/formula72/formula_opt_d860979de1_thumbnail.png",
+                  "hash": "thumbnail_formula_opt_d860979de1",
+                  "mime": "image/png",
+                  "name": "thumbnail_formula_opt.png",
+                  "path": null,
+                  "size": 26.79,
+                  "width": 245,
+                  "height": 145,
+                  "provider": "cloudinary",
+                  "sizeInBytes": 26792,
+                  "provider_metadata": {
+                    "public_id": "formula72/formula_opt_d860979de1_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "formula_opt_d860979de1",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 152.5,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034113/formula72/formula_opt_d860979de1.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/formula_opt_d860979de1",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-04-24T09:52:41.889Z",
+              "updatedAt": "2026-04-24T12:35:17.205Z",
+              "publishedAt": "2026-04-24T09:52:41.889Z"
+            }
+          },
+          {
+            "id": 9,
+            "title": "ПОД КЛЮЧ",
+            "description": "Возьмем на себя ключевые этапы производства. Качественная косметика под вашим брендом.",
+            "mobileImage": {
+              "id": 84,
+              "documentId": "ui6kobkslgkwgw2xdw1qxxiw",
+              "name": "formula_key.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 1080,
+              "height": 640,
+              "formats": {
+                "large": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034118/formula72/formula_key_b054aaeaf3_large.png",
+                  "hash": "large_formula_key_b054aaeaf3",
+                  "mime": "image/png",
+                  "name": "large_formula_key.png",
+                  "path": null,
+                  "size": 402.22,
+                  "width": 1000,
+                  "height": 593,
+                  "provider": "cloudinary",
+                  "sizeInBytes": 402215,
+                  "provider_metadata": {
+                    "public_id": "formula72/formula_key_b054aaeaf3_large",
+                    "resource_type": "image"
+                  }
+                },
+                "small": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034118/formula72/formula_key_b054aaeaf3_small.png",
+                  "hash": "small_formula_key_b054aaeaf3",
+                  "mime": "image/png",
+                  "name": "small_formula_key.png",
+                  "path": null,
+                  "size": 101.46,
+                  "width": 500,
+                  "height": 296,
+                  "provider": "cloudinary",
+                  "sizeInBytes": 101463,
+                  "provider_metadata": {
+                    "public_id": "formula72/formula_key_b054aaeaf3_small",
+                    "resource_type": "image"
+                  }
+                },
+                "medium": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034121/formula72/formula_key_b054aaeaf3_medium.png",
+                  "hash": "medium_formula_key_b054aaeaf3",
+                  "mime": "image/png",
+                  "name": "medium_formula_key.png",
+                  "path": null,
+                  "size": 234.15,
+                  "width": 750,
+                  "height": 444,
+                  "provider": "cloudinary",
+                  "sizeInBytes": 234150,
+                  "provider_metadata": {
+                    "public_id": "formula72/formula_key_b054aaeaf3_medium",
+                    "resource_type": "image"
+                  }
+                },
+                "thumbnail": {
+                  "ext": ".png",
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034122/formula72/formula_key_b054aaeaf3_thumbnail.png",
+                  "hash": "thumbnail_formula_key_b054aaeaf3",
+                  "mime": "image/png",
+                  "name": "thumbnail_formula_key.png",
+                  "path": null,
+                  "size": 25.05,
+                  "width": 245,
+                  "height": 145,
+                  "provider": "cloudinary",
+                  "sizeInBytes": 25052,
+                  "provider_metadata": {
+                    "public_id": "formula72/formula_key_b054aaeaf3_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "formula_key_b054aaeaf3",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 150.05,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777034117/formula72/formula_key_b054aaeaf3.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/formula_key_b054aaeaf3",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-04-24T09:53:01.798Z",
+              "updatedAt": "2026-04-24T12:35:22.771Z",
+              "publishedAt": "2026-04-24T09:53:01.798Z"
+            }
+          }
+        ]
+      },
+      "meta": {}
+    },
+    "missionK72": {
+      "data": {
+        "id": 5,
+        "documentId": "dcj8ptdmz7t9k7n8c3fiudru",
+        "title": "Миссия ФОРМУЛА72",
+        "leadText": "Хочешь покорить мир через свой продукт? Мы поможем",
+        "certificationTitle": "Сертификация",
+        "certificationText": "Все наши продукты и сырье сертифицируются",
+        "honestSignTitle": "Честный Знак",
+        "honestSignText": "Мы умеем работать с Честным Знаком и с радостью поможем вам",
+        "professionalismTitle": "Профессионализм",
+        "professionalismText": "Мы сотрудничаем с косметологиями и косметологами по всей России",
+        "sideLabel": "ФОРМУЛА72",
+        "createdAt": "2026-03-26T13:46:36.175Z",
+        "updatedAt": "2026-04-24T08:55:25.093Z",
+        "publishedAt": "2026-04-24T08:55:25.226Z",
+        "leftMainImage": {
+          "id": 68,
+          "documentId": "eh9sywsejg4lihqh2bibmazx",
+          "name": "mission-main.png",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 520,
+          "height": 860,
+          "formats": {
+            "small": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032843/formula72/mission_main_5d57db414b_small.png",
+              "hash": "small_mission_main_5d57db414b",
+              "mime": "image/png",
+              "name": "small_mission-main.png",
+              "path": null,
+              "size": 268.63,
+              "width": 302,
+              "height": 500,
+              "provider": "cloudinary",
+              "sizeInBytes": 268627,
+              "provider_metadata": {
+                "public_id": "formula72/mission_main_5d57db414b_small",
+                "resource_type": "image"
+              }
+            },
+            "medium": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032844/formula72/mission_main_5d57db414b_medium.png",
+              "hash": "medium_mission_main_5d57db414b",
+              "mime": "image/png",
+              "name": "medium_mission-main.png",
+              "path": null,
+              "size": 588.45,
+              "width": 453,
+              "height": 750,
+              "provider": "cloudinary",
+              "sizeInBytes": 588454,
+              "provider_metadata": {
+                "public_id": "formula72/mission_main_5d57db414b_medium",
+                "resource_type": "image"
+              }
+            },
+            "thumbnail": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032844/formula72/mission_main_5d57db414b_thumbnail.png",
+              "hash": "thumbnail_mission_main_5d57db414b",
+              "mime": "image/png",
+              "name": "thumbnail_mission-main.png",
+              "path": null,
+              "size": 30.24,
+              "width": 94,
+              "height": 156,
+              "provider": "cloudinary",
+              "sizeInBytes": 30236,
+              "provider_metadata": {
+                "public_id": "formula72/mission_main_5d57db414b_thumbnail",
+                "resource_type": "image"
+              }
+            }
+          },
+          "hash": "mission_main_5d57db414b",
+          "ext": ".png",
+          "mime": "image/png",
+          "size": 200.66,
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032842/formula72/mission_main_5d57db414b.png",
+          "previewUrl": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/mission_main_5d57db414b",
+            "resource_type": "image"
+          },
+          "createdAt": "2026-04-24T08:53:30.790Z",
+          "updatedAt": "2026-04-24T12:14:05.480Z",
+          "publishedAt": "2026-04-24T08:53:30.790Z"
+        },
+        "certificationImage": {
+          "id": 69,
+          "documentId": "atx1t8c76jpijp0xct7kcw0n",
+          "name": "mission-certification.png",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 400,
+          "height": 580,
+          "formats": {
+            "small": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032846/formula72/mission_certification_c00327c05a_small.png",
+              "hash": "small_mission_certification_c00327c05a",
+              "mime": "image/png",
+              "name": "small_mission-certification.png",
+              "path": null,
+              "size": 305.02,
+              "width": 345,
+              "height": 500,
+              "provider": "cloudinary",
+              "sizeInBytes": 305015,
+              "provider_metadata": {
+                "public_id": "formula72/mission_certification_c00327c05a_small",
+                "resource_type": "image"
+              }
+            },
+            "thumbnail": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032847/formula72/mission_certification_c00327c05a_thumbnail.png",
+              "hash": "thumbnail_mission_certification_c00327c05a",
+              "mime": "image/png",
+              "name": "thumbnail_mission-certification.png",
+              "path": null,
+              "size": 37.22,
+              "width": 108,
+              "height": 156,
+              "provider": "cloudinary",
+              "sizeInBytes": 37223,
+              "provider_metadata": {
+                "public_id": "formula72/mission_certification_c00327c05a_thumbnail",
+                "resource_type": "image"
+              }
+            }
+          },
+          "hash": "mission_certification_c00327c05a",
+          "ext": ".png",
+          "mime": "image/png",
+          "size": 91.54,
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032845/formula72/mission_certification_c00327c05a.png",
+          "previewUrl": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/mission_certification_c00327c05a",
+            "resource_type": "image"
+          },
+          "createdAt": "2026-04-24T08:54:32.195Z",
+          "updatedAt": "2026-04-24T12:14:08.182Z",
+          "publishedAt": "2026-04-24T08:54:32.196Z"
+        },
+        "honestSignImage": {
+          "id": 70,
+          "documentId": "jcbe8ypvdlck8q0dm802wqh8",
+          "name": "mission-honest-sign.png",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 400,
+          "height": 580,
+          "formats": {
+            "small": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032849/formula72/mission_honest_sign_35139c9fe2_small.png",
+              "hash": "small_mission_honest_sign_35139c9fe2",
+              "mime": "image/png",
+              "name": "small_mission-honest-sign.png",
+              "path": null,
+              "size": 194.55,
+              "width": 345,
+              "height": 500,
+              "provider": "cloudinary",
+              "sizeInBytes": 194550,
+              "provider_metadata": {
+                "public_id": "formula72/mission_honest_sign_35139c9fe2_small",
+                "resource_type": "image"
+              }
+            },
+            "thumbnail": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032849/formula72/mission_honest_sign_35139c9fe2_thumbnail.png",
+              "hash": "thumbnail_mission_honest_sign_35139c9fe2",
+              "mime": "image/png",
+              "name": "thumbnail_mission-honest-sign.png",
+              "path": null,
+              "size": 24.4,
+              "width": 108,
+              "height": 156,
+              "provider": "cloudinary",
+              "sizeInBytes": 24395,
+              "provider_metadata": {
+                "public_id": "formula72/mission_honest_sign_35139c9fe2_thumbnail",
+                "resource_type": "image"
+              }
+            }
+          },
+          "hash": "mission_honest_sign_35139c9fe2",
+          "ext": ".png",
+          "mime": "image/png",
+          "size": 60.86,
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032848/formula72/mission_honest_sign_35139c9fe2.png",
+          "previewUrl": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/mission_honest_sign_35139c9fe2",
+            "resource_type": "image"
+          },
+          "createdAt": "2026-04-24T08:54:52.387Z",
+          "updatedAt": "2026-04-24T12:14:10.391Z",
+          "publishedAt": "2026-04-24T08:54:52.387Z"
+        },
+        "professionalismImage": {
+          "id": 71,
+          "documentId": "ysc1kjke3dc16w2d1c9lajgu",
+          "name": "mission-professionalism.png",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 400,
+          "height": 580,
+          "formats": {
+            "small": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032851/formula72/mission_professionalism_eecff0b7dd_small.png",
+              "hash": "small_mission_professionalism_eecff0b7dd",
+              "mime": "image/png",
+              "name": "small_mission-professionalism.png",
+              "path": null,
+              "size": 395.44,
+              "width": 345,
+              "height": 500,
+              "provider": "cloudinary",
+              "sizeInBytes": 395439,
+              "provider_metadata": {
+                "public_id": "formula72/mission_professionalism_eecff0b7dd_small",
+                "resource_type": "image"
+              }
+            },
+            "thumbnail": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032852/formula72/mission_professionalism_eecff0b7dd_thumbnail.png",
+              "hash": "thumbnail_mission_professionalism_eecff0b7dd",
+              "mime": "image/png",
+              "name": "thumbnail_mission-professionalism.png",
+              "path": null,
+              "size": 42.02,
+              "width": 108,
+              "height": 156,
+              "provider": "cloudinary",
+              "sizeInBytes": 42016,
+              "provider_metadata": {
+                "public_id": "formula72/mission_professionalism_eecff0b7dd_thumbnail",
+                "resource_type": "image"
+              }
+            }
+          },
+          "hash": "mission_professionalism_eecff0b7dd",
+          "ext": ".png",
+          "mime": "image/png",
+          "size": 138.57,
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777032850/formula72/mission_professionalism_eecff0b7dd.png",
+          "previewUrl": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/mission_professionalism_eecff0b7dd",
+            "resource_type": "image"
+          },
+          "createdAt": "2026-04-24T08:55:07.095Z",
+          "updatedAt": "2026-04-24T12:14:12.809Z",
+          "publishedAt": "2026-04-24T08:55:07.095Z"
+        }
+      },
+      "meta": {}
+    },
+    "workStages": {
+      "data": {
+        "id": 4,
+        "documentId": "h2tc99crtpgtrboran1q13ss",
+        "title": "ЭТАПЫ РАБОТЫ",
+        "createdAt": "2026-03-26T12:05:29.905Z",
+        "updatedAt": "2026-03-26T12:46:10.403Z",
+        "publishedAt": "2026-03-26T12:46:10.429Z",
+        "stages": [
+          {
+            "id": 7,
+            "text": "Совместно с менеджером выбираете продукт, тару, упаковку и определяете состав заказа."
+          },
+          {
+            "id": 8,
+            "text": "Подписываете договор и спецификацию, выставляется счет и осуществляется оплата."
+          },
+          {
+            "id": 9,
+            "text": "Регистрируется декларация, организуется маркировка «Честный Знак» и создается карточка товара."
+          },
+          {
+            "id": 10,
+            "text": "Производство закупает сырьё, изготавливает сигнальный образец и запускает варку при наличии всех материалов."
+          },
+          {
+            "id": 11,
+            "text": "Упаковываются коробки, маркируются для отгрузки и осуществляется отгрузка продукции."
+          },
+          {
+            "id": 12,
+            "text": "Организуется транспортировка, оформляется забор груза и передаются сопроводительные документы."
+          }
+        ]
+      },
+      "meta": {}
+    },
+    "whoSuits": {
+      "data": {
+        "id": 4,
+        "documentId": "hk7csdf3pjgmh94phj55p1qm",
+        "title": "КОМУ ПОДОЙДЁТ",
+        "createdAt": "2026-03-27T13:19:38.265Z",
+        "updatedAt": "2026-04-07T15:59:14.565Z",
+        "publishedAt": "2026-04-07T15:59:14.586Z",
+        "items": [
+          {
+            "id": 7,
+            "title": "Селлерам на маркетплейсах",
+            "text": "Минимальная партия от 5000 ₽ для старта, можно запускать продукт под своим брендом без лишних вложений",
+            "buttonText": null,
+            "buttonLink": null
+          },
+          {
+            "id": 8,
+            "title": "Бьюти-блогерам",
+            "text": "Подойдет для первого запуска, рекламных интеграций и теста спроса с собственной косметической линейкой.",
+            "buttonText": null,
+            "buttonLink": null
+          },
+          {
+            "id": 9,
+            "title": "Салонам красоты",
+            "text": "Поможет создать продукт для постоянных клиентов и усилить профессиональный имидж салонного бизнеса.",
+            "buttonText": null,
+            "buttonLink": null
+          },
+          {
+            "id": 10,
+            "title": "Дистрибьюторам",
+            "text": "Подходит для расширения ассортимента и запуска позиции с хорошей маржинальностью в собственной сети продаж.",
+            "buttonText": null,
+            "buttonLink": null
+          },
+          {
+            "id": 11,
+            "title": "Магазинам косметики и сетям",
+            "text": "Удобный формат для запуска private label и развития нового направления без сложной производственной базы.",
+            "buttonText": null,
+            "buttonLink": null
+          },
+          {
+            "id": 12,
+            "title": "Хочу свой бренд!",
+            "text": "Соберем подходящий продукт, тару и упаковку, чтобы вы быстро вышли на рынок со своей косметической маркой.",
+            "buttonText": "РАССЧИТАТЬ СТОИМОСТЬ",
+            "buttonLink": null
+          }
+        ]
+      },
+      "meta": {}
+    },
+    "whyTrustUs": {
+      "data": {
+        "id": 4,
+        "documentId": "jhfelefjrbgjuccu4oeo80kp",
+        "title": "ПОЧЕМУ НАМ ДОВЕРЯЮТ?",
+        "createdAt": "2026-03-27T13:48:22.672Z",
+        "updatedAt": "2026-03-27T14:53:08.983Z",
+        "publishedAt": "2026-03-27T14:53:09.030Z",
+        "points": [
+          {
+            "id": 6,
+            "text": "\nМинимальная партия от 50 000 рублей"
+          },
+          {
+            "id": 7,
+            "text": "Производство в России, собственная лаборатория"
+          },
+          {
+            "id": 8,
+            "text": "Чистые формулы, разработанные опытными технологами"
+          },
+          {
+            "id": 9,
+            "text": "Собственный фулфилмент"
+          },
+          {
+            "id": 10,
+            "text": "Более 300+ довольных клиентов по всей России и странам СНГ"
+          }
+        ],
+        "galleryItems": [
+          {
+            "id": 5
+          },
+          {
+            "id": 6
+          },
+          {
+            "id": 7
+          },
+          {
+            "id": 8
+          }
+        ]
+      },
+      "meta": {}
+    },
+    "whatWeCanMake": {
+      "data": {
+        "id": 4,
+        "documentId": "nogejl0p4c8kgffabe9oex88",
+        "title": "Что мы можем изготовить",
+        "createdAt": "2026-03-29T11:59:37.320Z",
+        "updatedAt": "2026-03-29T12:25:14.199Z",
+        "publishedAt": "2026-03-29T12:25:14.248Z",
+        "items": [
+          {
+            "id": 13,
+            "title": "Брови и ресницы",
+            "isActive": true
+          },
+          {
+            "id": 14,
+            "title": "Уход за лицом",
+            "isActive": true
+          },
+          {
+            "id": 15,
+            "title": "Уход за телом",
+            "isActive": true
+          },
+          {
+            "id": 16,
+            "title": "Антицеллюлитная серия",
+            "isActive": true
+          },
+          {
+            "id": 17,
+            "title": "Уход за волосами",
+            "isActive": true
+          },
+          {
+            "id": 18,
+            "title": "Средства для ванны и душа",
+            "isActive": true
+          },
+          {
+            "id": 19,
+            "title": "Средства для педикюра",
+            "isActive": true
+          },
+          {
+            "id": 20,
+            "title": "Шугаринг и депиляция",
+            "isActive": true
+          },
+          {
+            "id": 21,
+            "title": "Средства для кутикулы",
+            "isActive": true
+          },
+          {
+            "id": 22,
+            "title": "Солнцезащитная серия",
+            "isActive": true
+          },
+          {
+            "id": 23,
+            "title": "Мужская серия",
+            "isActive": true
+          },
+          {
+            "id": 24,
+            "title": "Средства для животных",
+            "isActive": true
+          }
+        ]
+      },
+      "meta": {}
+    },
+    "coverageMap": {
+      "data": {
+        "id": 4,
+        "documentId": "exm1mxhhkkuk2719jvu6kim4",
+        "title": "ФОРМУЛА72",
+        "subtitle": "Контрактное производство",
+        "description": "Нам доверяют тысячи клиентов",
+        "createdAt": "2026-03-28T07:24:43.607Z",
+        "updatedAt": "2026-04-07T15:43:45.527Z",
+        "publishedAt": "2026-04-07T15:43:45.573Z",
+        "mapImage": {
+          "id": 31,
+          "documentId": "w3enqo1l7l252fct8rbxgsgl",
+          "name": "map.png",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 1488,
+          "height": 848,
+          "formats": {
+            "large": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031749/formula72/map_c677322fad_large.png",
+              "hash": "large_map_c677322fad",
+              "mime": "image/png",
+              "name": "large_map.png",
+              "path": null,
+              "size": 81.13,
+              "width": 1000,
+              "height": 570,
+              "provider": "cloudinary",
+              "sizeInBytes": 81134,
+              "provider_metadata": {
+                "public_id": "formula72/map_c677322fad_large",
+                "resource_type": "image"
+              }
+            },
+            "small": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031750/formula72/map_c677322fad_small.png",
+              "hash": "small_map_c677322fad",
+              "mime": "image/png",
+              "name": "small_map.png",
+              "path": null,
+              "size": 29.59,
+              "width": 500,
+              "height": 285,
+              "provider": "cloudinary",
+              "sizeInBytes": 29590,
+              "provider_metadata": {
+                "public_id": "formula72/map_c677322fad_small",
+                "resource_type": "image"
+              }
+            },
+            "medium": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031751/formula72/map_c677322fad_medium.png",
+              "hash": "medium_map_c677322fad",
+              "mime": "image/png",
+              "name": "medium_map.png",
+              "path": null,
+              "size": 52.89,
+              "width": 750,
+              "height": 427,
+              "provider": "cloudinary",
+              "sizeInBytes": 52888,
+              "provider_metadata": {
+                "public_id": "formula72/map_c677322fad_medium",
+                "resource_type": "image"
+              }
+            },
+            "thumbnail": {
+              "ext": ".png",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031751/formula72/map_c677322fad_thumbnail.png",
+              "hash": "thumbnail_map_c677322fad",
+              "mime": "image/png",
+              "name": "thumbnail_map.png",
+              "path": null,
+              "size": 11.39,
+              "width": 245,
+              "height": 140,
+              "provider": "cloudinary",
+              "sizeInBytes": 11389,
+              "provider_metadata": {
+                "public_id": "formula72/map_c677322fad_thumbnail",
+                "resource_type": "image"
+              }
+            }
+          },
+          "hash": "map_c677322fad",
+          "ext": ".png",
+          "mime": "image/png",
+          "size": 25.66,
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031749/formula72/map_c677322fad.png",
+          "previewUrl": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/map_c677322fad",
+            "resource_type": "image"
+          },
+          "createdAt": "2026-03-28T07:24:03.047Z",
+          "updatedAt": "2026-04-24T11:55:52.211Z",
+          "publishedAt": "2026-03-28T07:24:03.048Z"
+        },
+        "reviews": [
+          {
+            "id": 42,
+            "name": "Анна",
+            "reviewText": "Сотрудничество с компанией оставило только положительные впечатления. Все этапы производства были организованы чётко и профессионально.",
+            "rating": 5,
+            "xPosition": 80,
+            "yPosition": 30,
+            "isActive": true,
+            "avatar": {
+              "id": 23,
+              "documentId": "qjmz6wmrb8p0mg6um05od3fb",
+              "name": "item-1.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".jpg",
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031737/formula72/item_1_af4ab3cc91_thumbnail.png",
+                  "hash": "thumbnail_item_1_af4ab3cc91",
+                  "mime": "image/jpeg",
+                  "name": "thumbnail_item-1.jpg",
+                  "path": null,
+                  "size": 52.33,
+                  "width": 156,
+                  "height": 156,
+                  "provider": "cloudinary",
+                  "sizeInBytes": 52330,
+                  "provider_metadata": {
+                    "public_id": "formula72/item_1_af4ab3cc91_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_1_af4ab3cc91",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 125.45,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031736/formula72/item_1_af4ab3cc91.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_1_af4ab3cc91",
+                "resource_type": "image"
+              }
+            },
+            "brandImage": {
+              "id": 28,
+              "documentId": "fatodx4f7s2skrshxdiuj7hp",
+              "name": "item-3-hover.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".jpg",
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031745/formula72/item_3_hover_491ec3d54a_thumbnail.png",
+                  "hash": "thumbnail_item_3_hover_491ec3d54a",
+                  "mime": "image/jpeg",
+                  "name": "thumbnail_item-3-hover.jpg",
+                  "path": null,
+                  "size": 43.4,
+                  "width": 156,
+                  "height": 156,
+                  "provider": "cloudinary",
+                  "sizeInBytes": 43403,
+                  "provider_metadata": {
+                    "public_id": "formula72/item_3_hover_491ec3d54a_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_3_hover_491ec3d54a",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 72.37,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031744/formula72/item_3_hover_491ec3d54a.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_3_hover_491ec3d54a",
+                "resource_type": "image"
+              }
+            }
+          },
+          {
+            "id": 43,
+            "name": "Мария",
+            "reviewText": "Отличный партнёр в сфере контрактного производства косметики. Помогли реализовать продукт именно так, как мы задумывали.",
+            "rating": 5,
+            "xPosition": 50,
+            "yPosition": 50,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": {
+              "id": 24,
+              "documentId": "soptc285gwnbotp2iutfen7l",
+              "name": "item-1-hover.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "ext": ".jpg",
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031739/formula72/item_1_hover_1fc1515dae_thumbnail.png",
+                  "hash": "thumbnail_item_1_hover_1fc1515dae",
+                  "mime": "image/jpeg",
+                  "name": "thumbnail_item-1-hover.jpg",
+                  "path": null,
+                  "size": 59.69,
+                  "width": 156,
+                  "height": 156,
+                  "provider": "cloudinary",
+                  "sizeInBytes": 59693,
+                  "provider_metadata": {
+                    "public_id": "formula72/item_1_hover_1fc1515dae_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_1_hover_1fc1515dae",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 104.72,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031738/formula72/item_1_hover_1fc1515dae.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_1_hover_1fc1515dae",
+                "resource_type": "image"
+              }
+            }
+          },
+          {
+            "id": 44,
+            "name": "Екатерина",
+            "reviewText": "Понравился серьёзный подход к работе, внимательность к деталям и соблюдение сроков.",
+            "rating": 4,
+            "xPosition": 20,
+            "yPosition": 80,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 45,
+            "name": "Ольга",
+            "reviewText": "Очень довольны качеством готовой продукции. Команда показала высокий уровень ответственности и компетентности.",
+            "rating": 5,
+            "xPosition": 80,
+            "yPosition": 75,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 46,
+            "name": "Ирина",
+            "reviewText": "Надёжный производитель, с которым комфортно работать. Всегда на связи и готовы предложить грамотные решения.",
+            "rating": 5,
+            "xPosition": 50,
+            "yPosition": 80,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 47,
+            "name": "Наталья",
+            "reviewText": "Заказывали производство косметической линейки, результат полностью оправдал ожидания. Качество отличное.",
+            "rating": 5,
+            "xPosition": 70,
+            "yPosition": 30,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 48,
+            "name": "Татьяна",
+            "reviewText": "Профессиональный подход на всех этапах — от обсуждения рецептуры до выпуска готовой продукции.",
+            "rating": 5,
+            "xPosition": 5,
+            "yPosition": 79,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 49,
+            "name": "Светлана",
+            "reviewText": "Компания зарекомендовала себя как ответственный и опытный подрядчик. Всё выполнено на высоком уровне.",
+            "rating": 5,
+            "xPosition": 10,
+            "yPosition": 45,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 50,
+            "name": "Юлия",
+            "reviewText": "Очень понравилась прозрачность в работе и готовность учитывать пожелания клиента.",
+            "rating": 5,
+            "xPosition": 15,
+            "yPosition": 68,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 51,
+            "name": "Елена",
+            "reviewText": "Благодарны за качественное контрактное производство и внимательное сопровождение проекта.",
+            "rating": 5,
+            "xPosition": 17,
+            "yPosition": 55,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 52,
+            "name": "Виктория",
+            "reviewText": "Сотрудничеством остались довольны. Продукция получилась качественной, а процесс работы — понятным и удобным.",
+            "rating": 5,
+            "xPosition": 20,
+            "yPosition": 70,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 53,
+            "name": "Алина",
+            "reviewText": "Хорошая компания для запуска собственной косметической продукции. Помогли быстро и профессионально.",
+            "rating": null,
+            "xPosition": 21,
+            "yPosition": 30,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 54,
+            "name": "Ксения",
+            "reviewText": "Оценили высокий уровень сервиса, соблюдение договорённостей и качество выпускаемой косметики.",
+            "rating": 5,
+            "xPosition": 30,
+            "yPosition": 48,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 55,
+            "name": "Дарья",
+            "reviewText": "Команда отлично разбирается в контрактном производстве. Всё сделано аккуратно, в срок и без лишних сложностей.",
+            "rating": 5,
+            "xPosition": 30,
+            "yPosition": 60,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 56,
+            "name": "Полина",
+            "reviewText": "Понравилось, что специалисты сопровождают проект и действительно заинтересованы в хорошем результате.",
+            "rating": 5,
+            "xPosition": 29,
+            "yPosition": 70,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 57,
+            "name": "Людмила",
+            "reviewText": "Надёжный партнёр для долгосрочного сотрудничества. Качество продукции и уровень сервиса на высоте.",
+            "rating": 5,
+            "xPosition": 35,
+            "yPosition": 55,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 58,
+            "name": "Валерия",
+            "reviewText": "Обратились за контрактным производством косметики и остались очень довольны. Всё организовано профессионально.",
+            "rating": 5,
+            "xPosition": 45,
+            "yPosition": 70,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 59,
+            "name": "Вероника",
+            "reviewText": "Компания помогла вывести продукт на рынок без лишних трудностей. Отличная работа и качественный результат.",
+            "rating": 5,
+            "xPosition": 40,
+            "yPosition": 65,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 60,
+            "name": "Диана",
+            "reviewText": "Видно, что у команды большой опыт в производстве косметики. Все процессы выстроены грамотно и удобно для клиента.",
+            "rating": 5,
+            "xPosition": 43,
+            "yPosition": 85,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 61,
+            "name": "Анастасия",
+            "reviewText": "Очень довольны сотрудничеством. Получили качественный продукт и надёжного производственного партнёра.",
+            "rating": 5,
+            "xPosition": 55,
+            "yPosition": 35,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 62,
+            "name": "Кристина",
+            "reviewText": "Понравился индивидуальный подход и готовность адаптироваться под задачи бренда.",
+            "rating": 5,
+            "xPosition": 54,
+            "yPosition": 65,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 63,
+            "name": "Нина",
+            "reviewText": "Отличная компания в сфере контрактного производства. Всё выполнено качественно и в оговорённые сроки.",
+            "rating": 5,
+            "xPosition": 59,
+            "yPosition": 45,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 64,
+            "name": "Марина",
+            "reviewText": "За время сотрудничества убедились в профессионализме команды. Приятно работать с ответственными специалистами.",
+            "rating": 5,
+            "xPosition": 57,
+            "yPosition": 80,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 65,
+            "name": "Лариса",
+            "reviewText": "Хороший производитель, который умеет слышать клиента и предлагать эффективные решения.",
+            "rating": 5,
+            "xPosition": 60,
+            "yPosition": 60,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 66,
+            "name": "София",
+            "reviewText": "Благодарны за качественную работу, оперативность и высокий уровень организации процессов.",
+            "rating": 5,
+            "xPosition": 60,
+            "yPosition": 90,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 67,
+            "name": "Александра",
+            "reviewText": "Заказывали производство косметики под своим брендом, всё прошло успешно. Результат нас полностью устроил.",
+            "rating": 5,
+            "xPosition": 50,
+            "yPosition": 92,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 68,
+            "name": "Зоя",
+            "reviewText": "Сильная команда и качественное производство. Особенно понравилось внимательное отношение к требованиям клиента.\n",
+            "rating": 5,
+            "xPosition": 65,
+            "yPosition": 52,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 69,
+            "name": "Галина",
+            "reviewText": "Отличный опыт сотрудничества. Компания показала себя как надёжный и профессиональный производственный партнёр.",
+            "rating": 5,
+            "xPosition": 65,
+            "yPosition": 70,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 70,
+            "name": "Милана",
+            "reviewText": "Очень достойный уровень работы. Продукция качественная, а коммуникация с командой быстрая и понятная.",
+            "rating": 5,
+            "xPosition": 67,
+            "yPosition": 84,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 71,
+            "name": "Надежда",
+            "reviewText": "Рекомендуем эту компанию как надёжного подрядчика в сфере контрактного производства косметики. Всё было выполнено профессионально и в срок.",
+            "rating": 5,
+            "xPosition": 75,
+            "yPosition": 40,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 72,
+            "name": "Инна",
+            "reviewText": "Сотрудничество с компанией прошло успешно, все договорённости были выполнены точно и в срок.",
+            "rating": 5,
+            "xPosition": 70,
+            "yPosition": 51,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 73,
+            "name": "Вера",
+            "reviewText": "Очень понравился профессиональный подход к контрактному производству косметики. Видно, что команда хорошо знает своё дело.",
+            "rating": 5,
+            "xPosition": 7,
+            "yPosition": 65,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 74,
+            "name": "Алёна",
+            "reviewText": "Надёжный производственный партнёр, который внимательно относится к задачам клиента и качеству продукции.",
+            "rating": 5,
+            "xPosition": 70,
+            "yPosition": 65,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 75,
+            "name": "Любовь",
+            "reviewText": "Благодарны компании за качественную работу и сопровождение на всех этапах производства.",
+            "rating": 5,
+            "xPosition": 75,
+            "yPosition": 75,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 76,
+            "name": "Карина",
+            "reviewText": "Отличный опыт сотрудничества. Все процессы были организованы грамотно, понятно и без задержек.",
+            "rating": 5,
+            "xPosition": 76,
+            "yPosition": 60,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 77,
+            "name": "Регина",
+            "reviewText": "Понравилось, что специалисты учитывают пожелания клиента и предлагают оптимальные решения по производству.",
+            "rating": 5,
+            "xPosition": 80,
+            "yPosition": 50,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 78,
+            "name": "Тамара",
+            "reviewText": "Компания показала высокий уровень ответственности, профессионализма и внимания к деталям.",
+            "rating": 5,
+            "xPosition": 79,
+            "yPosition": 70,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 79,
+            "name": "Элина",
+            "reviewText": "Заказывали контрактное производство косметики под своим брендом и остались довольны результатом.",
+            "rating": 5,
+            "xPosition": 80,
+            "yPosition": 60,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 80,
+            "name": "Раиса",
+            "reviewText": "Очень комфортно работать с такой командой. Всегда на связи, всё прозрачно и организованно.",
+            "rating": 5,
+            "xPosition": 86,
+            "yPosition": 40,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 81,
+            "name": "Жанна",
+            "reviewText": "Качество готовой продукции на высоком уровне, а сроки выполнения были полностью соблюдены.",
+            "rating": 5,
+            "xPosition": 81,
+            "yPosition": 38,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          },
+          {
+            "id": 82,
+            "name": "Лилия",
+            "reviewText": "Хорошая компания для запуска косметической линейки. Работают профессионально и ответственно.",
+            "rating": 5,
+            "xPosition": 88,
+            "yPosition": 80,
+            "isActive": true,
+            "avatar": null,
+            "brandImage": null
+          }
+        ]
+      },
+      "meta": {}
+    },
+    "faq": {
+      "data": {
+        "id": 4,
+        "documentId": "jtkro5dntewcsxnjb8gmwhe2",
+        "bigNumber": "12",
+        "title": "вопросов, которые задаёт каждый перед первым заказом",
+        "description": "Мы собрали самые частые вопросы о формуле, таре, объемах и сроках — чтобы вы сэкономили время на переписке и более осознанно приняли решение",
+        "ctaTitle": "Не нашли ответа на свой вопрос?",
+        "ctaText": "Нажмите здесь, и мы всё вам расскажем.",
+        "ctaButtonText": "Задать вопрос",
+        "ctaButtonLink": null,
+        "createdAt": "2026-03-29T16:54:29.043Z",
+        "updatedAt": "2026-04-04T06:15:59.549Z",
+        "publishedAt": "2026-04-04T06:15:59.575Z",
+        "categories": [
+          {
+            "id": 4,
+            "title": "Про продукт и рецептуры"
+          },
+          {
+            "id": 5,
+            "title": "Про сырьё и тару"
+          },
+          {
+            "id": 6,
+            "title": "Про деньги, сроки и объёмы"
+          }
+        ]
+      },
+      "meta": {}
+    },
+    "leadCta": {
+      "data": {
+        "id": 4,
+        "documentId": "oh8eznrencw4r285ni9pfluf",
+        "title": "Оставьте заявку — мы свяжемся в ближайшее время",
+        "description": "Заполните короткую форму, и менеджер свяжется с вами, чтобы ответить на вопросы и предложить варианты сотрудничества.",
+        "buttonText": "Оставить заявку",
+        "buttonLink": null,
+        "createdAt": "2026-04-04T06:41:51.500Z",
+        "updatedAt": "2026-04-04T06:59:14.718Z",
+        "publishedAt": "2026-04-04T06:59:14.733Z"
+      },
+      "meta": {}
+    },
+    "finalBrand": {
+      "data": {
+        "id": 4,
+        "documentId": "g1c1r35tsf70ayfxlh4sji7n",
+        "title": "ФОРМУЛА72",
+        "createdAt": "2026-04-04T07:17:05.499Z",
+        "updatedAt": "2026-04-06T08:54:07.718Z",
+        "publishedAt": "2026-04-06T08:54:07.728Z"
+      },
+      "meta": {}
+    },
+    "footer": {
+      "data": {
+        "id": 4,
+        "documentId": "m3t7vl5b813sxozf5wcd0jt5",
+        "contactsColumnTitle": "КОНТАКТЫ",
+        "consultationTitle": "Консультация по контрактному производству",
+        "consultationPhone": "+7 969 907 88 87",
+        "consultationEmail": "kosmetika72@bk.ru",
+        "procurementTitle": "Отдел закупок",
+        "procurementEmail": "kontrakt-kosmetika@mail.ru",
+        "marketingTitle": "Отдел маркетинга",
+        "marketingEmail": "evsi@gmail.com",
+        "workingHours": "график работы с 11:00 до 16:00 по Мск",
+        "companyColumnTitle": "О КОМПАНИИ",
+        "documentsColumnTitle": "ДОКУМЕНТЫ",
+        "formColumnTitle": "ОСТАВИТЬ ЗАЯВКУ",
+        "phonePlaceholder": "Оставьте ваш телефон",
+        "consentText": "Оставляя заявку, вы соглашаетесь с политикой обработки персональных данных",
+        "createdAt": "2026-04-05T11:33:35.670Z",
+        "updatedAt": "2026-04-09T12:57:35.869Z",
+        "publishedAt": "2026-04-09T12:57:35.919Z",
+        "companyLinks": [
+          {
+            "id": 9,
+            "label": "Условия",
+            "href": null
+          },
+          {
+            "id": 10,
+            "label": "Вакансии",
+            "href": null
+          },
+          {
+            "id": 11,
+            "label": "Сертификаты",
+            "href": null
+          },
+          {
+            "id": 12,
+            "label": "Бесплатные материалы для предпринимателей",
+            "href": null
+          },
+          {
+            "id": 13,
+            "label": "Разработка дизайна",
+            "href": null
+          }
+        ],
+        "documentLinks": [
+          {
+            "id": 14,
+            "label": "Условия обработки персональных данных",
+            "href": null
+          },
+          {
+            "id": 15,
+            "label": "Политика обработки персональных данных",
+            "href": null
+          },
+          {
+            "id": 16,
+            "label": "Согласие на обработку персональных данных",
+            "href": null
+          }
+        ],
+        "socialLinks": [
+          {
+            "id": 4,
+            "label": null,
+            "href": null,
+            "enabled": true,
+            "icon": {
+              "id": 58,
+              "documentId": "hpsrexw9wfxvn0l6nuxeyhoi",
+              "name": "Max-icon.svg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 720,
+              "height": 720,
+              "formats": {},
+              "hash": "Max_icon_1a42d1a5b6",
+              "ext": ".svg",
+              "mime": "image/svg+xml",
+              "size": 0.54,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031798/formula72/Max_icon_1a42d1a5b6.svg",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/Max_icon_1a42d1a5b6",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-04-09T12:03:27.192Z",
+              "updatedAt": "2026-04-24T11:56:40.131Z",
+              "publishedAt": "2026-04-09T12:03:27.193Z"
+            },
+            "hoverIcon": null
+          },
+          {
+            "id": 5,
+            "label": null,
+            "href": null,
+            "enabled": true,
+            "icon": {
+              "id": 55,
+              "documentId": "yo9tuh96edjbp8nlgx85exwh",
+              "name": "vk-icons.svg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 200,
+              "height": 200,
+              "formats": {},
+              "hash": "vk_icons_58a092fd25",
+              "ext": ".svg",
+              "mime": "image/svg+xml",
+              "size": 5.11,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031792/formula72/vk_icons_58a092fd25.svg",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/vk_icons_58a092fd25",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-04-09T11:56:49.464Z",
+              "updatedAt": "2026-04-24T11:56:34.704Z",
+              "publishedAt": "2026-04-09T11:56:49.465Z"
+            },
+            "hoverIcon": null
+          },
+          {
+            "id": 6,
+            "label": null,
+            "href": null,
+            "enabled": true,
+            "icon": {
+              "id": 56,
+              "documentId": "pc8ggiymw0qv4d4tv2rjtg0f",
+              "name": "tg-icons.svg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 200,
+              "height": 200,
+              "formats": {},
+              "hash": "tg_icons_68d85e76b0",
+              "ext": ".svg",
+              "mime": "image/svg+xml",
+              "size": 0.6,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031794/formula72/tg_icons_68d85e76b0.svg",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/tg_icons_68d85e76b0",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-04-09T11:59:48.605Z",
+              "updatedAt": "2026-04-24T11:56:36.464Z",
+              "publishedAt": "2026-04-09T11:59:48.606Z"
+            },
+            "hoverIcon": null
+          }
+        ]
+      },
+      "meta": {}
+    },
+    "floatingContact": {
+      "data": {
+        "id": 4,
+        "documentId": "mg66c7v0hcpbud4mzkml0y4t",
+        "enabled": true,
+        "buttonLabel": "Связь с менеджером",
+        "showScrollTop": true,
+        "createdAt": "2026-04-06T16:48:22.102Z",
+        "updatedAt": "2026-04-09T12:03:46.608Z",
+        "publishedAt": "2026-04-09T12:03:46.856Z",
+        "items": [
+          {
+            "order": 1,
+            "id": 5,
+            "label": "Telegram",
+            "href": null,
+            "enabled": true,
+            "icon": {
+              "id": 56,
+              "documentId": "pc8ggiymw0qv4d4tv2rjtg0f",
+              "name": "tg-icons.svg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 200,
+              "height": 200,
+              "formats": {},
+              "hash": "tg_icons_68d85e76b0",
+              "ext": ".svg",
+              "mime": "image/svg+xml",
+              "size": 0.6,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031794/formula72/tg_icons_68d85e76b0.svg",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/tg_icons_68d85e76b0",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-04-09T11:59:48.605Z",
+              "updatedAt": "2026-04-24T11:56:36.464Z",
+              "publishedAt": "2026-04-09T11:59:48.606Z"
+            },
+            "hoverIcon": null
+          },
+          {
+            "order": 2,
+            "id": 6,
+            "label": "MAX",
+            "href": null,
+            "enabled": true,
+            "icon": {
+              "id": 58,
+              "documentId": "hpsrexw9wfxvn0l6nuxeyhoi",
+              "name": "Max-icon.svg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 720,
+              "height": 720,
+              "formats": {},
+              "hash": "Max_icon_1a42d1a5b6",
+              "ext": ".svg",
+              "mime": "image/svg+xml",
+              "size": 0.54,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031798/formula72/Max_icon_1a42d1a5b6.svg",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/Max_icon_1a42d1a5b6",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-04-09T12:03:27.192Z",
+              "updatedAt": "2026-04-24T11:56:40.131Z",
+              "publishedAt": "2026-04-09T12:03:27.193Z"
+            },
+            "hoverIcon": null
+          },
+          {
+            "order": 3,
+            "id": 7,
+            "label": "Вконтакте",
+            "href": null,
+            "enabled": true,
+            "icon": {
+              "id": 55,
+              "documentId": "yo9tuh96edjbp8nlgx85exwh",
+              "name": "vk-icons.svg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 200,
+              "height": 200,
+              "formats": {},
+              "hash": "vk_icons_58a092fd25",
+              "ext": ".svg",
+              "mime": "image/svg+xml",
+              "size": 5.11,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031792/formula72/vk_icons_58a092fd25.svg",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/vk_icons_58a092fd25",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-04-09T11:56:49.464Z",
+              "updatedAt": "2026-04-24T11:56:34.704Z",
+              "publishedAt": "2026-04-09T11:56:49.465Z"
+            },
+            "hoverIcon": null
+          },
+          {
+            "order": 4,
+            "id": 8,
+            "label": "+7 969 807 88 87",
+            "href": null,
+            "enabled": true,
+            "icon": {
+              "id": 57,
+              "documentId": "n5av09fql98xnagl1p6mz87b",
+              "name": "phone-icons.svg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 200,
+              "height": 200,
+              "formats": {},
+              "hash": "phone_icons_751af2914a",
+              "ext": ".svg",
+              "mime": "image/svg+xml",
+              "size": 2.13,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031796/formula72/phone_icons_751af2914a.svg",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/phone_icons_751af2914a",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-04-09T12:01:01.451Z",
+              "updatedAt": "2026-04-24T11:56:38.115Z",
+              "publishedAt": "2026-04-09T12:01:01.451Z"
+            },
+            "hoverIcon": null
+          }
+        ]
+      },
+      "meta": {}
+    }
+  }
+}

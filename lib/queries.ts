@@ -1,5 +1,6 @@
 ﻿import { getStrapiMediaUrl, strapiFetch } from "@/lib/api";
 import { homePageMock } from "@/lib/mock/home";
+import homePageSnapshot from "@/lib/mock/home.snapshot.json";
 import type {
   BannerSectionData,
   BannerSlideData,
@@ -69,6 +70,7 @@ import type {
 } from "@/types/strapi";
 
 const navigationHrefs = ["#hero", "#hero", "#wholesale-contract", "#banners"] as const;
+const snapshotResponses = homePageSnapshot.responses ?? {};
 function splitTitle(value: string, fallback: [string, string]): [string, string] {
   const normalized = value.trim();
 
@@ -108,6 +110,35 @@ function normalizeSingle<T>(response: StrapiSingleResponse<T | { attributes?: T 
   }
 
   return entry as T;
+}
+
+function getSnapshotSingle<T>(key: string): T | null {
+  const response = snapshotResponses[key as keyof typeof snapshotResponses];
+
+  if (!response) {
+    return null;
+  }
+
+  return normalizeSingle(response as StrapiSingleResponse<T | { attributes?: T }>);
+}
+
+function getSnapshotCollection<T>(key: string): T[] {
+  const response = snapshotResponses[key as keyof typeof snapshotResponses] as unknown as
+    | StrapiCollectionResponse<T>
+    | undefined;
+
+  return response?.data ?? [];
+}
+
+function getSnapshotBannerSectionData() {
+  const section = getSnapshotSingle<StrapiBannerSection>("bannerSection");
+  const banners = getSnapshotCollection<StrapiBanner>("banners");
+
+  if (!section && banners.length === 0) {
+    return null;
+  }
+
+  return mapBannerSection(section, banners);
 }
 
 function resolveMediaUrl(
@@ -983,33 +1014,67 @@ export async function getHomePageData(): Promise<HomePageData> {
     getFloatingContactSection(),
   ]);
 
-  const siteHeader = siteHeaderResult.status === "fulfilled" ? siteHeaderResult.value : null;
-  const homePage = homePageResult.status === "fulfilled" ? homePageResult.value : null;
-  const bannerSection = bannerSectionResult.status === "fulfilled" ? bannerSectionResult.value : null;
+  const snapshotSiteHeader = getSnapshotSingle<StrapiSiteHeader>("siteHeader");
+  const snapshotHomePage = getSnapshotSingle<StrapiHomePage>("homePage");
+  const snapshotBannerSection = getSnapshotBannerSectionData();
+  const snapshotWholesaleSection = getSnapshotSingle<StrapiWholesaleContractSection>("wholesaleContract");
+  const snapshotProsConsSection = getSnapshotSingle<StrapiProsConsSection>("prosCons");
+  const snapshotFormula72SchemeSection =
+    getSnapshotSingle<StrapiFormula72SchemeSection>("formula72Scheme");
+  const snapshotMissionK72Section = getSnapshotSingle<StrapiMissionK72Section>("missionK72");
+  const snapshotWorkStagesSection = getSnapshotSingle<StrapiWorkStagesSection>("workStages");
+  const snapshotWhoSuitsSection = getSnapshotSingle<StrapiWhoSuitsSection>("whoSuits");
+  const snapshotWhyTrustUsSection = getSnapshotSingle<StrapiWhyTrustUsSection>("whyTrustUs");
+  const snapshotWhatWeCanMakeSection =
+    getSnapshotSingle<StrapiWhatWeCanMakeSection>("whatWeCanMake");
+  const snapshotCoverageMapSection = getSnapshotSingle<StrapiCoverageMapSection>("coverageMap");
+  const snapshotFaqSection = getSnapshotSingle<StrapiFaqSection>("faq");
+  const snapshotLeadCtaSection = getSnapshotSingle<StrapiLeadCtaSection>("leadCta");
+  const snapshotFinalBrandSection = getSnapshotSingle<StrapiFinalBrandSection>("finalBrand");
+  const snapshotFooterSection = getSnapshotSingle<StrapiFooterSection>("footer");
+  const snapshotFloatingContactSection =
+    getSnapshotSingle<StrapiFloatingContactSection>("floatingContact");
+
+  const siteHeader = siteHeaderResult.status === "fulfilled" ? siteHeaderResult.value ?? snapshotSiteHeader : snapshotSiteHeader;
+  const homePage = homePageResult.status === "fulfilled" ? homePageResult.value ?? snapshotHomePage : snapshotHomePage;
+  const bannerSection =
+    bannerSectionResult.status === "fulfilled" ? bannerSectionResult.value ?? snapshotBannerSection : snapshotBannerSection;
   const wholesaleSection =
-    wholesaleSectionResult.status === "fulfilled" ? wholesaleSectionResult.value : null;
-  const prosConsSection = prosConsSectionResult.status === "fulfilled" ? prosConsSectionResult.value : null;
+    wholesaleSectionResult.status === "fulfilled" ? wholesaleSectionResult.value ?? snapshotWholesaleSection : snapshotWholesaleSection;
+  const prosConsSection =
+    prosConsSectionResult.status === "fulfilled" ? prosConsSectionResult.value ?? snapshotProsConsSection : snapshotProsConsSection;
   const formula72SchemeSection =
-    formula72SchemeSectionResult.status === "fulfilled" ? formula72SchemeSectionResult.value : null;
+    formula72SchemeSectionResult.status === "fulfilled"
+      ? formula72SchemeSectionResult.value ?? snapshotFormula72SchemeSection
+      : snapshotFormula72SchemeSection;
   const missionK72Section =
-    missionK72SectionResult.status === "fulfilled" ? missionK72SectionResult.value : null;
+    missionK72SectionResult.status === "fulfilled" ? missionK72SectionResult.value ?? snapshotMissionK72Section : snapshotMissionK72Section;
   const workStagesSection =
-    workStagesSectionResult.status === "fulfilled" ? workStagesSectionResult.value : null;
+    workStagesSectionResult.status === "fulfilled" ? workStagesSectionResult.value ?? snapshotWorkStagesSection : snapshotWorkStagesSection;
   const whoSuitsSection =
-    whoSuitsSectionResult.status === "fulfilled" ? whoSuitsSectionResult.value : null;
+    whoSuitsSectionResult.status === "fulfilled" ? whoSuitsSectionResult.value ?? snapshotWhoSuitsSection : snapshotWhoSuitsSection;
   const whyTrustUsSection =
-    whyTrustUsSectionResult.status === "fulfilled" ? whyTrustUsSectionResult.value : null;
+    whyTrustUsSectionResult.status === "fulfilled" ? whyTrustUsSectionResult.value ?? snapshotWhyTrustUsSection : snapshotWhyTrustUsSection;
   const whatWeCanMakeSection =
-    whatWeCanMakeSectionResult.status === "fulfilled" ? whatWeCanMakeSectionResult.value : null;
+    whatWeCanMakeSectionResult.status === "fulfilled"
+      ? whatWeCanMakeSectionResult.value ?? snapshotWhatWeCanMakeSection
+      : snapshotWhatWeCanMakeSection;
   const coverageMapSection =
-    coverageMapSectionResult.status === "fulfilled" ? coverageMapSectionResult.value : null;
-  const faqSection = faqSectionResult.status === "fulfilled" ? faqSectionResult.value : null;
-  const leadCtaSection = leadCtaSectionResult.status === "fulfilled" ? leadCtaSectionResult.value : null;
+    coverageMapSectionResult.status === "fulfilled" ? coverageMapSectionResult.value ?? snapshotCoverageMapSection : snapshotCoverageMapSection;
+  const faqSection =
+    faqSectionResult.status === "fulfilled" ? faqSectionResult.value ?? snapshotFaqSection : snapshotFaqSection;
+  const leadCtaSection =
+    leadCtaSectionResult.status === "fulfilled" ? leadCtaSectionResult.value ?? snapshotLeadCtaSection : snapshotLeadCtaSection;
   const finalBrandSection =
-    finalBrandSectionResult.status === "fulfilled" ? finalBrandSectionResult.value : null;
-  const footerSection = footerSectionResult.status === "fulfilled" ? footerSectionResult.value : null;
+    finalBrandSectionResult.status === "fulfilled"
+      ? finalBrandSectionResult.value ?? snapshotFinalBrandSection
+      : snapshotFinalBrandSection;
+  const footerSection =
+    footerSectionResult.status === "fulfilled" ? footerSectionResult.value ?? snapshotFooterSection : snapshotFooterSection;
   const floatingContactSection =
-    floatingContactSectionResult.status === "fulfilled" ? floatingContactSectionResult.value : null;
+    floatingContactSectionResult.status === "fulfilled"
+      ? floatingContactSectionResult.value ?? snapshotFloatingContactSection
+      : snapshotFloatingContactSection;
   const headerData = siteHeader
     ? mapSiteHeader(siteHeader)
     : {

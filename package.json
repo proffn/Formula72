@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext .ts,.tsx"
+    "lint": "eslint . --ext .ts,.tsx",
+    "sync:fallback": "node scripts/sync-strapi-fallback-snapshot.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.9.2",
