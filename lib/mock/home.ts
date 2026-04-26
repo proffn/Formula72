@@ -476,7 +476,7 @@ export const homePageMock: HomePageData = {
       },
       {
         label: "VK",
-        href: "https://vk.com/formula72",
+        href: "https://vk.com/kontraktnoe72",
         enabled: true,
         order: 3,
       },
