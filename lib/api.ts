@@ -22,6 +22,10 @@ export function getStrapiMediaUrl(url?: string | null) {
     return url;
   }
 
+  if (url.startsWith("/cms-uploads/")) {
+    return url;
+  }
+
   return new URL(url, `${getStrapiBaseUrl()}/`).toString();
 }
 
