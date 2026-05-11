@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { access, copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -45,6 +45,11 @@ if (!baseUrl) {
 
 const normalizedBaseUrl = baseUrl.replace(/\/$/, "");
 const apiToken = process.env.SNAPSHOT_STRAPI_TOKEN || process.env.STRAPI_API_TOKEN;
+const strapiUploadsDir =
+  process.env.SNAPSHOT_STRAPI_UPLOADS_DIR ||
+  path.resolve(projectRoot, "..", "formula72-cms", "public", "uploads");
+const frontendUploadsDir = path.join(projectRoot, "public", "cms-uploads");
+const frontendVideoFile = path.join(projectRoot, "public", "videos", "main_video.mov");
 const endpoints = [
   ["siteHeader", "/api/site-header?populate=*"],
   ["homePage", "/api/home-page?populate=*"],
@@ -109,6 +114,146 @@ function isUploadUrl(url) {
   }
 }
 
+function getUploadFileName(url) {
+  if (typeof url !== "string") {
+    return null;
+  }
+
+  if (url.startsWith("/uploads/")) {
+    return path.basename(url.split("?")[0]);
+  }
+
+  try {
+    const parsedUrl = new URL(url);
+    const parsedBaseUrl = new URL(normalizedBaseUrl);
+
+    if (parsedUrl.origin === parsedBaseUrl.origin && parsedUrl.pathname.startsWith("/uploads/")) {
+      return path.basename(parsedUrl.pathname);
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
+}
+
+function collectUploadFileNames(value, fileNames = new Set()) {
+  if (Array.isArray(value)) {
+    value.forEach((item) => collectUploadFileNames(item, fileNames));
+    return fileNames;
+  }
+
+  if (!value || typeof value !== "object") {
+    return fileNames;
+  }
+
+  for (const nestedValue of Object.values(value)) {
+    if (typeof nestedValue === "string") {
+      const fileName = getUploadFileName(nestedValue);
+
+      if (fileName) {
+        fileNames.add(fileName);
+      }
+    } else {
+      collectUploadFileNames(nestedValue, fileNames);
+    }
+  }
+
+  return fileNames;
+}
+
+function rewriteUploadUrls(value, stats) {
+  if (Array.isArray(value)) {
+    value.forEach((item) => rewriteUploadUrls(item, stats));
+    return;
+  }
+
+  if (!value || typeof value !== "object") {
+    return;
+  }
+
+  for (const [key, nestedValue] of Object.entries(value)) {
+    if (typeof nestedValue === "string") {
+      const fileName = getUploadFileName(nestedValue);
+
+      if (!fileName) {
+        continue;
+      }
+
+      if (/\.mov$/i.test(fileName)) {
+        value[key] = "/videos/main_video.mov";
+        stats.rewrittenVideos += 1;
+      } else {
+        value[key] = `/cms-uploads/${fileName}`;
+        stats.rewrittenUploads += 1;
+      }
+    } else {
+      rewriteUploadUrls(nestedValue, stats);
+    }
+  }
+}
+
+async function pathExists(filePath) {
+  try {
+    await access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function localizeUploadMedia(responses) {
+  const fileNames = [...collectUploadFileNames(responses)];
+
+  if (fileNames.length === 0) {
+    return null;
+  }
+
+  if (!(await pathExists(strapiUploadsDir))) {
+    console.warn(`[sync:fallback] Strapi uploads directory not found: ${strapiUploadsDir}`);
+    return null;
+  }
+
+  await mkdir(frontendUploadsDir, { recursive: true });
+
+  const stats = {
+    copiedFrom: strapiUploadsDir,
+    uploadsRewrittenTo: "/cms-uploads/",
+    videoRewrittenTo: "/videos/main_video.mov",
+    copiedFiles: 0,
+    missingFiles: 0,
+    skippedVideoFiles: 0,
+    rewrittenUploads: 0,
+    rewrittenVideos: 0,
+  };
+
+  for (const fileName of fileNames) {
+    if (/\.mov$/i.test(fileName)) {
+      stats.skippedVideoFiles += 1;
+      continue;
+    }
+
+    const sourceFile = path.join(strapiUploadsDir, fileName);
+    const targetFile = path.join(frontendUploadsDir, fileName);
+
+    try {
+      await copyFile(sourceFile, targetFile);
+      stats.copiedFiles += 1;
+    } catch {
+      stats.missingFiles += 1;
+      console.warn(`[sync:fallback] WARNING: missing upload file ${sourceFile}`);
+    }
+  }
+
+  if (stats.skippedVideoFiles > 0 && !(await pathExists(frontendVideoFile))) {
+    console.warn(`[sync:fallback] WARNING: video fallback is missing: ${frontendVideoFile}`);
+  }
+
+  rewriteUploadUrls(responses, stats);
+
+  return stats;
+}
+
 function isCloudinaryUrl(url) {
   return typeof url === "string" && url.startsWith("https://res.cloudinary.com/");
 }
@@ -155,6 +300,7 @@ for (const [key, endpoint] of endpoints) {
   );
 }
 
+const localizedMedia = await localizeUploadMedia(responses);
 const mediaStats = {
   cloudinaryUrlCount: 0,
   uploadUrls: [],
@@ -167,6 +313,7 @@ const snapshot = {
   generatedAt: new Date().toISOString(),
   sourceUrl: normalizedBaseUrl,
   media: mediaStats,
+  ...(localizedMedia ? { localizedMedia } : {}),
   responses,
 };
 
