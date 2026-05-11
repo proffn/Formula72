@@ -11,12 +11,12 @@ const defaultAvatar = "/images/home/coverage-map/default-avatar.png";
 
 export function CoverageMapSection({ section }: CoverageMapSectionProps) {
   const activeReviews = section.reviews.filter((review) => review.isActive);
-  const desktopSubtitle = section.subtitle.replace(/\s+/g, " ").trim().replace(/\s+ПРОИЗВОДСТВО$/i, "\nПРОИЗВОДСТВО");
+  const desktopSubtitle = section.subtitle.replace(/\s+/g, "\n").trim();
 
   return (
     <section
       id="coverage-map"
-      className="relative z-10 overflow-visible bg-[#F7F2EE] px-5 py-9 text-[#7C6259] sm:px-8 sm:py-11 lg:px-10 lg:py-13"
+      className="relative z-10 overflow-visible bg-[#F7F2EE] px-5 py-0 text-[#7C6259] sm:px-8 sm:py-0 lg:px-10 lg:py-0"
     >
       <div className="mx-auto max-w-[1140px] overflow-visible">
         <div className="mx-auto max-w-[988px] text-center">

@@ -68,6 +68,8 @@ export interface ComparisonColumnData {
   advantages: string[];
   disadvantagesTitle: string;
   disadvantages: string[];
+  buttonText?: string;
+  buttonLink?: string;
 }
 
 export interface ProsConsSectionData {
@@ -104,6 +106,7 @@ export interface MissionK72SectionData {
 
 export interface WorkStageItemData {
   id: string;
+  number: string;
   text: string;
   image: string;
 }
@@ -140,6 +143,16 @@ export interface WhyTrustGalleryItemData {
 
 export interface WhyTrustUsSectionData {
   title: string;
+  speedTitle: string;
+  speedFormulaLabel: string;
+  speedText: string;
+  speedFulfillmentText: string;
+  availabilityTitle: string;
+  availabilityText: string;
+  availabilityNote: string;
+  professionalismTitle: string;
+  professionalismText: string;
+  brandLinks: FooterLinkData[];
   points: WhyTrustPointData[];
   galleryItems: WhyTrustGalleryItemData[];
 }
@@ -151,6 +164,8 @@ export interface WhatWeCanMakeItemData {
   hoverImage?: string;
   hoverVideo?: string;
   isActive: boolean;
+  buttonText?: string;
+  buttonLink?: string;
 }
 
 export interface WhatWeCanMakeSectionData {
@@ -221,9 +236,8 @@ export interface FooterData {
   companyLinks: FooterLinkData[];
   documentsColumnTitle: string;
   documentLinks: FooterLinkData[];
-  formColumnTitle: string;
-  phonePlaceholder: string;
-  consentText: string;
+  formButtonText: string;
+  formButtonLink: string;
   socialLinks: FooterSocialLinkData[];
 }
 

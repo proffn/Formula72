@@ -1,5 +1,6 @@
 ﻿"use client";
 
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import type { ComparisonColumnData, ProsConsSectionData } from "@/types/home";
 
@@ -138,6 +139,17 @@ function ComparisonCard({ column, tone, advantagesRef }: ComparisonCardProps) {
           accent="negative"
         />
       </div>
+
+      {column.buttonText && column.buttonLink ? (
+        <div className="mt-auto pt-7">
+          <Link
+            href={column.buttonLink}
+            className="inline-flex min-h-10 w-full items-center justify-center rounded-[8px] bg-[#63504A] px-5 py-2.5 text-center font-manrope text-[0.72rem] font-bold uppercase tracking-[0.08em] text-[#F7F2EE] shadow-[0_10px_24px_rgba(69,53,47,0.14)] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.02] hover:bg-[#52403a] hover:shadow-[0_16px_30px_rgba(69,53,47,0.2)] active:translate-y-0 active:scale-[0.99] focus-visible:bg-[#52403a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#63504A]/25 sm:text-[0.76rem]"
+          >
+            {column.buttonText}
+          </Link>
+        </div>
+      ) : null}
     </article>
   );
 }

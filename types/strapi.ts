@@ -58,11 +58,24 @@ export interface StrapiSiteHeader {
   logoImage?: StrapiMedia | null;
   burgerMenuLogo?: StrapiMedia | null;
   navAboutLabel?: string | null;
+  navAboutHref?: string | null;
   navProductionLabel?: string | null;
+  navProductionHref?: string | null;
   navWholesaleLabel?: string | null;
+  navWholesaleHref?: string | null;
   navReviewsLabel?: string | null;
+  navReviewsHref?: string | null;
   phone?: string | null;
   workSchedule?: string | null;
+}
+
+export interface StrapiProductionVideoPage {
+  id: number;
+  documentId?: string;
+  title?: string | null;
+  description?: string | null;
+  videoFile?: StrapiMedia | null;
+  posterImage?: StrapiMedia | null;
 }
 
 export interface StrapiBanner {
@@ -138,11 +151,15 @@ export interface StrapiProsConsSection {
   leftAdvantages?: StrapiTextItem[] | null;
   leftDisadvantagesTitle?: string | null;
   leftDisadvantages?: StrapiTextItem[] | null;
+  leftButtonText?: string | null;
+  leftButtonLink?: string | null;
   rightTitle?: string | null;
   rightAdvantagesTitle?: string | null;
   rightAdvantages?: StrapiTextItem[] | null;
   rightDisadvantagesTitle?: string | null;
   rightDisadvantages?: StrapiTextItem[] | null;
+  rightButtonText?: string | null;
+  rightButtonLink?: string | null;
 }
 
 export interface StrapiFormula72SchemeItem {
@@ -180,6 +197,7 @@ export interface StrapiMissionK72Section {
 
 export interface StrapiWorkStageItem {
   id?: number;
+  number?: number | string | null;
   text?: string | null;
   image?: StrapiMedia | null;
 }
@@ -222,6 +240,16 @@ export interface StrapiWhyTrustUsSection {
   id: number;
   documentId?: string;
   title?: string | null;
+  speedTitle?: string | null;
+  speedFormulaLabel?: string | null;
+  speedText?: string | null;
+  speedFulfillmentText?: string | null;
+  availabilityTitle?: string | null;
+  availabilityText?: string | null;
+  availabilityNote?: string | null;
+  professionalismTitle?: string | null;
+  professionalismText?: string | null;
+  brandLinks?: StrapiFooterLink[] | null;
   points?: StrapiWhyTrustPoint[] | null;
   galleryItems?: StrapiWhyTrustGalleryItem[] | null;
 }
@@ -234,6 +262,8 @@ export interface StrapiMakeItem {
   hoverImage?: StrapiMedia | null;
   hoverVideo?: StrapiMedia | null;
   isActive?: boolean | null;
+  buttonText?: string | null;
+  buttonLink?: string | null;
 }
 
 export interface StrapiWhatWeCanMakeSection {
@@ -312,9 +342,8 @@ export interface StrapiFooterSection {
   companyLinks?: StrapiFooterLink[] | null;
   documentsColumnTitle?: string | null;
   documentLinks?: StrapiFooterLink[] | null;
-  formColumnTitle?: string | null;
-  phonePlaceholder?: string | null;
-  consentText?: string | null;
+  formButtonText?: string | null;
+  formButtonLink?: string | null;
   socialLinks?: StrapiFooterSocialLink[] | null;
 }
 export interface StrapiFloatingContactItem {

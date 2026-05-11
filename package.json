@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .ts,.tsx",
-    "sync:fallback": "node scripts/sync-strapi-fallback-snapshot.mjs"
+    "sync:strapi-snapshot": "node scripts/sync-strapi-fallback-snapshot.mjs",
+    "sync:fallback": "npm run sync:strapi-snapshot"
   },
   "dependencies": {
     "framer-motion": "^12.9.2",

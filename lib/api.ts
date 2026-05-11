@@ -1,5 +1,3 @@
-const DEFAULT_STRAPI_URL = "http://localhost:1337";
-
 type QueryValue = string | number | boolean | null | undefined;
 
 type StrapiFetchOptions = {
@@ -8,9 +6,9 @@ type StrapiFetchOptions = {
 };
 
 export function getStrapiBaseUrl() {
-  const baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL ?? process.env.STRAPI_URL ?? DEFAULT_STRAPI_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL || process.env.STRAPI_URL;
 
-  return baseUrl.replace(/\/$/, "");
+  return baseUrl?.replace(/\/$/, "") ?? null;
 }
 
 export function getStrapiMediaUrl(url?: string | null) {
@@ -26,7 +24,13 @@ export function getStrapiMediaUrl(url?: string | null) {
     return url;
   }
 
-  return new URL(url, `${getStrapiBaseUrl()}/`).toString();
+  const baseUrl = getStrapiBaseUrl();
+
+  if (!baseUrl) {
+    return url;
+  }
+
+  return new URL(url, `${baseUrl}/`).toString();
 }
 
 export function isRemoteAssetUrl(url?: string | null) {
@@ -53,13 +57,21 @@ function buildQueryString(params?: Record<string, QueryValue>) {
 }
 
 export async function strapiFetch<T>(path: string, options: StrapiFetchOptions = {}): Promise<T> {
-  const url = `${getStrapiBaseUrl()}${path}${buildQueryString(options.params)}`;
+  const baseUrl = getStrapiBaseUrl();
+  const apiToken = process.env.STRAPI_API_TOKEN;
+
+  if (!baseUrl) {
+    throw new Error("Strapi URL is not configured");
+  }
+
+  const url = `${baseUrl}${path}${buildQueryString(options.params)}`;
 
   const response = await fetch(url, {
     ...options.init,
     cache: "no-store",
     headers: {
       "Content-Type": "application/json",
+      ...(apiToken ? { Authorization: `Bearer ${apiToken}` } : {}),
       ...(options.init?.headers ?? {}),
     },
   });

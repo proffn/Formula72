@@ -56,7 +56,7 @@ img {
 
 .page-shell {
   position: relative;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .page-shell::before {

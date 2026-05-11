@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { type MouseEvent, useEffect, useState } from "react";
 
 import type { NavItem, SiteHeaderContent } from "@/types/home";
 
@@ -20,6 +20,52 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
   const mobileLogoSrc = content.burgerMenuLogo || content.logoImage || "/images/home/hero/logo2-w.png";
   const burgerIconSrc = "/images/home/ui-icons/burger-icon.svg";
   const logoAlt = "Formula72";
+  const getExternalLinkProps = (href: string) =>
+    href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {};
+  const scrollToHashTarget = (hash: string, behavior: ScrollBehavior = "smooth") => {
+    if (hash === "#hero") {
+      window.scrollTo({ top: 0, behavior });
+      return;
+    }
+
+    const target = document.getElementById(hash.slice(1));
+
+    if (target) {
+      target.scrollIntoView({ behavior, block: "start" });
+    }
+  };
+  const scrollHomeTop = () => {
+    window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  const handleHomeClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (window.location.pathname !== "/") {
+      return;
+    }
+
+    event.preventDefault();
+    setIsMenuOpen(false);
+    scrollHomeTop();
+  };
+  const handleNavigationClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    const hash = href.startsWith("/#") ? href.slice(1) : href.startsWith("#") ? href : null;
+
+    if (!hash || window.location.pathname !== "/") {
+      setIsMenuOpen(false);
+      return;
+    }
+
+    event.preventDefault();
+    setIsMenuOpen(false);
+
+    if (hash === "#hero") {
+      scrollHomeTop();
+      return;
+    }
+
+    window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    scrollToHashTarget(hash);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,13 +96,44 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
     };
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    const syncScrollWithLocation = () => {
+      window.requestAnimationFrame(() => {
+        const hash = window.location.hash;
+
+        if (!hash || hash === "#hero") {
+          window.history.replaceState(null, "", window.location.pathname + window.location.search);
+          window.scrollTo({ top: 0, behavior: "auto" });
+          return;
+        }
+
+        scrollToHashTarget(hash, "auto");
+        window.history.replaceState(null, "", window.location.pathname + window.location.search);
+      });
+    };
+
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    syncScrollWithLocation();
+    window.addEventListener("popstate", syncScrollWithLocation);
+    window.addEventListener("hashchange", syncScrollWithLocation);
+
+    return () => {
+      window.removeEventListener("popstate", syncScrollWithLocation);
+      window.removeEventListener("hashchange", syncScrollWithLocation);
+    };
+  }, []);
+
   return (
     <>
       <header className="absolute inset-x-0 top-0 z-40 px-4 pt-3 sm:px-6 sm:pt-4 lg:px-8 lg:pt-5">
-        <div className="mx-auto w-full max-w-[1100px]">
+        <div className="mx-auto w-full max-w-[1100px] lg:max-w-[960px]">
           <div className="flex items-center justify-between gap-4 lg:hidden">
             <Link
-              href="#hero"
+              href="/"
+              onClick={handleHomeClick}
               className="group relative block h-[41px] w-[105px] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.02] focus-visible:outline-none"
             >
               <Image
@@ -74,7 +151,8 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
 
           <div className="hidden grid-cols-[auto_1fr_auto] items-center gap-3 lg:grid">
             <Link
-              href="#hero"
+              href="/"
+              onClick={handleHomeClick}
               className="group relative block h-[53px] w-[121px] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.02] focus-visible:outline-none lg:h-[64px] lg:w-[149px]"
             >
               <Image
@@ -92,6 +170,8 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
                 <Link
                   key={item.label}
                   href={item.href}
+                  {...getExternalLinkProps(item.href)}
+                  onClick={(event) => handleNavigationClick(event, item.href)}
                   className="group relative text-[15.5px] font-medium tracking-[-0.01em] text-[#63504A] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.03] hover:text-[#4f3f3a] focus-visible:text-[#4f3f3a] focus-visible:outline-none xl:text-[18px]"
                 >
                   {item.label}
@@ -199,7 +279,8 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
               <Link
                 key={item.label}
                 href={item.href}
-                onClick={() => setIsMenuOpen(false)}
+                {...getExternalLinkProps(item.href)}
+                onClick={(event) => handleNavigationClick(event, item.href)}
                 className="group border-b border-[rgba(247,242,238,0.11)] py-4.5 transition duration-300 ease-out hover:border-[rgba(247,242,238,0.18)] focus-visible:outline-none"
               >
                 <div className="flex items-baseline justify-between gap-4">

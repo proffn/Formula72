@@ -76,7 +76,7 @@ export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) 
 
         <SiteHeader content={siteHeader} navigation={navigation} />
 
-        <div className="absolute inset-0 flex items-center justify-center px-6 pb-10 pt-20 sm:px-8 sm:pt-24 lg:pt-26">
+        <div className="absolute inset-0 flex items-center justify-center px-6 pb-10 pt-20 sm:px-8 sm:pt-24 lg:pb-16 lg:pt-20">
           <div className="flex max-w-5xl flex-col items-center text-center text-[#63504A]">
             <motion.div
               initial={{ opacity: 0, y: 18 }}

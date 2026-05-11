@@ -1,4 +1,5 @@
 ﻿import Image from "next/image";
+import Link from "next/link";
 import type { WhatWeCanMakeItemData, WhatWeCanMakeSectionData } from "@/types/home";
 
 type WhatWeCanMakeSectionProps = {
@@ -37,9 +38,12 @@ type WhatWeCanMakeCardProps = {
 function WhatWeCanMakeCard({ item }: WhatWeCanMakeCardProps) {
   const hasHoverImage = Boolean(item.hoverImage);
   const hasHoverVideo = Boolean(item.hoverVideo);
+  const buttonText = item.buttonText || "Получить прайс";
+  const buttonLink =
+    item.buttonLink || "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72";
 
   return (
-    <article className="group overflow-hidden rounded-[22px] border border-[rgba(99,80,74,0.08)] bg-[rgba(255,255,255,0.72)] shadow-[0_14px_36px_rgba(99,80,74,0.1)] transition duration-300 hover:translate-y-[-2px] hover:shadow-[0_20px_46px_rgba(99,80,74,0.14)]">
+    <article className="group overflow-hidden rounded-[22px] border border-[rgba(99,80,74,0.08)] bg-[rgba(255,255,255,0.72)] shadow-[0_14px_36px_rgba(99,80,74,0.1)]">
       <div className="relative aspect-[0.92] overflow-hidden bg-[rgba(255,255,255,0.5)]">
         <Image
           src={item.image}
@@ -77,10 +81,19 @@ function WhatWeCanMakeCard({ item }: WhatWeCanMakeCardProps) {
         ) : null}
       </div>
 
-      <div className="border-t border-[rgba(99,80,74,0.08)] px-3 py-3 sm:px-4">
+      <div className="flex flex-col border-t border-[rgba(99,80,74,0.08)] px-3 py-3 sm:px-4">
         <h3 className="text-center text-[0.84rem] font-bold leading-[1.16] tracking-[-0.02em] sm:text-[0.88rem]">
           {item.title}
         </h3>
+
+        {buttonText && buttonLink ? (
+          <Link
+            href={buttonLink}
+            className="mt-3 inline-flex min-h-8 items-center justify-center rounded-full bg-[#63504A] px-4 py-2 text-center text-[0.66rem] font-extrabold uppercase tracking-[0.06em] text-[#F7F2EE] shadow-[0_9px_20px_rgba(69,53,47,0.14)] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.02] hover:bg-[#52403a] hover:shadow-[0_14px_26px_rgba(69,53,47,0.2)] active:translate-y-0 active:scale-[0.99] focus-visible:bg-[#52403a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#63504A]/25"
+          >
+            {buttonText}
+          </Link>
+        ) : null}
       </div>
     </article>
   );

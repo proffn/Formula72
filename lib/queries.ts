@@ -54,6 +54,7 @@ import type {
   StrapiLeadCtaSection,
   StrapiMissionK72Section,
   StrapiProsConsSection,
+  StrapiProductionVideoPage,
   StrapiSiteHeader,
   StrapiSingleResponse,
   StrapiTextItem,
@@ -69,8 +70,27 @@ import type {
   StrapiWorkStagesSection,
 } from "@/types/strapi";
 
-const navigationHrefs = ["#hero", "#hero", "#wholesale-contract", "#banners"] as const;
+const navigationHrefs = [
+  "#hero",
+  "/production",
+  "https://b24-k8i1gh.bitrix24site.ru/crm_form_cw6nx/?utm_source=website_contract72",
+  "/#coverage-map",
+] as const;
 const snapshotResponses = homePageSnapshot.responses ?? {};
+function normalizeNavigationHref(value: string | null | undefined, fallback: string) {
+  const href = value?.trim() || fallback;
+
+  if (href === "#hero") {
+    return href;
+  }
+
+  if (href.startsWith("#")) {
+    return `/${href}`;
+  }
+
+  return href;
+}
+
 function splitTitle(value: string, fallback: [string, string]): [string, string] {
   const normalized = value.trim();
 
@@ -308,8 +328,34 @@ function mapSiteHeader(siteHeader: StrapiSiteHeader): {
       siteHeader.navReviewsLabel?.trim() || homePageMock.navigation[3].label,
     ].map((label, index) => ({
       label,
-      href: navigationHrefs[index],
+      href: normalizeNavigationHref(
+        [
+          siteHeader.navAboutHref,
+          siteHeader.navProductionHref,
+          siteHeader.navWholesaleHref,
+          siteHeader.navReviewsHref,
+        ][index],
+        navigationHrefs[index],
+      ),
     })),
+  };
+}
+
+export type ProductionVideoPageData = {
+  title: string;
+  description: string;
+  videoUrl: string;
+  posterImage?: string;
+};
+
+export function mapProductionVideoPage(section?: StrapiProductionVideoPage | null): ProductionVideoPageData {
+  return {
+    title: section?.title?.trim() || "Производство Formula72",
+    description:
+      section?.description?.trim() ||
+      "Посмотрите, как устроено контрактное производство Formula72: лаборатория, разработка, фасовка и подготовка продукции к отгрузке.",
+    videoUrl: resolveMediaUrl(section?.videoFile) ?? "/videos/production.mp4",
+    posterImage: resolveMediaUrl(section?.posterImage) ?? undefined,
   };
 }
 
@@ -362,6 +408,8 @@ function mapProsCons(section: StrapiProsConsSection): ProsConsSectionData {
         section.leftDisadvantages,
         homePageMock.prosCons.leftColumn.disadvantages,
       ),
+      buttonText: section.leftButtonText?.trim() || homePageMock.prosCons.leftColumn.buttonText,
+      buttonLink: section.leftButtonLink?.trim() || homePageMock.prosCons.leftColumn.buttonLink,
     },
     rightColumn: {
       title: section.rightTitle?.trim() || homePageMock.prosCons.rightColumn.title,
@@ -374,6 +422,8 @@ function mapProsCons(section: StrapiProsConsSection): ProsConsSectionData {
         section.rightDisadvantages,
         homePageMock.prosCons.rightColumn.disadvantages,
       ),
+      buttonText: section.rightButtonText?.trim() || homePageMock.prosCons.rightColumn.buttonText,
+      buttonLink: section.rightButtonLink?.trim() || homePageMock.prosCons.rightColumn.buttonLink,
     },
   };
 }
@@ -440,9 +490,12 @@ function mapMissionK72(section: StrapiMissionK72Section): MissionK72SectionData 
 
 function mapWorkStageItem(stage: StrapiWorkStageItem, index: number): WorkStageItemData {
   const fallbackStage = homePageMock.workStages.stages[index % homePageMock.workStages.stages.length];
+  const stageNumber =
+    typeof stage.number === "number" ? String(stage.number) : stage.number?.trim();
 
   return {
     id: String(stage.id ?? fallbackStage.id ?? index),
+    number: stageNumber || fallbackStage.number || String(index + 1),
     text: stage.text?.trim() || fallbackStage.text,
     image: resolveMediaUrl(stage.image) ?? fallbackStage.image,
   };
@@ -513,9 +566,32 @@ function mapWhyTrustUs(section: StrapiWhyTrustUsSection): WhyTrustUsSectionData 
   const galleryItems = (section.galleryItems ?? [])
     .filter((item) => Boolean(item.image?.url || item.hoverImage?.url))
     .map(mapWhyTrustGalleryItem);
+  const brandLinks = (section.brandLinks ?? [])
+    .filter((link) => Boolean(link.label?.trim()) && Boolean(link.href?.trim()))
+    .map((link, index) =>
+      mapFooterLink(
+        link,
+        homePageMock.whyTrustUs.brandLinks[index % homePageMock.whyTrustUs.brandLinks.length],
+      ),
+    );
 
   return {
     title: section.title?.trim() || homePageMock.whyTrustUs.title,
+    speedTitle: section.speedTitle?.trim() || homePageMock.whyTrustUs.speedTitle,
+    speedFormulaLabel:
+      section.speedFormulaLabel?.trim() || homePageMock.whyTrustUs.speedFormulaLabel,
+    speedText: section.speedText?.trim() || homePageMock.whyTrustUs.speedText,
+    speedFulfillmentText:
+      section.speedFulfillmentText?.trim() || homePageMock.whyTrustUs.speedFulfillmentText,
+    availabilityTitle:
+      section.availabilityTitle?.trim() || homePageMock.whyTrustUs.availabilityTitle,
+    availabilityText: section.availabilityText?.trim() || homePageMock.whyTrustUs.availabilityText,
+    availabilityNote: section.availabilityNote?.trim() || homePageMock.whyTrustUs.availabilityNote,
+    professionalismTitle:
+      section.professionalismTitle?.trim() || homePageMock.whyTrustUs.professionalismTitle,
+    professionalismText:
+      section.professionalismText?.trim() || homePageMock.whyTrustUs.professionalismText,
+    brandLinks: brandLinks.length > 0 ? brandLinks : homePageMock.whyTrustUs.brandLinks,
     points: points.length > 0 ? points : homePageMock.whyTrustUs.points,
     galleryItems: galleryItems.length > 0 ? galleryItems : homePageMock.whyTrustUs.galleryItems,
   };
@@ -532,6 +608,11 @@ function mapWhatWeCanMakeItem(item: StrapiMakeItem, index: number): WhatWeCanMak
     hoverImage: resolveMediaUrl(item.hoverImage) ?? fallbackItem.hoverImage,
     hoverVideo: resolveMediaUrl(item.hoverVideo) ?? fallbackItem.hoverVideo,
     isActive: item.isActive ?? fallbackItem.isActive,
+    buttonText: item.buttonText?.trim() || fallbackItem.buttonText || "Получить прайс",
+    buttonLink:
+      item.buttonLink?.trim() ||
+      fallbackItem.buttonLink ||
+      "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
   };
 }
 
@@ -708,9 +789,8 @@ function mapFooterSection(section: StrapiFooterSection): FooterData {
     companyLinks: companyLinks.length > 0 ? companyLinks : homePageMock.footer.companyLinks,
     documentsColumnTitle: section.documentsColumnTitle?.trim() || homePageMock.footer.documentsColumnTitle,
     documentLinks: documentLinks.length > 0 ? documentLinks : homePageMock.footer.documentLinks,
-    formColumnTitle: section.formColumnTitle?.trim() || homePageMock.footer.formColumnTitle,
-    phonePlaceholder: section.phonePlaceholder?.trim() || homePageMock.footer.phonePlaceholder,
-    consentText: section.consentText?.trim() || homePageMock.footer.consentText,
+    formButtonText: section.formButtonText?.trim() || homePageMock.footer.formButtonText,
+    formButtonLink: section.formButtonLink?.trim() || homePageMock.footer.formButtonLink,
     socialLinks: section.socialLinks ? socialLinks : homePageMock.footer.socialLinks,
   };
 }
@@ -767,6 +847,23 @@ export async function getSiteHeader() {
   });
 
   return normalizeSingle(response);
+}
+
+export async function getProductionVideoPage() {
+  try {
+    const response = await strapiFetch<StrapiSingleResponse<StrapiProductionVideoPage>>(
+      "/api/production-video-page",
+      {
+        params: {
+          populate: "*",
+        },
+      },
+    );
+
+    return normalizeSingle(response);
+  } catch {
+    return getSnapshotSingle<StrapiProductionVideoPage>("productionVideo");
+  }
 }
 export async function getBannerSection() {
   const [sectionResponse, bannersResponse] = await Promise.allSettled([

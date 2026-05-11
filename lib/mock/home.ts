@@ -8,9 +8,9 @@ export const homePageMock: HomePageData = {
   },
   navigation: [
     { label: "О нас", href: "#hero" },
-    { label: "Производство", href: "#hero" },
-    { label: "Опт", href: "#wholesale-contract" },
-    { label: "Отзывы", href: "#banners" },
+    { label: "Производство", href: "/production" },
+    { label: "Опт", href: "https://b24-k8i1gh.bitrix24site.ru/crm_form_cw6nx/?utm_source=website_contract72" },
+    { label: "Отзывы", href: "/#coverage-map" },
     { label: "Контакты", href: "#wholesale-contract" },
   ],
   hero: {
@@ -92,6 +92,8 @@ export const homePageMock: HomePageData = {
         "Нет уникальности",
         "Демпинг конкурентов с похожим товаром",
       ],
+      buttonText: "Получить прайс лист",
+      buttonLink: "#wholesale-contract",
     },
     rightColumn: {
       title: "КОНТРАКТНОЕ",
@@ -111,6 +113,8 @@ export const homePageMock: HomePageData = {
         "Ответственность за продукт / репутацию",
         "Высокие маркетинговые вложения",
       ],
+      buttonText: "Получить консультацию",
+      buttonLink: "#wholesale-contract",
     },
   },
   missionK72: {
@@ -164,31 +168,37 @@ export const homePageMock: HomePageData = {
     stages: [
       {
         id: "stage-1",
+        number: "1",
         image: "/images/home/work-stages/stage-1.png",
         text: "РЎРѕРІРјРµСЃС‚РЅРѕ СЃ РјРµРЅРµРґР¶РµСЂРѕРј РІС‹Р±РёСЂР°РµС‚Рµ РїСЂРѕРґСѓРєС‚, С‚Р°СЂСѓ, СѓРїР°РєРѕРІРєСѓ Рё РѕРїСЂРµРґРµР»СЏРµС‚Рµ СЃРѕСЃС‚Р°РІ Р·Р°РєР°Р·Р°.",
       },
       {
         id: "stage-2",
+        number: "2",
         image: "/images/home/work-stages/stage-2.png",
         text: "РџРѕРґРїРёСЃС‹РІР°РµС‚Рµ РґРѕРіРѕРІРѕСЂ Рё СЃРїРµС†РёС„РёРєР°С†РёСЋ, РІС‹СЃС‚Р°РІР»СЏРµС‚СЃСЏ СЃС‡РµС‚ Рё РѕСЃСѓС‰РµСЃС‚РІР»СЏРµС‚СЃСЏ РѕРїР»Р°С‚Р°.",
       },
       {
         id: "stage-3",
+        number: "3",
         image: "/images/home/work-stages/stage-3.png",
         text: "Р РµРіРёСЃС‚СЂРёСЂСѓРµС‚СЃСЏ РґРµРєР»Р°СЂР°С†РёСЏ, РѕСЂРіР°РЅРёР·СѓРµС‚СЃСЏ РјР°СЂРєРёСЂРѕРІРєР° В«Р§РµСЃС‚РЅС‹Р№ Р—РЅР°РєВ» Рё СЃРѕР·РґР°РµС‚СЃСЏ РєР°СЂС‚РѕС‡РєР° С‚РѕРІР°СЂР°.",
       },
       {
         id: "stage-4",
+        number: "4",
         image: "/images/home/work-stages/stage-4.png",
         text: "РџСЂРѕРёР·РІРѕРґСЃС‚РІРѕ Р·Р°РєСѓРїР°РµС‚ СЃС‹СЂСЊС‘, РёР·РіРѕС‚Р°РІР»РёРІР°РµС‚ СЃРёРіРЅР°Р»СЊРЅС‹Р№ РѕР±СЂР°Р·РµС† Рё Р·Р°РїСѓСЃРєР°РµС‚ РІР°СЂРєСѓ РїСЂРё РЅР°Р»РёС‡РёРё РІСЃРµС… РјР°С‚РµСЂРёР°Р»РѕРІ.",
       },
       {
         id: "stage-5",
+        number: "5",
         image: "/images/home/work-stages/stage-5.png",
         text: "РЈРїР°РєРѕРІС‹РІР°СЋС‚СЃСЏ РєРѕСЂРѕР±РєРё, РјР°СЂРєРёСЂСѓСЋС‚СЃСЏ РґР»СЏ РѕС‚РіСЂСѓР·РєРё Рё РѕСЃСѓС‰РµСЃС‚РІР»СЏРµС‚СЃСЏ РѕС‚РіСЂСѓР·РєР° РїСЂРѕРґСѓРєС†РёРё.",
       },
       {
         id: "stage-6",
+        number: "6",
         image: "/images/home/work-stages/stage-6.png",
         text: "РћСЂРіР°РЅРёР·СѓРµС‚СЃСЏ С‚СЂР°РЅСЃРїРѕСЂС‚РёСЂРѕРІРєР°, РѕС„РѕСЂРјР»СЏРµС‚СЃСЏ Р·Р°Р±РѕСЂ РіСЂСѓР·Р° Рё РїРµСЂРµРґР°СЋС‚СЃСЏ СЃРѕРїСЂРѕРІРѕРґРёС‚РµР»СЊРЅС‹Рµ РґРѕРєСѓРјРµРЅС‚С‹.",
       },
@@ -202,63 +212,86 @@ export const homePageMock: HomePageData = {
         title: "РЎРµР»Р»РµСЂР°Рј РЅР° РјР°СЂРєРµС‚РїР»РµР№СЃР°С…",
         text: "РњРёРЅРёРјР°Р»СЊРЅР°СЏ РїР°СЂС‚РёСЏ РѕС‚ 5000 в‚Ѕ РґР»СЏ СЃС‚Р°СЂС‚Р°, РјРѕР¶РЅРѕ Р·Р°РїСѓСЃРєР°С‚СЊ РїСЂРѕРґСѓРєС‚ РїРѕРґ СЃРІРѕРёРј Р±СЂРµРЅРґРѕРј Р±РµР· Р»РёС€РЅРёС… РІР»РѕР¶РµРЅРёР№.",
         image: "/images/home/who-suits/item-1.png",
+        buttonText: "РАССЧИТАТЬ СТОИМОСТЬ",
+        buttonLink: "#wholesale-contract",
       },
       {
         id: "who-suits-2",
         title: "Р‘СЊСЋС‚Рё-Р±Р»РѕРіРµСЂР°Рј",
         text: "РџРѕРґРѕР№РґРµС‚ РґР»СЏ РїРµСЂРІРѕРіРѕ Р·Р°РїСѓСЃРєР°, СЂРµРєР»Р°РјРЅС‹С… РёРЅС‚РµРіСЂР°С†РёР№ Рё С‚РµСЃС‚Р° СЃРїСЂРѕСЃР° СЃ СЃРѕР±СЃС‚РІРµРЅРЅРѕР№ РєРѕСЃРјРµС‚РёС‡РµСЃРєРѕР№ Р»РёРЅРµР№РєРѕР№.",
         image: "/images/home/who-suits/item-2.png",
+        buttonText: "РАССЧИТАТЬ СТОИМОСТЬ",
+        buttonLink: "#wholesale-contract",
       },
       {
         id: "who-suits-3",
         title: "РЎР°Р»РѕРЅР°Рј РєСЂР°СЃРѕС‚С‹",
         text: "РџРѕРјРѕР¶РµС‚ СЃРѕР·РґР°С‚СЊ РїСЂРѕРґСѓРєС‚ РґР»СЏ РїРѕСЃС‚РѕСЏРЅРЅС‹С… РєР»РёРµРЅС‚РѕРІ Рё СѓСЃРёР»РёС‚СЊ РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Р№ РёРјРёРґР¶ СЃР°Р»РѕРЅРЅРѕРіРѕ Р±РёР·РЅРµСЃР°.",
         image: "/images/home/who-suits/item-3.png",
+        buttonText: "РАССЧИТАТЬ СТОИМОСТЬ",
+        buttonLink: "#wholesale-contract",
       },
       {
         id: "who-suits-4",
         title: "Р”РёСЃС‚СЂРёР±СЊСЋС‚РѕСЂР°Рј",
         text: "РџРѕРґС…РѕРґРёС‚ РґР»СЏ СЂР°СЃС€РёСЂРµРЅРёСЏ Р°СЃСЃРѕСЂС‚РёРјРµРЅС‚Р° Рё Р·Р°РїСѓСЃРєР° РїРѕР·РёС†РёРё СЃ С…РѕСЂРѕС€РµР№ РјР°СЂР¶РёРЅР°Р»СЊРЅРѕСЃС‚СЊСЋ РІ СЃРѕР±СЃС‚РІРµРЅРЅРѕР№ СЃРµС‚Рё РїСЂРѕРґР°Р¶.",
         image: "/images/home/who-suits/item-4.png",
+        buttonText: "РАССЧИТАТЬ СТОИМОСТЬ",
+        buttonLink: "#wholesale-contract",
       },
       {
         id: "who-suits-5",
         title: "РњР°РіР°Р·РёРЅР°Рј РєРѕСЃРјРµС‚РёРєРё Рё СЃРµС‚СЏРј",
         text: "РЈРґРѕР±РЅС‹Р№ С„РѕСЂРјР°С‚ РґР»СЏ Р·Р°РїСѓСЃРєР° private label Рё СЂР°Р·РІРёС‚РёСЏ РЅРѕРІРѕРіРѕ РЅР°РїСЂР°РІР»РµРЅРёСЏ Р±РµР· СЃР»РѕР¶РЅРѕР№ РїСЂРѕРёР·РІРѕРґСЃС‚РІРµРЅРЅРѕР№ Р±Р°Р·С‹.",
         image: "/images/home/who-suits/item-5.png",
+        buttonText: "РАССЧИТАТЬ СТОИМОСТЬ",
+        buttonLink: "#wholesale-contract",
       },
       {
         id: "who-suits-6",
         title: "РҐРѕС‡Сѓ СЃРІРѕР№ Р±СЂРµРЅРґ!",
         text: "РЎРѕР±РµСЂРµРј РїРѕРґС…РѕРґСЏС‰РёР№ РїСЂРѕРґСѓРєС‚, С‚Р°СЂСѓ Рё СѓРїР°РєРѕРІРєСѓ, С‡С‚РѕР±С‹ РІС‹ Р±С‹СЃС‚СЂРѕ РІС‹С€Р»Рё РЅР° СЂС‹РЅРѕРє СЃРѕ СЃРІРѕРµР№ РєРѕСЃРјРµС‚РёС‡РµСЃРєРѕР№ РјР°СЂРєРѕР№.",
         image: "/images/home/who-suits/item-6.png",
-        buttonText: "Р РђРЎРЎР§РРўРђРўР¬ РЎРўРћРРњРћРЎРўР¬",
+        buttonText: "РАССЧИТАТЬ СТОИМОСТЬ",
         buttonLink: "#wholesale-contract",
       },
     ],
   },
   whyTrustUs: {
     title: "РџРћР§Р•РњРЈ РќРђРњ Р”РћР’Р•Р РЇР®Рў?",
+    speedTitle: "Скорость",
+    speedFormulaLabel: "Формула 14/30:",
+    speedText:
+      "14 рабочих дней займет разработка опытных образцов. 30 рабочих дней займет разработка Вашего бренда под ключ.",
+    speedFulfillmentText: "Собственный фулфилмент",
+    availabilityTitle: "Доступность",
+    availabilityText:
+      "Минимальная партия - 50 000 ₽. Это самый низкий порог входа для бизнеса в 2026*",
+    availabilityNote: "* Согласно данным ЯНДЕКС БИЗНЕС открыть ПВЗ от 550 000 ₽",
+    professionalismTitle: "Профессионализм",
+    professionalismText:
+      "Знаем, как создать успешный косметический бренд, который будет продаваться в Золотом Яблоке или Лэтуаль: EVSI и QTIX - это наши собственные торговые марки.",
+    brandLinks: [
+      { label: "EVSI в Лэтуаль", href: "https://www.letu.ru/brand/evsi" },
+      { label: "EVSI в Золотом Яблоке", href: "https://goldapple.ru/brands/evsi" },
+      { label: "QTIX в Лэтуаль", href: "https://www.letu.ru/brand/qti" },
+    ],
     points: [
       {
         id: "why-trust-point-1",
-        text: "РњРёРЅРёРјР°Р»СЊРЅР°СЏ РїР°СЂС‚РёСЏ РѕС‚ 50 000 СЂСѓР±Р»РµР№",
+        text: "300+ довольных клиентов по всей России и странам СНГ",
       },
       {
         id: "why-trust-point-2",
-        text: "РџСЂРѕРёР·РІРѕРґСЃС‚РІРѕ РІ Р РѕСЃСЃРёРё, СЃРѕР±СЃС‚РІРµРЅРЅР°СЏ Р»Р°Р±РѕСЂР°С‚РѕСЂРёСЏ",
+        text: "Производство в России, собственная лаборатория",
       },
       {
         id: "why-trust-point-3",
-        text: "Р§РёСЃС‚С‹Рµ С„РѕСЂРјСѓР»С‹, СЂР°Р·СЂР°Р±РѕС‚Р°РЅРЅС‹Рµ РѕРїС‹С‚РЅС‹РјРё С‚РµС…РЅРѕР»РѕРіР°РјРё",
+        text: "Чистые формулы, разработанные опытными технологами",
       },
       {
         id: "why-trust-point-4",
-        text: "РЎРѕР±СЃС‚РІРµРЅРЅС‹Р№ С„СѓР»С„РёР»РјРµРЅС‚",
-      },
-      {
-        id: "why-trust-point-5",
-        text: "Р‘РѕР»РµРµ 300+ РґРѕРІРѕР»СЊРЅС‹С… РєР»РёРµРЅС‚РѕРІ РїРѕ РІСЃРµР№ Р РѕСЃСЃРёРё Рё СЃС‚СЂР°РЅР°Рј РЎРќР“",
+        text: "Поддержим Вас на всех стадиях: от производства до маркетинга",
       },
     ],
     galleryItems: [
@@ -445,13 +478,12 @@ export const homePageMock: HomePageData = {
     ],
     documentsColumnTitle: "ДОКУМЕНТЫ",
     documentLinks: [
-      { label: "Условия обработки персональных данных", href: "#" },
-      { label: "Политика обработки персональных данных", href: "#" },
-      { label: "Согласие на обработку персональных данных", href: "#" },
+      { label: "Условия обработки персональных данных", href: "/conditionsforprocessingpersonaldata" },
+      { label: "Политика обработки персональных данных", href: "/personal_data_processing_policy" },
+      { label: "Согласие на обработку персональных данных", href: "/personal_data_processing_consent" },
     ],
-    formColumnTitle: "ОСТАВИТЬ ЗАЯВКУ",
-    phonePlaceholder: "Оставьте ваш телефон",
-    consentText: "Оставляя заявку, вы соглашаетесь с политикой обработки персональных данных",
+    formButtonText: "Оставить заявку",
+    formButtonLink: "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
     socialLinks: [
       { label: "WhatsApp", href: "#", enabled: true, icon: undefined, hoverIcon: undefined },
       { label: "Telegram", href: "#", enabled: true, icon: undefined, hoverIcon: undefined },

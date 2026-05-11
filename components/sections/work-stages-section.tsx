@@ -22,8 +22,12 @@ export function WorkStagesSection({ section }: WorkStagesSectionProps) {
           {section.stages.map((stage, index) => (
             <article
               key={`${stage.id}-${index}`}
-              className="group grid min-h-[15.2rem] grid-rows-[6.4rem,1fr] rounded-[21px] border border-[rgba(255,255,255,0.04)] bg-[#63504A] p-4 shadow-[0_14px_27px_rgba(34,22,18,0.34)] transition duration-300 sm:min-h-[16rem] sm:grid-rows-[6.8rem,1fr] sm:p-5"
+              className="group relative grid min-h-[15.2rem] grid-rows-[6.4rem,1fr] overflow-hidden rounded-[21px] border border-[rgba(255,255,255,0.04)] bg-[#63504A] p-4 shadow-[0_14px_27px_rgba(34,22,18,0.34)] transition duration-300 sm:min-h-[16rem] sm:grid-rows-[6.8rem,1fr] sm:p-5"
             >
+              <span className="pointer-events-none absolute left-4 top-3 z-10 text-[clamp(1.8rem,2.8vw,2.6rem)] font-extrabold leading-none tracking-normal text-[#F7F2EE] sm:left-5 sm:top-3.5">
+                {stage.number}
+              </span>
+
               <div className="flex items-end justify-center">
                 <div className="relative h-[5.6rem] w-full max-w-[8rem] sm:h-[6rem] sm:max-w-[8.4rem]">
                   <Image
