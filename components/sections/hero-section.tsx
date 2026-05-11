@@ -47,6 +47,9 @@ export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) 
               <p className="text-[2.78rem] font-bold uppercase leading-[0.9] tracking-[-0.055em]">
                 {hero.lines[1]}
               </p>
+              <p className="text-[2.78rem] font-bold uppercase leading-[0.9] tracking-[-0.055em]">
+                {hero.lines[2]}
+              </p>
             </motion.div>
 
             <motion.p
@@ -89,6 +92,9 @@ export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) 
               </p>
               <p className="text-[clamp(1.8rem,4.8vw,4.8rem)] font-bold uppercase leading-[0.94] tracking-[0.064em] sm:tracking-[0.08em]">
                 {hero.lines[1]}
+              </p>
+              <p className="text-[clamp(1.8rem,4.8vw,4.8rem)] font-bold uppercase leading-[0.94] tracking-[0.064em] sm:tracking-[0.08em]">
+                {hero.lines[2]}
               </p>
             </motion.div>
 

@@ -29,6 +29,7 @@ export interface StrapiHomePage {
   documentId?: string;
   heroTitleLine1: string;
   heroTitleLine2: string;
+  heroTitleLine3?: string | null;
   heroSubtitle: string;
   heroBackgroundImage?: StrapiMedia | null;
   heroMobileBackgroundImage?: StrapiMedia | null;

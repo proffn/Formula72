@@ -301,7 +301,8 @@ function mapHero(homePage: StrapiHomePage) {
     lines: [
       homePage.heroTitleLine1 || homePageMock.hero.lines[0],
       homePage.heroTitleLine2 || homePageMock.hero.lines[1],
-    ] as [string, string],
+      homePage.heroTitleLine3 || homePageMock.hero.lines[2],
+    ] as [string, string, string],
     brand: homePage.heroSubtitle || homePageMock.hero.brand,
     backgroundImage: resolveMediaUrl(homePage.heroBackgroundImage) ?? homePageMock.hero.backgroundImage,
     mobileBackgroundImage:

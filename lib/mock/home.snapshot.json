@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-05-11T18:02:06.053Z",
+  "generatedAt": "2026-05-11T18:30:31.039Z",
   "sourceUrl": "https://formula72-cms.onrender.com",
   "media": {
     "cloudinaryUrlCount": 88,
@@ -113,9 +113,9 @@
       "data": {
         "id": 7,
         "documentId": "vky6ruwc66r6cssuhwb124yy",
-        "heroTitleLine1": "КОНТРАКТНОE",
-        "heroTitleLine2": "ПРОИЗВОДСТВО",
-        "heroSubtitle": "ФОРМУЛА72",
+        "heroTitleLine1": "??????????E",
+        "heroTitleLine2": "????????????",
+        "heroSubtitle": "???????72",
         "createdAt": "2026-03-22T16:27:06.040Z",
         "updatedAt": "2026-04-24T12:38:58.524Z",
         "publishedAt": "2026-04-24T12:38:58.623Z",
@@ -306,7 +306,8 @@
           "createdAt": "2026-04-24T09:09:10.597Z",
           "updatedAt": "2026-04-24T12:14:20.056Z",
           "publishedAt": "2026-04-24T09:09:10.597Z"
-        }
+        },
+        "heroTitleLine3": "?????????"
       },
       "meta": {}
     },

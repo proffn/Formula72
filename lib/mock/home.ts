@@ -14,8 +14,8 @@ export const homePageMock: HomePageData = {
     { label: "Контакты", href: "#wholesale-contract" },
   ],
   hero: {
-    lines: ["РљРћРќРўР РђРљРўРќРћР•", "РџР РћРР—Р’РћР”РЎРўР’Рћ"],
-    brand: "FORMULA72",
+    lines: ["КОНТРАКТНОE", "ПРОИЗВОДСТВО", "КОСМЕТИКИ"],
+    brand: "ФОРМУЛА72",
     mobileBackgroundImage: "/images/home/hero/mobile-hero-bg.png",
   },
   bannerSection: {

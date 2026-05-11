@@ -11,7 +11,7 @@ export interface SiteHeaderContent {
 }
 
 export interface HeroContent {
-  lines: [string, string];
+  lines: [string, string, string];
   brand: string;
   backgroundImage?: string;
   mobileBackgroundImage?: string;
