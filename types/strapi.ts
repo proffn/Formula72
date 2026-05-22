@@ -79,6 +79,72 @@ export interface StrapiProductionVideoPage {
   posterImage?: StrapiMedia | null;
 }
 
+export interface StrapiRichTextNode {
+  text?: string;
+  children?: StrapiRichTextNode[];
+}
+
+export type StrapiTextValue = string | StrapiRichTextNode[] | null | undefined;
+
+export interface StrapiAboutValueCard {
+  id?: number;
+  title?: string | null;
+  description?: StrapiTextValue;
+  highlightText?: string | null;
+  icon?: StrapiMedia | null;
+  order?: number | null;
+  enabled?: boolean | null;
+}
+
+export interface StrapiAboutWhyItem {
+  id?: number;
+  title?: string | null;
+  label?: string | null;
+  value?: string | null;
+  description?: StrapiTextValue;
+  linkLabel?: string | null;
+  linkHref?: string | null;
+  order?: number | null;
+  enabled?: boolean | null;
+}
+
+export interface StrapiAboutStoreLink {
+  id?: number;
+  title?: string | null;
+  logo?: StrapiMedia | null;
+  href?: string | null;
+  order?: number | null;
+  enabled?: boolean | null;
+}
+
+export interface StrapiAboutPartnerCard {
+  id?: number;
+  title?: string | null;
+  logo?: StrapiMedia | null;
+  stores?: StrapiAboutStoreLink[] | null;
+  order?: number | null;
+  enabled?: boolean | null;
+}
+
+export interface StrapiAboutPage {
+  id: number;
+  documentId?: string;
+  enabled?: boolean | null;
+  title?: string | null;
+  subtitle?: string | null;
+  logo?: StrapiMedia | null;
+  backButtonLabel?: string | null;
+  backButtonHref?: string | null;
+  valuesTitle?: string | null;
+  values?: StrapiAboutValueCard[] | null;
+  missionTitle?: string | null;
+  missionText?: StrapiTextValue;
+  missionImage?: StrapiMedia | null;
+  whyTitle?: string | null;
+  whyItems?: StrapiAboutWhyItem[] | null;
+  partners?: StrapiAboutPartnerCard[] | null;
+}
+
 export interface StrapiBanner {
   id: number;
   documentId?: string;

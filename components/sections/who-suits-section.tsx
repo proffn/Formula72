@@ -37,7 +37,7 @@ export function WhoSuitsSection({ section }: WhoSuitsSectionProps) {
               </div>
 
               <div className="mt-3 flex flex-1 flex-col">
-                <h3 className="text-center text-[0.96rem] font-extrabold leading-[1.05] tracking-[-0.03em]">
+                <h3 className="text-center text-[0.96rem] font-extrabold uppercase leading-[1.05] tracking-[-0.03em]">
                   {item.title}
                 </h3>
                 <p className="mt-2.5 text-center text-[0.78rem] font-medium leading-[1.38] text-[rgba(99,80,74,0.88)] sm:text-[0.8rem]">
@@ -60,5 +60,4 @@ export function WhoSuitsSection({ section }: WhoSuitsSectionProps) {
     </section>
   );
 }
-
 

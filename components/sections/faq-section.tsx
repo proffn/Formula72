@@ -75,7 +75,7 @@ export function FaqSection({ section }: FaqSectionProps) {
           <div className="rounded-[15px] border border-[#E6D9CF] bg-[#FBF4ED] px-4 py-4 shadow-[0_12px_32px_rgba(99,80,74,0.06)] sm:px-5 sm:py-5">
             <div className="flex h-full flex-col items-start justify-between gap-4">
               <div className="space-y-2">
-                <p className="font-manrope text-[19px] font-semibold leading-[1.02] tracking-[-0.04em] sm:text-[22px]">
+                <p className="font-manrope text-[19px] font-semibold uppercase leading-[1.02] tracking-[-0.04em] sm:text-[22px]">
                   {section.ctaTitle}
                 </p>
                 <p className="max-w-[28ch] text-[13px] leading-5 text-[#7A6862] sm:text-[14px] sm:leading-6">
@@ -109,7 +109,7 @@ function FaqCategoryCard({ category, openId, onToggle }: FaqCategoryCardProps) {
   return (
     <div className="rounded-[15px] border border-[#E6D9CF] bg-[#FBF7F2] shadow-[0_12px_32px_rgba(99,80,74,0.05)]">
       <div className="border-b border-[#E8DDD4] px-4 py-3 sm:px-5">
-        <h3 className="font-manrope text-[15px] font-semibold leading-tight sm:text-[16px]">
+        <h3 className="font-manrope text-[15px] font-semibold uppercase leading-tight sm:text-[16px]">
           {category.title}
         </h3>
       </div>

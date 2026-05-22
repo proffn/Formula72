@@ -7,7 +7,7 @@ export const homePageMock: HomePageData = {
     workSchedule: "пн.-пт. с 07:00 до 16:00 по мск",
   },
   navigation: [
-    { label: "О нас", href: "#hero" },
+    { label: "О нас", href: "/about" },
     { label: "Производство", href: "/production" },
     { label: "Опт", href: "https://b24-k8i1gh.bitrix24site.ru/crm_form_cw6nx/?utm_source=website_contract72" },
     { label: "Отзывы", href: "/#coverage-map" },

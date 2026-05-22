@@ -16,7 +16,7 @@ export function WhatWeCanMakeSection({ section }: WhatWeCanMakeSectionProps) {
     >
       <div className="mx-auto max-w-[1100px]">
         <div className="max-w-[840px]">
-          <h2 className="text-[clamp(2rem,3.2vw,3.4rem)] font-extrabold leading-[0.94] tracking-[-0.04em]">
+          <h2 className="text-[clamp(2rem,3.2vw,3.4rem)] font-extrabold uppercase leading-[0.94] tracking-[-0.04em]">
             {section.title}
           </h2>
         </div>
@@ -82,7 +82,7 @@ function WhatWeCanMakeCard({ item }: WhatWeCanMakeCardProps) {
       </div>
 
       <div className="flex flex-col border-t border-[rgba(99,80,74,0.08)] px-3 py-3 sm:px-4">
-        <h3 className="text-center text-[0.84rem] font-bold leading-[1.16] tracking-[-0.02em] sm:text-[0.88rem]">
+        <h3 className="text-center text-[0.84rem] font-bold uppercase leading-[1.16] tracking-[-0.02em] sm:text-[0.88rem]">
           {item.title}
         </h3>
 

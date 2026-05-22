@@ -77,7 +77,7 @@ export function ProsConsSection({ section }: ProsConsSectionProps) {
     >
       <div className="mx-auto flex max-w-[1100px] flex-col lg:min-h-[calc(100svh-3.5rem)] lg:justify-center">
         <div className="max-w-[980px] pb-4 sm:pb-0">
-          <h2 className="text-[clamp(2rem,2.85vw,3.22rem)] font-extrabold leading-[0.94] tracking-[-0.04em] sm:whitespace-pre-line">
+          <h2 className="text-[clamp(2rem,2.85vw,3.22rem)] font-extrabold uppercase leading-[0.94] tracking-[-0.04em] sm:whitespace-pre-line">
             <span className="whitespace-pre-line sm:hidden">{`Плюсы и минусы
 готовых рецептур
 и создание своего
@@ -169,7 +169,7 @@ function SectionList({ title, items, marker, accent }: SectionListProps) {
 
   return (
     <div>
-      <h4 className="text-[0.94rem] font-bold leading-none tracking-[-0.02em] sm:text-[1rem]">{title}</h4>
+      <h4 className="text-[0.94rem] font-bold uppercase leading-none tracking-[-0.02em] sm:text-[1rem]">{title}</h4>
       <ul className="mt-2.5 space-y-2.5 sm:space-y-2.5">
         {items.map((item, index) => (
           <li

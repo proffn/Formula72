@@ -13,7 +13,7 @@ export function MissionK72Section({ section }: MissionK72SectionProps) {
       <div className="mx-auto flex w-full max-w-[1520px] lg:min-h-[calc(100svh-2.5rem)] lg:items-center">
         <div className="grid w-full gap-3.5 lg:grid-cols-[416px_minmax(0,960px)] lg:grid-rows-[auto_auto] lg:gap-x-0 lg:gap-y-2.5">
           <div className="lg:col-start-2 lg:row-start-1 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:gap-3">
-            <h2 className="text-[clamp(2rem,4.2vw,3.9rem)] font-black leading-[0.88] tracking-[-0.06em]">
+            <h2 className="text-[clamp(2rem,4.2vw,3.9rem)] font-black uppercase leading-[0.88] tracking-[-0.06em]">
               {section.title}
             </h2>
             <p className="mt-2.5 max-w-[320px] text-[clamp(0.82rem,0.95vw,1.08rem)] font-extrabold uppercase leading-[1.04] tracking-[-0.03em] text-[#74635B] sm:mt-3 lg:mt-0 lg:justify-self-start lg:pb-1">

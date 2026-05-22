@@ -8,33 +8,38 @@ type Formula72SchemeSectionProps = {
 const mobileLayout = [
   {
     imagePosition: "object-center",
-    contentClass: "items-center pl-[45%] pr-6 pt-4 text-left",
-    titleClass: "text-[2rem]",
-    headingClass: "mt-7 text-[1.45rem]",
-    textClass: "max-w-[12rem] text-[0.95rem]",
+    contentClass: "items-start pl-[46%] pr-[0.17rem] pt-[0.33rem] text-left",
+    bodyClass: "pt-1",
+    titleClass: "text-[clamp(1.5rem,6.8vw,2.11rem)]",
+    headingClass: "mt-2 text-[clamp(1.25rem,5.5vw,1.69rem)]",
+    textClass: "max-w-[11.4rem] text-[clamp(0.78rem,3.5vw,1.03rem)]",
   },
   {
     imagePosition: "object-center",
-    contentClass: "items-start justify-center pl-[18%] pr-[38%] text-right",
+    contentClass: "items-center justify-start pl-[7%] pr-[41%] pt-[8%] text-right",
+    bodyClass: "ml-auto max-w-[14.8rem]",
     titleClass: "",
-    headingClass: "text-[1.45rem]",
-    textClass: "max-w-[15rem] text-[0.95rem]",
+    headingClass: "text-[clamp(1.25rem,5.5vw,1.69rem)]",
+    textClass: "max-w-full text-[clamp(0.78rem,3.5vw,1.03rem)]",
   },
   {
     imagePosition: "object-center",
-    contentClass: "items-start pl-[45%] pr-6 pt-[22%] text-left",
+    contentClass: "items-start pl-[48%] pr-[0.17rem] pt-[5.5%] text-left",
+    bodyClass: "",
     titleClass: "",
-    headingClass: "text-[1.45rem]",
-    textClass: "max-w-[12rem] text-[0.95rem]",
+    headingClass: "text-[clamp(1.25rem,5.5vw,1.69rem)]",
+    textClass: "max-w-[12.9rem] text-[clamp(0.75rem,3.38vw,1rem)]",
   },
 ] as const;
 
 export function Formula72SchemeSection({ section }: Formula72SchemeSectionProps) {
+  const mobileItems = [section.items[0], section.items[2], section.items[1]];
+
   return (
     <section id="formula72-scheme" className="relative w-full bg-[#F7F2EE]">
       <div className="md:hidden">
         <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col">
-          {section.items.map((item, index) => {
+          {mobileItems.map((item, index) => {
             const layout = mobileLayout[index] ?? mobileLayout[0];
 
             return (
@@ -59,11 +64,11 @@ export function Formula72SchemeSection({ section }: Formula72SchemeSectionProps)
                       ФОРМУЛА72
                     </h2>
                   ) : null}
-                  <div>
+                  <div className={`w-full ${layout.bodyClass}`}>
                     <h3 className={`font-extrabold uppercase leading-none ${layout.headingClass}`}>
                       {item.title}
                     </h3>
-                    <p className={`mt-1 font-medium leading-[1.08] text-[#63504A]/90 ${layout.textClass}`}>
+                    <p className={`mt-1 font-medium leading-[1.02] text-[#63504A]/90 ${layout.textClass}`}>
                       {item.description}
                     </p>
                   </div>
@@ -76,7 +81,7 @@ export function Formula72SchemeSection({ section }: Formula72SchemeSectionProps)
 
       <div className="relative hidden aspect-[1920/1080] w-full overflow-hidden md:block">
         <div className="absolute inset-x-0 top-0 z-10 flex justify-center px-6 pt-8 sm:pt-10 lg:pt-12">
-          <h2 className="text-center text-[clamp(5.5rem,10vw,11rem)] font-extrabold uppercase leading-none tracking-[-0.05em] text-[#63504A]">
+          <h2 className="text-center text-[clamp(3.7rem,6.7vw,7.3rem)] font-extrabold uppercase leading-none tracking-[-0.05em] text-[#63504A]">
             {section.title}
           </h2>
         </div>

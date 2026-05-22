@@ -1,6 +1,14 @@
 ﻿import { getStrapiMediaUrl, strapiFetch } from "@/lib/api";
+import { aboutPageMock } from "@/lib/mock/about";
 import { homePageMock } from "@/lib/mock/home";
 import homePageSnapshot from "@/lib/mock/home.snapshot.json";
+import type {
+  AboutPageData,
+  AboutPartnerCardData,
+  AboutStoreLinkData,
+  AboutValueCardData,
+  AboutWhyItemData,
+} from "@/types/about";
 import type {
   BannerSectionData,
   BannerSlideData,
@@ -34,6 +42,11 @@ import type {
   WorkStagesSectionData,
 } from "@/types/home";
 import type {
+  StrapiAboutPage,
+  StrapiAboutPartnerCard,
+  StrapiAboutStoreLink,
+  StrapiAboutValueCard,
+  StrapiAboutWhyItem,
   StrapiBanner,
   StrapiBannerSection,
   StrapiCollectionResponse,
@@ -57,6 +70,8 @@ import type {
   StrapiProductionVideoPage,
   StrapiSiteHeader,
   StrapiSingleResponse,
+  StrapiRichTextNode,
+  StrapiTextValue,
   StrapiTextItem,
   StrapiWhyTrustGalleryItem,
   StrapiWhyTrustPoint,
@@ -71,7 +86,7 @@ import type {
 } from "@/types/strapi";
 
 const navigationHrefs = [
-  "#hero",
+  "/about",
   "/production",
   "https://b24-k8i1gh.bitrix24site.ru/crm_form_cw6nx/?utm_source=website_contract72",
   "/#coverage-map",
@@ -79,6 +94,10 @@ const navigationHrefs = [
 const snapshotResponses = homePageSnapshot.responses ?? {};
 function normalizeNavigationHref(value: string | null | undefined, fallback: string) {
   const href = value?.trim() || fallback;
+
+  if (fallback === "/about" && (href === "#hero" || href === "/#hero")) {
+    return "/about";
+  }
 
   if (href === "#hero") {
     return href;
@@ -357,6 +376,141 @@ export function mapProductionVideoPage(section?: StrapiProductionVideoPage | nul
       "Посмотрите, как устроено контрактное производство Formula72: лаборатория, разработка, фасовка и подготовка продукции к отгрузке.",
     videoUrl: resolveMediaUrl(section?.videoFile) ?? "/videos/production.mp4",
     posterImage: resolveMediaUrl(section?.posterImage) ?? undefined,
+  };
+}
+
+function normalizeTextValue(value: StrapiTextValue, fallback = "") {
+  if (typeof value === "string") {
+    return value.trim() || fallback;
+  }
+
+  if (!Array.isArray(value)) {
+    return fallback;
+  }
+
+  const readNode = (node: StrapiRichTextNode): string => {
+    if (typeof node.text === "string") {
+      return node.text;
+    }
+
+    if (Array.isArray(node.children)) {
+      return node.children.map((child) => readNode(child)).join("");
+    }
+
+    return "";
+  };
+
+  const normalized = value
+    .map((node) => readNode(node))
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .join("\n");
+
+  return normalized || fallback;
+}
+
+function sortByOrder<T extends { order?: number; title: string }>(items: T[]) {
+  return [...items].sort((firstItem, secondItem) => {
+    const firstOrder = typeof firstItem.order === "number" ? firstItem.order : Number.MAX_SAFE_INTEGER;
+    const secondOrder = typeof secondItem.order === "number" ? secondItem.order : Number.MAX_SAFE_INTEGER;
+
+    if (firstOrder !== secondOrder) {
+      return firstOrder - secondOrder;
+    }
+
+    return firstItem.title.localeCompare(secondItem.title, "ru");
+  });
+}
+
+function mapAboutValueCard(item: StrapiAboutValueCard, fallback: AboutValueCardData): AboutValueCardData {
+  return {
+    title: item.title?.trim() || fallback.title,
+    description: normalizeTextValue(item.description, fallback.description),
+    highlightText: item.highlightText?.trim() || fallback.highlightText,
+    icon: resolveMediaUrl(item.icon) ?? fallback.icon,
+    order: typeof item.order === "number" ? item.order : fallback.order,
+    enabled: item.enabled ?? fallback.enabled,
+  };
+}
+
+function mapAboutWhyItem(item: StrapiAboutWhyItem, fallback: AboutWhyItemData): AboutWhyItemData {
+  return {
+    title: item.title?.trim() || fallback.title,
+    label: item.label?.trim() || fallback.label,
+    value: item.value?.trim() || fallback.value,
+    description: normalizeTextValue(item.description, fallback.description),
+    linkLabel: item.linkLabel?.trim() || fallback.linkLabel,
+    linkHref: item.linkHref?.trim() || fallback.linkHref,
+    order: typeof item.order === "number" ? item.order : fallback.order,
+    enabled: item.enabled ?? fallback.enabled,
+  };
+}
+
+function mapAboutStoreLink(item: StrapiAboutStoreLink, fallback: AboutStoreLinkData): AboutStoreLinkData {
+  return {
+    title: item.title?.trim() || fallback.title,
+    logo: resolveMediaUrl(item.logo) ?? fallback.logo,
+    href: item.href?.trim() || fallback.href,
+    order: typeof item.order === "number" ? item.order : fallback.order,
+    enabled: item.enabled ?? fallback.enabled,
+  };
+}
+
+function mapAboutPartnerCard(item: StrapiAboutPartnerCard, fallback: AboutPartnerCardData): AboutPartnerCardData {
+  const fallbackStores = fallback.stores.length > 0 ? fallback.stores : aboutPageMock.partners[0].stores;
+  const stores =
+    item.stores && item.stores.length > 0
+      ? item.stores.map((store, index) => mapAboutStoreLink(store, fallbackStores[index % fallbackStores.length]))
+      : fallback.stores;
+
+  return {
+    title: item.title?.trim() || fallback.title,
+    logo: resolveMediaUrl(item.logo) ?? fallback.logo,
+    stores: sortByOrder(stores.filter((store) => store.enabled && Boolean(store.title.trim()))),
+    order: typeof item.order === "number" ? item.order : fallback.order,
+    enabled: item.enabled ?? fallback.enabled,
+  };
+}
+
+export function mapAboutPage(section?: StrapiAboutPage | null): AboutPageData {
+  if (!section) {
+    return aboutPageMock;
+  }
+
+  const values =
+    section.values && section.values.length > 0
+      ? section.values.map((item, index) =>
+          mapAboutValueCard(item, aboutPageMock.values[index % aboutPageMock.values.length]),
+        )
+      : aboutPageMock.values;
+  const whyItems =
+    section.whyItems && section.whyItems.length > 0
+      ? section.whyItems.map((item, index) =>
+          mapAboutWhyItem(item, aboutPageMock.whyItems[index % aboutPageMock.whyItems.length]),
+        )
+      : aboutPageMock.whyItems;
+  const partners =
+    section.partners && section.partners.length > 0
+      ? section.partners.map((item, index) =>
+          mapAboutPartnerCard(item, aboutPageMock.partners[index % aboutPageMock.partners.length]),
+        )
+      : aboutPageMock.partners;
+
+  return {
+    enabled: section.enabled ?? aboutPageMock.enabled,
+    title: section.title?.trim() || aboutPageMock.title,
+    subtitle: section.subtitle?.trim() || aboutPageMock.subtitle,
+    logo: resolveMediaUrl(section.logo) ?? aboutPageMock.logo,
+    backButtonLabel: section.backButtonLabel?.trim() || aboutPageMock.backButtonLabel,
+    backButtonHref: section.backButtonHref?.trim() || aboutPageMock.backButtonHref,
+    valuesTitle: section.valuesTitle?.trim() || aboutPageMock.valuesTitle,
+    values: sortByOrder(values.filter((item) => item.enabled && Boolean(item.title.trim()))),
+    missionTitle: section.missionTitle?.trim() || aboutPageMock.missionTitle,
+    missionText: normalizeTextValue(section.missionText, aboutPageMock.missionText),
+    missionImage: resolveMediaUrl(section.missionImage) ?? aboutPageMock.missionImage,
+    whyTitle: section.whyTitle?.trim() || aboutPageMock.whyTitle,
+    whyItems: sortByOrder(whyItems.filter((item) => item.enabled && Boolean(item.title.trim()))),
+    partners: sortByOrder(partners.filter((item) => item.enabled && Boolean(item.title.trim()))),
   };
 }
 
@@ -864,6 +1018,25 @@ export async function getProductionVideoPage() {
     return normalizeSingle(response);
   } catch {
     return getSnapshotSingle<StrapiProductionVideoPage>("productionVideo");
+  }
+}
+
+export async function getAboutPage() {
+  try {
+    const response = await strapiFetch<StrapiSingleResponse<StrapiAboutPage>>("/api/about-page", {
+      params: {
+        "populate[logo]": true,
+        "populate[values][populate]": "icon",
+        "populate[missionImage]": true,
+        "populate[whyItems]": true,
+        "populate[partners][populate][logo]": true,
+        "populate[partners][populate][stores][populate]": "logo",
+      },
+    });
+
+    return normalizeSingle(response);
+  } catch {
+    return null;
   }
 }
 export async function getBannerSection() {
