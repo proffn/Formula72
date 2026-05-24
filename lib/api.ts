@@ -20,7 +20,7 @@ export function getStrapiMediaUrl(url?: string | null) {
     return url;
   }
 
-  if (url.startsWith("/cms-uploads/")) {
+  if (url.startsWith("/cms-uploads/") || url.startsWith("/uploads/")) {
     return url;
   }
 

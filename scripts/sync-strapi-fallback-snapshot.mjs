@@ -1,9 +1,11 @@
-import { access, copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(scriptDir, "..");
+const outputFile = path.join(projectRoot, "lib", "mock", "home.snapshot.json");
+const backupDir = path.join(projectRoot, "lib", "mock", "snapshot-backups");
 
 async function loadEnvFile(filePath) {
   try {
@@ -45,16 +47,32 @@ if (!baseUrl) {
 
 const normalizedBaseUrl = baseUrl.replace(/\/$/, "");
 const apiToken = process.env.SNAPSHOT_STRAPI_TOKEN || process.env.STRAPI_API_TOKEN;
-const strapiUploadsDir =
-  process.env.SNAPSHOT_STRAPI_UPLOADS_DIR ||
-  path.resolve(projectRoot, "..", "formula72-cms", "public", "uploads");
-const frontendUploadsDir = path.join(projectRoot, "public", "cms-uploads");
-const frontendVideoFile = path.join(projectRoot, "public", "videos", "main_video.mov");
+let previousSnapshotText = null;
+let previousSnapshot = null;
+
+try {
+  previousSnapshotText = await readFile(outputFile, "utf8");
+  previousSnapshot = JSON.parse(previousSnapshotText);
+} catch {
+  previousSnapshotText = null;
+  previousSnapshot = null;
+}
+
+const previousResponses =
+  previousSnapshot && typeof previousSnapshot === "object" && previousSnapshot.responses
+    ? previousSnapshot.responses
+    : {};
+
 const endpoints = [
   ["siteHeader", "/api/site-header?populate=*"],
   ["homePage", "/api/home-page?populate=*"],
+  [
+    "aboutPage",
+    "/api/about-page?populate[logo]=true&populate[values][populate]=icon&populate[missionImage]=true&populate[whyItems]=true&populate[partners][populate][logo]=true&populate[partners][populate][stores][populate]=logo",
+  ],
   ["productionVideo", "/api/production-video-page?populate=*"],
-  ["bannerSection", "/api/banner-section?populate[banners][populate]=*"],
+  ["termsPage", "/api/terms-page?populate[sections][populate]=image"],
+  ["certificatesPage", "/api/certificates-page?populate[certificates][populate]=image"],
   ["banners", "/api/banners?populate=*"],
   ["wholesaleContract", "/api/wholesale-contract-section?populate=*"],
   ["prosCons", "/api/pros-cons-section?populate=*"],
@@ -95,6 +113,10 @@ async function fetchJson(url) {
   return response.json();
 }
 
+function isCloudinaryUrl(url) {
+  return typeof url === "string" && url.startsWith("https://res.cloudinary.com/");
+}
+
 function isUploadUrl(url) {
   if (typeof url !== "string") {
     return false;
@@ -112,150 +134,6 @@ function isUploadUrl(url) {
   } catch {
     return false;
   }
-}
-
-function getUploadFileName(url) {
-  if (typeof url !== "string") {
-    return null;
-  }
-
-  if (url.startsWith("/uploads/")) {
-    return path.basename(url.split("?")[0]);
-  }
-
-  try {
-    const parsedUrl = new URL(url);
-    const parsedBaseUrl = new URL(normalizedBaseUrl);
-
-    if (parsedUrl.origin === parsedBaseUrl.origin && parsedUrl.pathname.startsWith("/uploads/")) {
-      return path.basename(parsedUrl.pathname);
-    }
-  } catch {
-    return null;
-  }
-
-  return null;
-}
-
-function collectUploadFileNames(value, fileNames = new Set()) {
-  if (Array.isArray(value)) {
-    value.forEach((item) => collectUploadFileNames(item, fileNames));
-    return fileNames;
-  }
-
-  if (!value || typeof value !== "object") {
-    return fileNames;
-  }
-
-  for (const nestedValue of Object.values(value)) {
-    if (typeof nestedValue === "string") {
-      const fileName = getUploadFileName(nestedValue);
-
-      if (fileName) {
-        fileNames.add(fileName);
-      }
-    } else {
-      collectUploadFileNames(nestedValue, fileNames);
-    }
-  }
-
-  return fileNames;
-}
-
-function rewriteUploadUrls(value, stats) {
-  if (Array.isArray(value)) {
-    value.forEach((item) => rewriteUploadUrls(item, stats));
-    return;
-  }
-
-  if (!value || typeof value !== "object") {
-    return;
-  }
-
-  for (const [key, nestedValue] of Object.entries(value)) {
-    if (typeof nestedValue === "string") {
-      const fileName = getUploadFileName(nestedValue);
-
-      if (!fileName) {
-        continue;
-      }
-
-      if (/\.mov$/i.test(fileName)) {
-        value[key] = "/videos/main_video.mov";
-        stats.rewrittenVideos += 1;
-      } else {
-        value[key] = `/cms-uploads/${fileName}`;
-        stats.rewrittenUploads += 1;
-      }
-    } else {
-      rewriteUploadUrls(nestedValue, stats);
-    }
-  }
-}
-
-async function pathExists(filePath) {
-  try {
-    await access(filePath);
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-async function localizeUploadMedia(responses) {
-  const fileNames = [...collectUploadFileNames(responses)];
-
-  if (fileNames.length === 0) {
-    return null;
-  }
-
-  if (!(await pathExists(strapiUploadsDir))) {
-    console.warn(`[sync:fallback] Strapi uploads directory not found: ${strapiUploadsDir}`);
-    return null;
-  }
-
-  await mkdir(frontendUploadsDir, { recursive: true });
-
-  const stats = {
-    copiedFrom: strapiUploadsDir,
-    uploadsRewrittenTo: "/cms-uploads/",
-    videoRewrittenTo: "/videos/main_video.mov",
-    copiedFiles: 0,
-    missingFiles: 0,
-    skippedVideoFiles: 0,
-    rewrittenUploads: 0,
-    rewrittenVideos: 0,
-  };
-
-  for (const fileName of fileNames) {
-    if (/\.mov$/i.test(fileName)) {
-      stats.skippedVideoFiles += 1;
-      continue;
-    }
-
-    const sourceFile = path.join(strapiUploadsDir, fileName);
-    const targetFile = path.join(frontendUploadsDir, fileName);
-
-    try {
-      await copyFile(sourceFile, targetFile);
-      stats.copiedFiles += 1;
-    } catch {
-      stats.missingFiles += 1;
-      console.warn(`[sync:fallback] WARNING: missing upload file ${sourceFile}`);
-    }
-  }
-
-  if (stats.skippedVideoFiles > 0 && !(await pathExists(frontendVideoFile))) {
-    console.warn(`[sync:fallback] WARNING: video fallback is missing: ${frontendVideoFile}`);
-  }
-
-  rewriteUploadUrls(responses, stats);
-
-  return stats;
-}
-
-function isCloudinaryUrl(url) {
-  return typeof url === "string" && url.startsWith("https://res.cloudinary.com/");
 }
 
 function collectMediaUrlStats(value, stats, pathParts = []) {
@@ -288,19 +166,46 @@ function collectMediaUrlStats(value, stats, pathParts = []) {
   }
 }
 
+async function backupPreviousSnapshot() {
+  if (!previousSnapshotText) {
+    console.info("[sync:strapi-snapshot] no previous snapshot found, skipping backup");
+    return;
+  }
+
+  try {
+    const backupName = `home.snapshot.${new Date().toISOString().replaceAll(":", "-")}.json`;
+
+    await mkdir(backupDir, { recursive: true });
+    await writeFile(path.join(backupDir, backupName), previousSnapshotText, "utf8");
+    console.info(`[sync:strapi-snapshot] backed up previous snapshot to lib/mock/snapshot-backups/${backupName}`);
+  } catch {
+    console.warn("[sync:strapi-snapshot] WARNING: failed to back up previous snapshot");
+  }
+}
+
 const responses = {};
+
+console.info(`[sync:strapi-snapshot] source: ${normalizedBaseUrl}`);
+console.info(`[sync:strapi-snapshot] endpoints: ${endpoints.map(([key]) => key).join(", ")}`);
 
 for (const [key, endpoint] of endpoints) {
   const url = `${normalizedBaseUrl}${endpoint}`;
-  responses[key] = await fetchJson(url);
-  console.info(
-    responses[key] === null
-      ? `[sync:fallback] skipped ${key} (endpoint unavailable or forbidden)`
-      : `[sync:fallback] fetched ${key}`,
-  );
+  const response = await fetchJson(url);
+
+  if (response === null) {
+    responses[key] = previousResponses[key] ?? null;
+    console.info(
+      previousResponses[key]
+        ? `[sync:strapi-snapshot] preserved ${key} from previous snapshot (endpoint unavailable or forbidden)`
+        : `[sync:strapi-snapshot] skipped ${key} (endpoint unavailable or forbidden)`,
+    );
+    continue;
+  }
+
+  responses[key] = response;
+  console.info(`[sync:strapi-snapshot] fetched ${key}`);
 }
 
-const localizedMedia = await localizeUploadMedia(responses);
 const mediaStats = {
   cloudinaryUrlCount: 0,
   uploadUrls: [],
@@ -309,42 +214,30 @@ const mediaStats = {
 collectMediaUrlStats(responses, mediaStats);
 
 const snapshot = {
-  version: 1,
+  version: 2,
   generatedAt: new Date().toISOString(),
   sourceUrl: normalizedBaseUrl,
   media: mediaStats,
-  ...(localizedMedia ? { localizedMedia } : {}),
   responses,
 };
 
-const outputFile = path.join(projectRoot, "lib", "mock", "home.snapshot.json");
-const backupDir = path.join(projectRoot, "lib", "mock", "snapshot-backups");
 await mkdir(path.dirname(outputFile), { recursive: true });
-
-try {
-  const previousSnapshot = await readFile(outputFile, "utf8");
-  const backupName = `home.snapshot.${new Date().toISOString().replaceAll(":", "-")}.json`;
-  await mkdir(backupDir, { recursive: true });
-  await writeFile(path.join(backupDir, backupName), previousSnapshot, "utf8");
-  console.info(`[sync:fallback] backed up previous snapshot to lib/mock/snapshot-backups/${backupName}`);
-} catch {
-  console.info("[sync:fallback] no previous snapshot found, skipping backup");
-}
-
+await backupPreviousSnapshot();
 await writeFile(outputFile, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
 
-console.info(`[sync:fallback] found ${mediaStats.cloudinaryUrlCount} Cloudinary media URLs`);
+console.info(`[sync:strapi-snapshot] found ${mediaStats.cloudinaryUrlCount} Cloudinary media URLs`);
 
 if (mediaStats.uploadUrls.length > 0) {
-  console.warn(`[sync:fallback] WARNING: found ${mediaStats.uploadUrls.length} /uploads media URLs.`);
-  console.warn("[sync:fallback] These URLs were preserved as-is. Check Strapi media migration to Cloudinary.");
+  console.warn(`[sync:strapi-snapshot] WARNING: found ${mediaStats.uploadUrls.length} /uploads media URLs.`);
+  console.warn("[sync:strapi-snapshot] URLs were preserved as-is. Check Strapi media migration to Cloudinary.");
+
   for (const entry of mediaStats.uploadUrls.slice(0, 20)) {
-    console.warn(`[sync:fallback] /uploads at ${entry.path}: ${entry.url}`);
+    console.warn(`[sync:strapi-snapshot] /uploads at ${entry.path}: ${entry.url}`);
   }
 
   if (mediaStats.uploadUrls.length > 20) {
-    console.warn(`[sync:fallback] ...and ${mediaStats.uploadUrls.length - 20} more /uploads URLs`);
+    console.warn(`[sync:strapi-snapshot] ...and ${mediaStats.uploadUrls.length - 20} more /uploads URLs`);
   }
 }
 
-console.info(`[sync:fallback] wrote snapshot to ${outputFile}`);
+console.info(`[sync:strapi-snapshot] wrote snapshot to ${outputFile}`);

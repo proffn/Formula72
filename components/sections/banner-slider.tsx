@@ -207,7 +207,7 @@ function BannerSlide({ banner }: { banner: BannerSlideData }) {
             <p
                 className={`whitespace-pre-line sm:whitespace-pre font-medium uppercase leading-[1.1] tracking-[-0.02em] sm:mt-5 ${
                   isFirstBanner
-                    ? "mt-2.5 text-[0.71rem] sm:text-[clamp(1.08rem,2.15vw,2.75rem)]"
+                    ? "mt-2.5 text-[0.731rem] sm:text-[clamp(1.111rem,2.213vw,2.83rem)]"
                     : "mt-3 text-[0.75rem] sm:mt-12 sm:text-[clamp(1.2rem,2.4vw,3.06rem)]"
                 }`}
             >

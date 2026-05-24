@@ -18,6 +18,7 @@ yarn-error.log*
 pnpm-debug.log*
 
 public/videos/*.mov
+public/uploads/*.mov
 lib/mock/snapshot-backups/*.json
 
 .DS_Store

@@ -1,20 +1,431 @@
 {
-  "version": 1,
-  "generatedAt": "2026-05-11T19:32:53.428Z",
+  "version": 2,
+  "generatedAt": "2026-05-24T11:38:52.762Z",
   "sourceUrl": "http://localhost:1337",
   "media": {
-    "cloudinaryUrlCount": 0,
-    "uploadUrls": []
-  },
-  "localizedMedia": {
-    "copiedFrom": "D:\\сайты\\formula72-cms\\public\\uploads",
-    "uploadsRewrittenTo": "/cms-uploads/",
-    "videoRewrittenTo": "/videos/main_video.mov",
-    "copiedFiles": 86,
-    "missingFiles": 0,
-    "skippedVideoFiles": 1,
-    "rewrittenUploads": 89,
-    "rewrittenVideos": 1
+    "cloudinaryUrlCount": 65,
+    "uploadUrls": [
+      {
+        "path": "aboutPage.data.missionImage.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_cream_heart_303c5b7e4d.png"
+      },
+      {
+        "path": "aboutPage.data.missionImage.url",
+        "url": "/uploads/cream_heart_303c5b7e4d.png"
+      },
+      {
+        "path": "aboutPage.data.values.0.icon.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_speed_icon_b68ad9c4cd.png"
+      },
+      {
+        "path": "aboutPage.data.values.0.icon.url",
+        "url": "/uploads/speed_icon_b68ad9c4cd.png"
+      },
+      {
+        "path": "aboutPage.data.values.1.icon.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_accessibility_icon_bf09930659.png"
+      },
+      {
+        "path": "aboutPage.data.values.1.icon.url",
+        "url": "/uploads/accessibility_icon_bf09930659.png"
+      },
+      {
+        "path": "aboutPage.data.values.2.icon.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_professionalism_icon_dd2d2777b4.png"
+      },
+      {
+        "path": "aboutPage.data.values.2.icon.url",
+        "url": "/uploads/professionalism_icon_dd2d2777b4.png"
+      },
+      {
+        "path": "aboutPage.data.partners.0.logo.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_evsi_logo_397bc5ba40.png"
+      },
+      {
+        "path": "aboutPage.data.partners.0.logo.url",
+        "url": "/uploads/evsi_logo_397bc5ba40.png"
+      },
+      {
+        "path": "aboutPage.data.partners.0.stores.0.logo.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_golden_apple_logo_305c75e442.png"
+      },
+      {
+        "path": "aboutPage.data.partners.0.stores.0.logo.url",
+        "url": "/uploads/golden_apple_logo_305c75e442.png"
+      },
+      {
+        "path": "aboutPage.data.partners.0.stores.1.logo.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_letual_logo_cd43916514.png"
+      },
+      {
+        "path": "aboutPage.data.partners.0.stores.1.logo.url",
+        "url": "/uploads/letual_logo_cd43916514.png"
+      },
+      {
+        "path": "aboutPage.data.partners.0.stores.2.logo.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_detmir_logo_f330302f1c.png"
+      },
+      {
+        "path": "aboutPage.data.partners.0.stores.2.logo.url",
+        "url": "/uploads/detmir_logo_f330302f1c.png"
+      },
+      {
+        "path": "aboutPage.data.partners.1.logo.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_qtix_logo_493648530e.png"
+      },
+      {
+        "path": "aboutPage.data.partners.1.logo.url",
+        "url": "/uploads/qtix_logo_493648530e.png"
+      },
+      {
+        "path": "aboutPage.data.partners.1.stores.0.logo.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_letual_logo_cd43916514.png"
+      },
+      {
+        "path": "aboutPage.data.partners.1.stores.0.logo.url",
+        "url": "/uploads/letual_logo_cd43916514.png"
+      },
+      {
+        "path": "aboutPage.data.partners.2.logo.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_dr_groomer_logo_c8ac61a0d5.png"
+      },
+      {
+        "path": "aboutPage.data.partners.2.logo.formats.small.url",
+        "url": "/uploads/small_dr_groomer_logo_c8ac61a0d5.png"
+      },
+      {
+        "path": "aboutPage.data.partners.2.logo.url",
+        "url": "/uploads/dr_groomer_logo_c8ac61a0d5.png"
+      },
+      {
+        "path": "aboutPage.data.partners.2.stores.0.logo.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_zoozavr_logo_c879a648b6.png"
+      },
+      {
+        "path": "aboutPage.data.partners.2.stores.0.logo.url",
+        "url": "/uploads/zoozavr_logo_c879a648b6.png"
+      },
+      {
+        "path": "termsPage.data.sections.0.image.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_minimum_order_bfcc3021c1.png"
+      },
+      {
+        "path": "termsPage.data.sections.0.image.formats.small.url",
+        "url": "/uploads/small_minimum_order_bfcc3021c1.png"
+      },
+      {
+        "path": "termsPage.data.sections.0.image.url",
+        "url": "/uploads/minimum_order_bfcc3021c1.png"
+      },
+      {
+        "path": "termsPage.data.sections.1.image.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_demo_samples_8f150c666b.png"
+      },
+      {
+        "path": "termsPage.data.sections.1.image.formats.small.url",
+        "url": "/uploads/small_demo_samples_8f150c666b.png"
+      },
+      {
+        "path": "termsPage.data.sections.1.image.url",
+        "url": "/uploads/demo_samples_8f150c666b.png"
+      },
+      {
+        "path": "termsPage.data.sections.2.image.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_payment_delivery_a346e417be.png"
+      },
+      {
+        "path": "termsPage.data.sections.2.image.formats.small.url",
+        "url": "/uploads/small_payment_delivery_a346e417be.png"
+      },
+      {
+        "path": "termsPage.data.sections.2.image.url",
+        "url": "/uploads/payment_delivery_a346e417be.png"
+      },
+      {
+        "path": "certificatesPage.data.certificates.0.image.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_certificate_01_f1a0032239.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.0.image.formats.small.url",
+        "url": "/uploads/small_certificate_01_f1a0032239.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.0.image.formats.medium.url",
+        "url": "/uploads/medium_certificate_01_f1a0032239.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.0.image.formats.large.url",
+        "url": "/uploads/large_certificate_01_f1a0032239.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.0.image.url",
+        "url": "/uploads/certificate_01_f1a0032239.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.1.image.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_certificate_02_0c0f3415f1.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.1.image.formats.medium.url",
+        "url": "/uploads/medium_certificate_02_0c0f3415f1.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.1.image.formats.small.url",
+        "url": "/uploads/small_certificate_02_0c0f3415f1.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.1.image.formats.large.url",
+        "url": "/uploads/large_certificate_02_0c0f3415f1.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.1.image.url",
+        "url": "/uploads/certificate_02_0c0f3415f1.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.2.image.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_certificate_03_c34695b552.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.2.image.formats.small.url",
+        "url": "/uploads/small_certificate_03_c34695b552.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.2.image.url",
+        "url": "/uploads/certificate_03_c34695b552.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.3.image.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_certificate_04_6934eb62a6.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.3.image.formats.small.url",
+        "url": "/uploads/small_certificate_04_6934eb62a6.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.3.image.url",
+        "url": "/uploads/certificate_04_6934eb62a6.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.4.image.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_certificate_05_6c5fe0c97b.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.4.image.formats.small.url",
+        "url": "/uploads/small_certificate_05_6c5fe0c97b.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.4.image.formats.medium.url",
+        "url": "/uploads/medium_certificate_05_6c5fe0c97b.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.4.image.formats.large.url",
+        "url": "/uploads/large_certificate_05_6c5fe0c97b.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.4.image.url",
+        "url": "/uploads/certificate_05_6c5fe0c97b.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.5.image.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_certificate_06_9d844e5be6.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.5.image.formats.large.url",
+        "url": "/uploads/large_certificate_06_9d844e5be6.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.5.image.formats.medium.url",
+        "url": "/uploads/medium_certificate_06_9d844e5be6.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.5.image.formats.small.url",
+        "url": "/uploads/small_certificate_06_9d844e5be6.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.5.image.url",
+        "url": "/uploads/certificate_06_9d844e5be6.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.6.image.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_certificate_07_1cc8acba75.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.6.image.formats.medium.url",
+        "url": "/uploads/medium_certificate_07_1cc8acba75.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.6.image.formats.small.url",
+        "url": "/uploads/small_certificate_07_1cc8acba75.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.6.image.formats.large.url",
+        "url": "/uploads/large_certificate_07_1cc8acba75.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.6.image.url",
+        "url": "/uploads/certificate_07_1cc8acba75.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.7.image.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_certificate_08_0c04fe3489.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.7.image.formats.medium.url",
+        "url": "/uploads/medium_certificate_08_0c04fe3489.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.7.image.formats.small.url",
+        "url": "/uploads/small_certificate_08_0c04fe3489.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.7.image.formats.large.url",
+        "url": "/uploads/large_certificate_08_0c04fe3489.jpg"
+      },
+      {
+        "path": "certificatesPage.data.certificates.7.image.url",
+        "url": "/uploads/certificate_08_0c04fe3489.jpg"
+      },
+      {
+        "path": "banners.data.0.mobileImage.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_banner_2_mobile_9d48141716.png"
+      },
+      {
+        "path": "banners.data.0.mobileImage.formats.small.url",
+        "url": "/uploads/small_banner_2_mobile_9d48141716.png"
+      },
+      {
+        "path": "banners.data.0.mobileImage.formats.medium.url",
+        "url": "/uploads/medium_banner_2_mobile_9d48141716.png"
+      },
+      {
+        "path": "banners.data.0.mobileImage.formats.large.url",
+        "url": "/uploads/large_banner_2_mobile_9d48141716.png"
+      },
+      {
+        "path": "banners.data.0.mobileImage.url",
+        "url": "/uploads/banner_2_mobile_9d48141716.png"
+      },
+      {
+        "path": "banners.data.1.image.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_banner_1_2_1b46cde2f8.png"
+      },
+      {
+        "path": "banners.data.1.image.formats.small.url",
+        "url": "/uploads/small_banner_1_2_1b46cde2f8.png"
+      },
+      {
+        "path": "banners.data.1.image.formats.medium.url",
+        "url": "/uploads/medium_banner_1_2_1b46cde2f8.png"
+      },
+      {
+        "path": "banners.data.1.image.formats.large.url",
+        "url": "/uploads/large_banner_1_2_1b46cde2f8.png"
+      },
+      {
+        "path": "banners.data.1.image.url",
+        "url": "/uploads/banner_1_2_1b46cde2f8.png"
+      },
+      {
+        "path": "banners.data.1.mobileImage.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_banner_1_mobile2_df69a8771f.png"
+      },
+      {
+        "path": "banners.data.1.mobileImage.formats.small.url",
+        "url": "/uploads/small_banner_1_mobile2_df69a8771f.png"
+      },
+      {
+        "path": "banners.data.1.mobileImage.formats.medium.url",
+        "url": "/uploads/medium_banner_1_mobile2_df69a8771f.png"
+      },
+      {
+        "path": "banners.data.1.mobileImage.formats.large.url",
+        "url": "/uploads/large_banner_1_mobile2_df69a8771f.png"
+      },
+      {
+        "path": "banners.data.1.mobileImage.url",
+        "url": "/uploads/banner_1_mobile2_df69a8771f.png"
+      },
+      {
+        "path": "formula72Scheme.data.image.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_formula72_scheme3_078232e94c.png"
+      },
+      {
+        "path": "formula72Scheme.data.image.formats.small.url",
+        "url": "/uploads/small_formula72_scheme3_078232e94c.png"
+      },
+      {
+        "path": "formula72Scheme.data.image.formats.medium.url",
+        "url": "/uploads/medium_formula72_scheme3_078232e94c.png"
+      },
+      {
+        "path": "formula72Scheme.data.image.formats.large.url",
+        "url": "/uploads/large_formula72_scheme3_078232e94c.png"
+      },
+      {
+        "path": "formula72Scheme.data.image.url",
+        "url": "/uploads/formula72_scheme3_078232e94c.png"
+      },
+      {
+        "path": "formula72Scheme.data.items.0.mobileImage.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_formula_angro2_d3e51ef68d.png"
+      },
+      {
+        "path": "formula72Scheme.data.items.0.mobileImage.formats.small.url",
+        "url": "/uploads/small_formula_angro2_d3e51ef68d.png"
+      },
+      {
+        "path": "formula72Scheme.data.items.0.mobileImage.formats.medium.url",
+        "url": "/uploads/medium_formula_angro2_d3e51ef68d.png"
+      },
+      {
+        "path": "formula72Scheme.data.items.0.mobileImage.formats.large.url",
+        "url": "/uploads/large_formula_angro2_d3e51ef68d.png"
+      },
+      {
+        "path": "formula72Scheme.data.items.0.mobileImage.url",
+        "url": "/uploads/formula_angro2_d3e51ef68d.png"
+      },
+      {
+        "path": "formula72Scheme.data.items.1.mobileImage.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_formula_opt2_65cf9701a7.png"
+      },
+      {
+        "path": "formula72Scheme.data.items.1.mobileImage.formats.small.url",
+        "url": "/uploads/small_formula_opt2_65cf9701a7.png"
+      },
+      {
+        "path": "formula72Scheme.data.items.1.mobileImage.formats.medium.url",
+        "url": "/uploads/medium_formula_opt2_65cf9701a7.png"
+      },
+      {
+        "path": "formula72Scheme.data.items.1.mobileImage.formats.large.url",
+        "url": "/uploads/large_formula_opt2_65cf9701a7.png"
+      },
+      {
+        "path": "formula72Scheme.data.items.1.mobileImage.url",
+        "url": "/uploads/formula_opt2_65cf9701a7.png"
+      },
+      {
+        "path": "formula72Scheme.data.items.2.mobileImage.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_formula_key2_2cf24ac56b.png"
+      },
+      {
+        "path": "formula72Scheme.data.items.2.mobileImage.formats.small.url",
+        "url": "/uploads/small_formula_key2_2cf24ac56b.png"
+      },
+      {
+        "path": "formula72Scheme.data.items.2.mobileImage.formats.medium.url",
+        "url": "/uploads/medium_formula_key2_2cf24ac56b.png"
+      },
+      {
+        "path": "formula72Scheme.data.items.2.mobileImage.formats.large.url",
+        "url": "/uploads/large_formula_key2_2cf24ac56b.png"
+      },
+      {
+        "path": "formula72Scheme.data.items.2.mobileImage.url",
+        "url": "/uploads/formula_key2_2cf24ac56b.png"
+      }
+    ]
   },
   "responses": {
     "siteHeader": {
@@ -54,19 +465,27 @@
               "height": 153,
               "size": 11.4,
               "sizeInBytes": 11399,
-              "url": "/cms-uploads/thumbnail_logo3_a2bdb0372f.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031800/formula72/logo3_a2bdb0372f_thumbnail.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/logo3_a2bdb0372f_thumbnail",
+                "resource_type": "image"
+              }
             }
           },
           "hash": "logo3_a2bdb0372f",
           "ext": ".png",
           "mime": "image/png",
           "size": 3.04,
-          "url": "/cms-uploads/logo3_a2bdb0372f.png",
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031800/formula72/logo3_a2bdb0372f.png",
           "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/logo3_a2bdb0372f",
+            "resource_type": "image"
+          },
           "createdAt": "2026-04-13T05:55:55.996Z",
-          "updatedAt": "2026-04-13T05:55:55.996Z",
+          "updatedAt": "2026-05-15T07:24:29.217Z",
           "publishedAt": "2026-04-13T05:55:55.997Z"
         },
         "burgerMenuLogo": {
@@ -89,19 +508,27 @@
               "height": 153,
               "size": 11.6,
               "sizeInBytes": 11601,
-              "url": "/cms-uploads/thumbnail_logo3_w_554b199633.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031802/formula72/logo3_w_554b199633_thumbnail.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/logo3_w_554b199633_thumbnail",
+                "resource_type": "image"
+              }
             }
           },
           "hash": "logo3_w_554b199633",
           "ext": ".png",
           "mime": "image/png",
           "size": 3.1,
-          "url": "/cms-uploads/logo3_w_554b199633.png",
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031801/formula72/logo3_w_554b199633.png",
           "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/logo3_w_554b199633",
+            "resource_type": "image"
+          },
           "createdAt": "2026-04-13T05:56:10.210Z",
-          "updatedAt": "2026-04-13T05:56:10.210Z",
+          "updatedAt": "2026-05-15T07:24:30.764Z",
           "publishedAt": "2026-04-13T05:56:10.211Z"
         }
       },
@@ -138,7 +565,12 @@
               "height": 137,
               "size": 4.5,
               "sizeInBytes": 4504,
-              "url": "/cms-uploads/thumbnail_hero_bg_f6d32094f9.jpg"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031689/formula72/hero_bg_f6d32094f9_thumbnail.jpg",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/hero_bg_f6d32094f9_thumbnail",
+                "resource_type": "image"
+              }
             },
             "large": {
               "name": "large_hero-bg.jpg",
@@ -150,7 +582,12 @@
               "height": 561,
               "size": 33.44,
               "sizeInBytes": 33441,
-              "url": "/cms-uploads/large_hero_bg_f6d32094f9.jpg"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031687/formula72/hero_bg_f6d32094f9_large.jpg",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/hero_bg_f6d32094f9_large",
+                "resource_type": "image"
+              }
             },
             "medium": {
               "name": "medium_hero-bg.jpg",
@@ -162,7 +599,12 @@
               "height": 421,
               "size": 21.78,
               "sizeInBytes": 21783,
-              "url": "/cms-uploads/medium_hero_bg_f6d32094f9.jpg"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031688/formula72/hero_bg_f6d32094f9_medium.jpg",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/hero_bg_f6d32094f9_medium",
+                "resource_type": "image"
+              }
             },
             "small": {
               "name": "small_hero-bg.jpg",
@@ -174,19 +616,27 @@
               "height": 281,
               "size": 12.08,
               "sizeInBytes": 12077,
-              "url": "/cms-uploads/small_hero_bg_f6d32094f9.jpg"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031688/formula72/hero_bg_f6d32094f9_small.jpg",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/hero_bg_f6d32094f9_small",
+                "resource_type": "image"
+              }
             }
           },
           "hash": "hero_bg_f6d32094f9",
           "ext": ".jpg",
           "mime": "image/jpeg",
           "size": 93.35,
-          "url": "/cms-uploads/hero_bg_f6d32094f9.jpg",
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031686/formula72/hero_bg_f6d32094f9.jpg",
           "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/hero_bg_f6d32094f9",
+            "resource_type": "image"
+          },
           "createdAt": "2026-03-22T16:35:14.934Z",
-          "updatedAt": "2026-03-22T17:37:49.328Z",
+          "updatedAt": "2026-05-15T07:22:37.840Z",
           "publishedAt": "2026-03-22T16:35:14.935Z"
         },
         "heroMobileBackgroundImage": {
@@ -209,7 +659,12 @@
               "height": 156,
               "size": 18.18,
               "sizeInBytes": 18182,
-              "url": "/cms-uploads/thumbnail_mobile_hero_bg_44f440c46a.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031806/formula72/mobile_hero_bg_44f440c46a_thumbnail.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/mobile_hero_bg_44f440c46a_thumbnail",
+                "resource_type": "image"
+              }
             },
             "small": {
               "name": "small_mobile-hero-bg.png",
@@ -221,7 +676,12 @@
               "height": 500,
               "size": 151.87,
               "sizeInBytes": 151867,
-              "url": "/cms-uploads/small_mobile_hero_bg_44f440c46a.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031804/formula72/mobile_hero_bg_44f440c46a_small.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/mobile_hero_bg_44f440c46a_small",
+                "resource_type": "image"
+              }
             },
             "medium": {
               "name": "medium_mobile-hero-bg.png",
@@ -233,7 +693,12 @@
               "height": 750,
               "size": 332.24,
               "sizeInBytes": 332244,
-              "url": "/cms-uploads/medium_mobile_hero_bg_44f440c46a.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031805/formula72/mobile_hero_bg_44f440c46a_medium.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/mobile_hero_bg_44f440c46a_medium",
+                "resource_type": "image"
+              }
             },
             "large": {
               "name": "large_mobile-hero-bg.png",
@@ -245,21 +710,603 @@
               "height": 1000,
               "size": 581.17,
               "sizeInBytes": 581173,
-              "url": "/cms-uploads/large_mobile_hero_bg_44f440c46a.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031804/formula72/mobile_hero_bg_44f440c46a_large.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/mobile_hero_bg_44f440c46a_large",
+                "resource_type": "image"
+              }
             }
           },
           "hash": "mobile_hero_bg_44f440c46a",
           "ext": ".png",
           "mime": "image/png",
           "size": 540.43,
-          "url": "/cms-uploads/mobile_hero_bg_44f440c46a.png",
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031803/formula72/mobile_hero_bg_44f440c46a.png",
+          "previewUrl": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/mobile_hero_bg_44f440c46a",
+            "resource_type": "image"
+          },
+          "createdAt": "2026-04-13T06:43:40.120Z",
+          "updatedAt": "2026-05-15T07:24:34.813Z",
+          "publishedAt": "2026-04-13T06:43:40.121Z"
+        }
+      },
+      "meta": {}
+    },
+    "aboutPage": {
+      "data": {
+        "id": 11,
+        "documentId": "fjhrd26hf14sk1npbwhz6sro",
+        "enabled": true,
+        "title": "ФОРМУЛА [72]",
+        "subtitle": "ВАША ИДЕЯ - НАШЕ ВОПЛОЩЕНИЕ",
+        "backButtonLabel": "На главную",
+        "backButtonHref": "/",
+        "valuesTitle": "ЦЕННОСТИ ФОРМУЛА72",
+        "missionTitle": "МИССИЯ БРЕНДА",
+        "missionText": "Хочешь покорить мир через свой бренд косметики?\nМы поможем. Ваша идея - наше воплощение.",
+        "whyTitle": "ПОЧЕМУ СТОИТ ВЫБРАТЬ #ФОРМУЛА[72]",
+        "createdAt": "2026-05-22T15:55:44.824Z",
+        "updatedAt": "2026-05-22T16:40:08.802Z",
+        "publishedAt": "2026-05-22T16:40:08.821Z",
+        "logo": null,
+        "missionImage": {
+          "id": 89,
+          "documentId": "lrbbe81qduvdlhez3ztihhy5",
+          "name": "cream-heart.png",
+          "alternativeText": "cream-heart",
+          "caption": null,
+          "focalPoint": null,
+          "width": 376,
+          "height": 310,
+          "formats": {
+            "thumbnail": {
+              "name": "thumbnail_cream-heart.png",
+              "hash": "thumbnail_cream_heart_303c5b7e4d",
+              "ext": ".png",
+              "mime": "image/png",
+              "path": null,
+              "width": 189,
+              "height": 156,
+              "size": 34.1,
+              "sizeInBytes": 34104,
+              "url": "/uploads/thumbnail_cream_heart_303c5b7e4d.png"
+            }
+          },
+          "hash": "cream_heart_303c5b7e4d",
+          "ext": ".png",
+          "mime": "image/png",
+          "size": 32.91,
+          "url": "/uploads/cream_heart_303c5b7e4d.png",
           "previewUrl": null,
           "provider": "local",
           "provider_metadata": null,
-          "createdAt": "2026-04-13T06:43:40.120Z",
-          "updatedAt": "2026-04-13T06:43:40.120Z",
-          "publishedAt": "2026-04-13T06:43:40.121Z"
-        }
+          "createdAt": "2026-05-22T15:56:46.485Z",
+          "updatedAt": "2026-05-22T15:56:46.485Z",
+          "publishedAt": "2026-05-22T15:56:46.485Z"
+        },
+        "whyItems": [
+          {
+            "order": 1,
+            "id": 34,
+            "title": "Скорость",
+            "label": "Формула",
+            "value": "14 / 30",
+            "description": "14 рабочих дней займёт\nразработка опытных\nобразцов.\n\n30 рабочих дней займёт\nразработка Вашего\nбренда под ключ.",
+            "linkLabel": null,
+            "linkHref": null,
+            "enabled": true
+          },
+          {
+            "order": 2,
+            "id": 35,
+            "title": "Доступность",
+            "label": "Минимальная партия",
+            "value": "от 50 000₽",
+            "description": "Это самый низкий порог\nвхода для бизнеса в 2026*\n\n*Согласно данным\nЯНДЕКС БИЗНЕС открыть,\nнапример, ПВЗ от 250 000 ₽",
+            "linkLabel": "ЯНДЕКС БИЗНЕС",
+            "linkHref": "https://business.yandex/praktika/kakoj-biznes-otkryt-v-rossii/",
+            "enabled": true
+          },
+          {
+            "order": 3,
+            "id": 36,
+            "title": "Профессионализм",
+            "label": "Полная",
+            "value": "ПОДДЕРЖКА",
+            "description": "Полная поддержка на всех\nстадиях от производства\nдо маркетинга.\n\nМы точно знаем, как создать\nуспешный косметический\nбренд - потому что наши\nсобственные продукты\nпродаются:",
+            "linkLabel": null,
+            "linkHref": null,
+            "enabled": true
+          }
+        ],
+        "values": [
+          {
+            "order": 1,
+            "id": 34,
+            "title": "Скорость",
+            "description": "Сейчас мир на расстоянии\nклика. Хочешь свой бренд\nкосметики?",
+            "highlightText": "Мы уложимся за 30\nрабочих дней.",
+            "enabled": true,
+            "icon": {
+              "id": 86,
+              "documentId": "heyiy4asgj6qbb9aermpx67f",
+              "name": "speed-icon.png",
+              "alternativeText": "speed-icon",
+              "caption": null,
+              "focalPoint": null,
+              "width": 430,
+              "height": 482,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_speed-icon.png",
+                  "hash": "thumbnail_speed_icon_b68ad9c4cd",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 139,
+                  "height": 156,
+                  "size": 32.58,
+                  "sizeInBytes": 32575,
+                  "url": "/uploads/thumbnail_speed_icon_b68ad9c4cd.png"
+                }
+              },
+              "hash": "speed_icon_b68ad9c4cd",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 46.85,
+              "url": "/uploads/speed_icon_b68ad9c4cd.png",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-22T15:56:46.158Z",
+              "updatedAt": "2026-05-22T15:56:46.158Z",
+              "publishedAt": "2026-05-22T15:56:46.158Z"
+            }
+          },
+          {
+            "order": 2,
+            "id": 35,
+            "title": "Доступность",
+            "description": "Чтобы запустить свой бренд\nкосметики – больше не нужен\nзавод и огромные вложения:",
+            "highlightText": "Минимальная партия у нас\nдействительно минимальная,\nа не для “галочки”.\n\nК Вашим услугам экспертиза\nотдела маркетинга\n#ФОРМУЛА[72]: если Вы наш\nклиент - консультация, как\nвыйти в “Золотое Яблоко”\nили Летуаль - БЕСПЛАТНО.",
+            "enabled": true,
+            "icon": {
+              "id": 87,
+              "documentId": "enm9kkr6s9nfdinpph2hn1g6",
+              "name": "accessibility-icon.png",
+              "alternativeText": "accessibility-icon",
+              "caption": null,
+              "focalPoint": null,
+              "width": 411,
+              "height": 476,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_accessibility-icon.png",
+                  "hash": "thumbnail_accessibility_icon_bf09930659",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 135,
+                  "height": 156,
+                  "size": 33.2,
+                  "sizeInBytes": 33196,
+                  "url": "/uploads/thumbnail_accessibility_icon_bf09930659.png"
+                }
+              },
+              "hash": "accessibility_icon_bf09930659",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 47.62,
+              "url": "/uploads/accessibility_icon_bf09930659.png",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-22T15:56:46.283Z",
+              "updatedAt": "2026-05-22T15:56:46.283Z",
+              "publishedAt": "2026-05-22T15:56:46.283Z"
+            }
+          },
+          {
+            "order": 3,
+            "id": 36,
+            "title": "Профессионализм",
+            "description": "1000 проверенных составов,\nсовременное производство\nи целая команда маркетинга\nбудет работать над Вашим\nбрендом, начиная\nс минимальной партии.\n\nЗа Вашим брендом закрепляется\nпрофессиональный менеджер,\nкоторый заинтересован в том,\nчтобы Ваш продукт\nреально продавался.",
+            "highlightText": "",
+            "enabled": true,
+            "icon": {
+              "id": 88,
+              "documentId": "o2sffv21yw2z2jyfpzvbz2ee",
+              "name": "professionalism-icon.png",
+              "alternativeText": "professionalism-icon",
+              "caption": null,
+              "focalPoint": null,
+              "width": 466,
+              "height": 432,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_professionalism-icon.png",
+                  "hash": "thumbnail_professionalism_icon_dd2d2777b4",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 168,
+                  "height": 156,
+                  "size": 31.51,
+                  "sizeInBytes": 31506,
+                  "url": "/uploads/thumbnail_professionalism_icon_dd2d2777b4.png"
+                }
+              },
+              "hash": "professionalism_icon_dd2d2777b4",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 42.49,
+              "url": "/uploads/professionalism_icon_dd2d2777b4.png",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-22T15:56:46.387Z",
+              "updatedAt": "2026-05-22T15:56:46.387Z",
+              "publishedAt": "2026-05-22T15:56:46.387Z"
+            }
+          }
+        ],
+        "partners": [
+          {
+            "order": 1,
+            "id": 34,
+            "title": "ÉVSI",
+            "enabled": true,
+            "logo": {
+              "id": 90,
+              "documentId": "bi07mv0nld8duw537dhewjic",
+              "name": "evsi-logo.png",
+              "alternativeText": "evsi-logo",
+              "caption": null,
+              "focalPoint": null,
+              "width": 305,
+              "height": 121,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_evsi-logo.png",
+                  "hash": "thumbnail_evsi_logo_397bc5ba40",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 245,
+                  "height": 97,
+                  "size": 8.14,
+                  "sizeInBytes": 8138,
+                  "url": "/uploads/thumbnail_evsi_logo_397bc5ba40.png"
+                }
+              },
+              "hash": "evsi_logo_397bc5ba40",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 1.97,
+              "url": "/uploads/evsi_logo_397bc5ba40.png",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-22T15:56:46.531Z",
+              "updatedAt": "2026-05-22T15:56:46.531Z",
+              "publishedAt": "2026-05-22T15:56:46.531Z"
+            },
+            "stores": [
+              {
+                "order": 1,
+                "id": 56,
+                "title": "Золотое яблоко",
+                "href": "https://goldapple.ru/brands/evsi",
+                "enabled": true,
+                "logo": {
+                  "id": 93,
+                  "documentId": "rjxazzrglpzfmup58yiw1ye1",
+                  "name": "golden-apple-logo.png",
+                  "alternativeText": "golden-apple-logo",
+                  "caption": null,
+                  "focalPoint": null,
+                  "width": 320,
+                  "height": 320,
+                  "formats": {
+                    "thumbnail": {
+                      "name": "thumbnail_golden-apple-logo.png",
+                      "hash": "thumbnail_golden_apple_logo_305c75e442",
+                      "ext": ".png",
+                      "mime": "image/png",
+                      "path": null,
+                      "width": 156,
+                      "height": 156,
+                      "size": 12.96,
+                      "sizeInBytes": 12958,
+                      "url": "/uploads/thumbnail_golden_apple_logo_305c75e442.png"
+                    }
+                  },
+                  "hash": "golden_apple_logo_305c75e442",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "size": 4.54,
+                  "url": "/uploads/golden_apple_logo_305c75e442.png",
+                  "previewUrl": null,
+                  "provider": "local",
+                  "provider_metadata": null,
+                  "createdAt": "2026-05-22T15:56:46.710Z",
+                  "updatedAt": "2026-05-22T15:56:46.710Z",
+                  "publishedAt": "2026-05-22T15:56:46.710Z"
+                }
+              },
+              {
+                "order": 2,
+                "id": 57,
+                "title": "Летуаль",
+                "href": "https://www.letu.ru/merchant/41500012",
+                "enabled": true,
+                "logo": {
+                  "id": 95,
+                  "documentId": "znf7gb3qyzeb8so3zo6npf6h",
+                  "name": "letual-logo.png",
+                  "alternativeText": "letual-logo",
+                  "caption": null,
+                  "focalPoint": null,
+                  "width": 320,
+                  "height": 320,
+                  "formats": {
+                    "thumbnail": {
+                      "name": "thumbnail_letual-logo.png",
+                      "hash": "thumbnail_letual_logo_cd43916514",
+                      "ext": ".png",
+                      "mime": "image/png",
+                      "path": null,
+                      "width": 156,
+                      "height": 156,
+                      "size": 5.54,
+                      "sizeInBytes": 5543,
+                      "url": "/uploads/thumbnail_letual_logo_cd43916514.png"
+                    }
+                  },
+                  "hash": "letual_logo_cd43916514",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "size": 2.32,
+                  "url": "/uploads/letual_logo_cd43916514.png",
+                  "previewUrl": null,
+                  "provider": "local",
+                  "provider_metadata": null,
+                  "createdAt": "2026-05-22T15:56:46.822Z",
+                  "updatedAt": "2026-05-22T15:56:46.822Z",
+                  "publishedAt": "2026-05-22T15:56:46.822Z"
+                }
+              },
+              {
+                "order": 3,
+                "id": 58,
+                "title": "Детский мир",
+                "href": "https://www.detmir.ru/catalog/index/name/skin_care_mom/brand/113897/",
+                "enabled": true,
+                "logo": {
+                  "id": 94,
+                  "documentId": "yayz6yh9nluj41trypzk1403",
+                  "name": "detmir-logo.png",
+                  "alternativeText": "detmir-logo",
+                  "caption": null,
+                  "focalPoint": null,
+                  "width": 320,
+                  "height": 320,
+                  "formats": {
+                    "thumbnail": {
+                      "name": "thumbnail_detmir-logo.png",
+                      "hash": "thumbnail_detmir_logo_f330302f1c",
+                      "ext": ".png",
+                      "mime": "image/png",
+                      "path": null,
+                      "width": 156,
+                      "height": 156,
+                      "size": 11.22,
+                      "sizeInBytes": 11222,
+                      "url": "/uploads/thumbnail_detmir_logo_f330302f1c.png"
+                    }
+                  },
+                  "hash": "detmir_logo_f330302f1c",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "size": 3.91,
+                  "url": "/uploads/detmir_logo_f330302f1c.png",
+                  "previewUrl": null,
+                  "provider": "local",
+                  "provider_metadata": null,
+                  "createdAt": "2026-05-22T15:56:46.767Z",
+                  "updatedAt": "2026-05-22T15:56:46.767Z",
+                  "publishedAt": "2026-05-22T15:56:46.767Z"
+                }
+              }
+            ]
+          },
+          {
+            "order": 2,
+            "id": 35,
+            "title": "QTIX",
+            "enabled": true,
+            "logo": {
+              "id": 91,
+              "documentId": "nb3sk16w07jckra1s3ykvel3",
+              "name": "qtix-logo.png",
+              "alternativeText": "qtix-logo",
+              "caption": null,
+              "focalPoint": null,
+              "width": 271,
+              "height": 133,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_qtix-logo.png",
+                  "hash": "thumbnail_qtix_logo_493648530e",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 245,
+                  "height": 120,
+                  "size": 10.87,
+                  "sizeInBytes": 10865,
+                  "url": "/uploads/thumbnail_qtix_logo_493648530e.png"
+                }
+              },
+              "hash": "qtix_logo_493648530e",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 1.88,
+              "url": "/uploads/qtix_logo_493648530e.png",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-22T15:56:46.580Z",
+              "updatedAt": "2026-05-22T15:56:46.580Z",
+              "publishedAt": "2026-05-22T15:56:46.580Z"
+            },
+            "stores": [
+              {
+                "order": 1,
+                "id": 59,
+                "title": "Летуаль",
+                "href": "https://www.letu.ru/merchant/215000004",
+                "enabled": true,
+                "logo": {
+                  "id": 95,
+                  "documentId": "znf7gb3qyzeb8so3zo6npf6h",
+                  "name": "letual-logo.png",
+                  "alternativeText": "letual-logo",
+                  "caption": null,
+                  "focalPoint": null,
+                  "width": 320,
+                  "height": 320,
+                  "formats": {
+                    "thumbnail": {
+                      "name": "thumbnail_letual-logo.png",
+                      "hash": "thumbnail_letual_logo_cd43916514",
+                      "ext": ".png",
+                      "mime": "image/png",
+                      "path": null,
+                      "width": 156,
+                      "height": 156,
+                      "size": 5.54,
+                      "sizeInBytes": 5543,
+                      "url": "/uploads/thumbnail_letual_logo_cd43916514.png"
+                    }
+                  },
+                  "hash": "letual_logo_cd43916514",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "size": 2.32,
+                  "url": "/uploads/letual_logo_cd43916514.png",
+                  "previewUrl": null,
+                  "provider": "local",
+                  "provider_metadata": null,
+                  "createdAt": "2026-05-22T15:56:46.822Z",
+                  "updatedAt": "2026-05-22T15:56:46.822Z",
+                  "publishedAt": "2026-05-22T15:56:46.822Z"
+                }
+              }
+            ]
+          },
+          {
+            "order": 3,
+            "id": 36,
+            "title": "DR.GROOMER",
+            "enabled": true,
+            "logo": {
+              "id": 92,
+              "documentId": "ugdn9ch1jqgunu51p06cvlti",
+              "name": "dr-groomer-logo.png",
+              "alternativeText": "dr-groomer-logo",
+              "caption": null,
+              "focalPoint": null,
+              "width": 740,
+              "height": 178,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_dr-groomer-logo.png",
+                  "hash": "thumbnail_dr_groomer_logo_c8ac61a0d5",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 245,
+                  "height": 59,
+                  "size": 10.91,
+                  "sizeInBytes": 10912,
+                  "url": "/uploads/thumbnail_dr_groomer_logo_c8ac61a0d5.png"
+                },
+                "small": {
+                  "name": "small_dr-groomer-logo.png",
+                  "hash": "small_dr_groomer_logo_c8ac61a0d5",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 500,
+                  "height": 120,
+                  "size": 28.25,
+                  "sizeInBytes": 28253,
+                  "url": "/uploads/small_dr_groomer_logo_c8ac61a0d5.png"
+                }
+              },
+              "hash": "dr_groomer_logo_c8ac61a0d5",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 9.93,
+              "url": "/uploads/dr_groomer_logo_c8ac61a0d5.png",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-22T15:56:46.655Z",
+              "updatedAt": "2026-05-22T15:56:46.655Z",
+              "publishedAt": "2026-05-22T15:56:46.655Z"
+            },
+            "stores": [
+              {
+                "order": 1,
+                "id": 60,
+                "title": "Зоозавр",
+                "href": "https://zoozavr.ru/catalog/index/name/uhod-i-kosmetika-dlya-sobak/brand/113898/",
+                "enabled": true,
+                "logo": {
+                  "id": 96,
+                  "documentId": "gfpehdx8q6fqqaw99hrff0wa",
+                  "name": "zoozavr-logo.png",
+                  "alternativeText": "zoozavr-logo",
+                  "caption": null,
+                  "focalPoint": null,
+                  "width": 320,
+                  "height": 320,
+                  "formats": {
+                    "thumbnail": {
+                      "name": "thumbnail_zoozavr-logo.png",
+                      "hash": "thumbnail_zoozavr_logo_c879a648b6",
+                      "ext": ".png",
+                      "mime": "image/png",
+                      "path": null,
+                      "width": 156,
+                      "height": 156,
+                      "size": 10.41,
+                      "sizeInBytes": 10410,
+                      "url": "/uploads/thumbnail_zoozavr_logo_c879a648b6.png"
+                    }
+                  },
+                  "hash": "zoozavr_logo_c879a648b6",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "size": 4.05,
+                  "url": "/uploads/zoozavr_logo_c879a648b6.png",
+                  "previewUrl": null,
+                  "provider": "local",
+                  "provider_metadata": null,
+                  "createdAt": "2026-05-22T15:56:46.876Z",
+                  "updatedAt": "2026-05-22T15:56:46.876Z",
+                  "publishedAt": "2026-05-22T15:56:46.876Z"
+                }
+              }
+            ]
+          }
+        ]
       },
       "meta": {}
     },
@@ -286,31 +1333,808 @@
           "ext": ".mov",
           "mime": "video/quicktime",
           "size": 252257.86,
-          "url": "/videos/main_video.mov",
+          "url": "https://res.cloudinary.com/dquzly7um/video/upload/v1778831747/main_video2_kvmhkn.mp4",
           "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/main_video_68cf17d09e",
+            "resource_type": "video"
+          },
           "createdAt": "2026-05-10T09:46:42.699Z",
-          "updatedAt": "2026-05-10T09:46:42.699Z",
+          "updatedAt": "2026-05-15T07:57:29.339Z",
           "publishedAt": "2026-05-10T09:46:42.700Z"
         },
         "posterImage": null
       },
       "meta": {}
     },
-    "bannerSection": null,
+    "termsPage": {
+      "data": {
+        "id": 4,
+        "documentId": "r0h29gu880m9w506rvwkucfj",
+        "enabled": true,
+        "title": "ОПЛАТА, ПАРТИЯ, СРОКИ.",
+        "createdAt": "2026-05-23T17:58:49.934Z",
+        "updatedAt": "2026-05-23T18:01:05.276Z",
+        "publishedAt": "2026-05-23T18:01:05.284Z",
+        "sections": [
+          {
+            "order": 1,
+            "id": 10,
+            "title": "МИНИМАЛЬНАЯ ПАРТИЯ И СРОКИ",
+            "content": "Минимальная партия: 50 000₽\n• Каждого **SKU не менее 50 шт;\n*SKU – это идентификатор товарной позиции (артикул)\n**В рамках одной минимальной партии может быть несколько товарных позиций\n• Срок изготовления партии: до 30 рабочих дней согласно производственной очереди;\nВАЖНО! Срок в 30 рабочих дней – это время на изготовление продукта.\n+ 3 рабочих дня на упаковку и отправку.\n+ 3 рабочих дня, если ваш заказ включает дополнительные услуги:\n• Оклейка;\n• Датировка;\n• Термоусадка;",
+            "buttonLabel": "ПОДРОБНЕЕ",
+            "buttonHref": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "enabled": true,
+            "image": {
+              "id": 100,
+              "documentId": "pvzrpvi7chyy8srhu5dyccn2",
+              "name": "minimum-order.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 500,
+              "height": 600,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_minimum-order.png",
+                  "hash": "thumbnail_minimum_order_bfcc3021c1",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 130,
+                  "height": 156,
+                  "size": 25.19,
+                  "sizeInBytes": 25186,
+                  "url": "/uploads/thumbnail_minimum_order_bfcc3021c1.png"
+                },
+                "small": {
+                  "name": "small_minimum-order.png",
+                  "hash": "small_minimum_order_bfcc3021c1",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 417,
+                  "height": 500,
+                  "size": 133.68,
+                  "sizeInBytes": 133675,
+                  "url": "/uploads/small_minimum_order_bfcc3021c1.png"
+                }
+              },
+              "hash": "minimum_order_bfcc3021c1",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 41.87,
+              "url": "/uploads/minimum_order_bfcc3021c1.png",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-23T18:00:18.677Z",
+              "updatedAt": "2026-05-23T18:00:18.677Z",
+              "publishedAt": "2026-05-23T18:00:18.677Z"
+            }
+          },
+          {
+            "order": 2,
+            "id": 11,
+            "title": "ЗАКАЗ ДЕМО-ОБРАЗЦОВ",
+            "content": "Минимальной суммы заказа нет.\n• В одном заказе может быть до 11 образцов;\n• Каждого продукта в заказе может быть не более 2 штук;\n• Срок изготовления образцов: до 14 рабочих дней;\n• Образцы полноразмерные по той же цене, что в прайсе;\n• Образцы изготавливаются под заказ, мы их не храним;\n• Вы получаете максимально свежий продукт;\n• Подробный файл с заказанными позициями, составами и способами применения вам отправит менеджер.",
+            "buttonLabel": "СМОТРЕТЬ ОБРАЗЦЫ",
+            "buttonHref": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "enabled": true,
+            "image": {
+              "id": 101,
+              "documentId": "vvp1di309wuyoj9vazjny3aq",
+              "name": "demo-samples.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 500,
+              "height": 594,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_demo-samples.png",
+                  "hash": "thumbnail_demo_samples_8f150c666b",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 131,
+                  "height": 156,
+                  "size": 29.57,
+                  "sizeInBytes": 29570,
+                  "url": "/uploads/thumbnail_demo_samples_8f150c666b.png"
+                },
+                "small": {
+                  "name": "small_demo-samples.png",
+                  "hash": "small_demo_samples_8f150c666b",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 421,
+                  "height": 500,
+                  "size": 201.23,
+                  "sizeInBytes": 201226,
+                  "url": "/uploads/small_demo_samples_8f150c666b.png"
+                }
+              },
+              "hash": "demo_samples_8f150c666b",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 69.34,
+              "url": "/uploads/demo_samples_8f150c666b.png",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-23T18:00:28.651Z",
+              "updatedAt": "2026-05-23T18:00:28.651Z",
+              "publishedAt": "2026-05-23T18:00:28.651Z"
+            }
+          },
+          {
+            "order": 3,
+            "id": 12,
+            "title": "ОПЛАТА И ДОСТАВКА",
+            "content": "Мы запускаем производство после 100% предоплаты.\nВаш персональный менеджер вышлет вам счёт на электронную почту или в WhatsApp для оплаты.\nОплатить заказ можно двумя способами:\n• на расчётный счёт организации;\n• на карту банка.\n\nПосле поступления средств мы передаём ваш заказ в производство.\n\nДоставка До терминалов CDEK, ПЭК, Кит, Энергия, Байкал, Мэйджиктранс, ЖелДорЭкспедиция и прочих — бесплатно.\nТранспортные расходы до вашего города и услуги по дополнительной жёсткой упаковке оплачивает клиент.\n\nКак только мы отправим заказ, менеджер пришлёт вам письмо с номером транспортной накладной.\n\nС ним вы сможете отслеживать статус перемещения груза.",
+            "buttonLabel": "СВЯЗАТЬСЯ",
+            "buttonHref": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "enabled": true,
+            "image": {
+              "id": 102,
+              "documentId": "p4vgaukhou1jhuk5m94vjjga",
+              "name": "payment-delivery.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 500,
+              "height": 564,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_payment-delivery.png",
+                  "hash": "thumbnail_payment_delivery_a346e417be",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 138,
+                  "height": 156,
+                  "size": 24.05,
+                  "sizeInBytes": 24052,
+                  "url": "/uploads/thumbnail_payment_delivery_a346e417be.png"
+                },
+                "small": {
+                  "name": "small_payment-delivery.png",
+                  "hash": "small_payment_delivery_a346e417be",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 443,
+                  "height": 500,
+                  "size": 140.84,
+                  "sizeInBytes": 140843,
+                  "url": "/uploads/small_payment_delivery_a346e417be.png"
+                }
+              },
+              "hash": "payment_delivery_a346e417be",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 41.45,
+              "url": "/uploads/payment_delivery_a346e417be.png",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-23T18:00:51.044Z",
+              "updatedAt": "2026-05-23T18:00:51.044Z",
+              "publishedAt": "2026-05-23T18:00:51.044Z"
+            }
+          }
+        ]
+      },
+      "meta": {}
+    },
+    "certificatesPage": {
+      "data": {
+        "id": 4,
+        "documentId": "jsjdbkrfk9ifhxr5zrw8jjtj",
+        "enabled": true,
+        "title": "СЕРТИФИКАТЫ",
+        "description": "Компания ФОРМУЛА72 имеет все необходимые сертификаты и разрешения.\nС ними можно ознакомиться, пролистав изображения в карусели.\nОстались вопросы?\nЗадайте их сотруднику компании ФОРМУЛА72.",
+        "buttonLabel": "КОНСУЛЬТАЦИЯ",
+        "buttonHref": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+        "createdAt": "2026-05-23T18:21:47.126Z",
+        "updatedAt": "2026-05-23T18:25:45.807Z",
+        "publishedAt": "2026-05-23T18:25:45.822Z",
+        "certificates": [
+          {
+            "order": 1,
+            "id": 25,
+            "title": "Сертификат 1",
+            "alt": "Сертификат Formula72 1",
+            "enabled": true,
+            "image": {
+              "id": 103,
+              "documentId": "k6253xletjad8kvdhwuuytlz",
+              "name": "certificate-01.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 905,
+              "height": 1280,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_certificate-01.jpg",
+                  "hash": "thumbnail_certificate_01_f1a0032239",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 110,
+                  "height": 156,
+                  "size": 4.73,
+                  "sizeInBytes": 4730,
+                  "url": "/uploads/thumbnail_certificate_01_f1a0032239.jpg"
+                },
+                "small": {
+                  "name": "small_certificate-01.jpg",
+                  "hash": "small_certificate_01_f1a0032239",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 354,
+                  "height": 500,
+                  "size": 39.94,
+                  "sizeInBytes": 39944,
+                  "url": "/uploads/small_certificate_01_f1a0032239.jpg"
+                },
+                "medium": {
+                  "name": "medium_certificate-01.jpg",
+                  "hash": "medium_certificate_01_f1a0032239",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 530,
+                  "height": 750,
+                  "size": 79.44,
+                  "sizeInBytes": 79438,
+                  "url": "/uploads/medium_certificate_01_f1a0032239.jpg"
+                },
+                "large": {
+                  "name": "large_certificate-01.jpg",
+                  "hash": "large_certificate_01_f1a0032239",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 707,
+                  "height": 1000,
+                  "size": 120.94,
+                  "sizeInBytes": 120938,
+                  "url": "/uploads/large_certificate_01_f1a0032239.jpg"
+                }
+              },
+              "hash": "certificate_01_f1a0032239",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 198.67,
+              "url": "/uploads/certificate_01_f1a0032239.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-23T18:24:09.720Z",
+              "updatedAt": "2026-05-23T18:24:09.720Z",
+              "publishedAt": "2026-05-23T18:24:09.720Z"
+            }
+          },
+          {
+            "order": 2,
+            "id": 26,
+            "title": "Сертификат 2",
+            "alt": "Сертификат Formula72 2",
+            "enabled": true,
+            "image": {
+              "id": 104,
+              "documentId": "xarpwz4txy35fwoa9v1dhx5z",
+              "name": "certificate-02.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 905,
+              "height": 1280,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_certificate-02.jpg",
+                  "hash": "thumbnail_certificate_02_0c0f3415f1",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 110,
+                  "height": 156,
+                  "size": 3.36,
+                  "sizeInBytes": 3356,
+                  "url": "/uploads/thumbnail_certificate_02_0c0f3415f1.jpg"
+                },
+                "medium": {
+                  "name": "medium_certificate-02.jpg",
+                  "hash": "medium_certificate_02_0c0f3415f1",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 530,
+                  "height": 750,
+                  "size": 56.99,
+                  "sizeInBytes": 56986,
+                  "url": "/uploads/medium_certificate_02_0c0f3415f1.jpg"
+                },
+                "small": {
+                  "name": "small_certificate-02.jpg",
+                  "hash": "small_certificate_02_0c0f3415f1",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 354,
+                  "height": 500,
+                  "size": 29.31,
+                  "sizeInBytes": 29312,
+                  "url": "/uploads/small_certificate_02_0c0f3415f1.jpg"
+                },
+                "large": {
+                  "name": "large_certificate-02.jpg",
+                  "hash": "large_certificate_02_0c0f3415f1",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 707,
+                  "height": 1000,
+                  "size": 84.72,
+                  "sizeInBytes": 84718,
+                  "url": "/uploads/large_certificate_02_0c0f3415f1.jpg"
+                }
+              },
+              "hash": "certificate_02_0c0f3415f1",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 132.62,
+              "url": "/uploads/certificate_02_0c0f3415f1.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-23T18:24:24.878Z",
+              "updatedAt": "2026-05-23T18:24:24.878Z",
+              "publishedAt": "2026-05-23T18:24:24.878Z"
+            }
+          },
+          {
+            "order": 3,
+            "id": 27,
+            "title": "Сертификат 3",
+            "alt": "Сертификат Formula72 3",
+            "enabled": true,
+            "image": {
+              "id": 105,
+              "documentId": "za9tf7fxjhj8l6b2otw47mab",
+              "name": "certificate-03.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 385,
+              "height": 545,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_certificate-03.jpg",
+                  "hash": "thumbnail_certificate_03_c34695b552",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 110,
+                  "height": 156,
+                  "size": 3.75,
+                  "sizeInBytes": 3748,
+                  "url": "/uploads/thumbnail_certificate_03_c34695b552.jpg"
+                },
+                "small": {
+                  "name": "small_certificate-03.jpg",
+                  "hash": "small_certificate_03_c34695b552",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 353,
+                  "height": 500,
+                  "size": 30.16,
+                  "sizeInBytes": 30160,
+                  "url": "/uploads/small_certificate_03_c34695b552.jpg"
+                }
+              },
+              "hash": "certificate_03_c34695b552",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 43.25,
+              "url": "/uploads/certificate_03_c34695b552.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-23T18:24:40.605Z",
+              "updatedAt": "2026-05-23T18:24:40.605Z",
+              "publishedAt": "2026-05-23T18:24:40.605Z"
+            }
+          },
+          {
+            "order": 4,
+            "id": 28,
+            "title": "Сертификат 4",
+            "alt": "Сертификат Formula72 4",
+            "enabled": true,
+            "image": {
+              "id": 106,
+              "documentId": "ja8qbt5vr08clwhqxx94l1s7",
+              "name": "certificate-04.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 385,
+              "height": 545,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_certificate-04.jpg",
+                  "hash": "thumbnail_certificate_04_6934eb62a6",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 110,
+                  "height": 156,
+                  "size": 2.89,
+                  "sizeInBytes": 2890,
+                  "url": "/uploads/thumbnail_certificate_04_6934eb62a6.jpg"
+                },
+                "small": {
+                  "name": "small_certificate-04.jpg",
+                  "hash": "small_certificate_04_6934eb62a6",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 353,
+                  "height": 500,
+                  "size": 23.83,
+                  "sizeInBytes": 23828,
+                  "url": "/uploads/small_certificate_04_6934eb62a6.jpg"
+                }
+              },
+              "hash": "certificate_04_6934eb62a6",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 33.87,
+              "url": "/uploads/certificate_04_6934eb62a6.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-23T18:25:06.909Z",
+              "updatedAt": "2026-05-23T18:25:06.909Z",
+              "publishedAt": "2026-05-23T18:25:06.909Z"
+            }
+          },
+          {
+            "order": 5,
+            "id": 29,
+            "title": "Сертификат 5",
+            "alt": "Сертификат Formula72 5",
+            "enabled": true,
+            "image": {
+              "id": 108,
+              "documentId": "hvhkelhv6tomqv7hwjmyo7sr",
+              "name": "certificate-05.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 905,
+              "height": 1280,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_certificate-05.jpg",
+                  "hash": "thumbnail_certificate_05_6c5fe0c97b",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 110,
+                  "height": 156,
+                  "size": 2.89,
+                  "sizeInBytes": 2890,
+                  "url": "/uploads/thumbnail_certificate_05_6c5fe0c97b.jpg"
+                },
+                "small": {
+                  "name": "small_certificate-05.jpg",
+                  "hash": "small_certificate_05_6c5fe0c97b",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 354,
+                  "height": 500,
+                  "size": 25.57,
+                  "sizeInBytes": 25574,
+                  "url": "/uploads/small_certificate_05_6c5fe0c97b.jpg"
+                },
+                "medium": {
+                  "name": "medium_certificate-05.jpg",
+                  "hash": "medium_certificate_05_6c5fe0c97b",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 530,
+                  "height": 750,
+                  "size": 47.86,
+                  "sizeInBytes": 47858,
+                  "url": "/uploads/medium_certificate_05_6c5fe0c97b.jpg"
+                },
+                "large": {
+                  "name": "large_certificate-05.jpg",
+                  "hash": "large_certificate_05_6c5fe0c97b",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 707,
+                  "height": 1000,
+                  "size": 75.32,
+                  "sizeInBytes": 75318,
+                  "url": "/uploads/large_certificate_05_6c5fe0c97b.jpg"
+                }
+              },
+              "hash": "certificate_05_6c5fe0c97b",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 119.18,
+              "url": "/uploads/certificate_05_6c5fe0c97b.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-23T18:25:07.148Z",
+              "updatedAt": "2026-05-23T18:25:07.148Z",
+              "publishedAt": "2026-05-23T18:25:07.148Z"
+            }
+          },
+          {
+            "order": 6,
+            "id": 30,
+            "title": "Сертификат 6",
+            "alt": "Сертификат Formula72 6",
+            "enabled": true,
+            "image": {
+              "id": 107,
+              "documentId": "i3m4pp5r669b2hzdr7a4qlsc",
+              "name": "certificate-06.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 905,
+              "height": 1280,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_certificate-06.jpg",
+                  "hash": "thumbnail_certificate_06_9d844e5be6",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 110,
+                  "height": 156,
+                  "size": 2.46,
+                  "sizeInBytes": 2464,
+                  "url": "/uploads/thumbnail_certificate_06_9d844e5be6.jpg"
+                },
+                "large": {
+                  "name": "large_certificate-06.jpg",
+                  "hash": "large_certificate_06_9d844e5be6",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 707,
+                  "height": 1000,
+                  "size": 61.43,
+                  "sizeInBytes": 61430,
+                  "url": "/uploads/large_certificate_06_9d844e5be6.jpg"
+                },
+                "medium": {
+                  "name": "medium_certificate-06.jpg",
+                  "hash": "medium_certificate_06_9d844e5be6",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 530,
+                  "height": 750,
+                  "size": 41.49,
+                  "sizeInBytes": 41490,
+                  "url": "/uploads/medium_certificate_06_9d844e5be6.jpg"
+                },
+                "small": {
+                  "name": "small_certificate-06.jpg",
+                  "hash": "small_certificate_06_9d844e5be6",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 354,
+                  "height": 500,
+                  "size": 21.79,
+                  "sizeInBytes": 21786,
+                  "url": "/uploads/small_certificate_06_9d844e5be6.jpg"
+                }
+              },
+              "hash": "certificate_06_9d844e5be6",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 93.62,
+              "url": "/uploads/certificate_06_9d844e5be6.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-23T18:25:07.124Z",
+              "updatedAt": "2026-05-23T18:25:07.124Z",
+              "publishedAt": "2026-05-23T18:25:07.124Z"
+            }
+          },
+          {
+            "order": 7,
+            "id": 31,
+            "title": "Сертификат 7",
+            "alt": "Сертификат Formula72 7",
+            "enabled": true,
+            "image": {
+              "id": 109,
+              "documentId": "xiy6m1bxwg2ncs465k2owf4b",
+              "name": "certificate-07.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 905,
+              "height": 1280,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_certificate-07.jpg",
+                  "hash": "thumbnail_certificate_07_1cc8acba75",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 110,
+                  "height": 156,
+                  "size": 3.61,
+                  "sizeInBytes": 3606,
+                  "url": "/uploads/thumbnail_certificate_07_1cc8acba75.jpg"
+                },
+                "medium": {
+                  "name": "medium_certificate-07.jpg",
+                  "hash": "medium_certificate_07_1cc8acba75",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 530,
+                  "height": 750,
+                  "size": 55.91,
+                  "sizeInBytes": 55910,
+                  "url": "/uploads/medium_certificate_07_1cc8acba75.jpg"
+                },
+                "small": {
+                  "name": "small_certificate-07.jpg",
+                  "hash": "small_certificate_07_1cc8acba75",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 354,
+                  "height": 500,
+                  "size": 29.74,
+                  "sizeInBytes": 29744,
+                  "url": "/uploads/small_certificate_07_1cc8acba75.jpg"
+                },
+                "large": {
+                  "name": "large_certificate-07.jpg",
+                  "hash": "large_certificate_07_1cc8acba75",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 707,
+                  "height": 1000,
+                  "size": 84.48,
+                  "sizeInBytes": 84482,
+                  "url": "/uploads/large_certificate_07_1cc8acba75.jpg"
+                }
+              },
+              "hash": "certificate_07_1cc8acba75",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 129.36,
+              "url": "/uploads/certificate_07_1cc8acba75.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-23T18:25:07.241Z",
+              "updatedAt": "2026-05-23T18:25:07.241Z",
+              "publishedAt": "2026-05-23T18:25:07.241Z"
+            }
+          },
+          {
+            "order": 8,
+            "id": 32,
+            "title": "Сертификат 8",
+            "alt": "Сертификат Formula72 8",
+            "enabled": true,
+            "image": {
+              "id": 110,
+              "documentId": "f34j9fpk5p4yyvrm0wiqh2m0",
+              "name": "certificate-08.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 905,
+              "height": 1280,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_certificate-08.jpg",
+                  "hash": "thumbnail_certificate_08_0c04fe3489",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 110,
+                  "height": 156,
+                  "size": 3.29,
+                  "sizeInBytes": 3288,
+                  "url": "/uploads/thumbnail_certificate_08_0c04fe3489.jpg"
+                },
+                "medium": {
+                  "name": "medium_certificate-08.jpg",
+                  "hash": "medium_certificate_08_0c04fe3489",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 530,
+                  "height": 750,
+                  "size": 54.46,
+                  "sizeInBytes": 54460,
+                  "url": "/uploads/medium_certificate_08_0c04fe3489.jpg"
+                },
+                "small": {
+                  "name": "small_certificate-08.jpg",
+                  "hash": "small_certificate_08_0c04fe3489",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 354,
+                  "height": 500,
+                  "size": 28.3,
+                  "sizeInBytes": 28298,
+                  "url": "/uploads/small_certificate_08_0c04fe3489.jpg"
+                },
+                "large": {
+                  "name": "large_certificate-08.jpg",
+                  "hash": "large_certificate_08_0c04fe3489",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 707,
+                  "height": 1000,
+                  "size": 81.27,
+                  "sizeInBytes": 81274,
+                  "url": "/uploads/large_certificate_08_0c04fe3489.jpg"
+                }
+              },
+              "hash": "certificate_08_0c04fe3489",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 126.32,
+              "url": "/uploads/certificate_08_0c04fe3489.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-23T18:25:07.319Z",
+              "updatedAt": "2026-05-23T18:25:07.319Z",
+              "publishedAt": "2026-05-23T18:25:07.319Z"
+            }
+          }
+        ]
+      },
+      "meta": {}
+    },
     "banners": {
       "data": [
         {
-          "id": 10,
+          "id": 22,
           "documentId": "c1alu5vm9phf6cpugwn6xj2r",
           "title": "ВРЕМЯ СОЗДАВАТЬ",
           "subtitle": "МЫ ПРЕВРАЩАЕМ МЕЧТЫ\nВ РЕАЛЬНОСТЬ",
           "order": 2,
           "isActive": true,
           "createdAt": "2026-03-22T17:16:14.758Z",
-          "updatedAt": "2026-03-22T17:38:29.653Z",
-          "publishedAt": "2026-03-22T17:38:29.665Z",
+          "updatedAt": "2026-05-23T17:15:09.188Z",
+          "publishedAt": "2026-05-23T17:15:09.198Z",
           "textPosition": null,
           "image": {
             "id": 4,
@@ -332,7 +2156,12 @@
                 "height": 138,
                 "size": 5.81,
                 "sizeInBytes": 5807,
-                "url": "/cms-uploads/thumbnail_banner_2_6910912eb2.jpg"
+                "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031700/formula72/banner_2_6910912eb2_thumbnail.jpg",
+                "provider": "cloudinary",
+                "provider_metadata": {
+                  "public_id": "formula72/banner_2_6910912eb2_thumbnail",
+                  "resource_type": "image"
+                }
               },
               "large": {
                 "name": "large_banner-2.jpg",
@@ -344,7 +2173,12 @@
                 "height": 562,
                 "size": 62.38,
                 "sizeInBytes": 62380,
-                "url": "/cms-uploads/large_banner_2_6910912eb2.jpg"
+                "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031698/formula72/banner_2_6910912eb2_large.jpg",
+                "provider": "cloudinary",
+                "provider_metadata": {
+                  "public_id": "formula72/banner_2_6910912eb2_large",
+                  "resource_type": "image"
+                }
               },
               "medium": {
                 "name": "medium_banner-2.jpg",
@@ -356,7 +2190,12 @@
                 "height": 422,
                 "size": 38.29,
                 "sizeInBytes": 38293,
-                "url": "/cms-uploads/medium_banner_2_6910912eb2.jpg"
+                "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031700/formula72/banner_2_6910912eb2_medium.jpg",
+                "provider": "cloudinary",
+                "provider_metadata": {
+                  "public_id": "formula72/banner_2_6910912eb2_medium",
+                  "resource_type": "image"
+                }
               },
               "small": {
                 "name": "small_banner-2.jpg",
@@ -368,37 +2207,116 @@
                 "height": 281,
                 "size": 19.09,
                 "sizeInBytes": 19088,
-                "url": "/cms-uploads/small_banner_2_6910912eb2.jpg"
+                "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031699/formula72/banner_2_6910912eb2_small.jpg",
+                "provider": "cloudinary",
+                "provider_metadata": {
+                  "public_id": "formula72/banner_2_6910912eb2_small",
+                  "resource_type": "image"
+                }
               }
             },
             "hash": "banner_2_6910912eb2",
             "ext": ".jpg",
             "mime": "image/jpeg",
             "size": 102.25,
-            "url": "/cms-uploads/banner_2_6910912eb2.jpg",
+            "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031698/formula72/banner_2_6910912eb2.jpg",
+            "previewUrl": null,
+            "provider": "cloudinary",
+            "provider_metadata": {
+              "public_id": "formula72/banner_2_6910912eb2",
+              "resource_type": "image"
+            },
+            "createdAt": "2026-03-22T17:16:08.535Z",
+            "updatedAt": "2026-05-15T07:22:50.501Z",
+            "publishedAt": "2026-03-22T17:16:08.536Z"
+          },
+          "mobileImage": {
+            "id": 99,
+            "documentId": "qkshc3ke3lmj6bgrbyi1uvzs",
+            "name": "banner-2-mobile.png",
+            "alternativeText": null,
+            "caption": null,
+            "focalPoint": null,
+            "width": 1080,
+            "height": 900,
+            "formats": {
+              "thumbnail": {
+                "name": "thumbnail_banner-2-mobile.png",
+                "hash": "thumbnail_banner_2_mobile_9d48141716",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 187,
+                "height": 156,
+                "size": 45.08,
+                "sizeInBytes": 45078,
+                "url": "/uploads/thumbnail_banner_2_mobile_9d48141716.png"
+              },
+              "small": {
+                "name": "small_banner-2-mobile.png",
+                "hash": "small_banner_2_mobile_9d48141716",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 500,
+                "height": 417,
+                "size": 268.3,
+                "sizeInBytes": 268296,
+                "url": "/uploads/small_banner_2_mobile_9d48141716.png"
+              },
+              "medium": {
+                "name": "medium_banner-2-mobile.png",
+                "hash": "medium_banner_2_mobile_9d48141716",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 750,
+                "height": 625,
+                "size": 572.48,
+                "sizeInBytes": 572481,
+                "url": "/uploads/medium_banner_2_mobile_9d48141716.png"
+              },
+              "large": {
+                "name": "large_banner-2-mobile.png",
+                "hash": "large_banner_2_mobile_9d48141716",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 1000,
+                "height": 833,
+                "size": 964.32,
+                "sizeInBytes": 964324,
+                "url": "/uploads/large_banner_2_mobile_9d48141716.png"
+              }
+            },
+            "hash": "banner_2_mobile_9d48141716",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 292.55,
+            "url": "/uploads/banner_2_mobile_9d48141716.png",
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "createdAt": "2026-03-22T17:16:08.535Z",
-            "updatedAt": "2026-03-22T17:16:08.535Z",
-            "publishedAt": "2026-03-22T17:16:08.536Z"
+            "createdAt": "2026-05-23T17:15:06.335Z",
+            "updatedAt": "2026-05-23T17:15:06.335Z",
+            "publishedAt": "2026-05-23T17:15:06.336Z"
           }
         },
         {
-          "id": 18,
+          "id": 24,
           "documentId": "kxfn13prurl2f20oo7nndtt4",
           "title": "ИДЕАЛЬНЫЙ ПРОДУКТ\nС ФОРМУЛА72",
-          "subtitle": "ТОВОЯ ИДЕЯ — НАШ ПРИОРИТЕТ",
+          "subtitle": "ТВОЯ ИДЕЯ — НАШ ПРИОРИТЕТ",
           "order": 1,
           "isActive": true,
           "createdAt": "2026-03-22T17:15:23.474Z",
-          "updatedAt": "2026-03-25T12:12:21.610Z",
-          "publishedAt": "2026-03-25T12:12:21.647Z",
+          "updatedAt": "2026-05-23T17:15:27.161Z",
+          "publishedAt": "2026-05-23T17:15:27.171Z",
           "textPosition": null,
           "image": {
-            "id": 3,
-            "documentId": "jlsqi1tdptqd1qbkltnu5flw",
-            "name": "banner-1.jpg",
+            "id": 97,
+            "documentId": "tsndvy9w0yp3d0w8og6u6fap",
+            "name": "banner-1-2.png",
             "alternativeText": null,
             "caption": null,
             "focalPoint": null,
@@ -406,65 +2324,136 @@
             "height": 768,
             "formats": {
               "thumbnail": {
-                "name": "thumbnail_banner-1.jpg",
-                "hash": "thumbnail_banner_1_3244f25533",
-                "ext": ".jpg",
-                "mime": "image/jpeg",
+                "name": "thumbnail_banner-1-2.png",
+                "hash": "thumbnail_banner_1_2_1b46cde2f8",
+                "ext": ".png",
+                "mime": "image/png",
                 "path": null,
                 "width": 245,
                 "height": 138,
-                "size": 4.66,
-                "sizeInBytes": 4662,
-                "url": "/cms-uploads/thumbnail_banner_1_3244f25533.jpg"
-              },
-              "large": {
-                "name": "large_banner-1.jpg",
-                "hash": "large_banner_1_3244f25533",
-                "ext": ".jpg",
-                "mime": "image/jpeg",
-                "path": null,
-                "width": 1000,
-                "height": 562,
-                "size": 49.6,
-                "sizeInBytes": 49601,
-                "url": "/cms-uploads/large_banner_1_3244f25533.jpg"
-              },
-              "medium": {
-                "name": "medium_banner-1.jpg",
-                "hash": "medium_banner_1_3244f25533",
-                "ext": ".jpg",
-                "mime": "image/jpeg",
-                "path": null,
-                "width": 750,
-                "height": 422,
-                "size": 29.72,
-                "sizeInBytes": 29718,
-                "url": "/cms-uploads/medium_banner_1_3244f25533.jpg"
+                "size": 53.11,
+                "sizeInBytes": 53108,
+                "url": "/uploads/thumbnail_banner_1_2_1b46cde2f8.png"
               },
               "small": {
-                "name": "small_banner-1.jpg",
-                "hash": "small_banner_1_3244f25533",
-                "ext": ".jpg",
-                "mime": "image/jpeg",
+                "name": "small_banner-1-2.png",
+                "hash": "small_banner_1_2_1b46cde2f8",
+                "ext": ".png",
+                "mime": "image/png",
                 "path": null,
                 "width": 500,
                 "height": 281,
-                "size": 15.08,
-                "sizeInBytes": 15078,
-                "url": "/cms-uploads/small_banner_1_3244f25533.jpg"
+                "size": 203.61,
+                "sizeInBytes": 203610,
+                "url": "/uploads/small_banner_1_2_1b46cde2f8.png"
+              },
+              "medium": {
+                "name": "medium_banner-1-2.png",
+                "hash": "medium_banner_1_2_1b46cde2f8",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 750,
+                "height": 422,
+                "size": 473.98,
+                "sizeInBytes": 473981,
+                "url": "/uploads/medium_banner_1_2_1b46cde2f8.png"
+              },
+              "large": {
+                "name": "large_banner-1-2.png",
+                "hash": "large_banner_1_2_1b46cde2f8",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 1000,
+                "height": 562,
+                "size": 867.62,
+                "sizeInBytes": 867623,
+                "url": "/uploads/large_banner_1_2_1b46cde2f8.png"
               }
             },
-            "hash": "banner_1_3244f25533",
-            "ext": ".jpg",
-            "mime": "image/jpeg",
-            "size": 83.01,
-            "url": "/cms-uploads/banner_1_3244f25533.jpg",
+            "hash": "banner_1_2_1b46cde2f8",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 444.19,
+            "url": "/uploads/banner_1_2_1b46cde2f8.png",
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "createdAt": "2026-03-22T17:12:22.369Z",
-            "updatedAt": "2026-03-24T18:43:07.392Z",
-            "publishedAt": "2026-03-22T17:12:22.369Z"
+            "createdAt": "2026-05-23T17:04:46.378Z",
+            "updatedAt": "2026-05-23T17:04:46.378Z",
+            "publishedAt": "2026-05-23T17:04:46.379Z"
+          },
+          "mobileImage": {
+            "id": 98,
+            "documentId": "yxr80whpsqepxentxqn3hw9i",
+            "name": "banner-1-mobile2.png",
+            "alternativeText": null,
+            "caption": null,
+            "focalPoint": null,
+            "width": 1080,
+            "height": 900,
+            "formats": {
+              "thumbnail": {
+                "name": "thumbnail_banner-1-mobile2.png",
+                "hash": "thumbnail_banner_1_mobile2_df69a8771f",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 187,
+                "height": 156,
+                "size": 41.95,
+                "sizeInBytes": 41954,
+                "url": "/uploads/thumbnail_banner_1_mobile2_df69a8771f.png"
+              },
+              "small": {
+                "name": "small_banner-1-mobile2.png",
+                "hash": "small_banner_1_mobile2_df69a8771f",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 500,
+                "height": 417,
+                "size": 269.63,
+                "sizeInBytes": 269629,
+                "url": "/uploads/small_banner_1_mobile2_df69a8771f.png"
+              },
+              "medium": {
+                "name": "medium_banner-1-mobile2.png",
+                "hash": "medium_banner_1_mobile2_df69a8771f",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 750,
+                "height": 625,
+                "size": 612.22,
+                "sizeInBytes": 612222,
+                "url": "/uploads/medium_banner_1_mobile2_df69a8771f.png"
+              },
+              "large": {
+                "name": "large_banner-1-mobile2.png",
+                "hash": "large_banner_1_mobile2_df69a8771f",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 1000,
+                "height": 833,
+                "size": 1056.96,
+                "sizeInBytes": 1056962,
+                "url": "/uploads/large_banner_1_mobile2_df69a8771f.png"
+              }
+            },
+            "hash": "banner_1_mobile2_df69a8771f",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 327.34,
+            "url": "/uploads/banner_1_mobile2_df69a8771f.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2026-05-23T17:14:24.400Z",
+            "updatedAt": "2026-05-23T17:14:24.400Z",
+            "publishedAt": "2026-05-23T17:14:24.400Z"
           }
         }
       ],
@@ -510,7 +2499,12 @@
               "height": 138,
               "size": 76.6,
               "sizeInBytes": 76597,
-              "url": "/cms-uploads/thumbnail_opt_contract_bg_d99f0fcef5.jpg"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031693/formula72/opt_contract_bg_d99f0fcef5_thumbnail.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/opt_contract_bg_d99f0fcef5_thumbnail",
+                "resource_type": "image"
+              }
             },
             "small": {
               "name": "small_opt-contract-bg.jpg",
@@ -522,7 +2516,12 @@
               "height": 281,
               "size": 278.92,
               "sizeInBytes": 278921,
-              "url": "/cms-uploads/small_opt_contract_bg_d99f0fcef5.jpg"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031691/formula72/opt_contract_bg_d99f0fcef5_small.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/opt_contract_bg_d99f0fcef5_small",
+                "resource_type": "image"
+              }
             },
             "medium": {
               "name": "medium_opt-contract-bg.jpg",
@@ -534,7 +2533,12 @@
               "height": 422,
               "size": 601.92,
               "sizeInBytes": 601918,
-              "url": "/cms-uploads/medium_opt_contract_bg_d99f0fcef5.jpg"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031692/formula72/opt_contract_bg_d99f0fcef5_medium.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/opt_contract_bg_d99f0fcef5_medium",
+                "resource_type": "image"
+              }
             },
             "large": {
               "name": "large_opt-contract-bg.jpg",
@@ -546,19 +2550,27 @@
               "height": 563,
               "size": 1048.62,
               "sizeInBytes": 1048618,
-              "url": "/cms-uploads/large_opt_contract_bg_d99f0fcef5.jpg"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031691/formula72/opt_contract_bg_d99f0fcef5_large.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/opt_contract_bg_d99f0fcef5_large",
+                "resource_type": "image"
+              }
             }
           },
           "hash": "opt_contract_bg_d99f0fcef5",
           "ext": ".jpg",
           "mime": "image/jpeg",
           "size": 851.58,
-          "url": "/cms-uploads/opt_contract_bg_d99f0fcef5.jpg",
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031690/formula72/opt_contract_bg_d99f0fcef5.png",
           "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/opt_contract_bg_d99f0fcef5",
+            "resource_type": "image"
+          },
           "createdAt": "2026-03-22T17:10:54.901Z",
-          "updatedAt": "2026-03-22T17:32:58.378Z",
+          "updatedAt": "2026-05-15T07:22:42.153Z",
           "publishedAt": "2026-03-22T17:10:54.902Z"
         },
         "OptMobileImage": {
@@ -581,7 +2593,12 @@
               "height": 156,
               "size": 84.17,
               "sizeInBytes": 84172,
-              "url": "/cms-uploads/thumbnail_opt_mobile_acf238f79a.jpg"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031814/formula72/opt_mobile_acf238f79a_thumbnail.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/opt_mobile_acf238f79a_thumbnail",
+                "resource_type": "image"
+              }
             },
             "small": {
               "name": "small_opt-mobile.jpg",
@@ -593,7 +2610,12 @@
               "height": 327,
               "size": 303.04,
               "sizeInBytes": 303044,
-              "url": "/cms-uploads/small_opt_mobile_acf238f79a.jpg"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031812/formula72/opt_mobile_acf238f79a_small.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/opt_mobile_acf238f79a_small",
+                "resource_type": "image"
+              }
             },
             "medium": {
               "name": "medium_opt-mobile.jpg",
@@ -605,19 +2627,27 @@
               "height": 490,
               "size": 585.36,
               "sizeInBytes": 585358,
-              "url": "/cms-uploads/medium_opt_mobile_acf238f79a.jpg"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031813/formula72/opt_mobile_acf238f79a_medium.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/opt_mobile_acf238f79a_medium",
+                "resource_type": "image"
+              }
             }
           },
           "hash": "opt_mobile_acf238f79a",
           "ext": ".jpg",
           "mime": "image/jpeg",
           "size": 143.39,
-          "url": "/cms-uploads/opt_mobile_acf238f79a.jpg",
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031812/formula72/opt_mobile_acf238f79a.png",
           "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/opt_mobile_acf238f79a",
+            "resource_type": "image"
+          },
           "createdAt": "2026-04-14T11:48:58.421Z",
-          "updatedAt": "2026-04-14T11:48:58.421Z",
+          "updatedAt": "2026-05-15T07:24:44.290Z",
           "publishedAt": "2026-04-14T11:48:58.421Z"
         },
         "ContractMobileImage": {
@@ -640,7 +2670,12 @@
               "height": 156,
               "size": 83.06,
               "sizeInBytes": 83064,
-              "url": "/cms-uploads/thumbnail_contract_mobile_ae3b3d01d8.jpg"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031811/formula72/contract_mobile_ae3b3d01d8_thumbnail.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/contract_mobile_ae3b3d01d8_thumbnail",
+                "resource_type": "image"
+              }
             },
             "small": {
               "name": "small_contract-mobile.jpg",
@@ -652,7 +2687,12 @@
               "height": 327,
               "size": 306.27,
               "sizeInBytes": 306265,
-              "url": "/cms-uploads/small_contract_mobile_ae3b3d01d8.jpg"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031810/formula72/contract_mobile_ae3b3d01d8_small.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/contract_mobile_ae3b3d01d8_small",
+                "resource_type": "image"
+              }
             },
             "medium": {
               "name": "medium_contract-mobile.jpg",
@@ -664,19 +2704,27 @@
               "height": 490,
               "size": 591.08,
               "sizeInBytes": 591079,
-              "url": "/cms-uploads/medium_contract_mobile_ae3b3d01d8.jpg"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031810/formula72/contract_mobile_ae3b3d01d8_medium.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/contract_mobile_ae3b3d01d8_medium",
+                "resource_type": "image"
+              }
             }
           },
           "hash": "contract_mobile_ae3b3d01d8",
           "ext": ".jpg",
           "mime": "image/jpeg",
           "size": 151.44,
-          "url": "/cms-uploads/contract_mobile_ae3b3d01d8.jpg",
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031809/formula72/contract_mobile_ae3b3d01d8.png",
           "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/contract_mobile_ae3b3d01d8",
+            "resource_type": "image"
+          },
           "createdAt": "2026-04-14T11:48:28.814Z",
-          "updatedAt": "2026-04-14T11:48:28.814Z",
+          "updatedAt": "2026-05-15T07:24:40.907Z",
           "publishedAt": "2026-04-14T11:48:28.814Z"
         }
       },
@@ -805,16 +2853,16 @@
     },
     "formula72Scheme": {
       "data": {
-        "id": 12,
+        "id": 15,
         "documentId": "t52gspivlo1ss7bamrszgjbd",
         "title": "ФОРМУЛА72",
         "createdAt": "2026-03-26T11:23:19.247Z",
-        "updatedAt": "2026-04-27T19:34:03.086Z",
-        "publishedAt": "2026-04-27T19:34:03.108Z",
+        "updatedAt": "2026-05-21T11:53:37.013Z",
+        "publishedAt": "2026-05-21T11:53:37.058Z",
         "image": {
-          "id": 68,
-          "documentId": "bgk8qiqcbxmcaddx0klhku9s",
-          "name": "formula72-scheme2.png",
+          "id": 71,
+          "documentId": "deqpx2i3ztatw1p97xwpr2u5",
+          "name": "formula72-scheme3.png",
           "alternativeText": null,
           "caption": null,
           "focalPoint": null,
@@ -822,75 +2870,75 @@
           "height": 1429,
           "formats": {
             "thumbnail": {
-              "name": "thumbnail_formula72-scheme2.png",
-              "hash": "thumbnail_formula72_scheme2_e9fb94beda",
+              "name": "thumbnail_formula72-scheme3.png",
+              "hash": "thumbnail_formula72_scheme3_078232e94c",
               "ext": ".png",
               "mime": "image/png",
               "path": null,
               "width": 245,
               "height": 137,
-              "size": 34.81,
-              "sizeInBytes": 34812,
-              "url": "/cms-uploads/thumbnail_formula72_scheme2_e9fb94beda.png"
+              "size": 56.26,
+              "sizeInBytes": 56257,
+              "url": "/uploads/thumbnail_formula72_scheme3_078232e94c.png"
             },
             "small": {
-              "name": "small_formula72-scheme2.png",
-              "hash": "small_formula72_scheme2_e9fb94beda",
+              "name": "small_formula72-scheme3.png",
+              "hash": "small_formula72_scheme3_078232e94c",
               "ext": ".png",
               "mime": "image/png",
               "path": null,
               "width": 500,
               "height": 279,
-              "size": 132.47,
-              "sizeInBytes": 132472,
-              "url": "/cms-uploads/small_formula72_scheme2_e9fb94beda.png"
+              "size": 209.49,
+              "sizeInBytes": 209489,
+              "url": "/uploads/small_formula72_scheme3_078232e94c.png"
             },
             "medium": {
-              "name": "medium_formula72-scheme2.png",
-              "hash": "medium_formula72_scheme2_e9fb94beda",
+              "name": "medium_formula72-scheme3.png",
+              "hash": "medium_formula72_scheme3_078232e94c",
               "ext": ".png",
               "mime": "image/png",
               "path": null,
               "width": 750,
               "height": 419,
-              "size": 294.38,
-              "sizeInBytes": 294381,
-              "url": "/cms-uploads/medium_formula72_scheme2_e9fb94beda.png"
+              "size": 457.18,
+              "sizeInBytes": 457175,
+              "url": "/uploads/medium_formula72_scheme3_078232e94c.png"
             },
             "large": {
-              "name": "large_formula72-scheme2.png",
-              "hash": "large_formula72_scheme2_e9fb94beda",
+              "name": "large_formula72-scheme3.png",
+              "hash": "large_formula72_scheme3_078232e94c",
               "ext": ".png",
               "mime": "image/png",
               "path": null,
               "width": 1000,
               "height": 558,
-              "size": 534.85,
-              "sizeInBytes": 534846,
-              "url": "/cms-uploads/large_formula72_scheme2_e9fb94beda.png"
+              "size": 817.79,
+              "sizeInBytes": 817794,
+              "url": "/uploads/large_formula72_scheme3_078232e94c.png"
             }
           },
-          "hash": "formula72_scheme2_e9fb94beda",
+          "hash": "formula72_scheme3_078232e94c",
           "ext": ".png",
           "mime": "image/png",
-          "size": 1099.16,
-          "url": "/cms-uploads/formula72_scheme2_e9fb94beda.png",
+          "size": 1260.45,
+          "url": "/uploads/formula72_scheme3_078232e94c.png",
           "previewUrl": null,
           "provider": "local",
           "provider_metadata": null,
-          "createdAt": "2026-04-27T19:33:59.269Z",
-          "updatedAt": "2026-04-27T19:33:59.269Z",
-          "publishedAt": "2026-04-27T19:33:59.269Z"
+          "createdAt": "2026-05-21T10:23:57.834Z",
+          "updatedAt": "2026-05-21T10:23:57.834Z",
+          "publishedAt": "2026-05-21T10:23:57.835Z"
         },
         "items": [
           {
-            "id": 19,
+            "id": 28,
             "title": "АНГРО",
             "description": "Готовая косметическая масса в удобной таре для самостоятельного розлива и упаковки.",
             "mobileImage": {
-              "id": 65,
-              "documentId": "q9etblkn1eguyjktqqx4172q",
-              "name": "formula_angro.png",
+              "id": 72,
+              "documentId": "br2gsfcu6a75qdt132va1oxd",
+              "name": "formula_angro2.png",
               "alternativeText": null,
               "caption": null,
               "focalPoint": null,
@@ -898,75 +2946,75 @@
               "height": 640,
               "formats": {
                 "thumbnail": {
-                  "name": "thumbnail_formula_angro.png",
-                  "hash": "thumbnail_formula_angro_cde98a517b",
+                  "name": "thumbnail_formula_angro2.png",
+                  "hash": "thumbnail_formula_angro2_d3e51ef68d",
                   "ext": ".png",
                   "mime": "image/png",
                   "path": null,
                   "width": 245,
                   "height": 145,
-                  "size": 22.97,
-                  "sizeInBytes": 22970,
-                  "url": "/cms-uploads/thumbnail_formula_angro_cde98a517b.png"
+                  "size": 51.83,
+                  "sizeInBytes": 51832,
+                  "url": "/uploads/thumbnail_formula_angro2_d3e51ef68d.png"
                 },
                 "small": {
-                  "name": "small_formula_angro.png",
-                  "hash": "small_formula_angro_cde98a517b",
+                  "name": "small_formula_angro2.png",
+                  "hash": "small_formula_angro2_d3e51ef68d",
                   "ext": ".png",
                   "mime": "image/png",
                   "path": null,
                   "width": 500,
                   "height": 296,
-                  "size": 90.06,
-                  "sizeInBytes": 90059,
-                  "url": "/cms-uploads/small_formula_angro_cde98a517b.png"
+                  "size": 195.55,
+                  "sizeInBytes": 195550,
+                  "url": "/uploads/small_formula_angro2_d3e51ef68d.png"
                 },
                 "medium": {
-                  "name": "medium_formula_angro.png",
-                  "hash": "medium_formula_angro_cde98a517b",
+                  "name": "medium_formula_angro2.png",
+                  "hash": "medium_formula_angro2_d3e51ef68d",
                   "ext": ".png",
                   "mime": "image/png",
                   "path": null,
                   "width": 750,
                   "height": 444,
-                  "size": 211.44,
-                  "sizeInBytes": 211436,
-                  "url": "/cms-uploads/medium_formula_angro_cde98a517b.png"
+                  "size": 442.12,
+                  "sizeInBytes": 442118,
+                  "url": "/uploads/medium_formula_angro2_d3e51ef68d.png"
                 },
                 "large": {
-                  "name": "large_formula_angro.png",
-                  "hash": "large_formula_angro_cde98a517b",
+                  "name": "large_formula_angro2.png",
+                  "hash": "large_formula_angro2_d3e51ef68d",
                   "ext": ".png",
                   "mime": "image/png",
                   "path": null,
                   "width": 1000,
                   "height": 593,
-                  "size": 363.17,
-                  "sizeInBytes": 363165,
-                  "url": "/cms-uploads/large_formula_angro_cde98a517b.png"
+                  "size": 760.65,
+                  "sizeInBytes": 760654,
+                  "url": "/uploads/large_formula_angro2_d3e51ef68d.png"
                 }
               },
-              "hash": "formula_angro_cde98a517b",
+              "hash": "formula_angro2_d3e51ef68d",
               "ext": ".png",
               "mime": "image/png",
-              "size": 95.79,
-              "url": "/cms-uploads/formula_angro_cde98a517b.png",
+              "size": 224.43,
+              "url": "/uploads/formula_angro2_d3e51ef68d.png",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,
-              "createdAt": "2026-04-21T18:29:01.016Z",
-              "updatedAt": "2026-04-21T18:29:01.016Z",
-              "publishedAt": "2026-04-21T18:29:01.017Z"
+              "createdAt": "2026-05-21T10:24:14.596Z",
+              "updatedAt": "2026-05-21T10:24:14.596Z",
+              "publishedAt": "2026-05-21T10:24:14.597Z"
             }
           },
           {
-            "id": 20,
+            "id": 29,
             "title": "ОПТ",
             "description": "Предлагаем готовую косметику известных брендов на оптимальных условиях.",
             "mobileImage": {
-              "id": 66,
-              "documentId": "zuyqp522dadiexvhonf5x2cl",
-              "name": "formula_opt.png",
+              "id": 73,
+              "documentId": "ln9rdy94qe5v62kl1l5w8msk",
+              "name": "formula_opt2.png",
               "alternativeText": null,
               "caption": null,
               "focalPoint": null,
@@ -974,75 +3022,75 @@
               "height": 640,
               "formats": {
                 "thumbnail": {
-                  "name": "thumbnail_formula_opt.png",
-                  "hash": "thumbnail_formula_opt_37f2a7ca5e",
+                  "name": "thumbnail_formula_opt2.png",
+                  "hash": "thumbnail_formula_opt2_65cf9701a7",
                   "ext": ".png",
                   "mime": "image/png",
                   "path": null,
                   "width": 245,
                   "height": 145,
-                  "size": 26.79,
-                  "sizeInBytes": 26790,
-                  "url": "/cms-uploads/thumbnail_formula_opt_37f2a7ca5e.png"
+                  "size": 41.48,
+                  "sizeInBytes": 41484,
+                  "url": "/uploads/thumbnail_formula_opt2_65cf9701a7.png"
                 },
                 "small": {
-                  "name": "small_formula_opt.png",
-                  "hash": "small_formula_opt_37f2a7ca5e",
+                  "name": "small_formula_opt2.png",
+                  "hash": "small_formula_opt2_65cf9701a7",
                   "ext": ".png",
                   "mime": "image/png",
                   "path": null,
                   "width": 500,
                   "height": 296,
-                  "size": 111.77,
-                  "sizeInBytes": 111765,
-                  "url": "/cms-uploads/small_formula_opt_37f2a7ca5e.png"
+                  "size": 150.73,
+                  "sizeInBytes": 150727,
+                  "url": "/uploads/small_formula_opt2_65cf9701a7.png"
                 },
                 "medium": {
-                  "name": "medium_formula_opt.png",
-                  "hash": "medium_formula_opt_37f2a7ca5e",
+                  "name": "medium_formula_opt2.png",
+                  "hash": "medium_formula_opt2_65cf9701a7",
                   "ext": ".png",
                   "mime": "image/png",
                   "path": null,
                   "width": 750,
                   "height": 444,
-                  "size": 258.07,
-                  "sizeInBytes": 258070,
-                  "url": "/cms-uploads/medium_formula_opt_37f2a7ca5e.png"
+                  "size": 326.71,
+                  "sizeInBytes": 326713,
+                  "url": "/uploads/medium_formula_opt2_65cf9701a7.png"
                 },
                 "large": {
-                  "name": "large_formula_opt.png",
-                  "hash": "large_formula_opt_37f2a7ca5e",
+                  "name": "large_formula_opt2.png",
+                  "hash": "large_formula_opt2_65cf9701a7",
                   "ext": ".png",
                   "mime": "image/png",
                   "path": null,
                   "width": 1000,
                   "height": 593,
-                  "size": 439.71,
-                  "sizeInBytes": 439712,
-                  "url": "/cms-uploads/large_formula_opt_37f2a7ca5e.png"
+                  "size": 548.65,
+                  "sizeInBytes": 548649,
+                  "url": "/uploads/large_formula_opt2_65cf9701a7.png"
                 }
               },
-              "hash": "formula_opt_37f2a7ca5e",
+              "hash": "formula_opt2_65cf9701a7",
               "ext": ".png",
               "mime": "image/png",
-              "size": 152.5,
-              "url": "/cms-uploads/formula_opt_37f2a7ca5e.png",
+              "size": 149.93,
+              "url": "/uploads/formula_opt2_65cf9701a7.png",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,
-              "createdAt": "2026-04-21T18:29:21.060Z",
-              "updatedAt": "2026-04-21T18:29:21.060Z",
-              "publishedAt": "2026-04-21T18:29:21.061Z"
+              "createdAt": "2026-05-21T10:24:30.298Z",
+              "updatedAt": "2026-05-21T10:24:30.298Z",
+              "publishedAt": "2026-05-21T10:24:30.299Z"
             }
           },
           {
-            "id": 21,
+            "id": 30,
             "title": "ПОД КЛЮЧ",
             "description": "Возьмем на себя ключевые этапы производства. Качественная косметика под вашим брендом.",
             "mobileImage": {
-              "id": 67,
-              "documentId": "n6axsherhly3qe2bx25wb6to",
-              "name": "formula_key.png",
+              "id": 74,
+              "documentId": "rhhmzx7q9xxf56dzniqm0r5m",
+              "name": "formula_key2.png",
               "alternativeText": null,
               "caption": null,
               "focalPoint": null,
@@ -1050,65 +3098,65 @@
               "height": 640,
               "formats": {
                 "thumbnail": {
-                  "name": "thumbnail_formula_key.png",
-                  "hash": "thumbnail_formula_key_a225796c63",
+                  "name": "thumbnail_formula_key2.png",
+                  "hash": "thumbnail_formula_key2_2cf24ac56b",
                   "ext": ".png",
                   "mime": "image/png",
                   "path": null,
                   "width": 245,
                   "height": 145,
-                  "size": 25.04,
-                  "sizeInBytes": 25043,
-                  "url": "/cms-uploads/thumbnail_formula_key_a225796c63.png"
+                  "size": 46.92,
+                  "sizeInBytes": 46918,
+                  "url": "/uploads/thumbnail_formula_key2_2cf24ac56b.png"
                 },
                 "small": {
-                  "name": "small_formula_key.png",
-                  "hash": "small_formula_key_a225796c63",
+                  "name": "small_formula_key2.png",
+                  "hash": "small_formula_key2_2cf24ac56b",
                   "ext": ".png",
                   "mime": "image/png",
                   "path": null,
                   "width": 500,
                   "height": 296,
-                  "size": 101.47,
-                  "sizeInBytes": 101465,
-                  "url": "/cms-uploads/small_formula_key_a225796c63.png"
+                  "size": 174.96,
+                  "sizeInBytes": 174956,
+                  "url": "/uploads/small_formula_key2_2cf24ac56b.png"
                 },
                 "medium": {
-                  "name": "medium_formula_key.png",
-                  "hash": "medium_formula_key_a225796c63",
+                  "name": "medium_formula_key2.png",
+                  "hash": "medium_formula_key2_2cf24ac56b",
                   "ext": ".png",
                   "mime": "image/png",
                   "path": null,
                   "width": 750,
                   "height": 444,
-                  "size": 234.16,
-                  "sizeInBytes": 234156,
-                  "url": "/cms-uploads/medium_formula_key_a225796c63.png"
+                  "size": 381.57,
+                  "sizeInBytes": 381574,
+                  "url": "/uploads/medium_formula_key2_2cf24ac56b.png"
                 },
                 "large": {
-                  "name": "large_formula_key.png",
-                  "hash": "large_formula_key_a225796c63",
+                  "name": "large_formula_key2.png",
+                  "hash": "large_formula_key2_2cf24ac56b",
                   "ext": ".png",
                   "mime": "image/png",
                   "path": null,
                   "width": 1000,
                   "height": 593,
-                  "size": 402.21,
-                  "sizeInBytes": 402208,
-                  "url": "/cms-uploads/large_formula_key_a225796c63.png"
+                  "size": 640.85,
+                  "sizeInBytes": 640848,
+                  "url": "/uploads/large_formula_key2_2cf24ac56b.png"
                 }
               },
-              "hash": "formula_key_a225796c63",
+              "hash": "formula_key2_2cf24ac56b",
               "ext": ".png",
               "mime": "image/png",
-              "size": 150.05,
-              "url": "/cms-uploads/formula_key_a225796c63.png",
+              "size": 177.89,
+              "url": "/uploads/formula_key2_2cf24ac56b.png",
               "previewUrl": null,
               "provider": "local",
               "provider_metadata": null,
-              "createdAt": "2026-04-21T18:29:43.707Z",
-              "updatedAt": "2026-04-21T18:36:15.289Z",
-              "publishedAt": "2026-04-21T18:29:43.707Z"
+              "createdAt": "2026-05-21T10:24:43.311Z",
+              "updatedAt": "2026-05-21T10:24:43.311Z",
+              "publishedAt": "2026-05-21T10:24:43.311Z"
             }
           }
         ]
@@ -1151,7 +3199,12 @@
               "height": 156,
               "size": 24.75,
               "sizeInBytes": 24746,
-              "url": "/cms-uploads/thumbnail_mission_main1_fcf2a7185a.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1778829901/formula72/mission_main1_fcf2a7185a_thumbnail.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/mission_main1_fcf2a7185a_thumbnail",
+                "resource_type": "image"
+              }
             },
             "small": {
               "name": "small_mission-main1.png",
@@ -1163,7 +3216,12 @@
               "height": 500,
               "size": 223.74,
               "sizeInBytes": 223738,
-              "url": "/cms-uploads/small_mission_main1_fcf2a7185a.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1778829901/formula72/mission_main1_fcf2a7185a_small.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/mission_main1_fcf2a7185a_small",
+                "resource_type": "image"
+              }
             },
             "medium": {
               "name": "medium_mission-main1.png",
@@ -1175,7 +3233,12 @@
               "height": 750,
               "size": 500.33,
               "sizeInBytes": 500327,
-              "url": "/cms-uploads/medium_mission_main1_fcf2a7185a.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1778829902/formula72/mission_main1_fcf2a7185a_medium.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/mission_main1_fcf2a7185a_medium",
+                "resource_type": "image"
+              }
             },
             "large": {
               "name": "large_mission-main1.png",
@@ -1187,19 +3250,27 @@
               "height": 1000,
               "size": 890.65,
               "sizeInBytes": 890651,
-              "url": "/cms-uploads/large_mission_main1_fcf2a7185a.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1778829903/formula72/mission_main1_fcf2a7185a_large.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/mission_main1_fcf2a7185a_large",
+                "resource_type": "image"
+              }
             }
           },
           "hash": "mission_main1_fcf2a7185a",
           "ext": ".png",
           "mime": "image/png",
           "size": 727.46,
-          "url": "/cms-uploads/mission_main1_fcf2a7185a.png",
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1778829900/formula72/mission_main1_fcf2a7185a.png",
           "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/mission_main1_fcf2a7185a",
+            "resource_type": "image"
+          },
           "createdAt": "2026-04-27T19:35:12.910Z",
-          "updatedAt": "2026-04-27T19:35:12.910Z",
+          "updatedAt": "2026-05-15T07:25:03.513Z",
           "publishedAt": "2026-04-27T19:35:12.910Z"
         },
         "certificationImage": {
@@ -1222,7 +3293,12 @@
               "height": 156,
               "size": 37.22,
               "sizeInBytes": 37223,
-              "url": "/cms-uploads/thumbnail_mission_certification_087fe4de9d.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031721/formula72/mission_certification_087fe4de9d_thumbnail.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/mission_certification_087fe4de9d_thumbnail",
+                "resource_type": "image"
+              }
             },
             "small": {
               "name": "small_mission-certification.png",
@@ -1234,19 +3310,27 @@
               "height": 500,
               "size": 305,
               "sizeInBytes": 304998,
-              "url": "/cms-uploads/small_mission_certification_087fe4de9d.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031720/formula72/mission_certification_087fe4de9d_small.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/mission_certification_087fe4de9d_small",
+                "resource_type": "image"
+              }
             }
           },
           "hash": "mission_certification_087fe4de9d",
           "ext": ".png",
           "mime": "image/png",
           "size": 91.54,
-          "url": "/cms-uploads/mission_certification_087fe4de9d.png",
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031720/formula72/mission_certification_087fe4de9d.png",
           "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/mission_certification_087fe4de9d",
+            "resource_type": "image"
+          },
           "createdAt": "2026-03-26T13:44:25.572Z",
-          "updatedAt": "2026-03-26T13:44:25.572Z",
+          "updatedAt": "2026-05-15T07:23:12.755Z",
           "publishedAt": "2026-03-26T13:44:25.572Z"
         },
         "honestSignImage": {
@@ -1269,7 +3353,12 @@
               "height": 156,
               "size": 24.4,
               "sizeInBytes": 24395,
-              "url": "/cms-uploads/thumbnail_mission_honest_sign_ccca4172ef.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031723/formula72/mission_honest_sign_ccca4172ef_thumbnail.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/mission_honest_sign_ccca4172ef_thumbnail",
+                "resource_type": "image"
+              }
             },
             "small": {
               "name": "small_mission-honest-sign.png",
@@ -1281,19 +3370,27 @@
               "height": 500,
               "size": 194.56,
               "sizeInBytes": 194559,
-              "url": "/cms-uploads/small_mission_honest_sign_ccca4172ef.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031723/formula72/mission_honest_sign_ccca4172ef_small.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/mission_honest_sign_ccca4172ef_small",
+                "resource_type": "image"
+              }
             }
           },
           "hash": "mission_honest_sign_ccca4172ef",
           "ext": ".png",
           "mime": "image/png",
           "size": 60.86,
-          "url": "/cms-uploads/mission_honest_sign_ccca4172ef.png",
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031722/formula72/mission_honest_sign_ccca4172ef.png",
           "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/mission_honest_sign_ccca4172ef",
+            "resource_type": "image"
+          },
           "createdAt": "2026-03-26T13:45:36.356Z",
-          "updatedAt": "2026-03-26T13:45:36.356Z",
+          "updatedAt": "2026-05-15T07:23:15.040Z",
           "publishedAt": "2026-03-26T13:45:36.357Z"
         },
         "professionalismImage": {
@@ -1316,7 +3413,12 @@
               "height": 156,
               "size": 42.02,
               "sizeInBytes": 42021,
-              "url": "/cms-uploads/thumbnail_mission_professionalism_2522221f9d.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031725/formula72/mission_professionalism_2522221f9d_thumbnail.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/mission_professionalism_2522221f9d_thumbnail",
+                "resource_type": "image"
+              }
             },
             "small": {
               "name": "small_mission-professionalism.png",
@@ -1328,19 +3430,27 @@
               "height": 500,
               "size": 395.43,
               "sizeInBytes": 395431,
-              "url": "/cms-uploads/small_mission_professionalism_2522221f9d.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031725/formula72/mission_professionalism_2522221f9d_small.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/mission_professionalism_2522221f9d_small",
+                "resource_type": "image"
+              }
             }
           },
           "hash": "mission_professionalism_2522221f9d",
           "ext": ".png",
           "mime": "image/png",
           "size": 138.57,
-          "url": "/cms-uploads/mission_professionalism_2522221f9d.png",
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031724/formula72/mission_professionalism_2522221f9d.png",
           "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/mission_professionalism_2522221f9d",
+            "resource_type": "image"
+          },
           "createdAt": "2026-03-26T13:46:13.103Z",
-          "updatedAt": "2026-03-26T13:46:13.103Z",
+          "updatedAt": "2026-05-15T07:23:17.287Z",
           "publishedAt": "2026-03-26T13:46:13.103Z"
         }
       },
@@ -1612,14 +3722,14 @@
     },
     "coverageMap": {
       "data": {
-        "id": 92,
+        "id": 95,
         "documentId": "exm1mxhhkkuk2719jvu6kim4",
         "title": "ФОРМУЛА72",
         "subtitle": "Контрактное производство косметики",
-        "description": "Нам доверяют тысячи клиентов",
+        "description": "Нам доверяют тысячи клиентов:\nЗа каждым «сердцем» скрыт реальный отзыв – просто нажми.\n",
         "createdAt": "2026-03-28T07:24:43.607Z",
-        "updatedAt": "2026-05-10T10:46:50.908Z",
-        "publishedAt": "2026-05-10T10:46:50.965Z",
+        "updatedAt": "2026-05-23T17:20:25.713Z",
+        "publishedAt": "2026-05-23T17:20:25.781Z",
         "mapImage": {
           "id": 31,
           "documentId": "w3enqo1l7l252fct8rbxgsgl",
@@ -1640,7 +3750,12 @@
               "height": 140,
               "size": 11.39,
               "sizeInBytes": 11389,
-              "url": "/cms-uploads/thumbnail_map_c677322fad.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031751/formula72/map_c677322fad_thumbnail.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/map_c677322fad_thumbnail",
+                "resource_type": "image"
+              }
             },
             "medium": {
               "name": "medium_map.png",
@@ -1652,7 +3767,12 @@
               "height": 427,
               "size": 52.89,
               "sizeInBytes": 52888,
-              "url": "/cms-uploads/medium_map_c677322fad.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031751/formula72/map_c677322fad_medium.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/map_c677322fad_medium",
+                "resource_type": "image"
+              }
             },
             "small": {
               "name": "small_map.png",
@@ -1664,7 +3784,12 @@
               "height": 285,
               "size": 29.59,
               "sizeInBytes": 29590,
-              "url": "/cms-uploads/small_map_c677322fad.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031750/formula72/map_c677322fad_small.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/map_c677322fad_small",
+                "resource_type": "image"
+              }
             },
             "large": {
               "name": "large_map.png",
@@ -1676,24 +3801,32 @@
               "height": 570,
               "size": 81.13,
               "sizeInBytes": 81134,
-              "url": "/cms-uploads/large_map_c677322fad.png"
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031749/formula72/map_c677322fad_large.png",
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/map_c677322fad_large",
+                "resource_type": "image"
+              }
             }
           },
           "hash": "map_c677322fad",
           "ext": ".png",
           "mime": "image/png",
           "size": 25.66,
-          "url": "/cms-uploads/map_c677322fad.png",
+          "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031749/formula72/map_c677322fad.png",
           "previewUrl": null,
-          "provider": "local",
-          "provider_metadata": null,
+          "provider": "cloudinary",
+          "provider_metadata": {
+            "public_id": "formula72/map_c677322fad",
+            "resource_type": "image"
+          },
           "createdAt": "2026-03-28T07:24:03.047Z",
-          "updatedAt": "2026-03-28T07:24:03.047Z",
+          "updatedAt": "2026-05-15T07:23:42.481Z",
           "publishedAt": "2026-03-28T07:24:03.048Z"
         },
         "reviews": [
           {
-            "id": 1505,
+            "id": 1628,
             "name": "Анна",
             "reviewText": "Сотрудничество с компанией оставило только положительные впечатления. Все этапы производства были организованы чётко и профессионально.",
             "rating": 5,
@@ -1719,16 +3852,25 @@
                   "height": 156,
                   "size": 52.33,
                   "sizeInBytes": 52330,
-                  "url": "/cms-uploads/thumbnail_item_1_af4ab3cc91.jpg"
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031737/formula72/item_1_af4ab3cc91_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_1_af4ab3cc91_thumbnail",
+                    "resource_type": "image"
+                  }
                 }
               },
               "hash": "item_1_af4ab3cc91",
               "ext": ".jpg",
               "mime": "image/jpeg",
               "size": 125.45,
-              "url": "/cms-uploads/item_1_af4ab3cc91.jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031736/formula72/item_1_af4ab3cc91.png",
               "previewUrl": null,
-              "provider": "local"
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_1_af4ab3cc91",
+                "resource_type": "image"
+              }
             },
             "brandImage": {
               "id": 28,
@@ -1749,20 +3891,29 @@
                   "height": 156,
                   "size": 43.4,
                   "sizeInBytes": 43403,
-                  "url": "/cms-uploads/thumbnail_item_3_hover_491ec3d54a.jpg"
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031745/formula72/item_3_hover_491ec3d54a_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_3_hover_491ec3d54a_thumbnail",
+                    "resource_type": "image"
+                  }
                 }
               },
               "hash": "item_3_hover_491ec3d54a",
               "ext": ".jpg",
               "mime": "image/jpeg",
               "size": 72.37,
-              "url": "/cms-uploads/item_3_hover_491ec3d54a.jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031744/formula72/item_3_hover_491ec3d54a.png",
               "previewUrl": null,
-              "provider": "local"
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_3_hover_491ec3d54a",
+                "resource_type": "image"
+              }
             }
           },
           {
-            "id": 1506,
+            "id": 1629,
             "name": "Мария",
             "reviewText": "Отличный партнёр в сфере контрактного производства косметики. Помогли реализовать продукт именно так, как мы задумывали.",
             "rating": 5,
@@ -1789,20 +3940,29 @@
                   "height": 156,
                   "size": 59.69,
                   "sizeInBytes": 59693,
-                  "url": "/cms-uploads/thumbnail_item_1_hover_1fc1515dae.jpg"
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031739/formula72/item_1_hover_1fc1515dae_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_1_hover_1fc1515dae_thumbnail",
+                    "resource_type": "image"
+                  }
                 }
               },
               "hash": "item_1_hover_1fc1515dae",
               "ext": ".jpg",
               "mime": "image/jpeg",
               "size": 104.72,
-              "url": "/cms-uploads/item_1_hover_1fc1515dae.jpg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031738/formula72/item_1_hover_1fc1515dae.png",
               "previewUrl": null,
-              "provider": "local"
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_1_hover_1fc1515dae",
+                "resource_type": "image"
+              }
             }
           },
           {
-            "id": 1507,
+            "id": 1630,
             "name": "Екатерина",
             "reviewText": "Понравился серьёзный подход к работе, внимательность к деталям и соблюдение сроков.",
             "rating": 4,
@@ -1813,7 +3973,7 @@
             "brandImage": null
           },
           {
-            "id": 1508,
+            "id": 1631,
             "name": "Ольга",
             "reviewText": "Очень довольны качеством готовой продукции. Команда показала высокий уровень ответственности и компетентности.",
             "rating": 5,
@@ -1824,7 +3984,7 @@
             "brandImage": null
           },
           {
-            "id": 1509,
+            "id": 1632,
             "name": "Ирина",
             "reviewText": "Надёжный производитель, с которым комфортно работать. Всегда на связи и готовы предложить грамотные решения.",
             "rating": 5,
@@ -1835,7 +3995,7 @@
             "brandImage": null
           },
           {
-            "id": 1510,
+            "id": 1633,
             "name": "Наталья",
             "reviewText": "Заказывали производство косметической линейки, результат полностью оправдал ожидания. Качество отличное.",
             "rating": 5,
@@ -1846,7 +4006,7 @@
             "brandImage": null
           },
           {
-            "id": 1511,
+            "id": 1634,
             "name": "Татьяна",
             "reviewText": "Профессиональный подход на всех этапах — от обсуждения рецептуры до выпуска готовой продукции.",
             "rating": 5,
@@ -1857,7 +4017,7 @@
             "brandImage": null
           },
           {
-            "id": 1512,
+            "id": 1635,
             "name": "Светлана",
             "reviewText": "Компания зарекомендовала себя как ответственный и опытный подрядчик. Всё выполнено на высоком уровне.",
             "rating": 5,
@@ -1868,7 +4028,7 @@
             "brandImage": null
           },
           {
-            "id": 1513,
+            "id": 1636,
             "name": "Юлия",
             "reviewText": "Очень понравилась прозрачность в работе и готовность учитывать пожелания клиента.",
             "rating": 5,
@@ -1879,7 +4039,7 @@
             "brandImage": null
           },
           {
-            "id": 1514,
+            "id": 1637,
             "name": "Елена",
             "reviewText": "Благодарны за качественное контрактное производство и внимательное сопровождение проекта.",
             "rating": 5,
@@ -1890,7 +4050,7 @@
             "brandImage": null
           },
           {
-            "id": 1515,
+            "id": 1638,
             "name": "Виктория",
             "reviewText": "Сотрудничеством остались довольны. Продукция получилась качественной, а процесс работы — понятным и удобным.",
             "rating": 5,
@@ -1901,7 +4061,7 @@
             "brandImage": null
           },
           {
-            "id": 1516,
+            "id": 1639,
             "name": "Алина",
             "reviewText": "Хорошая компания для запуска собственной косметической продукции. Помогли быстро и профессионально.",
             "rating": null,
@@ -1912,7 +4072,7 @@
             "brandImage": null
           },
           {
-            "id": 1517,
+            "id": 1640,
             "name": "Ксения",
             "reviewText": "Оценили высокий уровень сервиса, соблюдение договорённостей и качество выпускаемой косметики.",
             "rating": 5,
@@ -1923,7 +4083,7 @@
             "brandImage": null
           },
           {
-            "id": 1518,
+            "id": 1641,
             "name": "Дарья",
             "reviewText": "Команда отлично разбирается в контрактном производстве. Всё сделано аккуратно, в срок и без лишних сложностей.",
             "rating": 5,
@@ -1934,7 +4094,7 @@
             "brandImage": null
           },
           {
-            "id": 1519,
+            "id": 1642,
             "name": "Полина",
             "reviewText": "Понравилось, что специалисты сопровождают проект и действительно заинтересованы в хорошем результате.",
             "rating": 5,
@@ -1945,7 +4105,7 @@
             "brandImage": null
           },
           {
-            "id": 1520,
+            "id": 1643,
             "name": "Людмила",
             "reviewText": "Надёжный партнёр для долгосрочного сотрудничества. Качество продукции и уровень сервиса на высоте.",
             "rating": 5,
@@ -1956,7 +4116,7 @@
             "brandImage": null
           },
           {
-            "id": 1521,
+            "id": 1644,
             "name": "Валерия",
             "reviewText": "Обратились за контрактным производством косметики и остались очень довольны. Всё организовано профессионально.",
             "rating": 5,
@@ -1967,7 +4127,7 @@
             "brandImage": null
           },
           {
-            "id": 1522,
+            "id": 1645,
             "name": "Вероника",
             "reviewText": "Компания помогла вывести продукт на рынок без лишних трудностей. Отличная работа и качественный результат.",
             "rating": 5,
@@ -1978,7 +4138,7 @@
             "brandImage": null
           },
           {
-            "id": 1523,
+            "id": 1646,
             "name": "Диана",
             "reviewText": "Видно, что у команды большой опыт в производстве косметики. Все процессы выстроены грамотно и удобно для клиента.",
             "rating": 5,
@@ -1989,7 +4149,7 @@
             "brandImage": null
           },
           {
-            "id": 1524,
+            "id": 1647,
             "name": "Анастасия",
             "reviewText": "Очень довольны сотрудничеством. Получили качественный продукт и надёжного производственного партнёра.",
             "rating": 5,
@@ -2000,7 +4160,7 @@
             "brandImage": null
           },
           {
-            "id": 1525,
+            "id": 1648,
             "name": "Кристина",
             "reviewText": "Понравился индивидуальный подход и готовность адаптироваться под задачи бренда.",
             "rating": 5,
@@ -2011,7 +4171,7 @@
             "brandImage": null
           },
           {
-            "id": 1526,
+            "id": 1649,
             "name": "Нина",
             "reviewText": "Отличная компания в сфере контрактного производства. Всё выполнено качественно и в оговорённые сроки.",
             "rating": 5,
@@ -2022,7 +4182,7 @@
             "brandImage": null
           },
           {
-            "id": 1527,
+            "id": 1650,
             "name": "Марина",
             "reviewText": "За время сотрудничества убедились в профессионализме команды. Приятно работать с ответственными специалистами.",
             "rating": 5,
@@ -2033,7 +4193,7 @@
             "brandImage": null
           },
           {
-            "id": 1528,
+            "id": 1651,
             "name": "Лариса",
             "reviewText": "Хороший производитель, который умеет слышать клиента и предлагать эффективные решения.",
             "rating": 5,
@@ -2044,7 +4204,7 @@
             "brandImage": null
           },
           {
-            "id": 1529,
+            "id": 1652,
             "name": "София",
             "reviewText": "Благодарны за качественную работу, оперативность и высокий уровень организации процессов.",
             "rating": 5,
@@ -2055,7 +4215,7 @@
             "brandImage": null
           },
           {
-            "id": 1530,
+            "id": 1653,
             "name": "Александра",
             "reviewText": "Заказывали производство косметики под своим брендом, всё прошло успешно. Результат нас полностью устроил.",
             "rating": 5,
@@ -2066,7 +4226,7 @@
             "brandImage": null
           },
           {
-            "id": 1531,
+            "id": 1654,
             "name": "Зоя",
             "reviewText": "Сильная команда и качественное производство. Особенно понравилось внимательное отношение к требованиям клиента.\n",
             "rating": 5,
@@ -2077,7 +4237,7 @@
             "brandImage": null
           },
           {
-            "id": 1532,
+            "id": 1655,
             "name": "Галина",
             "reviewText": "Отличный опыт сотрудничества. Компания показала себя как надёжный и профессиональный производственный партнёр.",
             "rating": 5,
@@ -2088,7 +4248,7 @@
             "brandImage": null
           },
           {
-            "id": 1533,
+            "id": 1656,
             "name": "Милана",
             "reviewText": "Очень достойный уровень работы. Продукция качественная, а коммуникация с командой быстрая и понятная.",
             "rating": 5,
@@ -2099,7 +4259,7 @@
             "brandImage": null
           },
           {
-            "id": 1534,
+            "id": 1657,
             "name": "Надежда",
             "reviewText": "Рекомендуем эту компанию как надёжного подрядчика в сфере контрактного производства косметики. Всё было выполнено профессионально и в срок.",
             "rating": 5,
@@ -2110,7 +4270,7 @@
             "brandImage": null
           },
           {
-            "id": 1535,
+            "id": 1658,
             "name": "Инна",
             "reviewText": "Сотрудничество с компанией прошло успешно, все договорённости были выполнены точно и в срок.",
             "rating": 5,
@@ -2121,7 +4281,7 @@
             "brandImage": null
           },
           {
-            "id": 1536,
+            "id": 1659,
             "name": "Вера",
             "reviewText": "Очень понравился профессиональный подход к контрактному производству косметики. Видно, что команда хорошо знает своё дело.",
             "rating": 5,
@@ -2132,7 +4292,7 @@
             "brandImage": null
           },
           {
-            "id": 1537,
+            "id": 1660,
             "name": "Алёна",
             "reviewText": "Надёжный производственный партнёр, который внимательно относится к задачам клиента и качеству продукции.",
             "rating": 5,
@@ -2143,7 +4303,7 @@
             "brandImage": null
           },
           {
-            "id": 1538,
+            "id": 1661,
             "name": "Любовь",
             "reviewText": "Благодарны компании за качественную работу и сопровождение на всех этапах производства.",
             "rating": 5,
@@ -2154,7 +4314,7 @@
             "brandImage": null
           },
           {
-            "id": 1539,
+            "id": 1662,
             "name": "Карина",
             "reviewText": "Отличный опыт сотрудничества. Все процессы были организованы грамотно, понятно и без задержек.",
             "rating": 5,
@@ -2165,7 +4325,7 @@
             "brandImage": null
           },
           {
-            "id": 1540,
+            "id": 1663,
             "name": "Регина",
             "reviewText": "Понравилось, что специалисты учитывают пожелания клиента и предлагают оптимальные решения по производству.",
             "rating": 5,
@@ -2176,7 +4336,7 @@
             "brandImage": null
           },
           {
-            "id": 1541,
+            "id": 1664,
             "name": "Тамара",
             "reviewText": "Компания показала высокий уровень ответственности, профессионализма и внимания к деталям.",
             "rating": 5,
@@ -2187,7 +4347,7 @@
             "brandImage": null
           },
           {
-            "id": 1542,
+            "id": 1665,
             "name": "Элина",
             "reviewText": "Заказывали контрактное производство косметики под своим брендом и остались довольны результатом.",
             "rating": 5,
@@ -2198,7 +4358,7 @@
             "brandImage": null
           },
           {
-            "id": 1543,
+            "id": 1666,
             "name": "Раиса",
             "reviewText": "Очень комфортно работать с такой командой. Всегда на связи, всё прозрачно и организованно.",
             "rating": 5,
@@ -2209,7 +4369,7 @@
             "brandImage": null
           },
           {
-            "id": 1544,
+            "id": 1667,
             "name": "Жанна",
             "reviewText": "Качество готовой продукции на высоком уровне, а сроки выполнения были полностью соблюдены.",
             "rating": 5,
@@ -2220,7 +4380,7 @@
             "brandImage": null
           },
           {
-            "id": 1545,
+            "id": 1668,
             "name": "Лилия",
             "reviewText": "Хорошая компания для запуска косметической линейки. Работают профессионально и ответственно.",
             "rating": 5,
@@ -2292,7 +4452,7 @@
     },
     "footer": {
       "data": {
-        "id": 13,
+        "id": 16,
         "documentId": "m3t7vl5b813sxozf5wcd0jt5",
         "contactsColumnTitle": "КОНТАКТЫ",
         "consultationTitle": "Консультация по контрактному производству",
@@ -2302,61 +4462,46 @@
         "procurementEmail": "kontrakt-kosmetika@mail.ru",
         "marketingTitle": "Отдел маркетинга",
         "marketingEmail": "evsi@gmail.com",
-        "workingHours": "график работы с 11:00 до 16:00 по Мск",
+        "workingHours": "график работы с пн –пт с 07:00 до 16:00 по мск.\n",
         "companyColumnTitle": "О КОМПАНИИ",
         "documentsColumnTitle": "ДОКУМЕНТЫ",
         "createdAt": "2026-04-05T11:33:35.670Z",
-        "updatedAt": "2026-05-10T09:10:51.118Z",
-        "publishedAt": "2026-05-10T09:10:51.166Z",
+        "updatedAt": "2026-05-23T18:29:09.588Z",
+        "publishedAt": "2026-05-23T18:29:09.618Z",
         "formButtonText": "Оставить заявку",
         "formButtonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
         "companyLinks": [
           {
-            "id": 107,
+            "id": 131,
             "label": "Условия",
-            "href": null
+            "href": "/terms"
           },
           {
-            "id": 108,
-            "label": "Вакансии",
-            "href": null
-          },
-          {
-            "id": 109,
+            "id": 132,
             "label": "Сертификаты",
-            "href": null
-          },
-          {
-            "id": 110,
-            "label": "Бесплатные материалы для предпринимателей",
-            "href": null
-          },
-          {
-            "id": 111,
-            "label": "Разработка дизайна",
-            "href": null
+            "href": "/certificates"
           }
         ],
         "documentLinks": [
           {
-            "id": 112,
+            "id": 133,
             "label": "Условия обработки персональных данных",
             "href": "/conditionsforprocessingpersonaldata"
           },
           {
-            "id": 113,
+            "id": 134,
             "label": "Политика обработки персональных данных",
             "href": "/personal_data_processing_policy"
           },
           {
-            "id": 114,
+            "id": 135,
             "label": "Согласие на обработку персональных данных",
             "href": "/personal_data_processing_consent"
           }
         ],
         "socialLinks": [
           {
-            "id": 35,
+            "id": 44,
             "href": "https://max.ru/u/f9LHodD0cOK0gGKMH6F1leLAbsKyr3J0FbhrI7YyLyWKkdd8UtKTKQ6ICtc",
             "enabled": true,
             "label": null,
@@ -2369,23 +4514,26 @@
               "focalPoint": null,
               "width": 720,
               "height": 720,
-              "formats": null,
+              "formats": {},
               "hash": "Max_icon_1a42d1a5b6",
               "ext": ".svg",
               "mime": "image/svg+xml",
               "size": 0.54,
-              "url": "/cms-uploads/Max_icon_1a42d1a5b6.svg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031798/formula72/Max_icon_1a42d1a5b6.svg",
               "previewUrl": null,
-              "provider": "local",
-              "provider_metadata": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/Max_icon_1a42d1a5b6",
+                "resource_type": "image"
+              },
               "createdAt": "2026-04-09T12:03:27.192Z",
-              "updatedAt": "2026-04-09T12:03:27.192Z",
+              "updatedAt": "2026-05-15T07:24:27.808Z",
               "publishedAt": "2026-04-09T12:03:27.193Z"
             },
             "hoverIcon": null
           },
           {
-            "id": 36,
+            "id": 45,
             "href": "https://vk.com/kontraktnoe72",
             "enabled": true,
             "label": null,
@@ -2398,23 +4546,26 @@
               "focalPoint": null,
               "width": 200,
               "height": 200,
-              "formats": null,
+              "formats": {},
               "hash": "vk_icons_58a092fd25",
               "ext": ".svg",
               "mime": "image/svg+xml",
               "size": 5.11,
-              "url": "/cms-uploads/vk_icons_58a092fd25.svg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031792/formula72/vk_icons_58a092fd25.svg",
               "previewUrl": null,
-              "provider": "local",
-              "provider_metadata": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/vk_icons_58a092fd25",
+                "resource_type": "image"
+              },
               "createdAt": "2026-04-09T11:56:49.464Z",
-              "updatedAt": "2026-04-09T11:56:49.464Z",
+              "updatedAt": "2026-05-15T07:24:23.180Z",
               "publishedAt": "2026-04-09T11:56:49.465Z"
             },
             "hoverIcon": null
           },
           {
-            "id": 37,
+            "id": 46,
             "href": "https://t.me/kontraktnoe72",
             "enabled": true,
             "label": null,
@@ -2427,17 +4578,20 @@
               "focalPoint": null,
               "width": 200,
               "height": 200,
-              "formats": null,
+              "formats": {},
               "hash": "tg_icons_68d85e76b0",
               "ext": ".svg",
               "mime": "image/svg+xml",
               "size": 0.6,
-              "url": "/cms-uploads/tg_icons_68d85e76b0.svg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031794/formula72/tg_icons_68d85e76b0.svg",
               "previewUrl": null,
-              "provider": "local",
-              "provider_metadata": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/tg_icons_68d85e76b0",
+                "resource_type": "image"
+              },
               "createdAt": "2026-04-09T11:59:48.605Z",
-              "updatedAt": "2026-04-09T11:59:48.605Z",
+              "updatedAt": "2026-05-15T07:24:24.687Z",
               "publishedAt": "2026-04-09T11:59:48.606Z"
             },
             "hoverIcon": null
@@ -2472,17 +4626,20 @@
               "focalPoint": null,
               "width": 200,
               "height": 200,
-              "formats": null,
+              "formats": {},
               "hash": "tg_icons_68d85e76b0",
               "ext": ".svg",
               "mime": "image/svg+xml",
               "size": 0.6,
-              "url": "/cms-uploads/tg_icons_68d85e76b0.svg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031794/formula72/tg_icons_68d85e76b0.svg",
               "previewUrl": null,
-              "provider": "local",
-              "provider_metadata": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/tg_icons_68d85e76b0",
+                "resource_type": "image"
+              },
               "createdAt": "2026-04-09T11:59:48.605Z",
-              "updatedAt": "2026-04-09T11:59:48.605Z",
+              "updatedAt": "2026-05-15T07:24:24.687Z",
               "publishedAt": "2026-04-09T11:59:48.606Z"
             },
             "hoverIcon": null
@@ -2502,17 +4659,20 @@
               "focalPoint": null,
               "width": 720,
               "height": 720,
-              "formats": null,
+              "formats": {},
               "hash": "Max_icon_1a42d1a5b6",
               "ext": ".svg",
               "mime": "image/svg+xml",
               "size": 0.54,
-              "url": "/cms-uploads/Max_icon_1a42d1a5b6.svg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031798/formula72/Max_icon_1a42d1a5b6.svg",
               "previewUrl": null,
-              "provider": "local",
-              "provider_metadata": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/Max_icon_1a42d1a5b6",
+                "resource_type": "image"
+              },
               "createdAt": "2026-04-09T12:03:27.192Z",
-              "updatedAt": "2026-04-09T12:03:27.192Z",
+              "updatedAt": "2026-05-15T07:24:27.808Z",
               "publishedAt": "2026-04-09T12:03:27.193Z"
             },
             "hoverIcon": null
@@ -2532,17 +4692,20 @@
               "focalPoint": null,
               "width": 200,
               "height": 200,
-              "formats": null,
+              "formats": {},
               "hash": "vk_icons_58a092fd25",
               "ext": ".svg",
               "mime": "image/svg+xml",
               "size": 5.11,
-              "url": "/cms-uploads/vk_icons_58a092fd25.svg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031792/formula72/vk_icons_58a092fd25.svg",
               "previewUrl": null,
-              "provider": "local",
-              "provider_metadata": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/vk_icons_58a092fd25",
+                "resource_type": "image"
+              },
               "createdAt": "2026-04-09T11:56:49.464Z",
-              "updatedAt": "2026-04-09T11:56:49.464Z",
+              "updatedAt": "2026-05-15T07:24:23.180Z",
               "publishedAt": "2026-04-09T11:56:49.465Z"
             },
             "hoverIcon": null
@@ -2562,17 +4725,20 @@
               "focalPoint": null,
               "width": 200,
               "height": 200,
-              "formats": null,
+              "formats": {},
               "hash": "phone_icons_751af2914a",
               "ext": ".svg",
               "mime": "image/svg+xml",
               "size": 2.13,
-              "url": "/cms-uploads/phone_icons_751af2914a.svg",
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031796/formula72/phone_icons_751af2914a.svg",
               "previewUrl": null,
-              "provider": "local",
-              "provider_metadata": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/phone_icons_751af2914a",
+                "resource_type": "image"
+              },
               "createdAt": "2026-04-09T12:01:01.451Z",
-              "updatedAt": "2026-04-09T12:01:01.451Z",
+              "updatedAt": "2026-05-15T07:24:26.121Z",
               "publishedAt": "2026-04-09T12:01:01.451Z"
             },
             "hoverIcon": null

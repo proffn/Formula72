@@ -7,11 +7,19 @@ interface LeadCtaSectionProps {
 }
 
 export function LeadCtaSection({ section }: LeadCtaSectionProps) {
+  const titleParts = section.title.includes(" — мы ")
+    ? section.title.replace(" — мы ", " — мы\n").split("\n")
+    : [section.title];
+
   return (
     <section className="bg-[#F7F2EE] px-4 pt-7 pb-11 text-[#63504A] sm:px-6 sm:pt-9 sm:pb-13 lg:px-8 lg:pt-10 lg:pb-14">
       <div className="mx-auto w-full max-w-[1100px]">
-        <h2 className="max-w-[784px] text-left font-manrope text-[32px] font-semibold uppercase leading-[0.94] tracking-[-0.05em] sm:text-[38px] lg:text-[56px]">
-          {section.title}
+        <h2 className="max-w-[1000px] text-left font-manrope text-[32px] font-semibold leading-[0.92] tracking-normal sm:text-[38px] lg:text-[56px]">
+          {titleParts.map((part) => (
+            <span key={part} className="block">
+              {part}
+            </span>
+          ))}
         </h2>
         <p className="mt-3 max-w-[736px] text-left text-[14px] leading-[1.34] text-[#7A6862] sm:text-[16px] lg:mt-4 lg:text-[20px] lg:leading-[1.3]">
           {section.description}

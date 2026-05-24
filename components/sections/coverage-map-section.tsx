@@ -12,6 +12,10 @@ const defaultAvatar = "/images/home/coverage-map/default-avatar.png";
 export function CoverageMapSection({ section }: CoverageMapSectionProps) {
   const activeReviews = section.reviews.filter((review) => review.isActive);
   const desktopSubtitle = section.subtitle.replace(/\s+/g, "\n").trim();
+  const description = section.description
+    .replace(/:\s+(?=За каждым)/, ":\n")
+    .replace(/скрыт\s+(?=реальный)/, "скрыт\n")
+    .trim();
 
   return (
     <section
@@ -26,8 +30,8 @@ export function CoverageMapSection({ section }: CoverageMapSectionProps) {
           <h2 className="mt-3 text-balance whitespace-pre-line text-[clamp(2rem,3.85vw,3.76rem)] font-extrabold uppercase leading-[0.92] tracking-[-0.05em]">
             {desktopSubtitle}
           </h2>
-          <p className="mt-3 text-balance text-[0.88rem] font-medium leading-[1.48] text-[rgba(124,98,89,0.86)] sm:text-[0.98rem]">
-            {section.description}
+          <p className="mt-3 whitespace-pre-line text-balance text-[0.88rem] font-medium leading-[1.48] text-[rgba(124,98,89,0.86)] sm:text-[0.98rem]">
+            {description}
           </p>
         </div>
 

@@ -12,6 +12,27 @@ function normalizeDocumentLabel(label: string) {
   return label.replaceAll("персональных данных", "персональных\u00A0данных");
 }
 
+function normalizeWorkingHours(value: string) {
+  const trimmedValue = value.trim();
+
+  if (trimmedValue === "график работы с 11:00 до 16:00 по Мск") {
+    return ["график работы с пн –пт", "с 07:00 до 16:00 по мск."];
+  }
+
+  if (trimmedValue.includes("\n")) {
+    return trimmedValue
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter(Boolean);
+  }
+
+  return trimmedValue
+    .replace(/\s+с 07:00/i, "\nс 07:00")
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+}
+
 function FooterLinks({ links, documentMode = false }: { links: FooterLinkData[]; documentMode?: boolean }) {
   return (
     <ul className="space-y-1.5 text-[12px] leading-[1.28] text-[#F7F2EE]/82 sm:text-[13px]">
@@ -62,6 +83,7 @@ function SocialIcon({ social }: { social: FooterSocialLinkData }) {
 
 export function SiteFooter({ section }: SiteFooterProps) {
   const socials = section.socialLinks.filter((link) => link.enabled);
+  const workingHoursLines = normalizeWorkingHours(section.workingHours);
 
   return (
     <footer className="relative bg-[#63504A] px-4 py-6 font-manrope text-[#F7F2EE] sm:px-6 sm:py-8 lg:px-8 lg:py-9">
@@ -83,7 +105,13 @@ export function SiteFooter({ section }: SiteFooterProps) {
                 <p className="font-semibold text-[#F7F2EE]">{section.marketingTitle}</p>
                 <a href={`mailto:${section.marketingEmail}`} className="mt-1 block break-all transition duration-300 ease-out hover:translate-x-[2px] hover:text-white">{section.marketingEmail}</a>
               </div>
-              <p className="pt-0.5 text-[#F7F2EE]/72">{section.workingHours}</p>
+              <p className="pt-0.5 text-[#F7F2EE]/72">
+                {workingHoursLines.map((line, index) => (
+                  <span key={line} className={index > 0 ? "mt-1.5 block" : "block"}>
+                    {line}
+                  </span>
+                ))}
+              </p>
             </div>
           </div>
 

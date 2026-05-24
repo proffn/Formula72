@@ -145,6 +145,45 @@ export interface StrapiAboutPage {
   partners?: StrapiAboutPartnerCard[] | null;
 }
 
+export interface StrapiTermsSection {
+  id?: number;
+  title?: string | null;
+  content?: StrapiTextValue;
+  image?: StrapiMedia | null;
+  buttonLabel?: string | null;
+  buttonHref?: string | null;
+  order?: number | null;
+  enabled?: boolean | null;
+}
+
+export interface StrapiTermsPage {
+  id: number;
+  documentId?: string;
+  enabled?: boolean | null;
+  title?: string | null;
+  sections?: StrapiTermsSection[] | null;
+}
+
+export interface StrapiCertificateItem {
+  id?: number;
+  title?: string | null;
+  alt?: string | null;
+  image?: StrapiMedia | null;
+  order?: number | null;
+  enabled?: boolean | null;
+}
+
+export interface StrapiCertificatesPage {
+  id: number;
+  documentId?: string;
+  enabled?: boolean | null;
+  title?: string | null;
+  description?: StrapiTextValue;
+  buttonLabel?: string | null;
+  buttonHref?: string | null;
+  certificates?: StrapiCertificateItem[] | null;
+}
+
 export interface StrapiBanner {
   id: number;
   documentId?: string;
@@ -163,31 +202,6 @@ export interface StrapiBanner {
   buttonHref?: string | null;
   textColor?: "dark" | "light" | null;
   description?: string | null;
-}
-
-export interface StrapiBannerSlideItem {
-  id?: number;
-  title?: string | null;
-  subtitle?: string | null;
-  description?: string | null;
-  image?: StrapiMedia | null;
-  mobileImage?: StrapiMedia | null;
-  enabled?: boolean | null;
-  order?: number | null;
-  contentAlign?: "left" | "center" | "right" | null;
-  contentVerticalAlign?: "top" | "center" | "bottom" | null;
-  textMaxWidth?: string | null;
-  buttonLabel?: string | null;
-  buttonHref?: string | null;
-  textColor?: "dark" | "light" | null;
-}
-
-export interface StrapiBannerSection {
-  id: number;
-  documentId?: string;
-  enabled?: boolean | null;
-  autoplayDelay?: number | null;
-  banners?: StrapiBannerSlideItem[] | null;
 }
 
 export interface StrapiWholesaleContractSection {
