@@ -18,15 +18,17 @@ export function AboutMission({ title, text, image }: AboutMissionProps) {
             <FormattedMissionText text={text} />
           </p>
         </div>
-        <div className="relative min-h-[9rem] sm:min-h-0">
-          <Image
-            src={image}
-            alt=""
-            fill
-            unoptimized
-            className="object-contain object-center px-8 py-4 sm:px-5"
-          />
-        </div>
+        {image ? (
+          <div className="relative min-h-[9rem] sm:min-h-0">
+            <Image
+              src={image}
+              alt=""
+              fill
+              unoptimized
+              className="object-contain object-center px-8 py-4 sm:px-5"
+            />
+          </div>
+        ) : null}
       </div>
     </section>
   );

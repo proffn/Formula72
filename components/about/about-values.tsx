@@ -20,9 +20,11 @@ export function AboutValues({ title, values }: AboutValuesProps) {
             key={value.title}
             className="min-h-[17rem] w-[18rem] max-w-[calc(100vw-3rem)] rounded-[14px] border border-[#7C6259]/8 bg-white px-6 py-6 text-center shadow-[0_18px_38px_rgba(99,80,74,0.13)] sm:w-auto sm:max-w-none"
           >
-            <div className="relative mx-auto h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem]">
-              <Image src={value.icon} alt="" fill unoptimized className="object-contain" />
-            </div>
+            {value.icon ? (
+              <div className="relative mx-auto h-16 w-16 sm:h-[4.5rem] sm:w-[4.5rem]">
+                <Image src={value.icon} alt="" fill unoptimized className="object-contain" />
+              </div>
+            ) : null}
             <h3 className="mt-4 text-[1rem] font-extrabold uppercase leading-none tracking-[-0.02em] text-[#63504A]">
               {value.title}
             </h3>

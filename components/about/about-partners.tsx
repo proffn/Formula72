@@ -13,9 +13,11 @@ function getExternalProps(href: string) {
 function StoreLink({ store }: { store: AboutStoreLinkData }) {
   const content = (
     <>
-      <span className="relative block h-[42px] w-[42px] shrink-0 overflow-hidden rounded-[9px]">
-        <Image src={store.logo} alt="" fill unoptimized className="object-contain" />
-      </span>
+      {store.logo ? (
+        <span className="relative block h-[42px] w-[42px] shrink-0 overflow-hidden rounded-[9px]">
+          <Image src={store.logo} alt="" fill unoptimized className="object-contain" />
+        </span>
+      ) : null}
       <span className="min-w-0">
         <span className="block text-[0.72rem] font-extrabold uppercase leading-[1.04] tracking-[-0.02em] text-[#63504A]">
           {store.title}
@@ -51,15 +53,17 @@ export function AboutPartners({ partners }: AboutPartnersProps) {
             key={partner.title}
             className="min-h-[212px] rounded-[12px] bg-white px-5 py-4 shadow-[0_14px_34px_rgba(99,80,74,0.08)]"
           >
-            <div className="relative h-11 w-36">
-              <Image
-                src={partner.logo}
-                alt={partner.title}
-                fill
-                unoptimized
-                className="object-contain object-left"
-              />
-            </div>
+            {partner.logo ? (
+              <div className="relative h-11 w-36">
+                <Image
+                  src={partner.logo}
+                  alt={partner.title}
+                  fill
+                  unoptimized
+                  className="object-contain object-left"
+                />
+              </div>
+            ) : null}
 
             <div className="mt-4 flex flex-col gap-3">
               {partner.stores.map((store) => (

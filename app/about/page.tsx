@@ -16,11 +16,7 @@ export default async function AboutRoutePage() {
     getHomePageData(),
     getAboutPage(),
   ]);
-  const mappedAboutPage = mapAboutPage(aboutSection);
-  const aboutPage = {
-    ...mappedAboutPage,
-    logo: homeData.siteHeader.logoImage || mappedAboutPage.logo,
-  };
+  const aboutPage = mapAboutPage(aboutSection);
 
   return (
     <>

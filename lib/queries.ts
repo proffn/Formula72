@@ -1,4 +1,4 @@
-﻿import { getStrapiMediaUrl, strapiFetch } from "@/lib/api";
+﻿import { getStrapiBaseUrl, getStrapiMediaUrl, strapiFetch } from "@/lib/api";
 import { aboutPageMock } from "@/lib/mock/about";
 import { certificatesPageMock } from "@/lib/mock/certificates";
 import { homePageMock } from "@/lib/mock/home";
@@ -200,6 +200,25 @@ function resolveMediaUrl(
 
   const nestedUrl = media?.data?.url ?? media?.data?.attributes?.url;
   return getStrapiMediaUrl(nestedUrl);
+}
+
+function resolveAboutMediaUrl(
+  media:
+    | { url?: string | null; data?: { url?: string | null; attributes?: { url?: string | null } | null } | null }
+    | null
+    | undefined,
+) {
+  const url = media?.url ?? media?.data?.url ?? media?.data?.attributes?.url;
+
+  if (url?.startsWith("/uploads/")) {
+    const baseUrl = getStrapiBaseUrl();
+
+    if (baseUrl) {
+      return new URL(url, `${baseUrl}/`).toString();
+    }
+  }
+
+  return getStrapiMediaUrl(url);
 }
 
 function resolveMediaAspectRatio(
@@ -421,91 +440,105 @@ function sortByOrder<T extends { order?: number; title: string }>(items: T[]) {
 
 function mapAboutValueCard(item: StrapiAboutValueCard, fallback: AboutValueCardData): AboutValueCardData {
   return {
-    title: item.title?.trim() || fallback.title,
-    description: normalizeTextValue(item.description, fallback.description),
-    highlightText: item.highlightText?.trim() || fallback.highlightText,
-    icon: resolveMediaUrl(item.icon) ?? fallback.icon,
+    title: item.title?.trim() ?? "",
+    description: normalizeTextValue(item.description),
+    highlightText: item.highlightText?.trim() || undefined,
+    icon: resolveAboutMediaUrl(item.icon) ?? "",
     order: typeof item.order === "number" ? item.order : fallback.order,
-    enabled: item.enabled ?? fallback.enabled,
+    enabled: item.enabled ?? true,
   };
 }
 
 function mapAboutWhyItem(item: StrapiAboutWhyItem, fallback: AboutWhyItemData): AboutWhyItemData {
   return {
-    title: item.title?.trim() || fallback.title,
-    label: item.label?.trim() || fallback.label,
-    value: item.value?.trim() || fallback.value,
-    description: normalizeTextValue(item.description, fallback.description),
-    linkLabel: item.linkLabel?.trim() || fallback.linkLabel,
-    linkHref: item.linkHref?.trim() || fallback.linkHref,
+    title: item.title?.trim() ?? "",
+    label: item.label?.trim() || undefined,
+    value: item.value?.trim() ?? "",
+    description: normalizeTextValue(item.description),
+    linkLabel: item.linkLabel?.trim() || undefined,
+    linkHref: item.linkHref?.trim() || undefined,
     order: typeof item.order === "number" ? item.order : fallback.order,
-    enabled: item.enabled ?? fallback.enabled,
+    enabled: item.enabled ?? true,
   };
 }
 
 function mapAboutStoreLink(item: StrapiAboutStoreLink, fallback: AboutStoreLinkData): AboutStoreLinkData {
   return {
-    title: item.title?.trim() || fallback.title,
-    logo: resolveMediaUrl(item.logo) ?? fallback.logo,
-    href: item.href?.trim() || fallback.href,
+    title: item.title?.trim() ?? "",
+    logo: resolveAboutMediaUrl(item.logo) ?? "",
+    href: item.href?.trim() ?? "",
     order: typeof item.order === "number" ? item.order : fallback.order,
-    enabled: item.enabled ?? fallback.enabled,
+    enabled: item.enabled ?? true,
   };
 }
 
 function mapAboutPartnerCard(item: StrapiAboutPartnerCard, fallback: AboutPartnerCardData): AboutPartnerCardData {
   const fallbackStores = fallback.stores.length > 0 ? fallback.stores : aboutPageMock.partners[0].stores;
   const stores =
-    item.stores && item.stores.length > 0
+    Array.isArray(item.stores)
       ? item.stores.map((store, index) => mapAboutStoreLink(store, fallbackStores[index % fallbackStores.length]))
-      : fallback.stores;
+      : [];
 
   return {
-    title: item.title?.trim() || fallback.title,
-    logo: resolveMediaUrl(item.logo) ?? fallback.logo,
+    title: item.title?.trim() ?? "",
+    logo: resolveAboutMediaUrl(item.logo) ?? "",
     stores: sortByOrder(stores.filter((store) => store.enabled && Boolean(store.title.trim()))),
     order: typeof item.order === "number" ? item.order : fallback.order,
-    enabled: item.enabled ?? fallback.enabled,
+    enabled: item.enabled ?? true,
   };
 }
 
+function hasAboutPageContent(section: StrapiAboutPage) {
+  return Boolean(
+    section.title?.trim() ||
+      section.subtitle?.trim() ||
+      section.valuesTitle?.trim() ||
+      (Array.isArray(section.values) && section.values.length > 0) ||
+      section.missionTitle?.trim() ||
+      normalizeTextValue(section.missionText) ||
+      section.whyTitle?.trim() ||
+      (Array.isArray(section.whyItems) && section.whyItems.length > 0) ||
+      (Array.isArray(section.partners) && section.partners.length > 0),
+  );
+}
+
 export function mapAboutPage(section?: StrapiAboutPage | null): AboutPageData {
-  if (!section) {
+  if (!section || !hasAboutPageContent(section)) {
     return aboutPageMock;
   }
 
   const values =
-    section.values && section.values.length > 0
+    Array.isArray(section.values)
       ? section.values.map((item, index) =>
           mapAboutValueCard(item, aboutPageMock.values[index % aboutPageMock.values.length]),
         )
-      : aboutPageMock.values;
+      : [];
   const whyItems =
-    section.whyItems && section.whyItems.length > 0
+    Array.isArray(section.whyItems)
       ? section.whyItems.map((item, index) =>
           mapAboutWhyItem(item, aboutPageMock.whyItems[index % aboutPageMock.whyItems.length]),
         )
-      : aboutPageMock.whyItems;
+      : [];
   const partners =
-    section.partners && section.partners.length > 0
+    Array.isArray(section.partners)
       ? section.partners.map((item, index) =>
           mapAboutPartnerCard(item, aboutPageMock.partners[index % aboutPageMock.partners.length]),
         )
-      : aboutPageMock.partners;
+      : [];
 
   return {
-    enabled: section.enabled ?? aboutPageMock.enabled,
-    title: section.title?.trim() || aboutPageMock.title,
-    subtitle: section.subtitle?.trim() || aboutPageMock.subtitle,
-    logo: resolveMediaUrl(section.logo) ?? aboutPageMock.logo,
-    backButtonLabel: section.backButtonLabel?.trim() || aboutPageMock.backButtonLabel,
-    backButtonHref: section.backButtonHref?.trim() || aboutPageMock.backButtonHref,
-    valuesTitle: section.valuesTitle?.trim() || aboutPageMock.valuesTitle,
+    enabled: section.enabled ?? true,
+    title: section.title?.trim() ?? "",
+    subtitle: section.subtitle?.trim() ?? "",
+    logo: resolveAboutMediaUrl(section.logo) ?? "",
+    backButtonLabel: section.backButtonLabel?.trim() ?? "",
+    backButtonHref: section.backButtonHref?.trim() ?? "",
+    valuesTitle: section.valuesTitle?.trim() ?? "",
     values: sortByOrder(values.filter((item) => item.enabled && Boolean(item.title.trim()))),
-    missionTitle: section.missionTitle?.trim() || aboutPageMock.missionTitle,
-    missionText: normalizeTextValue(section.missionText, aboutPageMock.missionText),
-    missionImage: resolveMediaUrl(section.missionImage) ?? aboutPageMock.missionImage,
-    whyTitle: section.whyTitle?.trim() || aboutPageMock.whyTitle,
+    missionTitle: section.missionTitle?.trim() ?? "",
+    missionText: normalizeTextValue(section.missionText),
+    missionImage: resolveAboutMediaUrl(section.missionImage) ?? "",
+    whyTitle: section.whyTitle?.trim() ?? "",
     whyItems: sortByOrder(whyItems.filter((item) => item.enabled && Boolean(item.title.trim()))),
     partners: sortByOrder(partners.filter((item) => item.enabled && Boolean(item.title.trim()))),
   };
@@ -1113,22 +1146,82 @@ export async function getProductionVideoPage() {
   }
 }
 
+const aboutPagePopulateParams = {
+  "populate[logo]": true,
+  "populate[values][populate]": "icon",
+  "populate[missionImage]": true,
+  "populate[whyItems]": true,
+  "populate[partners][populate][logo]": true,
+  "populate[partners][populate][stores][populate]": "logo",
+} as const;
+
+function getAboutPageRequestUrl() {
+  const baseUrl = getStrapiBaseUrl();
+  const params = new URLSearchParams();
+
+  Object.entries(aboutPagePopulateParams).forEach(([key, value]) => {
+    params.append(key, String(value));
+  });
+
+  return `${baseUrl ?? ""}/api/about-page?${params.toString()}`;
+}
+
+function logAboutPageResolution(
+  source: "strapi" | "snapshot" | "empty",
+  section: StrapiAboutPage | null,
+  reason?: unknown,
+) {
+  if (process.env.NODE_ENV === "production") {
+    return;
+  }
+
+  console.info("[about-page] CMS resolution", {
+    url: getAboutPageRequestUrl(),
+    source,
+    reason: reason instanceof Error ? reason.message : reason ?? null,
+    hasData: Boolean(section),
+    enabled: section?.enabled ?? null,
+    title: section?.title ?? null,
+    counts: {
+      values: section?.values?.length ?? 0,
+      whyItems: section?.whyItems?.length ?? 0,
+      partners: section?.partners?.length ?? 0,
+      stores:
+        section?.partners?.reduce(
+          (total, partner) => total + (Array.isArray(partner.stores) ? partner.stores.length : 0),
+          0,
+        ) ?? 0,
+    },
+    imageUrls: {
+      logo: resolveAboutMediaUrl(section?.logo) ?? null,
+      valueIcons: section?.values?.map((value) => resolveAboutMediaUrl(value.icon) ?? null) ?? [],
+      missionImage: resolveAboutMediaUrl(section?.missionImage) ?? null,
+      partnerLogos: section?.partners?.map((partner) => resolveAboutMediaUrl(partner.logo) ?? null) ?? [],
+      storeLogos:
+        section?.partners?.flatMap((partner) =>
+          partner.stores?.map((store) => resolveAboutMediaUrl(store.logo) ?? null) ?? [],
+        ) ?? [],
+    },
+  });
+}
+
 export async function getAboutPage() {
   try {
     const response = await strapiFetch<StrapiSingleResponse<StrapiAboutPage>>("/api/about-page", {
-      params: {
-        "populate[logo]": true,
-        "populate[values][populate]": "icon",
-        "populate[missionImage]": true,
-        "populate[whyItems]": true,
-        "populate[partners][populate][logo]": true,
-        "populate[partners][populate][stores][populate]": "logo",
-      },
+      params: aboutPagePopulateParams,
     });
+    const section = normalizeSingle(response);
+    const fallback = getSnapshotSingle<StrapiAboutPage>("aboutPage");
 
-    return normalizeSingle(response) ?? getSnapshotSingle<StrapiAboutPage>("aboutPage");
-  } catch {
-    return getSnapshotSingle<StrapiAboutPage>("aboutPage");
+    logAboutPageResolution(section ? "strapi" : fallback ? "snapshot" : "empty", section ?? fallback);
+
+    return section ?? fallback;
+  } catch (error) {
+    const fallback = getSnapshotSingle<StrapiAboutPage>("aboutPage");
+
+    logAboutPageResolution(fallback ? "snapshot" : "empty", fallback, error);
+
+    return fallback;
   }
 }
 

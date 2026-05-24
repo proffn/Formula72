@@ -22,19 +22,21 @@ export function AboutHero({ page }: AboutHeroProps) {
   return (
     <header className="mx-auto grid w-full max-w-[760px] grid-cols-[1fr_auto] items-start gap-4 px-4 pt-8 sm:px-6 lg:px-0 lg:pt-12">
       <Link href="/" aria-label="Formula72" className="relative block h-12 w-24 sm:h-14 sm:w-28">
-        <Image
-          src={logoSrc}
-          alt="Formula72"
-          fill
-          priority
-          unoptimized
-          className="object-contain object-left"
-          onError={() => {
-            if (logoSrc !== MAIN_LOGO_SRC) {
-              setLogoSrc(MAIN_LOGO_SRC);
-            }
-          }}
-        />
+        {logoSrc ? (
+          <Image
+            src={logoSrc}
+            alt="Formula72"
+            fill
+            priority
+            unoptimized
+            className="object-contain object-left"
+            onError={() => {
+              if (logoSrc !== MAIN_LOGO_SRC) {
+                setLogoSrc(MAIN_LOGO_SRC);
+              }
+            }}
+          />
+        ) : null}
       </Link>
 
       <Link
