@@ -39,6 +39,7 @@ export interface AboutPageData {
   title: string;
   subtitle: string;
   logo: string;
+  mobileLogo: string;
   backButtonLabel: string;
   backButtonHref: string;
   valuesTitle: string;

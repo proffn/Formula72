@@ -492,6 +492,8 @@ function hasAboutPageContent(section: StrapiAboutPage) {
   return Boolean(
     section.title?.trim() ||
       section.subtitle?.trim() ||
+      section.logo ||
+      section.mobileLogo ||
       section.valuesTitle?.trim() ||
       (Array.isArray(section.values) && section.values.length > 0) ||
       section.missionTitle?.trim() ||
@@ -531,6 +533,7 @@ export function mapAboutPage(section?: StrapiAboutPage | null): AboutPageData {
     title: section.title?.trim() ?? "",
     subtitle: section.subtitle?.trim() ?? "",
     logo: resolveAboutMediaUrl(section.logo) ?? "",
+    mobileLogo: resolveAboutMediaUrl(section.mobileLogo) ?? resolveAboutMediaUrl(section.logo) ?? "",
     backButtonLabel: section.backButtonLabel?.trim() ?? "",
     backButtonHref: section.backButtonHref?.trim() ?? "",
     valuesTitle: section.valuesTitle?.trim() ?? "",
@@ -1148,6 +1151,7 @@ export async function getProductionVideoPage() {
 
 const aboutPagePopulateParams = {
   "populate[logo]": true,
+  "populate[mobileLogo]": true,
   "populate[values][populate]": "icon",
   "populate[missionImage]": true,
   "populate[whyItems]": true,
@@ -1194,6 +1198,7 @@ function logAboutPageResolution(
     },
     imageUrls: {
       logo: resolveAboutMediaUrl(section?.logo) ?? null,
+      mobileLogo: resolveAboutMediaUrl(section?.mobileLogo) ?? null,
       valueIcons: section?.values?.map((value) => resolveAboutMediaUrl(value.icon) ?? null) ?? [],
       missionImage: resolveAboutMediaUrl(section?.missionImage) ?? null,
       partnerLogos: section?.partners?.map((partner) => resolveAboutMediaUrl(partner.logo) ?? null) ?? [],

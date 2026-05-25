@@ -5,6 +5,7 @@ export const aboutPageMock: AboutPageData = {
   title: "ФОРМУЛА [72]",
   subtitle: "ВАША ИДЕЯ - НАШЕ ВОПЛОЩЕНИЕ",
   logo: "/images/home/hero/logo1.png",
+  mobileLogo: "/images/home/hero/logo1.png",
   backButtonLabel: "На главную",
   backButtonHref: "/",
   valuesTitle: "ЦЕННОСТИ ФОРМУЛА72",

@@ -68,7 +68,7 @@ const endpoints = [
   ["homePage", "/api/home-page?populate=*"],
   [
     "aboutPage",
-    "/api/about-page?populate[logo]=true&populate[values][populate]=icon&populate[missionImage]=true&populate[whyItems]=true&populate[partners][populate][logo]=true&populate[partners][populate][stores][populate]=logo",
+    "/api/about-page?populate[logo]=true&populate[mobileLogo]=true&populate[values][populate]=icon&populate[missionImage]=true&populate[whyItems]=true&populate[partners][populate][logo]=true&populate[partners][populate][stores][populate]=logo",
   ],
   ["productionVideo", "/api/production-video-page?populate=*"],
   ["termsPage", "/api/terms-page?populate[sections][populate]=image"],

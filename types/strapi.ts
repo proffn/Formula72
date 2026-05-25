@@ -133,6 +133,7 @@ export interface StrapiAboutPage {
   title?: string | null;
   subtitle?: string | null;
   logo?: StrapiMedia | null;
+  mobileLogo?: StrapiMedia | null;
   backButtonLabel?: string | null;
   backButtonHref?: string | null;
   valuesTitle?: string | null;

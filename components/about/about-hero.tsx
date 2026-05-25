@@ -14,14 +14,37 @@ const MAIN_LOGO_SRC = "/images/home/hero/logo1.png";
 
 export function AboutHero({ page }: AboutHeroProps) {
   const [logoSrc, setLogoSrc] = useState(page.logo || MAIN_LOGO_SRC);
+  const [mobileLogoSrc, setMobileLogoSrc] = useState(page.mobileLogo || page.logo || MAIN_LOGO_SRC);
 
   useEffect(() => {
     setLogoSrc(page.logo || MAIN_LOGO_SRC);
-  }, [page.logo]);
+    setMobileLogoSrc(page.mobileLogo || page.logo || MAIN_LOGO_SRC);
+  }, [page.logo, page.mobileLogo]);
 
   return (
     <header className="mx-auto grid w-full max-w-[760px] grid-cols-[1fr_auto] items-start gap-4 px-4 pt-8 sm:px-6 lg:px-0 lg:pt-12">
       <Link href="/" aria-label="Formula72" className="relative block h-12 w-24 sm:h-14 sm:w-28">
+        {mobileLogoSrc ? (
+          <Image
+            src={mobileLogoSrc}
+            alt="Formula72"
+            fill
+            priority
+            unoptimized
+            className="object-contain object-left md:hidden"
+            onError={() => {
+              if (mobileLogoSrc !== logoSrc) {
+                setMobileLogoSrc(logoSrc);
+                return;
+              }
+
+              if (mobileLogoSrc !== MAIN_LOGO_SRC) {
+                setMobileLogoSrc(MAIN_LOGO_SRC);
+              }
+            }}
+          />
+        ) : null}
+
         {logoSrc ? (
           <Image
             src={logoSrc}
@@ -29,7 +52,7 @@ export function AboutHero({ page }: AboutHeroProps) {
             fill
             priority
             unoptimized
-            className="object-contain object-left"
+            className="hidden object-contain object-left md:block"
             onError={() => {
               if (logoSrc !== MAIN_LOGO_SRC) {
                 setLogoSrc(MAIN_LOGO_SRC);
