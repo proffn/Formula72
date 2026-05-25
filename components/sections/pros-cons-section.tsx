@@ -14,6 +14,19 @@ function formatSectionTitle(title: string) {
     .replace("рецептур и создание своего ", "рецептур и создание своего\n");
 }
 
+function formatMobileSectionTitle(title: string) {
+  const normalizedTitle = title.replace(/\s+/g, " ").trim();
+  const titleParts = normalizedTitle.match(
+    /^(Плюсы и минусы)\s+(готовых\s+рецептур)\s+(и\s+создани[ея]\s+своего)\s+(уникального\s+продукта)$/i,
+  );
+
+  if (!titleParts) {
+    return formatSectionTitle(title);
+  }
+
+  return titleParts.slice(1).join("\n");
+}
+
 export function ProsConsSection({ section }: ProsConsSectionProps) {
   const advantagesRefs = useRef<Array<HTMLDivElement | null>>([]);
 
@@ -78,10 +91,7 @@ export function ProsConsSection({ section }: ProsConsSectionProps) {
       <div className="mx-auto flex max-w-[1100px] flex-col lg:min-h-[calc(100svh-3.5rem)] lg:justify-center">
         <div className="max-w-[980px] pb-4 sm:pb-0">
           <h2 className="text-[clamp(2rem,2.85vw,3.22rem)] font-extrabold uppercase leading-[0.94] tracking-[-0.04em] sm:whitespace-pre-line">
-            <span className="whitespace-pre-line sm:hidden">{`Плюсы и минусы
-готовых рецептур
-и создание своего
-уникального продукта`}</span>
+            <span className="whitespace-pre-line sm:hidden">{formatMobileSectionTitle(section.sectionTitle)}</span>
             <span className="hidden sm:inline">{formatSectionTitle(section.sectionTitle)}</span>
           </h2>
         </div>

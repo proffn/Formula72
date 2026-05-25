@@ -33,13 +33,11 @@ const mobileLayout = [
 ] as const;
 
 export function Formula72SchemeSection({ section }: Formula72SchemeSectionProps) {
-  const mobileItems = [section.items[0], section.items[2], section.items[1]];
-
   return (
     <section id="formula72-scheme" className="relative w-full bg-[#F7F2EE]">
       <div className="md:hidden">
         <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col">
-          {mobileItems.map((item, index) => {
+          {section.items.map((item, index) => {
             const layout = mobileLayout[index] ?? mobileLayout[0];
 
             return (
@@ -61,7 +59,7 @@ export function Formula72SchemeSection({ section }: Formula72SchemeSectionProps)
                 >
                   {index === 0 ? (
                     <h2 className={`font-extrabold uppercase leading-none ${layout.titleClass}`}>
-                      ФОРМУЛА72
+                      {section.title}
                     </h2>
                   ) : null}
                   <div className={`w-full ${layout.bodyClass}`}>
