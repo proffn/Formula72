@@ -10,7 +10,7 @@ type TermsPageProps = {
   logoSrc?: string;
 };
 
-export function TermsPage({ page, logoSrc = "/images/home/hero/logo1.png" }: TermsPageProps) {
+export function TermsPage({ page, logoSrc = "/images/home/hero/logo3.png" }: TermsPageProps) {
   const sections = page.sections
     .filter((section) => section.enabled)
     .sort((left, right) => left.order - right.order);

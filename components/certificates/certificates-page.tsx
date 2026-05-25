@@ -12,7 +12,7 @@ type CertificatesPageProps = {
 
 export function CertificatesPage({
   page,
-  logoSrc = "/images/home/hero/logo1.png",
+  logoSrc = "/images/home/hero/logo3.png",
 }: CertificatesPageProps) {
   return (
     <main className="min-h-screen overflow-hidden bg-[#F7F2EE] font-manrope text-[#63504A]">

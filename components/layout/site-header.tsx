@@ -16,8 +16,8 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
   const [showBurger, setShowBurger] = useState(false);
 
   const mainNavigation = navigation.slice(0, 4);
-  const desktopLogoSrc = content.logoImage || "/images/home/hero/logo1.png";
-  const mobileLogoSrc = content.burgerMenuLogo || content.logoImage || "/images/home/hero/logo2-w.png";
+  const desktopLogoSrc = content.logoImage || "/images/home/hero/logo3.png";
+  const mobileLogoSrc = content.burgerMenuLogo || content.logoImage || "/images/home/hero/logo3-w.png";
   const burgerIconSrc = "/images/home/ui-icons/burger-icon.svg";
   const logoAlt = "Formula72";
   const getExternalLinkProps = (href: string) =>

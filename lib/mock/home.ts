@@ -2,7 +2,7 @@
 
 export const homePageMock: HomePageData = {
   siteHeader: {
-    logoImage: "/images/home/hero/logo1.png",
+    logoImage: "/images/home/hero/logo3.png",
     phone: "+7 969 807 88 87",
     workSchedule: "пн.-пт. с 07:00 до 16:00 по мск",
   },

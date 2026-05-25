@@ -22,7 +22,7 @@ export default async function ProductionPage() {
     getProductionVideoPage().catch(() => null),
   ]);
   const videoPage = mapProductionVideoPage(productionSection);
-  const logoImage = homeData.siteHeader.logoImage || "/images/home/hero/logo1.png";
+  const logoImage = homeData.siteHeader.logoImage || "/images/home/hero/logo3.png";
 
   return (
     <>

@@ -130,7 +130,7 @@ export const dynamic = "force-dynamic";
 
 export default async function PersonalDataProcessingConsentPage() {
   const data = await getHomePageData();
-  const logoImage = data.siteHeader.logoImage || "/images/home/hero/logo1.png";
+  const logoImage = data.siteHeader.logoImage || "/images/home/hero/logo3.png";
 
   return (
     <>

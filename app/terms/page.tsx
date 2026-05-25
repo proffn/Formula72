@@ -23,7 +23,7 @@ export default async function TermsRoutePage() {
     notFound();
   }
 
-  const logoImage = homeData.siteHeader.logoImage || "/images/home/hero/logo1.png";
+  const logoImage = homeData.siteHeader.logoImage || "/images/home/hero/logo3.png";
 
   return (
     <>

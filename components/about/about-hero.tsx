@@ -10,7 +10,7 @@ type AboutHeroProps = {
   page: AboutPageData;
 };
 
-const MAIN_LOGO_SRC = "/images/home/hero/logo1.png";
+const MAIN_LOGO_SRC = "/images/home/hero/logo3.png";
 
 export function AboutHero({ page }: AboutHeroProps) {
   const [logoSrc, setLogoSrc] = useState(page.logo || MAIN_LOGO_SRC);
