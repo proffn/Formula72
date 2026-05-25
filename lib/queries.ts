@@ -191,14 +191,23 @@ function resolveMediaUrl(
     | { url?: string | null; data?: { url?: string | null; attributes?: { url?: string | null } | null } | null }
     | null
     | undefined,
+  options: { preferLocalUploads?: boolean } = {},
 ) {
   const directUrl = media?.url;
 
   if (directUrl) {
+    if (options.preferLocalUploads && directUrl.startsWith("/uploads/")) {
+      return directUrl;
+    }
+
     return getStrapiMediaUrl(directUrl);
   }
 
   const nestedUrl = media?.data?.url ?? media?.data?.attributes?.url;
+  if (options.preferLocalUploads && nestedUrl?.startsWith("/uploads/")) {
+    return nestedUrl;
+  }
+
   return getStrapiMediaUrl(nestedUrl);
 }
 
@@ -706,34 +715,39 @@ function mapProsCons(section: StrapiProsConsSection): ProsConsSectionData {
 function mapFormula72SchemeItem(
   item: StrapiFormula72SchemeItem,
   index: number,
+  options: { preferLocalUploads?: boolean } = {},
 ): Formula72SchemeSectionData["items"][number] {
   const fallback = homePageMock.formula72Scheme.items[index % homePageMock.formula72Scheme.items.length];
 
   return {
     title: item.title?.trim() || fallback.title,
     description: item.description?.trim() || fallback.description,
-    mobileImage: resolveMediaUrl(item.mobileImage) ?? fallback.mobileImage,
+    mobileImage: resolveMediaUrl(item.mobileImage, options) ?? fallback.mobileImage,
   };
 }
 
 function mapFormula72SchemeItems(
   items: StrapiFormula72SchemeItem[] | null | undefined,
+  options: { preferLocalUploads?: boolean } = {},
 ): Formula72SchemeSectionData["items"] {
   const mappedItems = (items ?? [])
     .filter((item) => Boolean(item.title?.trim() || item.description?.trim() || item.mobileImage?.url))
     .slice(0, 3)
-    .map(mapFormula72SchemeItem);
+    .map((item, index) => mapFormula72SchemeItem(item, index, options));
 
   return homePageMock.formula72Scheme.items.map(
     (fallback, index) => mappedItems[index] ?? fallback,
   ) as Formula72SchemeSectionData["items"];
 }
 
-function mapFormula72Scheme(section: StrapiFormula72SchemeSection): Formula72SchemeSectionData {
+function mapFormula72Scheme(
+  section: StrapiFormula72SchemeSection,
+  options: { preferLocalUploads?: boolean } = {},
+): Formula72SchemeSectionData {
   return {
     title: section.title?.trim() || homePageMock.formula72Scheme.title,
-    image: resolveMediaUrl(section.image) ?? homePageMock.formula72Scheme.image,
-    items: mapFormula72SchemeItems(section.items),
+    image: resolveMediaUrl(section.image, options) ?? homePageMock.formula72Scheme.image,
+    items: mapFormula72SchemeItems(section.items, options),
   };
 }
 
@@ -1526,6 +1540,10 @@ export async function getHomePageData(): Promise<HomePageData> {
     formula72SchemeSectionResult.status === "fulfilled"
       ? formula72SchemeSectionResult.value ?? snapshotFormula72SchemeSection
       : snapshotFormula72SchemeSection;
+  const isFormula72SchemeSnapshot =
+    formula72SchemeSectionResult.status === "fulfilled"
+      ? !formula72SchemeSectionResult.value && Boolean(snapshotFormula72SchemeSection)
+      : Boolean(snapshotFormula72SchemeSection);
   const missionK72Section =
     missionK72SectionResult.status === "fulfilled" ? missionK72SectionResult.value ?? snapshotMissionK72Section : snapshotMissionK72Section;
   const workStagesSection =
@@ -1611,7 +1629,9 @@ export async function getHomePageData(): Promise<HomePageData> {
       prosCons: prosConsSection ? mapProsCons(prosConsSection) : homePageMock.prosCons,
       missionK72: missionK72Section ? mapMissionK72(missionK72Section) : homePageMock.missionK72,
       formula72Scheme: formula72SchemeSection
-        ? mapFormula72Scheme(formula72SchemeSection)
+        ? mapFormula72Scheme(formula72SchemeSection, {
+            preferLocalUploads: isFormula72SchemeSnapshot,
+          })
         : homePageMock.formula72Scheme,
       workStages: workStagesSection ? mapWorkStages(workStagesSection) : homePageMock.workStages,
       whoSuits: whoSuitsSection ? mapWhoSuits(whoSuitsSection) : homePageMock.whoSuits,
