@@ -9,7 +9,15 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Formula72",
+  title: "Формула72",
+  icons: {
+    icon: [
+      { url: "/favicon.ico?v=5", type: "image/x-icon" },
+      { url: "/favicon.png?v=5", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico?v=5",
+    apple: "/favicon.png?v=5",
+  },
   description: "Контрактное производство и оптовая торговля Formula72.",
 };
 
