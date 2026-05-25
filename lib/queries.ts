@@ -99,6 +99,37 @@ const navigationHrefs = [
   "/#coverage-map",
 ] as const;
 const snapshotResponses = homePageSnapshot.responses ?? {};
+const snapshotSourceSymbol: unique symbol = Symbol("snapshotSource");
+
+type SnapshotMarkedValue = {
+  [snapshotSourceSymbol]?: true;
+};
+
+function markSnapshotValue<T>(value: T): T {
+  if (!value || typeof value !== "object") {
+    return value;
+  }
+
+  const record = value as SnapshotMarkedValue & Record<string, unknown>;
+
+  if (record[snapshotSourceSymbol]) {
+    return value;
+  }
+
+  Object.defineProperty(record, snapshotSourceSymbol, {
+    value: true,
+    enumerable: false,
+  });
+
+  Object.values(record).forEach(markSnapshotValue);
+
+  return value;
+}
+
+function isSnapshotValue(value: unknown): boolean {
+  return Boolean(value && typeof value === "object" && (value as SnapshotMarkedValue)[snapshotSourceSymbol]);
+}
+
 function normalizeNavigationHref(value: string | null | undefined, fallback: string) {
   const href = value?.trim() || fallback;
 
@@ -165,7 +196,7 @@ function getSnapshotSingle<T>(key: string): T | null {
     return null;
   }
 
-  return normalizeSingle(response as StrapiSingleResponse<T | { attributes?: T }>);
+  return markSnapshotValue(normalizeSingle(response as StrapiSingleResponse<T | { attributes?: T }>));
 }
 
 function getSnapshotCollection<T>(key: string): T[] {
@@ -173,7 +204,7 @@ function getSnapshotCollection<T>(key: string): T[] {
     | StrapiCollectionResponse<T>
     | undefined;
 
-  return response?.data ?? [];
+  return markSnapshotValue(response?.data ?? []);
 }
 
 function getSnapshotBannerSectionData() {
@@ -193,10 +224,15 @@ function resolveMediaUrl(
     | undefined,
   options: { preferLocalUploads?: boolean } = {},
 ) {
+  const preferLocalUploads =
+    options.preferLocalUploads ||
+    isSnapshotValue(media) ||
+    isSnapshotValue(media?.data) ||
+    isSnapshotValue(media?.data?.attributes);
   const directUrl = media?.url;
 
   if (directUrl) {
-    if (options.preferLocalUploads && directUrl.startsWith("/uploads/")) {
+    if (preferLocalUploads && directUrl.startsWith("/uploads/")) {
       return directUrl;
     }
 
@@ -204,7 +240,7 @@ function resolveMediaUrl(
   }
 
   const nestedUrl = media?.data?.url ?? media?.data?.attributes?.url;
-  if (options.preferLocalUploads && nestedUrl?.startsWith("/uploads/")) {
+  if (preferLocalUploads && nestedUrl?.startsWith("/uploads/")) {
     return nestedUrl;
   }
 
@@ -217,9 +253,15 @@ function resolveAboutMediaUrl(
     | null
     | undefined,
 ) {
+  const preferLocalUploads =
+    isSnapshotValue(media) || isSnapshotValue(media?.data) || isSnapshotValue(media?.data?.attributes);
   const url = media?.url ?? media?.data?.url ?? media?.data?.attributes?.url;
 
   if (url?.startsWith("/uploads/")) {
+    if (preferLocalUploads) {
+      return url;
+    }
+
     const baseUrl = getStrapiBaseUrl();
 
     if (baseUrl) {
