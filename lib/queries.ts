@@ -1393,7 +1393,7 @@ export async function getWorkStagesSection() {
     "/api/work-stages-section",
     {
       params: {
-        populate: "*",
+        "populate[stages][populate]": "image",
       },
     },
   );
@@ -1406,7 +1406,7 @@ export async function getWhoSuitsSection() {
     "/api/who-suits-section",
     {
       params: {
-        populate: "*",
+        "populate[items][populate]": "image",
       },
     },
   );
@@ -1419,7 +1419,9 @@ export async function getWhyTrustUsSection() {
     "/api/why-trust-us-section",
     {
       params: {
-        populate: "*",
+        "populate[brandLinks]": "*",
+        "populate[points]": "*",
+        "populate[galleryItems][populate]": "*",
       },
     },
   );
@@ -1443,7 +1445,7 @@ export async function getWhatWeCanMakeSection() {
 export async function getFaqSection() {
   const response = await strapiFetch<StrapiSingleResponse<StrapiFaqSection>>("/api/faq-section", {
     params: {
-      populate: "*",
+      "populate[categories][populate]": "items",
     },
   });
 

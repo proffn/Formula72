@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "generatedAt": "2026-05-26T12:39:54.428Z",
+  "generatedAt": "2026-05-26T12:45:12.296Z",
   "sourceUrl": "http://localhost:1337",
   "media": {
-    "cloudinaryUrlCount": 87,
+    "cloudinaryUrlCount": 127,
     "uploadUrls": [
       {
         "path": "aboutPage.data.logo.formats.thumbnail.url",
@@ -3573,32 +3573,290 @@
           {
             "id": 49,
             "text": "Совместно с менеджером выбираете продукт, тару, упаковку и определяете состав заказа.",
-            "number": 1
+            "number": 1,
+            "image": {
+              "id": 7,
+              "documentId": "drqw7ciqmijr3m227kt7516j",
+              "name": "stage-1.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 250,
+              "height": 250,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_stage-1.png",
+                  "hash": "thumbnail_stage_1_23adda9948",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 26.04,
+                  "sizeInBytes": 26044,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031708/formula72/stage_1_23adda9948_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/stage_1_23adda9948_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "stage_1_23adda9948",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 13.85,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031708/formula72/stage_1_23adda9948.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/stage_1_23adda9948",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-26T12:43:08.744Z",
+              "updatedAt": "2026-05-15T07:22:58.595Z",
+              "publishedAt": "2026-03-26T12:43:08.745Z"
+            }
           },
           {
             "id": 50,
             "text": "Подписываете договор и спецификацию, выставляется счет и осуществляется оплата.",
-            "number": 2
+            "number": 2,
+            "image": {
+              "id": 8,
+              "documentId": "c5up9ofxuu8ji1guam0amzkk",
+              "name": "stage-2.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 250,
+              "height": 250,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_stage-2.png",
+                  "hash": "thumbnail_stage_2_7b94553b8a",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 31.37,
+                  "sizeInBytes": 31367,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031710/formula72/stage_2_7b94553b8a_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/stage_2_7b94553b8a_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "stage_2_7b94553b8a",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 18.61,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031709/formula72/stage_2_7b94553b8a.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/stage_2_7b94553b8a",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-26T12:43:34.490Z",
+              "updatedAt": "2026-05-15T07:23:00.073Z",
+              "publishedAt": "2026-03-26T12:43:34.490Z"
+            }
           },
           {
             "id": 51,
             "text": "Регистрируется декларация, организуется маркировка «Честный Знак» и создается карточка товара.",
-            "number": 3
+            "number": 3,
+            "image": {
+              "id": 9,
+              "documentId": "emq92xs27hye4zcabhoj6u7t",
+              "name": "stage-3.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 250,
+              "height": 250,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_stage-3.png",
+                  "hash": "thumbnail_stage_3_f89fe4a53f",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 31.63,
+                  "sizeInBytes": 31625,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031711/formula72/stage_3_f89fe4a53f_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/stage_3_f89fe4a53f_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "stage_3_f89fe4a53f",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 22.36,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031711/formula72/stage_3_f89fe4a53f.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/stage_3_f89fe4a53f",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-26T12:44:12.645Z",
+              "updatedAt": "2026-05-15T07:23:01.916Z",
+              "publishedAt": "2026-03-26T12:44:12.647Z"
+            }
           },
           {
             "id": 52,
             "text": "Производство закупает сырьё, изготавливает сигнальный образец и запускает варку при наличии всех материалов.",
-            "number": 4
+            "number": 4,
+            "image": {
+              "id": 10,
+              "documentId": "yh9w09j6vujndh4ko7zy0bp4",
+              "name": "stage-4.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 250,
+              "height": 250,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_stage-4.png",
+                  "hash": "thumbnail_stage_4_234c2c187b",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 28.45,
+                  "sizeInBytes": 28445,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031713/formula72/stage_4_234c2c187b_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/stage_4_234c2c187b_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "stage_4_234c2c187b",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 15.85,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031712/formula72/stage_4_234c2c187b.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/stage_4_234c2c187b",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-26T12:44:36.374Z",
+              "updatedAt": "2026-05-15T07:23:03.402Z",
+              "publishedAt": "2026-03-26T12:44:36.375Z"
+            }
           },
           {
             "id": 53,
             "text": "Упаковываются коробки, маркируются для отгрузки и осуществляется отгрузка продукции.",
-            "number": 5
+            "number": 5,
+            "image": {
+              "id": 11,
+              "documentId": "le4k8efkr02gbkzcfl9yd9h0",
+              "name": "stage-5.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 250,
+              "height": 250,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_stage-5.png",
+                  "hash": "thumbnail_stage_5_084940a997",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 31.28,
+                  "sizeInBytes": 31278,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031714/formula72/stage_5_084940a997_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/stage_5_084940a997_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "stage_5_084940a997",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 17.75,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031714/formula72/stage_5_084940a997.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/stage_5_084940a997",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-26T12:44:58.203Z",
+              "updatedAt": "2026-05-15T07:23:05.253Z",
+              "publishedAt": "2026-03-26T12:44:58.204Z"
+            }
           },
           {
             "id": 54,
             "text": "Организуется транспортировка, оформляется забор груза и передаются сопроводительные документы.",
-            "number": 6
+            "number": 6,
+            "image": {
+              "id": 12,
+              "documentId": "zt4hk9xmsm239kyesntajtqy",
+              "name": "stage-6.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 307,
+              "height": 250,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_stage-6.png",
+                  "hash": "thumbnail_stage_6_b4be8eecd8",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 192,
+                  "height": 156,
+                  "size": 38.1,
+                  "sizeInBytes": 38097,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031716/formula72/stage_6_b4be8eecd8_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/stage_6_b4be8eecd8_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "stage_6_b4be8eecd8",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 20.99,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031715/formula72/stage_6_b4be8eecd8.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/stage_6_b4be8eecd8",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-26T12:45:26.141Z",
+              "updatedAt": "2026-05-15T07:23:07.480Z",
+              "publishedAt": "2026-03-26T12:45:26.142Z"
+            }
           }
         ]
       },
@@ -3618,42 +3876,300 @@
             "title": "Селлерам на маркетплейсах",
             "text": "Минимальная партия от 50.000 ₽ для старта, можно запускать продукт под своим брендом без лишних вложений",
             "buttonText": "РАССЧИТАТЬ СТОИМОСТЬ",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 17,
+              "documentId": "e9dhn4h2onfujsw468wnrklq",
+              "name": "item-1.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 250,
+              "height": 250,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-1.png",
+                  "hash": "thumbnail_item_1_9afb7314d4",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 26.44,
+                  "sizeInBytes": 26438,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031727/formula72/item_1_9afb7314d4_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_1_9afb7314d4_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_1_9afb7314d4",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 16.19,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031726/formula72/item_1_9afb7314d4.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_1_9afb7314d4",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-27T13:26:56.511Z",
+              "updatedAt": "2026-05-15T07:23:18.728Z",
+              "publishedAt": "2026-03-27T13:26:56.512Z"
+            }
           },
           {
             "id": 104,
             "title": "Бьюти-блогерам",
             "text": "Подойдет для первого запуска, рекламных интеграций и теста спроса с собственной косметической линейкой.",
             "buttonText": "РАССЧИТАТЬ СТОИМОСТЬ",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 18,
+              "documentId": "bu49d7pvxw728b65u6s0pep7",
+              "name": "item-2.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 250,
+              "height": 250,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-2.png",
+                  "hash": "thumbnail_item_2_91a60645ff",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 20.67,
+                  "sizeInBytes": 20674,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031729/formula72/item_2_91a60645ff_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_2_91a60645ff_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_2_91a60645ff",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 12.99,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031728/formula72/item_2_91a60645ff.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_2_91a60645ff",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-27T13:27:47.159Z",
+              "updatedAt": "2026-05-15T07:23:20.147Z",
+              "publishedAt": "2026-03-27T13:27:47.159Z"
+            }
           },
           {
             "id": 105,
             "title": "Салонам красоты",
             "text": "Поможет создать продукт для постоянных клиентов и усилить профессиональный имидж салонного бизнеса.",
             "buttonText": "РАССЧИТАТЬ СТОИМОСТЬ",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 19,
+              "documentId": "ef3ma78yg3tud7uiiefrfxdl",
+              "name": "item-3.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 250,
+              "height": 250,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-3.png",
+                  "hash": "thumbnail_item_3_6cffd0ee53",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 27.11,
+                  "sizeInBytes": 27109,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031730/formula72/item_3_6cffd0ee53_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_3_6cffd0ee53_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_3_6cffd0ee53",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 16.37,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031730/formula72/item_3_6cffd0ee53.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_3_6cffd0ee53",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-27T13:28:38.620Z",
+              "updatedAt": "2026-05-15T07:23:21.829Z",
+              "publishedAt": "2026-03-27T13:28:38.621Z"
+            }
           },
           {
             "id": 106,
             "title": "Дистрибьюторам",
             "text": "Подходит для расширения ассортимента и запуска позиции с хорошей маржинальностью в собственной сети продаж.",
             "buttonText": "РАССЧИТАТЬ СТОИМОСТЬ",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 20,
+              "documentId": "m11z6ahx1na65jcockd7yrfb",
+              "name": "item-4.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 250,
+              "height": 250,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-4.png",
+                  "hash": "thumbnail_item_4_8151f44cc7",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 24.83,
+                  "sizeInBytes": 24825,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031732/formula72/item_4_8151f44cc7_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_4_8151f44cc7_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_4_8151f44cc7",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 16.29,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031731/formula72/item_4_8151f44cc7.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_4_8151f44cc7",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-27T13:29:32.903Z",
+              "updatedAt": "2026-05-15T07:23:23.253Z",
+              "publishedAt": "2026-03-27T13:29:32.903Z"
+            }
           },
           {
             "id": 107,
             "title": "Магазинам косметики и сетям",
             "text": "Удобный формат для запуска private label и развития нового направления без сложной производственной базы.",
             "buttonText": "РАССЧИТАТЬ СТОИМОСТЬ",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 21,
+              "documentId": "iqk07s5bfqbzlav98swrdqht",
+              "name": "item-5.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 250,
+              "height": 250,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-5.png",
+                  "hash": "thumbnail_item_5_ce4fee8b19",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 19.4,
+                  "sizeInBytes": 19399,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031734/formula72/item_5_ce4fee8b19_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_5_ce4fee8b19_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_5_ce4fee8b19",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 11.7,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031733/formula72/item_5_ce4fee8b19.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_5_ce4fee8b19",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-27T13:30:34.869Z",
+              "updatedAt": "2026-05-15T07:23:24.593Z",
+              "publishedAt": "2026-03-27T13:30:34.870Z"
+            }
           },
           {
             "id": 108,
             "title": "Хочу свой бренд!",
             "text": "Соберем подходящий продукт, тару и упаковку, чтобы вы быстро вышли на рынок со своей косметической маркой.",
             "buttonText": "РАССЧИТАТЬ СТОИМОСТЬ",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 22,
+              "documentId": "a41i7y8cm65f8m6em0lmoy13",
+              "name": "item-6.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 250,
+              "height": 250,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-6.png",
+                  "hash": "thumbnail_item_6_094be2974b",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 19.53,
+                  "sizeInBytes": 19532,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031735/formula72/item_6_094be2974b_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_6_094be2974b_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_6_094be2974b",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 11.13,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031734/formula72/item_6_094be2974b.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_6_094be2974b",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-27T13:31:31.915Z",
+              "updatedAt": "2026-05-15T07:23:26.097Z",
+              "publishedAt": "2026-03-27T13:31:31.916Z"
+            }
           }
         ]
       },
@@ -3676,6 +4192,23 @@
         "availabilityNote": "* Согласно данным ЯНДЕКС БИЗНЕС открыть ПВЗ от 550 000 ₽",
         "professionalismTitle": "ПРОФЕССИОНАЛИЗМ",
         "professionalismText": "Знаем, как создать успешный косметический бренд, который будет продаваться в Золотом Яблоке или Лэтуаль: EVSI и QTIX - это наши собственные торговые марки.",
+        "brandLinks": [
+          {
+            "id": 104,
+            "label": "EVSI в Лэтуаль",
+            "href": "https://www.letu.ru/brand/evsi"
+          },
+          {
+            "id": 105,
+            "label": "EVSI в Золотом Яблоке",
+            "href": "https://goldapple.ru/brands/evsi"
+          },
+          {
+            "id": 106,
+            "label": "QTIX в Лэтуаль",
+            "href": "https://www.letu.ru/brand/qti"
+          }
+        ],
         "points": [
           {
             "id": 45,
@@ -3696,33 +4229,360 @@
         ],
         "galleryItems": [
           {
-            "id": 37
+            "id": 37,
+            "image": {
+              "id": 23,
+              "documentId": "qjmz6wmrb8p0mg6um05od3fb",
+              "name": "item-1.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-1.jpg",
+                  "hash": "thumbnail_item_1_af4ab3cc91",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 52.33,
+                  "sizeInBytes": 52330,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031737/formula72/item_1_af4ab3cc91_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_1_af4ab3cc91_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_1_af4ab3cc91",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 125.45,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031736/formula72/item_1_af4ab3cc91.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_1_af4ab3cc91",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-27T14:35:39.458Z",
+              "updatedAt": "2026-05-15T07:23:27.635Z",
+              "publishedAt": "2026-03-27T14:35:39.459Z"
+            },
+            "hoverImage": {
+              "id": 24,
+              "documentId": "soptc285gwnbotp2iutfen7l",
+              "name": "item-1-hover.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-1-hover.jpg",
+                  "hash": "thumbnail_item_1_hover_1fc1515dae",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 59.69,
+                  "sizeInBytes": 59693,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031739/formula72/item_1_hover_1fc1515dae_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_1_hover_1fc1515dae_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_1_hover_1fc1515dae",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 104.72,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031738/formula72/item_1_hover_1fc1515dae.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_1_hover_1fc1515dae",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-27T14:36:04.968Z",
+              "updatedAt": "2026-05-15T07:23:29.742Z",
+              "publishedAt": "2026-03-27T14:36:04.968Z"
+            }
           },
           {
-            "id": 38
+            "id": 38,
+            "image": {
+              "id": 25,
+              "documentId": "zjpnm5meigu3jybd397sm898",
+              "name": "item-2.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-2.jpg",
+                  "hash": "thumbnail_item_2_aa2428d525",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 56.98,
+                  "sizeInBytes": 56980,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031740/formula72/item_2_aa2428d525_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_2_aa2428d525_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_2_aa2428d525",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 113.69,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031739/formula72/item_2_aa2428d525.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_2_aa2428d525",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-27T14:36:47.867Z",
+              "updatedAt": "2026-05-15T07:23:31.225Z",
+              "publishedAt": "2026-03-27T14:36:47.868Z"
+            },
+            "hoverImage": {
+              "id": 26,
+              "documentId": "gku33hneycjo9m9h8zme1h47",
+              "name": "item-2-hover.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-2-hover.jpg",
+                  "hash": "thumbnail_item_2_hover_7eb3d94b8c",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 53.52,
+                  "sizeInBytes": 53517,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031742/formula72/item_2_hover_7eb3d94b8c_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_2_hover_7eb3d94b8c_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_2_hover_7eb3d94b8c",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 93.36,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031741/formula72/item_2_hover_7eb3d94b8c.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_2_hover_7eb3d94b8c",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-27T14:37:10.796Z",
+              "updatedAt": "2026-05-15T07:23:32.775Z",
+              "publishedAt": "2026-03-27T14:37:10.796Z"
+            }
           },
           {
-            "id": 39
+            "id": 39,
+            "image": {
+              "id": 27,
+              "documentId": "uefptdot70ymg8br1gc9w6co",
+              "name": "item-3.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-3.jpg",
+                  "hash": "thumbnail_item_3_10ba8fb33f",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 57.46,
+                  "sizeInBytes": 57458,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031743/formula72/item_3_10ba8fb33f_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_3_10ba8fb33f_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_3_10ba8fb33f",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 138.87,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031743/formula72/item_3_10ba8fb33f.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_3_10ba8fb33f",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-27T14:37:37.854Z",
+              "updatedAt": "2026-05-15T07:23:34.283Z",
+              "publishedAt": "2026-03-27T14:37:37.854Z"
+            },
+            "hoverImage": {
+              "id": 28,
+              "documentId": "fatodx4f7s2skrshxdiuj7hp",
+              "name": "item-3-hover.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-3-hover.jpg",
+                  "hash": "thumbnail_item_3_hover_491ec3d54a",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 43.4,
+                  "sizeInBytes": 43403,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031745/formula72/item_3_hover_491ec3d54a_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_3_hover_491ec3d54a_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_3_hover_491ec3d54a",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 72.37,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031744/formula72/item_3_hover_491ec3d54a.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_3_hover_491ec3d54a",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-27T14:38:57.960Z",
+              "updatedAt": "2026-05-15T07:23:35.725Z",
+              "publishedAt": "2026-03-27T14:38:57.960Z"
+            }
           },
           {
-            "id": 40
-          }
-        ],
-        "brandLinks": [
-          {
-            "id": 104,
-            "label": "EVSI в Лэтуаль",
-            "href": "https://www.letu.ru/brand/evsi"
-          },
-          {
-            "id": 105,
-            "label": "EVSI в Золотом Яблоке",
-            "href": "https://goldapple.ru/brands/evsi"
-          },
-          {
-            "id": 106,
-            "label": "QTIX в Лэтуаль",
-            "href": "https://www.letu.ru/brand/qti"
+            "id": 40,
+            "image": {
+              "id": 29,
+              "documentId": "qov4j7knkm18bu9ja5vo9mvf",
+              "name": "item-4.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-4.jpg",
+                  "hash": "thumbnail_item_4_17cff4abb1",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 58.43,
+                  "sizeInBytes": 58428,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031746/formula72/item_4_17cff4abb1_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_4_17cff4abb1_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_4_17cff4abb1",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 125.37,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031746/formula72/item_4_17cff4abb1.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_4_17cff4abb1",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-27T14:39:23.923Z",
+              "updatedAt": "2026-05-15T07:23:37.225Z",
+              "publishedAt": "2026-03-27T14:39:23.924Z"
+            },
+            "hoverImage": {
+              "id": 30,
+              "documentId": "f4xcqhy96bfszxtftyk5qbzg",
+              "name": "item-4-hover.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-4-hover.jpg",
+                  "hash": "thumbnail_item_4_hover_dd514ebcaf",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 67.7,
+                  "sizeInBytes": 67703,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031748/formula72/item_4_hover_dd514ebcaf_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_4_hover_dd514ebcaf_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_4_hover_dd514ebcaf",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 137.99,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031747/formula72/item_4_hover_dd514ebcaf.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_4_hover_dd514ebcaf",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-27T14:39:46.478Z",
+              "updatedAt": "2026-05-15T07:23:38.725Z",
+              "publishedAt": "2026-03-27T14:39:46.478Z"
+            }
           }
         ]
       },
@@ -5084,15 +5944,105 @@
         "categories": [
           {
             "id": 13,
-            "title": "Про продукт и рецептуры"
+            "title": "Про продукт и рецептуры",
+            "items": [
+              {
+                "id": 49,
+                "question": "Можно ли повторить уже существующий продукт?",
+                "answer": "Да, мы можем обсудить повтор уже существующего продукта или подобрать максимально близкое решение на основе вашей задачи и состава.",
+                "isActive": true,
+                "number": "01"
+              },
+              {
+                "id": 50,
+                "question": "Как я могу увидеть составы?",
+                "answer": "Составы и варианты рецептур обсуждаются на этапе подбора продукта: мы подскажем доступные решения и поможем выбрать оптимальный вариант.",
+                "isActive": true,
+                "number": "02"
+              },
+              {
+                "id": 51,
+                "question": "Возможно ли доработать продукт из готовой рецептуры?",
+                "answer": "Да, готовую рецептуру можно адаптировать под ваши пожелания по текстуре, аромату, активам и позиционированию.",
+                "isActive": true,
+                "number": "03"
+              },
+              {
+                "id": 52,
+                "question": "Сколько стоит разработка рецепта?",
+                "answer": "Стоимость разработки зависит от сложности задачи. На консультации мы поможем оценить бюджет и предложим подходящий формат запуска.",
+                "isActive": true,
+                "number": "04"
+              }
+            ]
           },
           {
             "id": 14,
-            "title": "Про сырьё и тару"
+            "title": "Про сырьё и тару",
+            "items": [
+              {
+                "id": 53,
+                "question": "Работаете ли с давальческим сырьём?",
+                "answer": "Да, такой формат можно обсудить отдельно. Мы заранее проверим совместимость сырья и требования к производственному процессу.",
+                "isActive": true,
+                "number": "05"
+              },
+              {
+                "id": 54,
+                "question": "Могу ли отправить вам свою тару или отдушку?",
+                "answer": "Да, мы можем рассмотреть вашу тару, комплектующие или отдушку и заранее согласовать технические нюансы и совместимость.",
+                "isActive": true,
+                "number": "06"
+              },
+              {
+                "id": 55,
+                "question": "Можно ли приобрести продукт на разлив?",
+                "answer": "Да, для некоторых форматов это возможно. Уточним подходящий вариант в зависимости от продукта, объёма и упаковки.",
+                "isActive": true,
+                "number": "07"
+              }
+            ]
           },
           {
             "id": 15,
-            "title": "Про деньги, сроки и объёмы"
+            "title": "Про деньги, сроки и объёмы",
+            "items": [
+              {
+                "id": 56,
+                "question": "В минимальную сумму заказа входит только один продукт или несколько видов?",
+                "answer": "Минимальная сумма заказа может распределяться между несколькими позициями — точную конфигурацию мы поможем собрать под вашу задачу.",
+                "isActive": true,
+                "number": "08"
+              },
+              {
+                "id": 57,
+                "question": "Какие объёмы вы можете изготовить?",
+                "answer": "Мы работаем с разными объёмами партий: от стартовых запусков до более крупных тиражей. Подберём формат под ваш канал продаж.",
+                "isActive": true,
+                "number": "09"
+              },
+              {
+                "id": 58,
+                "question": "Сколько готовится заказ?",
+                "answer": "Сроки зависят от выбранного продукта, тары и загрузки производства. На старте проекта мы даём ориентир по срокам и этапам.",
+                "isActive": true,
+                "number": "10"
+              },
+              {
+                "id": 59,
+                "question": "Отправляете на маркетплейсы?",
+                "answer": "Да, мы помогаем подготовить продукцию к отгрузке и учитываем требования маркетплейсов при комплектации заказа.",
+                "isActive": true,
+                "number": "11"
+              },
+              {
+                "id": 60,
+                "question": "\nВозможно ли запросить предварительные расчёты?",
+                "answer": "Да, вы можете оставить запрос, и мы подготовим предварительный расчёт по вашему продукту, объёму и упаковке.",
+                "isActive": true,
+                "number": "12"
+              }
+            ]
           }
         ]
       },
