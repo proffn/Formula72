@@ -1433,7 +1433,7 @@ export async function getWhatWeCanMakeSection() {
     "/api/what-we-can-make-section",
     {
       params: {
-        populate: "*",
+        "populate[items][populate]": "*",
       },
     },
   );

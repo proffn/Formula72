@@ -81,7 +81,7 @@ const endpoints = [
   ["workStages", "/api/work-stages-section?populate=*"],
   ["whoSuits", "/api/who-suits-section?populate=*"],
   ["whyTrustUs", "/api/why-trust-us-section?populate=*"],
-  ["whatWeCanMake", "/api/what-we-can-make-section?populate=*"],
+  ["whatWeCanMake", "/api/what-we-can-make-section?populate[items][populate]=*"],
   ["coverageMap", "/api/coverage-map-section?populate=*"],
   ["faq", "/api/faq-section?populate=*"],
   ["leadCta", "/api/lead-cta-section"],

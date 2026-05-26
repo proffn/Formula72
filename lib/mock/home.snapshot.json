@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "generatedAt": "2026-05-26T12:33:35.716Z",
+  "generatedAt": "2026-05-26T12:39:54.428Z",
   "sourceUrl": "http://localhost:1337",
   "media": {
-    "cloudinaryUrlCount": 65,
+    "cloudinaryUrlCount": 87,
     "uploadUrls": [
       {
         "path": "aboutPage.data.logo.formats.thumbnail.url",
@@ -440,6 +440,26 @@
       {
         "path": "formula72Scheme.data.items.2.mobileImage.url",
         "url": "/uploads/formula_opt2_b80ef3f317.png"
+      },
+      {
+        "path": "whatWeCanMake.data.items.11.image.formats.thumbnail.url",
+        "url": "/uploads/thumbnail_item_12_2_1de10d2646.png"
+      },
+      {
+        "path": "whatWeCanMake.data.items.11.image.formats.small.url",
+        "url": "/uploads/small_item_12_2_1de10d2646.png"
+      },
+      {
+        "path": "whatWeCanMake.data.items.11.image.formats.medium.url",
+        "url": "/uploads/medium_item_12_2_1de10d2646.png"
+      },
+      {
+        "path": "whatWeCanMake.data.items.11.image.formats.large.url",
+        "url": "/uploads/large_item_12_2_1de10d2646.png"
+      },
+      {
+        "path": "whatWeCanMake.data.items.11.image.url",
+        "url": "/uploads/item_12_2_1de10d2646.png"
       }
     ]
   },
@@ -3710,96 +3730,664 @@
     },
     "whatWeCanMake": {
       "data": {
-        "id": 12,
+        "id": 13,
         "documentId": "nogejl0p4c8kgffabe9oex88",
         "title": "Что мы можем изготовить",
         "createdAt": "2026-03-29T11:59:37.320Z",
-        "updatedAt": "2026-03-29T12:25:14.199Z",
-        "publishedAt": "2026-03-29T12:25:14.248Z",
+        "updatedAt": "2026-05-26T12:37:41.048Z",
+        "publishedAt": "2026-05-26T12:37:41.096Z",
         "items": [
           {
-            "id": 121,
+            "id": 133,
             "title": "Брови и ресницы",
             "isActive": true,
             "buttonText": "Получить прайс",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 32,
+              "documentId": "r7taiisdgbkvn5xzri063ujf",
+              "name": "item-1.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-1.png",
+                  "hash": "thumbnail_item_1_a7a01fa59a",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 51.11,
+                  "sizeInBytes": 51111,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031753/formula72/item_1_a7a01fa59a_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_1_a7a01fa59a_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_1_a7a01fa59a",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 132.88,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031752/formula72/item_1_a7a01fa59a.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_1_a7a01fa59a",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-29T12:18:13.791Z",
+              "updatedAt": "2026-05-15T07:23:43.825Z",
+              "publishedAt": "2026-03-29T12:18:13.791Z"
+            },
+            "hoverImage": null,
+            "hoverVideo": null
           },
           {
-            "id": 122,
+            "id": 134,
             "title": "Уход за лицом",
             "isActive": true,
             "buttonText": "Получить прайс",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 33,
+              "documentId": "irvdy3x2caz189bf084dayml",
+              "name": "item-2.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-2.png",
+                  "hash": "thumbnail_item_2_15341736e9",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 47.43,
+                  "sizeInBytes": 47425,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031754/formula72/item_2_15341736e9_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_2_15341736e9_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_2_15341736e9",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 125.62,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031754/formula72/item_2_15341736e9.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_2_15341736e9",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-29T12:18:31.373Z",
+              "updatedAt": "2026-05-15T07:23:45.412Z",
+              "publishedAt": "2026-03-29T12:18:31.373Z"
+            },
+            "hoverImage": null,
+            "hoverVideo": null
           },
           {
-            "id": 123,
+            "id": 135,
             "title": "Уход за телом",
             "isActive": true,
             "buttonText": "Получить прайс",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 34,
+              "documentId": "givjxnj7tnsly25smfkvftv7",
+              "name": "item-3.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-3.png",
+                  "hash": "thumbnail_item_3_3ef21c80b6",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 40.98,
+                  "sizeInBytes": 40983,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031756/formula72/item_3_3ef21c80b6_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_3_3ef21c80b6_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_3_3ef21c80b6",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 90.08,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031755/formula72/item_3_3ef21c80b6.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_3_3ef21c80b6",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-29T12:18:47.555Z",
+              "updatedAt": "2026-05-15T07:23:46.769Z",
+              "publishedAt": "2026-03-29T12:18:47.555Z"
+            },
+            "hoverImage": null,
+            "hoverVideo": null
           },
           {
-            "id": 124,
+            "id": 136,
             "title": "Антицеллюлитная серия",
             "isActive": true,
             "buttonText": "Получить прайс",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 35,
+              "documentId": "f95t1e6hg7lmzunxq3b9tsaj",
+              "name": "item-4.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-4.png",
+                  "hash": "thumbnail_item_4_5204fdece6",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 41.62,
+                  "sizeInBytes": 41620,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031757/formula72/item_4_5204fdece6_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_4_5204fdece6_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_4_5204fdece6",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 77.84,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031756/formula72/item_4_5204fdece6.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_4_5204fdece6",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-29T12:19:10.918Z",
+              "updatedAt": "2026-05-15T07:23:48.134Z",
+              "publishedAt": "2026-03-29T12:19:10.918Z"
+            },
+            "hoverImage": null,
+            "hoverVideo": null
           },
           {
-            "id": 125,
+            "id": 137,
             "title": "Уход за волосами",
             "isActive": true,
             "buttonText": "Получить прайс",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 36,
+              "documentId": "f6vpnnky6iy04t1rkvj19gbg",
+              "name": "item-5.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-5.png",
+                  "hash": "thumbnail_item_5_63d14de161",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 52.71,
+                  "sizeInBytes": 52711,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031759/formula72/item_5_63d14de161_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_5_63d14de161_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_5_63d14de161",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 136.02,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031758/formula72/item_5_63d14de161.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_5_63d14de161",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-29T12:19:25.908Z",
+              "updatedAt": "2026-05-15T07:23:49.573Z",
+              "publishedAt": "2026-03-29T12:19:25.908Z"
+            },
+            "hoverImage": null,
+            "hoverVideo": null
           },
           {
-            "id": 126,
+            "id": 138,
             "title": "Средства для ванны и душа",
             "isActive": true,
             "buttonText": "Получить прайс",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 37,
+              "documentId": "picbvvki5fyg02whj4i12cht",
+              "name": "item-6.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-6.png",
+                  "hash": "thumbnail_item_6_010ea95c0e",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 44.61,
+                  "sizeInBytes": 44609,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031760/formula72/item_6_010ea95c0e_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_6_010ea95c0e_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_6_010ea95c0e",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 84.49,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031759/formula72/item_6_010ea95c0e.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_6_010ea95c0e",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-29T12:19:41.333Z",
+              "updatedAt": "2026-05-15T07:23:50.862Z",
+              "publishedAt": "2026-03-29T12:19:41.333Z"
+            },
+            "hoverImage": null,
+            "hoverVideo": null
           },
           {
-            "id": 127,
+            "id": 139,
             "title": "Средства для педикюра",
             "isActive": true,
             "buttonText": "Получить прайс",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 38,
+              "documentId": "f88t0mxg7z8gnqi1onse7rik",
+              "name": "item-7.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-7.png",
+                  "hash": "thumbnail_item_7_dd38bd220b",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 47,
+                  "sizeInBytes": 46999,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031762/formula72/item_7_dd38bd220b_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_7_dd38bd220b_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_7_dd38bd220b",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 105.34,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031761/formula72/item_7_dd38bd220b.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_7_dd38bd220b",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-29T12:20:03.077Z",
+              "updatedAt": "2026-05-15T07:23:52.378Z",
+              "publishedAt": "2026-03-29T12:20:03.077Z"
+            },
+            "hoverImage": null,
+            "hoverVideo": null
           },
           {
-            "id": 128,
+            "id": 140,
             "title": "Шугаринг и депиляция",
             "isActive": true,
             "buttonText": "Получить прайс",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 39,
+              "documentId": "s6wg3a72fni7r6rz1ezd4f0y",
+              "name": "item-8.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-8.png",
+                  "hash": "thumbnail_item_8_f313e450f4",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 42.67,
+                  "sizeInBytes": 42667,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031763/formula72/item_8_f313e450f4_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_8_f313e450f4_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_8_f313e450f4",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 72.74,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031763/formula72/item_8_f313e450f4.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_8_f313e450f4",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-29T12:20:18.032Z",
+              "updatedAt": "2026-05-15T07:23:53.769Z",
+              "publishedAt": "2026-03-29T12:20:18.034Z"
+            },
+            "hoverImage": null,
+            "hoverVideo": null
           },
           {
-            "id": 129,
+            "id": 141,
             "title": "Средства для кутикулы",
             "isActive": true,
             "buttonText": "Получить прайс",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 40,
+              "documentId": "wmg3of662zzjvmiqcjxlzps0",
+              "name": "item-9.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-9.png",
+                  "hash": "thumbnail_item_9_281173c1fd",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 27.05,
+                  "sizeInBytes": 27053,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031765/formula72/item_9_281173c1fd_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_9_281173c1fd_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_9_281173c1fd",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 50.84,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031764/formula72/item_9_281173c1fd.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_9_281173c1fd",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-29T12:20:33.605Z",
+              "updatedAt": "2026-05-15T07:23:55.345Z",
+              "publishedAt": "2026-03-29T12:20:33.605Z"
+            },
+            "hoverImage": null,
+            "hoverVideo": null
           },
           {
-            "id": 130,
+            "id": 142,
             "title": "Солнцезащитная серия",
             "isActive": true,
             "buttonText": "Получить прайс",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 41,
+              "documentId": "oo8znckle1ri3g23zwxj1eox",
+              "name": "item-10.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-10.png",
+                  "hash": "thumbnail_item_10_bcbdad1dd5",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 54.84,
+                  "sizeInBytes": 54838,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031767/formula72/item_10_bcbdad1dd5_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_10_bcbdad1dd5_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_10_bcbdad1dd5",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 138.15,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031766/formula72/item_10_bcbdad1dd5.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_10_bcbdad1dd5",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-29T12:20:48.881Z",
+              "updatedAt": "2026-05-15T07:23:56.926Z",
+              "publishedAt": "2026-03-29T12:20:48.882Z"
+            },
+            "hoverImage": null,
+            "hoverVideo": null
           },
           {
-            "id": 131,
+            "id": 143,
             "title": "Мужская серия",
             "isActive": true,
             "buttonText": "Получить прайс",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 42,
+              "documentId": "m44y41n9mlwj1yu4fia5kro1",
+              "name": "item-11.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 470,
+              "height": 470,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-11.png",
+                  "hash": "thumbnail_item_11_d83a63cc2c",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 51.9,
+                  "sizeInBytes": 51898,
+                  "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031768/formula72/item_11_d83a63cc2c_thumbnail.png",
+                  "provider": "cloudinary",
+                  "provider_metadata": {
+                    "public_id": "formula72/item_11_d83a63cc2c_thumbnail",
+                    "resource_type": "image"
+                  }
+                }
+              },
+              "hash": "item_11_d83a63cc2c",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 133.89,
+              "url": "https://res.cloudinary.com/dquzly7um/image/upload/v1777031767/formula72/item_11_d83a63cc2c.png",
+              "previewUrl": null,
+              "provider": "cloudinary",
+              "provider_metadata": {
+                "public_id": "formula72/item_11_d83a63cc2c",
+                "resource_type": "image"
+              },
+              "createdAt": "2026-03-29T12:21:01.535Z",
+              "updatedAt": "2026-05-15T07:23:58.644Z",
+              "publishedAt": "2026-03-29T12:21:01.535Z"
+            },
+            "hoverImage": null,
+            "hoverVideo": null
           },
           {
-            "id": 132,
+            "id": 144,
             "title": "Средства для животных",
             "isActive": true,
             "buttonText": "Получить прайс",
-            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72"
+            "buttonLink": "https://b24-2uwhq2.bitrix24site.ru/?utm_source=website_contract72",
+            "image": {
+              "id": 116,
+              "documentId": "qaanlr3c9yd7l82n048ku5vp",
+              "name": "item-12_2.png",
+              "alternativeText": null,
+              "caption": null,
+              "focalPoint": null,
+              "width": 1600,
+              "height": 1600,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_item-12_2.png",
+                  "hash": "thumbnail_item_12_2_1de10d2646",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 156,
+                  "height": 156,
+                  "size": 47.62,
+                  "sizeInBytes": 47624,
+                  "url": "/uploads/thumbnail_item_12_2_1de10d2646.png"
+                },
+                "small": {
+                  "name": "small_item-12_2.png",
+                  "hash": "small_item_12_2_1de10d2646",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 500,
+                  "height": 500,
+                  "size": 458.72,
+                  "sizeInBytes": 458722,
+                  "url": "/uploads/small_item_12_2_1de10d2646.png"
+                },
+                "medium": {
+                  "name": "medium_item-12_2.png",
+                  "hash": "medium_item_12_2_1de10d2646",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 750,
+                  "height": 750,
+                  "size": 1040.28,
+                  "sizeInBytes": 1040279,
+                  "url": "/uploads/medium_item_12_2_1de10d2646.png"
+                },
+                "large": {
+                  "name": "large_item-12_2.png",
+                  "hash": "large_item_12_2_1de10d2646",
+                  "ext": ".png",
+                  "mime": "image/png",
+                  "path": null,
+                  "width": 1000,
+                  "height": 1000,
+                  "size": 1850.03,
+                  "sizeInBytes": 1850029,
+                  "url": "/uploads/large_item_12_2_1de10d2646.png"
+                }
+              },
+              "hash": "item_12_2_1de10d2646",
+              "ext": ".png",
+              "mime": "image/png",
+              "size": 1209.83,
+              "url": "/uploads/item_12_2_1de10d2646.png",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2026-05-26T12:37:12.914Z",
+              "updatedAt": "2026-05-26T12:37:12.914Z",
+              "publishedAt": "2026-05-26T12:37:12.915Z"
+            },
+            "hoverImage": null,
+            "hoverVideo": null
           }
         ]
       },
