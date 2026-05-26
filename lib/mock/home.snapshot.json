@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-05-25T13:33:45.961Z",
+  "generatedAt": "2026-05-26T12:33:35.716Z",
   "sourceUrl": "http://localhost:1337",
   "media": {
     "cloudinaryUrlCount": 65,
@@ -323,43 +323,43 @@
       },
       {
         "path": "banners.data.1.image.formats.thumbnail.url",
-        "url": "/uploads/thumbnail_banner_1_2_1b46cde2f8.png"
+        "url": "/uploads/thumbnail_banner_1_3_dcfaa38a4e.png"
       },
       {
         "path": "banners.data.1.image.formats.small.url",
-        "url": "/uploads/small_banner_1_2_1b46cde2f8.png"
+        "url": "/uploads/small_banner_1_3_dcfaa38a4e.png"
       },
       {
         "path": "banners.data.1.image.formats.medium.url",
-        "url": "/uploads/medium_banner_1_2_1b46cde2f8.png"
+        "url": "/uploads/medium_banner_1_3_dcfaa38a4e.png"
       },
       {
         "path": "banners.data.1.image.formats.large.url",
-        "url": "/uploads/large_banner_1_2_1b46cde2f8.png"
+        "url": "/uploads/large_banner_1_3_dcfaa38a4e.png"
       },
       {
         "path": "banners.data.1.image.url",
-        "url": "/uploads/banner_1_2_1b46cde2f8.png"
+        "url": "/uploads/banner_1_3_dcfaa38a4e.png"
       },
       {
         "path": "banners.data.1.mobileImage.formats.thumbnail.url",
-        "url": "/uploads/thumbnail_banner_1_mobile2_df69a8771f.png"
-      },
-      {
-        "path": "banners.data.1.mobileImage.formats.small.url",
-        "url": "/uploads/small_banner_1_mobile2_df69a8771f.png"
-      },
-      {
-        "path": "banners.data.1.mobileImage.formats.medium.url",
-        "url": "/uploads/medium_banner_1_mobile2_df69a8771f.png"
+        "url": "/uploads/thumbnail_banner_1_mobile3_6085251552.png"
       },
       {
         "path": "banners.data.1.mobileImage.formats.large.url",
-        "url": "/uploads/large_banner_1_mobile2_df69a8771f.png"
+        "url": "/uploads/large_banner_1_mobile3_6085251552.png"
+      },
+      {
+        "path": "banners.data.1.mobileImage.formats.small.url",
+        "url": "/uploads/small_banner_1_mobile3_6085251552.png"
+      },
+      {
+        "path": "banners.data.1.mobileImage.formats.medium.url",
+        "url": "/uploads/medium_banner_1_mobile3_6085251552.png"
       },
       {
         "path": "banners.data.1.mobileImage.url",
-        "url": "/uploads/banner_1_mobile2_df69a8771f.png"
+        "url": "/uploads/banner_1_mobile3_6085251552.png"
       },
       {
         "path": "formula72Scheme.data.image.formats.thumbnail.url",
@@ -2388,20 +2388,20 @@
           }
         },
         {
-          "id": 24,
+          "id": 25,
           "documentId": "kxfn13prurl2f20oo7nndtt4",
           "title": "ИДЕАЛЬНЫЙ ПРОДУКТ\nС ФОРМУЛА72",
           "subtitle": "ТВОЯ ИДЕЯ — НАШ ПРИОРИТЕТ",
           "order": 1,
           "isActive": true,
           "createdAt": "2026-03-22T17:15:23.474Z",
-          "updatedAt": "2026-05-23T17:15:27.161Z",
-          "publishedAt": "2026-05-23T17:15:27.171Z",
+          "updatedAt": "2026-05-26T12:31:47.039Z",
+          "publishedAt": "2026-05-26T12:31:47.084Z",
           "textPosition": null,
           "image": {
-            "id": 97,
-            "documentId": "tsndvy9w0yp3d0w8og6u6fap",
-            "name": "banner-1-2.png",
+            "id": 114,
+            "documentId": "cbfpbvraygo04g0jntq1w4p1",
+            "name": "banner-1-3.png",
             "alternativeText": null,
             "caption": null,
             "focalPoint": null,
@@ -2409,70 +2409,70 @@
             "height": 768,
             "formats": {
               "thumbnail": {
-                "name": "thumbnail_banner-1-2.png",
-                "hash": "thumbnail_banner_1_2_1b46cde2f8",
+                "name": "thumbnail_banner-1-3.png",
+                "hash": "thumbnail_banner_1_3_dcfaa38a4e",
                 "ext": ".png",
                 "mime": "image/png",
                 "path": null,
                 "width": 245,
                 "height": 138,
-                "size": 53.11,
-                "sizeInBytes": 53108,
-                "url": "/uploads/thumbnail_banner_1_2_1b46cde2f8.png"
+                "size": 52.38,
+                "sizeInBytes": 52376,
+                "url": "/uploads/thumbnail_banner_1_3_dcfaa38a4e.png"
               },
               "small": {
-                "name": "small_banner-1-2.png",
-                "hash": "small_banner_1_2_1b46cde2f8",
+                "name": "small_banner-1-3.png",
+                "hash": "small_banner_1_3_dcfaa38a4e",
                 "ext": ".png",
                 "mime": "image/png",
                 "path": null,
                 "width": 500,
                 "height": 281,
-                "size": 203.61,
-                "sizeInBytes": 203610,
-                "url": "/uploads/small_banner_1_2_1b46cde2f8.png"
+                "size": 202.12,
+                "sizeInBytes": 202117,
+                "url": "/uploads/small_banner_1_3_dcfaa38a4e.png"
               },
               "medium": {
-                "name": "medium_banner-1-2.png",
-                "hash": "medium_banner_1_2_1b46cde2f8",
+                "name": "medium_banner-1-3.png",
+                "hash": "medium_banner_1_3_dcfaa38a4e",
                 "ext": ".png",
                 "mime": "image/png",
                 "path": null,
                 "width": 750,
                 "height": 422,
-                "size": 473.98,
-                "sizeInBytes": 473981,
-                "url": "/uploads/medium_banner_1_2_1b46cde2f8.png"
+                "size": 467.47,
+                "sizeInBytes": 467465,
+                "url": "/uploads/medium_banner_1_3_dcfaa38a4e.png"
               },
               "large": {
-                "name": "large_banner-1-2.png",
-                "hash": "large_banner_1_2_1b46cde2f8",
+                "name": "large_banner-1-3.png",
+                "hash": "large_banner_1_3_dcfaa38a4e",
                 "ext": ".png",
                 "mime": "image/png",
                 "path": null,
                 "width": 1000,
                 "height": 562,
-                "size": 867.62,
-                "sizeInBytes": 867623,
-                "url": "/uploads/large_banner_1_2_1b46cde2f8.png"
+                "size": 849.3,
+                "sizeInBytes": 849298,
+                "url": "/uploads/large_banner_1_3_dcfaa38a4e.png"
               }
             },
-            "hash": "banner_1_2_1b46cde2f8",
+            "hash": "banner_1_3_dcfaa38a4e",
             "ext": ".png",
             "mime": "image/png",
-            "size": 444.19,
-            "url": "/uploads/banner_1_2_1b46cde2f8.png",
+            "size": 425.62,
+            "url": "/uploads/banner_1_3_dcfaa38a4e.png",
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "createdAt": "2026-05-23T17:04:46.378Z",
-            "updatedAt": "2026-05-23T17:04:46.378Z",
-            "publishedAt": "2026-05-23T17:04:46.379Z"
+            "createdAt": "2026-05-26T12:31:25.063Z",
+            "updatedAt": "2026-05-26T12:31:25.063Z",
+            "publishedAt": "2026-05-26T12:31:25.063Z"
           },
           "mobileImage": {
-            "id": 98,
-            "documentId": "yxr80whpsqepxentxqn3hw9i",
-            "name": "banner-1-mobile2.png",
+            "id": 115,
+            "documentId": "lxybehg01f8uwfo9cgph3fmx",
+            "name": "banner-1-mobile3.png",
             "alternativeText": null,
             "caption": null,
             "focalPoint": null,
@@ -2480,65 +2480,65 @@
             "height": 900,
             "formats": {
               "thumbnail": {
-                "name": "thumbnail_banner-1-mobile2.png",
-                "hash": "thumbnail_banner_1_mobile2_df69a8771f",
+                "name": "thumbnail_banner-1-mobile3.png",
+                "hash": "thumbnail_banner_1_mobile3_6085251552",
                 "ext": ".png",
                 "mime": "image/png",
                 "path": null,
                 "width": 187,
                 "height": 156,
-                "size": 41.95,
-                "sizeInBytes": 41954,
-                "url": "/uploads/thumbnail_banner_1_mobile2_df69a8771f.png"
-              },
-              "small": {
-                "name": "small_banner-1-mobile2.png",
-                "hash": "small_banner_1_mobile2_df69a8771f",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 500,
-                "height": 417,
-                "size": 269.63,
-                "sizeInBytes": 269629,
-                "url": "/uploads/small_banner_1_mobile2_df69a8771f.png"
-              },
-              "medium": {
-                "name": "medium_banner-1-mobile2.png",
-                "hash": "medium_banner_1_mobile2_df69a8771f",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 750,
-                "height": 625,
-                "size": 612.22,
-                "sizeInBytes": 612222,
-                "url": "/uploads/medium_banner_1_mobile2_df69a8771f.png"
+                "size": 42.53,
+                "sizeInBytes": 42530,
+                "url": "/uploads/thumbnail_banner_1_mobile3_6085251552.png"
               },
               "large": {
-                "name": "large_banner-1-mobile2.png",
-                "hash": "large_banner_1_mobile2_df69a8771f",
+                "name": "large_banner-1-mobile3.png",
+                "hash": "large_banner_1_mobile3_6085251552",
                 "ext": ".png",
                 "mime": "image/png",
                 "path": null,
                 "width": 1000,
                 "height": 833,
-                "size": 1056.96,
-                "sizeInBytes": 1056962,
-                "url": "/uploads/large_banner_1_mobile2_df69a8771f.png"
+                "size": 1114.2,
+                "sizeInBytes": 1114204,
+                "url": "/uploads/large_banner_1_mobile3_6085251552.png"
+              },
+              "small": {
+                "name": "small_banner-1-mobile3.png",
+                "hash": "small_banner_1_mobile3_6085251552",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 500,
+                "height": 417,
+                "size": 280.73,
+                "sizeInBytes": 280727,
+                "url": "/uploads/small_banner_1_mobile3_6085251552.png"
+              },
+              "medium": {
+                "name": "medium_banner-1-mobile3.png",
+                "hash": "medium_banner_1_mobile3_6085251552",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 750,
+                "height": 625,
+                "size": 642.91,
+                "sizeInBytes": 642909,
+                "url": "/uploads/medium_banner_1_mobile3_6085251552.png"
               }
             },
-            "hash": "banner_1_mobile2_df69a8771f",
+            "hash": "banner_1_mobile3_6085251552",
             "ext": ".png",
             "mime": "image/png",
-            "size": 327.34,
-            "url": "/uploads/banner_1_mobile2_df69a8771f.png",
+            "size": 358.54,
+            "url": "/uploads/banner_1_mobile3_6085251552.png",
             "previewUrl": null,
             "provider": "local",
             "provider_metadata": null,
-            "createdAt": "2026-05-23T17:14:24.400Z",
-            "updatedAt": "2026-05-23T17:14:24.400Z",
-            "publishedAt": "2026-05-23T17:14:24.400Z"
+            "createdAt": "2026-05-26T12:31:41.584Z",
+            "updatedAt": "2026-05-26T12:31:41.584Z",
+            "publishedAt": "2026-05-26T12:31:41.585Z"
           }
         }
       ],
