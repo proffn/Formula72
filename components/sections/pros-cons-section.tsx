@@ -131,7 +131,7 @@ function ComparisonCard({ column, tone, advantagesRef }: ComparisonCardProps) {
 
   return (
     <article
-      className={`rounded-[26px] border border-[rgba(99,80,74,0.1)] ${cardTone} p-4 shadow-[0_18px_50px_rgba(99,80,74,0.08)] backdrop-blur-[2px] sm:p-5 lg:flex lg:h-full lg:flex-col lg:p-[22px] xl:p-6`}
+      className={`flex h-full flex-col rounded-[26px] border border-[rgba(99,80,74,0.1)] ${cardTone} p-4 shadow-[0_18px_50px_rgba(99,80,74,0.08)] backdrop-blur-[2px] sm:p-5 lg:p-[22px] xl:p-6`}
     >
       <h3 className="text-[clamp(1.28rem,1.66vw,1.88rem)] font-extrabold uppercase tracking-[-0.03em]">
         {column.title}

@@ -102,7 +102,7 @@ export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) 
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={getRevealTransition(0.28)}
-              className="mt-3 text-[clamp(2.666rem,.266vw,.234rem)] font-extralight uppercase leading-none tracking-[0.224em] sm:mt-4 sm:tracking-[0.272em]"
+              className="mt-3 text-[clamp(1.35rem,3vw,2.7rem)] font-extralight uppercase leading-none tracking-[0.224em] sm:mt-4 sm:tracking-[0.272em]"
             >
               {hero.brand}
             </motion.p>

@@ -153,7 +153,7 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
             <Link
               href="/"
               onClick={handleHomeClick}
-              className="group relative block h-[53px] w-[121px] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.02] focus-visible:outline-none lg:h-[64px] lg:w-[149px]"
+              className="group relative block h-[53px] w-[121px] transition duration-300 ease-out lg:translate-x-[45%] hover:-translate-y-[1px] hover:scale-[1.02] focus-visible:outline-none lg:h-[64px] lg:w-[149px]"
             >
               <Image
                 src={desktopLogoSrc}
@@ -182,7 +182,7 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
 
             <Link
               href="#wholesale-contract"
-              className="group hidden text-right text-[#63504A] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.02] hover:text-[#4f3f3a] focus-visible:text-[#4f3f3a] focus-visible:outline-none lg:block"
+              className="group hidden text-right text-[#63504A] transition duration-300 ease-out lg:-translate-x-[45%] hover:-translate-y-[1px] hover:scale-[1.02] hover:text-[#4f3f3a] focus-visible:text-[#4f3f3a] focus-visible:outline-none lg:block"
             >
               <span className="block text-[11px] font-semibold tracking-[-0.01em] transition duration-300 ease-out group-hover:text-[#3f312d] xl:text-[13px]">
                 {content.phone}

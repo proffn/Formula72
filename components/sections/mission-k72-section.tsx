@@ -22,7 +22,7 @@ export function MissionK72Section({ section }: MissionK72SectionProps) {
           </div>
 
           <div className="lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:pt-4">
-            <div className="relative aspect-[0.6047] h-full min-h-[340px] overflow-hidden bg-[#EDE0D5] lg:h-[688px] lg:min-h-0 lg:w-[416px]">
+            <div className="relative aspect-[0.74] min-h-[310px] overflow-hidden bg-[#EDE0D5] sm:aspect-[0.6047] sm:min-h-[340px] lg:h-[688px] lg:min-h-0 lg:w-[416px]">
               <img
                 src={section.leftMainImage}
                 alt={section.title}
