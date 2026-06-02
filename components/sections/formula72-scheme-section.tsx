@@ -77,7 +77,7 @@ export function Formula72SchemeSection({ section }: Formula72SchemeSectionProps)
         </div>
       </div>
 
-      <div className="relative hidden aspect-[1920/1080] w-full overflow-hidden md:block">
+      <div className="relative hidden h-[100svh] w-full overflow-hidden md:block">
         <div className="absolute inset-x-0 top-0 z-10 flex justify-center px-6 pt-8 sm:pt-10 lg:pt-12">
           <h2 className="text-center text-[clamp(3.7rem,6.7vw,7.3rem)] font-extrabold uppercase leading-none tracking-[-0.05em] text-[#63504A]">
             {section.title}
@@ -90,7 +90,7 @@ export function Formula72SchemeSection({ section }: Formula72SchemeSectionProps)
           sizes="100vw"
           loading="eager"
           unoptimized
-          className="object-contain object-center"
+          className="object-cover object-center"
         />
       </div>
     </section>

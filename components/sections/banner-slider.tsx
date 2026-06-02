@@ -152,9 +152,7 @@ function BannerSlide({ banner }: { banner: BannerSlideData }) {
   const mobileImage = banner.mobileImage || banner.image;
 
   return (
-    <div
-      className="relative h-[90vw] w-full flex-none sm:h-auto sm:aspect-[1366/768]"
-    >
+    <div className="relative h-[90vw] w-full flex-none sm:h-[100svh]">
       <div className="absolute inset-0 overflow-hidden sm:hidden">
         <Image
           src={mobileImage}

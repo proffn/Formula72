@@ -26,7 +26,7 @@ export function WholesaleContractSection({ section }: WholesaleContractSectionPr
         />
       </div>
 
-      <div className="relative hidden aspect-[1920/1080] w-full overflow-hidden md:block">
+      <div className="relative hidden h-[100svh] w-full overflow-hidden md:block">
         <Image
           src={section.backgroundImage}
           alt="РћРїС‚РѕРІР°СЏ С‚РѕСЂРіРѕРІР»СЏ Рё РєРѕРЅС‚СЂР°РєС‚РЅРѕРµ РїСЂРѕРёР·РІРѕРґСЃС‚РІРѕ"
@@ -34,7 +34,7 @@ export function WholesaleContractSection({ section }: WholesaleContractSectionPr
           sizes="100vw"
           loading="eager"
           unoptimized
-          className="object-contain object-center"
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,245,235,0.12)_0%,rgba(255,245,235,0.04)_42%,rgba(255,245,235,0.12)_100%)]" />
 
@@ -96,7 +96,7 @@ function SplitSide({ side, align }: SplitSideProps) {
 
   return (
     <div
-      className={`flex h-full flex-col justify-start ${
+      className={`flex h-full -translate-y-[5%] flex-col justify-start ${
         isRight ? "md:items-end md:text-right" : "md:items-start md:text-left"
       }`}
     >
