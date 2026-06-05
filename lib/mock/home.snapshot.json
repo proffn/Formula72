@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-06-02T11:35:20.224Z",
+  "generatedAt": "2026-06-05T07:36:55.298Z",
   "sourceUrl": "http://localhost:1337",
   "media": {
     "cloudinaryUrlCount": 106,
@@ -403,23 +403,23 @@
       },
       {
         "path": "formula72Scheme.data.image.formats.thumbnail.url",
-        "url": "/uploads/thumbnail_formula72_scheme3_078232e94c.png"
+        "url": "/uploads/thumbnail_formula72_scheme4_8089eeb8dc.png"
       },
       {
         "path": "formula72Scheme.data.image.formats.small.url",
-        "url": "/uploads/small_formula72_scheme3_078232e94c.png"
+        "url": "/uploads/small_formula72_scheme4_8089eeb8dc.png"
       },
       {
         "path": "formula72Scheme.data.image.formats.medium.url",
-        "url": "/uploads/medium_formula72_scheme3_078232e94c.png"
+        "url": "/uploads/medium_formula72_scheme4_8089eeb8dc.png"
       },
       {
         "path": "formula72Scheme.data.image.formats.large.url",
-        "url": "/uploads/large_formula72_scheme3_078232e94c.png"
+        "url": "/uploads/large_formula72_scheme4_8089eeb8dc.png"
       },
       {
         "path": "formula72Scheme.data.image.url",
-        "url": "/uploads/formula72_scheme3_078232e94c.png"
+        "url": "/uploads/formula72_scheme4_8089eeb8dc.png"
       },
       {
         "path": "formula72Scheme.data.items.0.mobileImage.formats.thumbnail.url",
@@ -3073,16 +3073,16 @@
     },
     "formula72Scheme": {
       "data": {
-        "id": 16,
+        "id": 17,
         "documentId": "t52gspivlo1ss7bamrszgjbd",
         "title": "ФОРМУЛА72",
         "createdAt": "2026-03-26T11:23:19.247Z",
-        "updatedAt": "2026-05-25T13:17:44.673Z",
-        "publishedAt": "2026-05-25T13:17:44.719Z",
+        "updatedAt": "2026-06-05T07:30:27.562Z",
+        "publishedAt": "2026-06-05T07:30:27.608Z",
         "image": {
-          "id": 71,
-          "documentId": "deqpx2i3ztatw1p97xwpr2u5",
-          "name": "formula72-scheme3.png",
+          "id": 126,
+          "documentId": "oz2twxiz60cekfgebuhiwv5a",
+          "name": "formula72-scheme4.png",
           "alternativeText": null,
           "caption": null,
           "focalPoint": null,
@@ -3090,69 +3090,69 @@
           "height": 1429,
           "formats": {
             "thumbnail": {
-              "name": "thumbnail_formula72-scheme3.png",
-              "hash": "thumbnail_formula72_scheme3_078232e94c",
+              "name": "thumbnail_formula72-scheme4.png",
+              "hash": "thumbnail_formula72_scheme4_8089eeb8dc",
               "ext": ".png",
               "mime": "image/png",
               "path": null,
               "width": 245,
               "height": 137,
-              "size": 56.26,
-              "sizeInBytes": 56257,
-              "url": "/uploads/thumbnail_formula72_scheme3_078232e94c.png"
+              "size": 55.04,
+              "sizeInBytes": 55040,
+              "url": "/uploads/thumbnail_formula72_scheme4_8089eeb8dc.png"
             },
             "small": {
-              "name": "small_formula72-scheme3.png",
-              "hash": "small_formula72_scheme3_078232e94c",
+              "name": "small_formula72-scheme4.png",
+              "hash": "small_formula72_scheme4_8089eeb8dc",
               "ext": ".png",
               "mime": "image/png",
               "path": null,
               "width": 500,
               "height": 279,
-              "size": 209.49,
-              "sizeInBytes": 209489,
-              "url": "/uploads/small_formula72_scheme3_078232e94c.png"
+              "size": 199.73,
+              "sizeInBytes": 199731,
+              "url": "/uploads/small_formula72_scheme4_8089eeb8dc.png"
             },
             "medium": {
-              "name": "medium_formula72-scheme3.png",
-              "hash": "medium_formula72_scheme3_078232e94c",
+              "name": "medium_formula72-scheme4.png",
+              "hash": "medium_formula72_scheme4_8089eeb8dc",
               "ext": ".png",
               "mime": "image/png",
               "path": null,
               "width": 750,
               "height": 419,
-              "size": 457.18,
-              "sizeInBytes": 457175,
-              "url": "/uploads/medium_formula72_scheme3_078232e94c.png"
+              "size": 429.59,
+              "sizeInBytes": 429586,
+              "url": "/uploads/medium_formula72_scheme4_8089eeb8dc.png"
             },
             "large": {
-              "name": "large_formula72-scheme3.png",
-              "hash": "large_formula72_scheme3_078232e94c",
+              "name": "large_formula72-scheme4.png",
+              "hash": "large_formula72_scheme4_8089eeb8dc",
               "ext": ".png",
               "mime": "image/png",
               "path": null,
               "width": 1000,
               "height": 558,
-              "size": 817.79,
-              "sizeInBytes": 817794,
-              "url": "/uploads/large_formula72_scheme3_078232e94c.png"
+              "size": 764.67,
+              "sizeInBytes": 764666,
+              "url": "/uploads/large_formula72_scheme4_8089eeb8dc.png"
             }
           },
-          "hash": "formula72_scheme3_078232e94c",
+          "hash": "formula72_scheme4_8089eeb8dc",
           "ext": ".png",
           "mime": "image/png",
-          "size": 1260.45,
-          "url": "/uploads/formula72_scheme3_078232e94c.png",
+          "size": 1134.93,
+          "url": "/uploads/formula72_scheme4_8089eeb8dc.png",
           "previewUrl": null,
           "provider": "local",
           "provider_metadata": null,
-          "createdAt": "2026-05-21T10:23:57.834Z",
-          "updatedAt": "2026-05-21T10:23:57.834Z",
-          "publishedAt": "2026-05-21T10:23:57.835Z"
+          "createdAt": "2026-06-05T07:30:24.283Z",
+          "updatedAt": "2026-06-05T07:30:24.283Z",
+          "publishedAt": "2026-06-05T07:30:24.284Z"
         },
         "items": [
           {
-            "id": 31,
+            "id": 34,
             "title": "АНГРО",
             "description": "Готовая косметическая масса в удобной таре для самостоятельного розлива и упаковки.",
             "mobileImage": {
@@ -3228,7 +3228,7 @@
             }
           },
           {
-            "id": 32,
+            "id": 35,
             "title": "ОПТ",
             "description": "Предлагаем готовую косметику известных брендов на оптимальных условиях.",
             "mobileImage": {
@@ -3304,7 +3304,7 @@
             }
           },
           {
-            "id": 33,
+            "id": 36,
             "title": "ПОД КЛЮЧ",
             "description": "Возьмем на себя ключевые этапы производства. Качественная косметика под вашим брендом.",
             "mobileImage": {

@@ -150,9 +150,8 @@ function BannerSlide({ banner }: { banner: BannerSlideData }) {
       : "bg-[linear-gradient(90deg,rgba(255,247,238,0.12)_0%,rgba(255,247,238,0.04)_100%)]";
   const textColorClass = banner.textColor === "light" ? "text-[#F7F2EE]" : "text-[#63504A]";
   const mobileImage = banner.mobileImage || banner.image;
-
   return (
-    <div className="relative h-[90vw] w-full flex-none sm:h-[88svh]">
+    <div className="relative h-[90vw] w-full flex-none sm:h-[75svh]">
       <div className="absolute inset-0 overflow-hidden sm:hidden">
         <Image
           src={mobileImage}
@@ -192,22 +191,22 @@ function BannerSlide({ banner }: { banner: BannerSlideData }) {
           style={!isSecondBanner ? { maxWidth: banner.textMaxWidth || undefined } : undefined}
         >
           <h3
-              className={`whitespace-pre-line sm:whitespace-pre font-bold uppercase leading-[0.92] tracking-[-0.055em] sm:tracking-[-0.04em] ${
-                isFirstBanner
-                  ? "text-[1.63rem] sm:text-[clamp(2.54rem,4.97vw,5.88rem)]"
-                  : "text-[1.62rem] sm:text-[clamp(2.54rem,4.97vw,5.88rem)]"
-              }`}
+            className={`whitespace-pre-line sm:whitespace-pre font-bold uppercase leading-[0.92] tracking-[-0.055em] sm:tracking-[-0.04em] ${
+              isFirstBanner
+                ? "text-[1.63rem] sm:text-[clamp(2.54rem,4.97vw,5.88rem)]"
+                : "text-[1.62rem] sm:text-[clamp(2.54rem,4.97vw,5.88rem)]"
+            }`}
           >
             {titleText}
           </h3>
 
           {banner.subtitle ? (
             <p
-                className={`whitespace-pre-line sm:whitespace-pre font-medium uppercase leading-[1.1] tracking-[-0.02em] sm:mt-5 ${
-                  isFirstBanner
-                    ? "mt-2.5 text-[0.731rem] sm:text-[clamp(1.111rem,2.213vw,2.83rem)]"
-                    : "mt-3 text-[0.75rem] sm:mt-12 sm:text-[clamp(1.2rem,2.4vw,3.06rem)]"
-                }`}
+              className={`whitespace-pre-line sm:whitespace-pre font-medium uppercase leading-[1.1] tracking-[-0.02em] sm:mt-5 ${
+                isFirstBanner
+                  ? "mt-2.5 text-[0.731rem] sm:text-[clamp(1.111rem,2.213vw,2.83rem)]"
+                  : "mt-3 text-[0.75rem] sm:mt-12 sm:text-[clamp(1.2rem,2.4vw,3.06rem)]"
+              }`}
             >
               {banner.subtitle}
             </p>
