@@ -65,6 +65,10 @@ export function ProsConsSection({ section }: ProsConsSectionProps) {
 
     syncAdvantagesHeight();
 
+    if (typeof ResizeObserver === "undefined") {
+      return;
+    }
+
     const resizeObserver = new ResizeObserver(() => {
       syncAdvantagesHeight();
     });

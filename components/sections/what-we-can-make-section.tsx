@@ -74,7 +74,7 @@ function WhatWeCanMakeCard({ item }: WhatWeCanMakeCardProps) {
             loop
             playsInline
             autoPlay
-            preload="metadata"
+            preload="none"
           >
             <source src={item.hoverVideo} />
           </video>

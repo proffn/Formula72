@@ -36,7 +36,6 @@ export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) 
         <div className="absolute inset-0 flex items-center justify-center px-6 pb-[15svh] pt-[calc(max(5.75rem,calc(env(safe-area-inset-top)+4.75rem))+10%)]">
           <div className="flex max-w-[20rem] flex-col items-center text-center text-[#63504A]">
             <motion.div
-              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={getRevealTransition(0.12)}
               className="space-y-0.5"
@@ -53,7 +52,6 @@ export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) 
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={getRevealTransition(0.26)}
               className="mt-3 text-[1.455rem] font-extralight uppercase leading-none tracking-[0.16em] text-[#7B665F]"
@@ -82,7 +80,6 @@ export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) 
         <div className="absolute inset-0 flex items-center justify-center px-6 pb-10 pt-20 sm:px-8 sm:pt-24 lg:pb-16 lg:pt-20">
           <div className="flex max-w-5xl flex-col items-center text-center text-[#63504A]">
             <motion.div
-              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={getRevealTransition(0.12)}
               className="space-y-1"
@@ -99,7 +96,6 @@ export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) 
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={getRevealTransition(0.28)}
               className="mt-3 text-[clamp(1.35rem,3vw,2.7rem)] font-extralight uppercase leading-none tracking-[0.224em] sm:mt-4 sm:tracking-[0.272em]"

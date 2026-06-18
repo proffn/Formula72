@@ -54,6 +54,11 @@ export function FloatingActionButtons({ section }: FloatingActionButtonsProps) {
       return;
     }
 
+    if (typeof IntersectionObserver === "undefined") {
+      setHideManagerButton(false);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         setHideManagerButton(entry.isIntersecting);
