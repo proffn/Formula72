@@ -258,15 +258,7 @@ function resolveAboutMediaUrl(
   const url = media?.url ?? media?.data?.url ?? media?.data?.attributes?.url;
 
   if (url?.startsWith("/uploads/")) {
-    if (preferLocalUploads) {
-      return url;
-    }
-
-    const baseUrl = getStrapiBaseUrl();
-
-    if (baseUrl) {
-      return new URL(url, `${baseUrl}/`).toString();
-    }
+    return url;
   }
 
   return getStrapiMediaUrl(url);

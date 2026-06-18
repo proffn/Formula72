@@ -6,9 +6,9 @@ type StrapiFetchOptions = {
 };
 
 export function getStrapiBaseUrl() {
-  const baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL || process.env.STRAPI_URL;
+  const baseUrl = process.env.STRAPI_URL || process.env.NEXT_PUBLIC_STRAPI_URL;
 
-  return baseUrl?.replace(/\/$/, "") ?? null;
+  return baseUrl?.replace(/\/$/, "") ?? "http://127.0.0.1:1337";
 }
 
 export function getStrapiMediaUrl(url?: string | null) {
@@ -20,7 +20,7 @@ export function getStrapiMediaUrl(url?: string | null) {
     return url;
   }
 
-  if (url.startsWith("/cms-uploads/")) {
+  if (url.startsWith("/uploads/") || url.startsWith("/cms-uploads/")) {
     return url;
   }
 
