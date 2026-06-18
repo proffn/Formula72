@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 import { SiteHeader } from "@/components/layout/site-header";
@@ -12,19 +9,13 @@ type HeroSectionProps = {
   hero: HeroContent;
 };
 
-const getRevealTransition = (delay: number) => ({
-  duration: 0.8,
-  delay,
-  ease: [0.22, 1, 0.36, 1] as const,
-});
-
 export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) {
   const backgroundImage = hero.backgroundImage ?? "/images/home/hero/hero-bg.jpg";
   const mobileBackgroundImage = hero.mobileBackgroundImage ?? "/images/home/hero/mobile-hero-bg.png";
 
   return (
     <section id="hero" className="relative w-full overflow-hidden">
-      <div className="relative min-h-[100svh] sm:hidden">
+      <div className="relative min-h-screen min-h-[100svh] sm:hidden">
         <div
           className="absolute inset-0 bg-cover bg-[center_top] bg-no-repeat"
           style={{ backgroundImage: `url('${mobileBackgroundImage}')` }}
@@ -35,11 +26,7 @@ export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) 
 
         <div className="absolute inset-0 flex items-center justify-center px-6 pb-[15svh] pt-[calc(max(5.75rem,calc(env(safe-area-inset-top)+4.75rem))+10%)]">
           <div className="flex max-w-[20rem] flex-col items-center text-center text-[#63504A]">
-            <motion.div
-              animate={{ opacity: 1, y: 0 }}
-              transition={getRevealTransition(0.12)}
-              className="space-y-0.5"
-            >
+            <div className="space-y-0.5">
               <p className="text-[2.78rem] font-bold uppercase leading-[0.9] tracking-[-0.055em]">
                 {hero.lines[0]}
               </p>
@@ -49,15 +36,11 @@ export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) 
               <p className="text-[2.78rem] font-bold uppercase leading-[0.9] tracking-[-0.055em]">
                 {hero.lines[2]}
               </p>
-            </motion.div>
+            </div>
 
-            <motion.p
-              animate={{ opacity: 1, y: 0 }}
-              transition={getRevealTransition(0.26)}
-              className="mt-3 text-[1.455rem] font-extralight uppercase leading-none tracking-[0.16em] text-[#7B665F]"
-            >
+            <p className="mt-3 text-[1.455rem] font-extralight uppercase leading-none tracking-[0.16em] text-[#7B665F]">
               {hero.brand}
-            </motion.p>
+            </p>
           </div>
         </div>
       </div>
@@ -79,11 +62,7 @@ export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) 
 
         <div className="absolute inset-0 flex items-center justify-center px-6 pb-10 pt-20 sm:px-8 sm:pt-24 lg:pb-16 lg:pt-20">
           <div className="flex max-w-5xl flex-col items-center text-center text-[#63504A]">
-            <motion.div
-              animate={{ opacity: 1, y: 0 }}
-              transition={getRevealTransition(0.12)}
-              className="space-y-1"
-            >
+            <div className="space-y-1">
               <p className="text-[clamp(1.8rem,4.8vw,4.8rem)] font-bold uppercase leading-[0.94] tracking-[0.064em] sm:tracking-[0.08em]">
                 {hero.lines[0]}
               </p>
@@ -93,15 +72,11 @@ export function HeroSection({ siteHeader, navigation, hero }: HeroSectionProps) 
               <p className="text-[clamp(1.8rem,4.8vw,4.8rem)] font-bold uppercase leading-[0.94] tracking-[0.064em] sm:tracking-[0.08em]">
                 {hero.lines[2]}
               </p>
-            </motion.div>
+            </div>
 
-            <motion.p
-              animate={{ opacity: 1, y: 0 }}
-              transition={getRevealTransition(0.28)}
-              className="mt-3 text-[clamp(1.35rem,3vw,2.7rem)] font-extralight uppercase leading-none tracking-[0.224em] sm:mt-4 sm:tracking-[0.272em]"
-            >
+            <p className="mt-3 text-[clamp(1.35rem,3vw,2.7rem)] font-extralight uppercase leading-none tracking-[0.224em] sm:mt-4 sm:tracking-[0.272em]">
               {hero.brand}
-            </motion.p>
+            </p>
           </div>
         </div>
       </div>
