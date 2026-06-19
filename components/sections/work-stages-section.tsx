@@ -9,7 +9,7 @@ export function WorkStagesSection({ section }: WorkStagesSectionProps) {
   return (
     <section
       id="work-stages"
-      className="relative z-[1] bg-[#63504A] px-2.5 py-11 text-[#F7F2EE] sm:px-8 sm:py-13 lg:min-h-[100svh] lg:px-10 lg:py-13"
+      className="relative z-[1] bg-[#63504A] px-2.5 py-11 text-[#F7F2EE] sm:px-8 sm:py-13 lg:min-h-screen lg:min-h-[100svh] lg:px-10 lg:py-13"
     >
       <div className="mx-auto flex max-w-[1100px] flex-col lg:min-h-[calc(100svh-6.5rem)] lg:justify-center">
         <div className="max-w-[820px]">

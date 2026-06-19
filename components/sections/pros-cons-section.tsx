@@ -90,7 +90,7 @@ export function ProsConsSection({ section }: ProsConsSectionProps) {
   return (
     <section
       id="pros-cons"
-      className="relative bg-[#F7F2EE] px-5 py-8 text-[#63504A] sm:px-8 sm:py-9 lg:min-h-[100svh] lg:px-10 lg:py-7 xl:py-8"
+      className="relative bg-[#F7F2EE] px-5 py-8 text-[#63504A] sm:px-8 sm:py-9 lg:min-h-screen lg:min-h-[100svh] lg:px-10 lg:py-7 xl:py-8"
     >
       <div className="mx-auto flex max-w-[1100px] flex-col lg:min-h-[calc(100svh-3.5rem)] lg:justify-center">
         <div className="max-w-[980px] pb-4 sm:pb-0">

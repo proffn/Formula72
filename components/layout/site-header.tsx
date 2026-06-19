@@ -244,7 +244,7 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
       />
 
       <aside
-        className={`fixed inset-y-0 right-0 z-[56] flex h-[100dvh] max-h-[100dvh] w-[min(360px,92vw)] flex-col overflow-y-auto overscroll-contain bg-[#63504A] text-[#F7F2EE] shadow-[-20px_0_44px_rgba(41,28,24,0.22)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`fixed inset-y-0 right-0 z-[56] flex h-screen h-[100dvh] max-h-screen max-h-[100dvh] w-[min(360px,92vw)] flex-col overflow-y-auto overscroll-contain bg-[#63504A] text-[#F7F2EE] shadow-[-20px_0_44px_rgba(41,28,24,0.22)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
         }`}
         style={{

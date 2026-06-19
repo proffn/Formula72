@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import type { ReactNode } from "react";
+import { ClientErrorLogger } from "@/components/diagnostics/client-error-logger";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -24,7 +25,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="ru">
-      <body className={manrope.variable}>{children}</body>
+      <body className={manrope.variable}>
+        <ClientErrorLogger />
+        {children}
+      </body>
     </html>
   );
 }

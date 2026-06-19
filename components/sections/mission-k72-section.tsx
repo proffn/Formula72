@@ -8,7 +8,7 @@ export function MissionK72Section({ section }: MissionK72SectionProps) {
   return (
     <section
       id="mission-k72"
-      className="relative flex w-full bg-[#F7F2EE] px-4 py-5 text-[#4B2E22] sm:px-6 sm:py-6 lg:min-h-[100svh] lg:px-8 lg:py-5 xl:px-10"
+      className="relative flex w-full bg-[#F7F2EE] px-4 py-5 text-[#4B2E22] sm:px-6 sm:py-6 lg:min-h-screen lg:min-h-[100svh] lg:px-8 lg:py-5 xl:px-10"
     >
       <div className="mx-auto flex w-full max-w-[1520px] lg:min-h-[calc(100svh-2.5rem)] lg:items-center">
         <div className="grid w-full gap-3.5 lg:grid-cols-[416px_minmax(0,960px)] lg:grid-rows-[auto_auto] lg:gap-x-0 lg:gap-y-2.5">
