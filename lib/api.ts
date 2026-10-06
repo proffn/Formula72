@@ -3,6 +3,7 @@ type QueryValue = string | number | boolean | null | undefined;
 type StrapiFetchOptions = {
   params?: Record<string, QueryValue>;
   init?: RequestInit;
+  timeoutMs?: number;
 };
 
 export function getStrapiBaseUrl() {
@@ -66,19 +67,36 @@ export async function strapiFetch<T>(path: string, options: StrapiFetchOptions =
 
   const url = `${baseUrl}${path}${buildQueryString(options.params)}`;
 
-  const response = await fetch(url, {
-    ...options.init,
-    cache: "no-store",
-    headers: {
-      "Content-Type": "application/json",
-      ...(apiToken ? { Authorization: `Bearer ${apiToken}` } : {}),
-      ...(options.init?.headers ?? {}),
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error(`Strapi request failed: ${response.status} ${response.statusText}`);
+  // Keep the deadline active while reading the body as well as waiting for headers.
+  const controller = new AbortController();
+  const callerSignal = options.init?.signal;
+  const abortFromCaller = () => controller.abort(callerSignal?.reason);
+  if (callerSignal?.aborted) {
+    abortFromCaller();
+  } else {
+    callerSignal?.addEventListener("abort", abortFromCaller, { once: true });
   }
+  const timeout = setTimeout(() => controller.abort(new Error("Strapi request timed out")), options.timeoutMs ?? 8000);
 
-  return (await response.json()) as T;
+  try {
+    const response = await fetch(url, {
+      ...options.init,
+      signal: controller.signal,
+      cache: "no-store",
+      headers: {
+        "Content-Type": "application/json",
+        ...(apiToken ? { Authorization: `Bearer ${apiToken}` } : {}),
+        ...(options.init?.headers ?? {}),
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Strapi request failed: ${response.status} ${response.statusText}`);
+    }
+
+    return (await response.json()) as T;
+  } finally {
+    clearTimeout(timeout);
+    callerSignal?.removeEventListener("abort", abortFromCaller);
+  }
 }

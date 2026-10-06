@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import type { CoverageMapReviewData, CoverageMapSectionData } from "@/types/home";
@@ -42,7 +42,7 @@ export function CoverageMapSection({ section }: CoverageMapSectionProps) {
               alt="Карта охвата Formula72"
               fill
               sizes="(max-width: 1280px) 76vw, 986px"
-              loading="eager"
+              loading="lazy"
               unoptimized
               className="object-contain"
             />
@@ -144,7 +144,7 @@ function ReviewCard({ review, compact = false }: ReviewCardProps) {
             alt={review.name}
             fill
             sizes="44px"
-            loading="eager"
+            loading="lazy"
             unoptimized
             className="object-cover"
           />
@@ -177,7 +177,7 @@ function ReviewCard({ review, compact = false }: ReviewCardProps) {
               alt={`Фото бренда ${review.name}`}
               fill
               sizes={compact ? "210px" : "268px"}
-              loading="eager"
+              loading="lazy"
               unoptimized
               className="object-cover"
             />

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import type { ReactNode } from "react";
+import { Suspense } from "react";
+import { YandexMetrika } from "@/components/analytics/yandex-metrika";
 import { ClientErrorLogger } from "@/components/diagnostics/client-error-logger";
 import "./globals.css";
 
@@ -8,6 +10,11 @@ const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
   variable: "--font-sans",
 });
+
+const configuredCounterId = process.env.NEXT_PUBLIC_YANDEX_METRIKA_ID;
+const metrikaId = configuredCounterId && /^\d+$/.test(configuredCounterId)
+  ? Number(configuredCounterId)
+  : 0;
 
 export const metadata: Metadata = {
   title: "Формула72",
@@ -28,6 +35,23 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       <body className={manrope.variable}>
         <ClientErrorLogger />
         {children}
+        {Number.isSafeInteger(metrikaId) && metrikaId > 0 ? (
+          <>
+            <Suspense fallback={null}>
+              <YandexMetrika counterId={metrikaId} />
+            </Suspense>
+            <noscript>
+              <div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`https://mc.yandex.ru/watch/${metrikaId}`}
+                  style={{ position: "absolute", left: "-9999px" }}
+                  alt=""
+                />
+              </div>
+            </noscript>
+          </>
+        ) : null}
       </body>
     </html>
   );

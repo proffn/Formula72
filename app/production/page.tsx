@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import {
-  getHomePageData,
+  getSiteLayoutData,
   getProductionVideoPage,
   mapProductionVideoPage,
 } from "@/lib/queries";
@@ -18,7 +18,7 @@ export const dynamic = "force-dynamic";
 
 export default async function ProductionPage() {
   const [homeData, productionSection] = await Promise.all([
-    getHomePageData(),
+    getSiteLayoutData(),
     getProductionVideoPage().catch(() => null),
   ]);
   const videoPage = mapProductionVideoPage(productionSection);
@@ -75,7 +75,7 @@ export default async function ProductionPage() {
                   poster={videoPage.posterImage}
                   controls
                   playsInline
-                  preload="metadata"
+                  preload="none"
                   className="aspect-video w-full bg-[#352A26] object-contain"
                 >
                   Ваш браузер не поддерживает воспроизведение видео.

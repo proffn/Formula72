@@ -28,8 +28,7 @@ export function MissionK72Section({ section }: MissionK72SectionProps) {
                 alt={section.title}
                 width={520}
                 height={860}
-                loading="eager"
-                fetchPriority="high"
+                loading="lazy"
                 decoding="async"
                 className="absolute inset-0 h-full w-full"
                 style={{ objectFit: "cover" }}
@@ -65,7 +64,7 @@ export function MissionK72Section({ section }: MissionK72SectionProps) {
                       alt={item.title}
                       width={400}
                       height={580}
-                      loading="eager"
+                      loading="lazy"
                       decoding="async"
                       className="absolute inset-0 h-full w-full"
                       style={{ objectFit: "cover" }}

@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import type { WhatWeCanMakeItemData, WhatWeCanMakeSectionData } from "@/types/home";
 
@@ -50,7 +50,7 @@ function WhatWeCanMakeCard({ item }: WhatWeCanMakeCardProps) {
           alt={item.title}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          loading="eager"
+          loading="lazy"
           unoptimized
           className={`object-cover object-center transition duration-500 ${hasHoverImage || hasHoverVideo ? 'group-hover:scale-[1.02]' : ''} ${hasHoverImage ? 'group-hover:opacity-0' : 'opacity-100'}`}
         />
@@ -61,7 +61,7 @@ function WhatWeCanMakeCard({ item }: WhatWeCanMakeCardProps) {
             alt={`${item.title} hover`}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            loading="eager"
+            loading="lazy"
             unoptimized
             className="object-cover object-center opacity-0 transition duration-500 group-hover:opacity-100"
           />

@@ -50,7 +50,7 @@ export function Formula72SchemeSection({ section }: Formula72SchemeSectionProps)
                   alt={item.title}
                   fill
                   sizes="100vw"
-                  loading="eager"
+                  loading="lazy"
                   unoptimized
                   className={`${layout.imagePosition} object-cover`}
                 />
@@ -88,7 +88,7 @@ export function Formula72SchemeSection({ section }: Formula72SchemeSectionProps)
           alt={section.title || "Formula72 scheme"}
           fill
           sizes="100vw"
-          loading="eager"
+          loading="lazy"
           unoptimized
           className="object-cover object-center"
         />

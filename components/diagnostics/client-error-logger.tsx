@@ -27,10 +27,11 @@ function normalizeError(error: unknown) {
     };
   }
 
-  return {
-    message: "Unknown client error",
-    stack: JSON.stringify(error),
-  };
+  try {
+    return { message: "Unknown client error", stack: JSON.stringify(error) };
+  } catch {
+    return { message: "Unknown client error (not serializable)" };
+  }
 }
 
 function sendClientError(payload: ClientErrorPayload) {
@@ -44,6 +45,8 @@ function sendClientError(payload: ClientErrorPayload) {
         "Content-Type": "application/json",
       },
       keepalive: true,
+    }).catch(() => {
+      // A failed diagnostic request must not trigger another unhandled rejection.
     });
   } catch {
     // Diagnostics must never break page rendering.

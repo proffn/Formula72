@@ -158,7 +158,7 @@ function BannerSlide({ banner }: { banner: BannerSlideData }) {
           alt={banner.title}
           fill
           sizes="100vw"
-          loading="eager"
+          loading="lazy"
           unoptimized
           className="object-cover object-center"
         />
@@ -168,7 +168,7 @@ function BannerSlide({ banner }: { banner: BannerSlideData }) {
         alt={banner.title}
         fill
         sizes="100vw"
-        loading="eager"
+        loading="lazy"
         unoptimized
         className="hidden object-cover object-center sm:block"
       />

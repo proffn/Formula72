@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 import { CertificatesPage } from "@/components/certificates/certificates-page";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { getCertificatesPage, getHomePageData, mapCertificatesPage } from "@/lib/queries";
+import { getCertificatesPage, getSiteLayoutData, mapCertificatesPage } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "Сертификаты | Formula72",
@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
 
 export default async function CertificatesRoutePage() {
   const [homeData, certificatesSection] = await Promise.all([
-    getHomePageData(),
+    getSiteLayoutData(),
     getCertificatesPage(),
   ]);
   const certificatesPage = mapCertificatesPage(certificatesSection);

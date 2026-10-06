@@ -71,6 +71,7 @@ import type {
   StrapiHomePage,
   StrapiLeadCtaSection,
   StrapiMissionK72Section,
+  StrapiMedia,
   StrapiProsConsSection,
   StrapiProductionVideoPage,
   StrapiSiteHeader,
@@ -428,14 +429,32 @@ export type ProductionVideoPageData = {
 };
 
 export function mapProductionVideoPage(section?: StrapiProductionVideoPage | null): ProductionVideoPageData {
+  const videoUrl = resolveMediaUrl(section?.videoFile) ?? "/videos/production.mp4";
   return {
     title: section?.title?.trim() || "Производство Formula72",
     description:
       section?.description?.trim() ||
       "Посмотрите, как устроено контрактное производство Formula72: лаборатория, разработка, фасовка и подготовка продукции к отгрузке.",
-    videoUrl: resolveMediaUrl(section?.videoFile) ?? "/videos/production.mp4",
-    posterImage: resolveMediaUrl(section?.posterImage) ?? undefined,
+    videoUrl,
+    posterImage: resolveMediaUrl(section?.posterImage) ?? getCloudinaryVideoPoster(videoUrl),
   };
+}
+
+function getCloudinaryVideoPoster(videoUrl: string): string | undefined {
+  try {
+    const url = new URL(videoUrl);
+    if (url.hostname !== "res.cloudinary.com" ||
+        !url.pathname.includes("/video/upload/") ||
+        url.pathname.includes("/s--") ||
+        !/\.(mp4|webm|mov|m4v)$/i.test(url.pathname)) return undefined;
+    // Keep the original first-frame preview without fetching MP4 metadata.
+    url.pathname = url.pathname
+      .replace("/video/upload/", "/video/upload/so_0,w_1280,q_90,f_jpg/")
+      .replace(/\.(mp4|webm|mov|m4v)$/i, ".jpg");
+    return url.toString();
+  } catch {
+    return undefined;
+  }
 }
 
 function normalizeTextValue(value: StrapiTextValue, fallback = "") {
@@ -677,6 +696,14 @@ export function mapCertificatesPage(page?: StrapiCertificatesPage | null): Certi
   };
 }
 
+function resolveMobileCardMediaUrl(media?: StrapiMedia | null) {
+  // The card is at most 446 CSS px wide; retain enough detail for high-DPR screens.
+  const format = Object.values(media?.formats ?? {})
+    .filter((item) => item.url && item.width && item.width <= 1600)
+    .sort((a, b) => (b.width ?? 0) - (a.width ?? 0))[0];
+  return resolveMediaUrl(format ?? media);
+}
+
 function mapWholesale(section: StrapiWholesaleContractSection): WholesaleSectionData {
   return {
     backgroundImage:
@@ -688,7 +715,7 @@ function mapWholesale(section: StrapiWholesaleContractSection): WholesaleSection
         href: section.leftButtonLink,
       },
       MobileImage:
-        resolveMediaUrl(section.OptMobileImage) ??
+        resolveMobileCardMediaUrl(section.OptMobileImage) ??
         homePageMock.wholesaleContract.left.MobileImage,
     },
     right: {
@@ -1502,6 +1529,29 @@ export async function getCoverageMapSection() {
   );
 
   return normalizeSingle(response);
+}
+
+export async function getSiteFooterData(): Promise<FooterData> {
+  try {
+    const section = await getFooterSection() ?? getSnapshotSingle<StrapiFooterSection>("footer");
+    return section ? mapFooterSection(section) : homePageMock.footer;
+  } catch {
+    const section = getSnapshotSingle<StrapiFooterSection>("footer");
+    return section ? mapFooterSection(section) : homePageMock.footer;
+  }
+}
+
+export async function getSiteLayoutData(): Promise<Pick<HomePageData, "siteHeader" | "navigation" | "footer">> {
+  const [headerResult, footer] = await Promise.all([
+    getSiteHeader().catch(() => null),
+    getSiteFooterData(),
+  ]);
+  const header = headerResult ?? getSnapshotSingle<StrapiSiteHeader>("siteHeader");
+  const headerData = header ? mapSiteHeader(header) : {
+    siteHeader: homePageMock.siteHeader,
+    navigation: homePageMock.navigation.slice(0, 4),
+  };
+  return { ...headerData, footer };
 }
 
 export async function getHomePageData(): Promise<HomePageData> {

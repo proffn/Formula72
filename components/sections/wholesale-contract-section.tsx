@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import Image from "next/image";
 import type { WholesaleSectionData } from "@/types/home";
 
@@ -12,6 +12,7 @@ export function WholesaleContractSection({ section }: WholesaleContractSectionPr
       <div className="mx-auto flex w-full max-w-[32rem] flex-col gap-8 px-4 py-5 md:hidden">
         <MobileSplitCard
           side={section.left}
+          optimizeImage
           imageSrc={
             section.left.MobileImage || "/images/home/wholesale-contract/opt-mobile.jpg"
           }
@@ -32,7 +33,7 @@ export function WholesaleContractSection({ section }: WholesaleContractSectionPr
           alt="РћРїС‚РѕРІР°СЏ С‚РѕСЂРіРѕРІР»СЏ Рё РєРѕРЅС‚СЂР°РєС‚РЅРѕРµ РїСЂРѕРёР·РІРѕРґСЃС‚РІРѕ"
           fill
           sizes="100vw"
-          loading="eager"
+          loading="lazy"
           unoptimized
           className="object-cover object-center"
         />
@@ -51,9 +52,10 @@ type MobileSplitCardProps = {
   side: WholesaleSectionData["left"];
   imageSrc: string;
   imageAlt: string;
+  optimizeImage?: boolean;
 };
 
-function MobileSplitCard({ side, imageSrc, imageAlt }: MobileSplitCardProps) {
+function MobileSplitCard({ side, imageSrc, imageAlt, optimizeImage = false }: MobileSplitCardProps) {
   return (
     <article className="rounded-[1.5rem] border border-[#d9cec6] bg-[#f8f3ef] p-4 shadow-[0_10px_26px_rgba(107,84,72,0.14)]">
       <div className="px-1 pt-1">
@@ -76,9 +78,9 @@ function MobileSplitCard({ side, imageSrc, imageAlt }: MobileSplitCardProps) {
           src={imageSrc}
           alt={imageAlt}
           fill
-          sizes="(max-width: 767px) 100vw, 0px"
-          loading="eager"
-          unoptimized
+          sizes="(max-width: 511px) calc(100vw - 66px), 446px"
+          loading="lazy"
+          unoptimized={!optimizeImage}
           className="object-cover object-center"
         />
       </div>

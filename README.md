@@ -35,3 +35,32 @@ To check the fallback mode locally, temporarily unset `NEXT_PUBLIC_STRAPI_URL` /
 ```bash
 npm run build
 ```
+## Относительные CMS uploads
+
+Существующие `/uploads/...` обслуживаются из frontend `public/uploads`. Если файла
+там нет, fallback rewrite запрашивает его у CMS, выбранной через `STRAPI_URL` или
+`NEXT_PUBLIC_STRAPI_URL`. Укажите корректный CMS origin до `npm run build`:
+rewrite сохраняется в сборке. При недоступности CMS отсутствующие локальные media
+также будут недоступны. Оригиналы и CMS-контент эта обработка не изменяет.
+
+# Яндекс Метрика
+
+Перед production-сборкой задайте `NEXT_PUBLIC_YANDEX_METRIKA_ID=113464320`
+в окружении или в игнорируемом `.env.local`. Несекретный пример находится в `.env.example`.
+Если ID отсутствует или некорректен, счётчик не подключается. После изменения ID нужна новая сборка.
+
+Счётчик подключён в корневом layout через `next/script` с `afterInteractive`.
+SPA-навигация учитывается через `usePathname` и `useSearchParams`: `defer: true`
+отключает автоматический просмотр при инициализации, затем каждый новый URL
+получает один `hit`. Переходы внутри секций по hash не создают отдельный просмотр.
+
+После deployment проверьте Network: один `tag.js?id=113464320`, запросы `watch/113464320`,
+один просмотр при открытии страницы, ещё один при переходе через Next Link,
+работу кнопки «Назад» и отсутствие hydration ошибок. Проверяйте с отключённым блокировщиком рекламы.
+При CSP, заданной вне приложения, потребуется проверить разрешения доменов Метрики отдельно.
+
+Проверка устойчивости API и сохранения header/footer:
+
+```sh
+node scripts/verify-frontend-reliability.mjs
+```

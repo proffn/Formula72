@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { SiteFooter } from "@/components/layout/site-footer";
-import { getHomePageData } from "@/lib/queries";
+import { getSiteLayoutData } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "Согласие на обработку персональных данных | Formula72",
@@ -129,7 +129,7 @@ const contacts = [
 export const dynamic = "force-dynamic";
 
 export default async function PersonalDataProcessingConsentPage() {
-  const data = await getHomePageData();
+  const data = await getSiteLayoutData();
   const logoImage = data.siteHeader.logoImage || "/images/home/hero/logo3.png";
 
   return (

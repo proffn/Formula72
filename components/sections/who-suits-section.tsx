@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import type { WhoSuitsSectionData } from "@/types/home";
 
@@ -33,7 +33,7 @@ export function WhoSuitsSection({ section }: WhoSuitsSectionProps) {
                     alt={item.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                    loading="eager"
+                    loading="lazy"
                     unoptimized
                     className="object-contain object-center transition duration-300 group-hover:translate-y-[-2px]"
                   />

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { AboutPage } from "@/components/about/about-page";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { getAboutPage, getHomePageData, mapAboutPage } from "@/lib/queries";
+import { getAboutPage, getSiteFooterData, mapAboutPage } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "О нас | Formula72",
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function AboutRoutePage() {
-  const [homeData, aboutSection] = await Promise.all([
-    getHomePageData(),
+  const [footer, aboutSection] = await Promise.all([
+    getSiteFooterData(),
     getAboutPage(),
   ]);
   const aboutPage = mapAboutPage(aboutSection);
@@ -21,7 +21,7 @@ export default async function AboutRoutePage() {
   return (
     <>
       <AboutPage page={aboutPage} />
-      <SiteFooter section={homeData.footer} />
+      <SiteFooter section={footer} />
     </>
   );
 }
