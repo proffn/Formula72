@@ -15,13 +15,13 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showBurger, setShowBurger] = useState(false);
 
-  const mainNavigation = navigation.slice(0, 4);
+  const mainNavigation = navigation;
   const desktopLogoSrc = content.logoImage || "/images/home/hero/logo3.png";
   const mobileLogoSrc = content.burgerMenuLogo || content.logoImage || "/images/home/hero/logo3-w.png";
   const burgerIconSrc = "/images/home/ui-icons/burger-icon.svg";
   const logoAlt = "Formula72";
   const getExternalLinkProps = (href: string) =>
-    href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {};
+    /^https?:\/\//i.test(href) ? { target: "_blank", rel: "noreferrer" } : {};
   const scrollToHashTarget = (hash: string, behavior: ScrollBehavior = "smooth") => {
     if (hash === "#hero") {
       window.scrollTo({ top: 0, behavior });
@@ -97,6 +97,15 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
   }, [isMenuOpen]);
 
   useEffect(() => {
+    if (!isMenuOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMenuOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [isMenuOpen]);
+
+  useEffect(() => {
     const syncScrollWithLocation = () => {
       window.requestAnimationFrame(() => {
         const hash = window.location.hash;
@@ -149,11 +158,11 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
             <div className="h-14 w-14 flex-none" aria-hidden="true" />
           </div>
 
-          <div className="hidden grid-cols-[auto_1fr_auto] items-center gap-3 lg:grid">
+          <div className="hidden grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 lg:grid">
             <Link
               href="/"
               onClick={handleHomeClick}
-              className="group relative block h-[53px] w-[121px] transition duration-300 ease-out lg:translate-x-[45%] hover:-translate-y-[1px] hover:scale-[1.02] focus-visible:outline-none lg:h-[64px] lg:w-[149px]"
+              className="group relative block h-[53px] w-[121px] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.02] focus-visible:outline-none lg:h-[64px] lg:w-[149px] lg:translate-x-[45%]"
             >
               <Image
                 src={desktopLogoSrc}
@@ -165,14 +174,14 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
               />
             </Link>
 
-            <nav className="hidden items-center justify-center gap-5 text-center lg:flex xl:gap-6">
-              {mainNavigation.map((item) => (
+            <nav className="hidden min-w-0 flex-wrap items-center justify-center gap-x-5 gap-y-3 text-center lg:flex xl:gap-x-6 lg:px-[70px]">
+              {mainNavigation.map((item, index) => (
                 <Link
-                  key={item.label}
+                  key={`${index}:${item.href}`}
                   href={item.href}
                   {...getExternalLinkProps(item.href)}
                   onClick={(event) => handleNavigationClick(event, item.href)}
-                  className="group relative text-[15.5px] font-medium tracking-[-0.01em] text-[#63504A] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.03] hover:text-[#4f3f3a] focus-visible:text-[#4f3f3a] focus-visible:outline-none xl:text-[18px]"
+                  className="group relative min-w-0 max-w-full break-words text-[15.5px] font-medium tracking-[-0.01em] text-[#63504A] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.03] hover:text-[#4f3f3a] focus-visible:text-[#4f3f3a] focus-visible:outline-none xl:text-[18px]"
                 >
                   {item.label}
                   <span className="absolute left-0 -bottom-1.5 h-px w-full origin-left scale-x-0 bg-[#63504A]/55 transition duration-300 ease-out group-hover:scale-x-100" />
@@ -181,8 +190,8 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
             </nav>
 
             <Link
-              href="#wholesale-contract"
-              className="group hidden text-right text-[#63504A] transition duration-300 ease-out lg:-translate-x-[45%] hover:-translate-y-[1px] hover:scale-[1.02] hover:text-[#4f3f3a] focus-visible:text-[#4f3f3a] focus-visible:outline-none lg:block"
+              href="/#wholesale-contract"
+              className="group hidden text-right text-[#63504A] transition duration-300 ease-out hover:-translate-y-[1px] hover:scale-[1.02] hover:text-[#4f3f3a] focus-visible:text-[#4f3f3a] focus-visible:outline-none lg:block lg:-translate-x-[45%]"
             >
               <span className="block text-[11px] font-semibold tracking-[-0.01em] transition duration-300 ease-out group-hover:text-[#3f312d] xl:text-[13px]">
                 {content.phone}
@@ -244,7 +253,10 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
       />
 
       <aside
-        className={`fixed inset-y-0 right-0 z-[56] flex h-screen h-[100dvh] max-h-screen max-h-[100dvh] w-[min(360px,92vw)] flex-col overflow-y-auto overscroll-contain bg-[#63504A] text-[#F7F2EE] shadow-[-20px_0_44px_rgba(41,28,24,0.22)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        aria-label="Меню сайта"
+        aria-hidden={!isMenuOpen}
+        inert={!isMenuOpen}
+        className={`fixed inset-y-0 right-0 z-[56] flex h-screen h-[100dvh] max-h-screen max-h-[100dvh] w-[min(360px,92vw)] flex-col overflow-hidden overscroll-contain bg-[#63504A] text-[#F7F2EE] shadow-[-20px_0_44px_rgba(41,28,24,0.22)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
         }`}
         style={{
@@ -252,8 +264,8 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
           paddingBottom: "max(1.5rem, calc(env(safe-area-inset-bottom) + 0.75rem))",
         }}
       >
-        <div className="flex min-h-full w-full flex-col px-5 sm:px-6">
-          <div className="flex items-start justify-between gap-4 pb-6">
+        <div className="flex h-full min-h-0 w-full flex-col px-5 sm:px-6">
+          <div className="flex shrink-0 items-start justify-between gap-4 pb-6">
             <div className="relative h-[42px] w-[118px] flex-none sm:h-[48px] sm:w-[136px]">
               <Image
                 src={mobileLogoSrc}
@@ -277,22 +289,22 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
           <nav className="mt-3 flex min-h-0 flex-1 flex-col overflow-y-auto pr-1">
             {mainNavigation.map((item, index) => (
               <Link
-                key={item.label}
+                key={`${index}:${item.href}`}
                 href={item.href}
                 {...getExternalLinkProps(item.href)}
                 onClick={(event) => handleNavigationClick(event, item.href)}
-                className="group border-b border-[rgba(247,242,238,0.11)] py-4.5 transition duration-300 ease-out hover:border-[rgba(247,242,238,0.18)] focus-visible:outline-none"
+                className="group shrink-0 border-b border-[rgba(247,242,238,0.11)] py-0 transition duration-300 ease-out hover:border-[rgba(247,242,238,0.18)] focus-visible:outline-none"
               >
                 <div className="flex items-baseline justify-between gap-4">
-                  <div className="flex items-baseline gap-3.5">
-                    <span className="text-[11px] font-semibold tracking-[0.16em] text-[#DCCFC9]/54 transition duration-300 ease-out group-hover:text-[#F7F2EE]/72">
+                  <div className="flex min-w-0 flex-1 items-baseline gap-3.5">
+                    <span className="shrink-0 text-[11px] font-semibold tracking-[0.16em] text-[#DCCFC9]/54 transition duration-300 ease-out group-hover:text-[#F7F2EE]/72">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-[29px] font-semibold leading-[0.96] tracking-[-0.05em] text-[#F7F2EE] transition duration-300 ease-out group-hover:translate-x-[3px] group-hover:scale-[1.02] sm:text-[32px]">
+                    <span className="min-w-0 break-words [overflow-wrap:anywhere] text-[29px] font-semibold leading-[0.96] tracking-[-0.05em] text-[#F7F2EE] transition duration-300 ease-out group-hover:translate-x-[3px] group-hover:scale-[1.02] sm:text-[32px]">
                       {item.label}
                     </span>
                   </div>
-                  <span className="pt-1 text-[18px] text-[#DCCFC9]/54 transition duration-300 ease-out group-hover:translate-x-[2px] group-hover:scale-[1.08] group-hover:text-[#F7F2EE]">
+                  <span className="shrink-0 pt-1 text-[18px] text-[#DCCFC9]/54 transition duration-300 ease-out group-hover:translate-x-[2px] group-hover:scale-[1.08] group-hover:text-[#F7F2EE]">
                     →
                   </span>
                 </div>
@@ -306,8 +318,8 @@ export function SiteHeader({ content, navigation }: SiteHeaderProps) {
                 Контакты
               </span>
               <Link
-                href="#wholesale-contract"
-                onClick={() => setIsMenuOpen(false)}
+                href="/#wholesale-contract"
+                onClick={(event) => handleNavigationClick(event, "/#wholesale-contract")}
                 className="mt-3 block text-[20px] font-semibold leading-[1.08] tracking-[-0.03em] text-[#F7F2EE] transition hover:text-white focus-visible:outline-none"
               >
                 {content.phone}

@@ -1,4 +1,5 @@
 ﻿import type { HomePageData } from "@/types/home";
+import { defaultNavigation } from "@/lib/navigation";
 
 export const homePageMock: HomePageData = {
   siteHeader: {
@@ -6,13 +7,7 @@ export const homePageMock: HomePageData = {
     phone: "+7 969 807 88 87",
     workSchedule: "пн.-пт. с 07:00 до 16:00 по мск",
   },
-  navigation: [
-    { label: "О нас", href: "/about" },
-    { label: "Производство", href: "/production" },
-    { label: "Опт", href: "https://b24-k8i1gh.bitrix24site.ru/crm_form_cw6nx/?utm_source=website_contract72" },
-    { label: "Отзывы", href: "/#coverage-map" },
-    { label: "Контакты", href: "#wholesale-contract" },
-  ],
+  navigation: defaultNavigation,
   hero: {
     lines: ["КОНТРАКТНОE", "ПРОИЗВОДСТВО", "КОСМЕТИКИ"],
     brand: "ФОРМУЛА72",

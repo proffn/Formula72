@@ -1,4 +1,5 @@
 ﻿import { getStrapiBaseUrl, getStrapiMediaUrl, strapiFetch } from "@/lib/api";
+import { defaultNavigation, mapNavigationItems } from "@/lib/navigation";
 import { aboutPageMock } from "@/lib/mock/about";
 import { certificatesPageMock } from "@/lib/mock/certificates";
 import { homePageMock } from "@/lib/mock/home";
@@ -93,12 +94,6 @@ import type {
   StrapiWorkStagesSection,
 } from "@/types/strapi";
 
-const navigationHrefs = [
-  "/about",
-  "/production",
-  "https://b24-k8i1gh.bitrix24site.ru/crm_form_cw6nx/?utm_source=website_contract72",
-  "/#coverage-map",
-] as const;
 const snapshotResponses = homePageSnapshot.responses ?? {};
 const snapshotSourceSymbol: unique symbol = Symbol("snapshotSource");
 
@@ -129,24 +124,6 @@ function markSnapshotValue<T>(value: T): T {
 
 function isSnapshotValue(value: unknown): boolean {
   return Boolean(value && typeof value === "object" && (value as SnapshotMarkedValue)[snapshotSourceSymbol]);
-}
-
-function normalizeNavigationHref(value: string | null | undefined, fallback: string) {
-  const href = value?.trim() || fallback;
-
-  if (fallback === "/about" && (href === "#hero" || href === "/#hero")) {
-    return "/about";
-  }
-
-  if (href === "#hero") {
-    return href;
-  }
-
-  if (href.startsWith("#")) {
-    return `/${href}`;
-  }
-
-  return href;
 }
 
 function splitTitle(value: string, fallback: [string, string]): [string, string] {
@@ -401,23 +378,7 @@ function mapSiteHeader(siteHeader: StrapiSiteHeader): {
       phone: siteHeader.phone?.trim() || homePageMock.siteHeader.phone,
       workSchedule: siteHeader.workSchedule?.trim() || homePageMock.siteHeader.workSchedule,
     },
-    navigation: [
-      siteHeader.navAboutLabel?.trim() || homePageMock.navigation[0].label,
-      siteHeader.navProductionLabel?.trim() || homePageMock.navigation[1].label,
-      siteHeader.navWholesaleLabel?.trim() || homePageMock.navigation[2].label,
-      siteHeader.navReviewsLabel?.trim() || homePageMock.navigation[3].label,
-    ].map((label, index) => ({
-      label,
-      href: normalizeNavigationHref(
-        [
-          siteHeader.navAboutHref,
-          siteHeader.navProductionHref,
-          siteHeader.navWholesaleHref,
-          siteHeader.navReviewsHref,
-        ][index],
-        navigationHrefs[index],
-      ),
-    })),
+    navigation: mapNavigationItems(siteHeader),
   };
 }
 
@@ -1549,7 +1510,7 @@ export async function getSiteLayoutData(): Promise<Pick<HomePageData, "siteHeade
   const header = headerResult ?? getSnapshotSingle<StrapiSiteHeader>("siteHeader");
   const headerData = header ? mapSiteHeader(header) : {
     siteHeader: homePageMock.siteHeader,
-    navigation: homePageMock.navigation.slice(0, 4),
+    navigation: defaultNavigation,
   };
   return { ...headerData, footer };
 }
@@ -1662,7 +1623,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     ? mapSiteHeader(siteHeader)
     : {
         siteHeader: homePageMock.siteHeader,
-        navigation: homePageMock.navigation.slice(0, 4),
+        navigation: defaultNavigation,
       };
 
   if (

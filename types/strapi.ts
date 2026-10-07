@@ -58,6 +58,7 @@ export interface StrapiSiteHeader {
   documentId?: string;
   logoImage?: StrapiMedia | null;
   burgerMenuLogo?: StrapiMedia | null;
+  navigationItems?: { id?: number; label: string | null; href: string | null }[] | null;
   navAboutLabel?: string | null;
   navAboutHref?: string | null;
   navProductionLabel?: string | null;
